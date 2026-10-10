@@ -1,0 +1,734 @@
+{
+  "infantil": [
+    {
+      "id": "gestora_cavall",
+      "name": "Cavall de Cartró Serveis Educatius",
+      "city": "Catalunya",
+      "phone": "900 060 133",
+      "email": "",
+      "services": "0–3 · Gestió d’escoles bressol municipals i serveis educatius",
+      "centres": "Especialistes en llars d’infants municipals",
+      "web": "https://www.cavallcartro.cat/",
+      "careers": "https://www.cavallcartro.cat/",
+      "verified": "Web corporativa amb enviament de CV"
+    },
+    {
+      "id": "gestora_creixer",
+      "name": "Créixer Junts · Serveis per a la Infància",
+      "city": "Catalunya",
+      "phone": "",
+      "email": "",
+      "services": "0–3 · Gestió d’escoles bressol municipals",
+      "centres": "Gestió de diverses escoles bressol a Catalunya",
+      "web": "https://creixerjunts.cat/",
+      "careers": "https://creixerjunts.cat/",
+      "verified": "Gestora especialitzada en petita infància"
+    },
+    {
+      "id": "gestora_incoop",
+      "name": "Incoop Cooperativa",
+      "city": "Catalunya",
+      "phone": "",
+      "email": "persones@incoop.cat",
+      "services": "0–3 · Escoles bressol, espais familiars i serveis socioeducatius",
+      "centres": "Borsa específica per a suplències a escoles bressol i espais familiars",
+      "web": "https://incoop.cat/",
+      "careers": "https://incoop.cat/treballa-amb-nosaltres/",
+      "verified": "Borsa de treball i candidatura espontània"
+    },
+    {
+      "id": "gestora_grupip",
+      "name": "Grup IP",
+      "city": "Barcelona / Baix Llobregat / Catalunya",
+      "phone": "93 199 20 99",
+      "email": "bcn@grup-ip.cat",
+      "services": "0–3 · Educació infantil, equipaments d’infants i famílies",
+      "centres": "Borsa específica d’Educació Infantil i escoles bressol",
+      "web": "https://www.grup-ip.cat/",
+      "careers": "https://www.grup-ip.cat/treballa-amb-nosaltres/",
+      "verified": "Borsa de treball específica d’Educació Infantil"
+    },
+    {
+      "id": "gestora_suara",
+      "name": "Suara Cooperativa",
+      "city": "Catalunya",
+      "phone": "932 547 690",
+      "email": "",
+      "services": "0–3 · Serveis educatius i escoles bressol",
+      "centres": "Projectes educatius i de petita infància",
+      "web": "https://suara.coop/ca",
+      "careers": "https://suara.coop/ca/contactans",
+      "verified": "Cooperativa de serveis educatius i socials"
+    },
+    {
+      "id": "gestora_fundesplai",
+      "name": "Fundesplai",
+      "city": "Catalunya",
+      "phone": "",
+      "email": "",
+      "services": "0–6 · Escoles bressol, espais familiars i serveis educatius",
+      "centres": "Gestió integral de bressol i serveis per a infants i famílies",
+      "web": "https://escoles.fundesplai.org/serveis-per-a-la-petita-infancia/",
+      "careers": "https://fundesplai.org/collabora/treballa-amb-nosaltres/",
+      "verified": "Àrea específica de petita infància"
+    },
+    {
+      "id": "gestora_peretarres",
+      "name": "Fundació Pere Tarrés",
+      "city": "Barcelona / Catalunya",
+      "phone": "93 430 16 06",
+      "email": "",
+      "services": "0–6 · Petita infància, escoles bressol i serveis educatius",
+      "centres": "Gestió i coordinació d’escoles bressol i projectes educatius",
+      "web": "https://www.peretarres.org/",
+      "careers": "https://www.peretarres.org/treballa-nosaltres",
+      "verified": "Borsa pròpia amb vacants de petita infància"
+    },
+    {
+      "id": "gestora_eulen",
+      "name": "EULEN Serveis Sociosanitaris",
+      "city": "Catalunya",
+      "phone": "902 355 366",
+      "email": "",
+      "services": "0–3 · Gestió i suport educatiu en escoles bressol",
+      "centres": "Serveis educatius externalitzats i contractes municipals",
+      "web": "https://www.eulen.com/es/",
+      "careers": "https://www.eulen.com/es/",
+      "verified": "Activitat en escoles bressol documentada"
+    },
+    {
+      "id": "xarxa_vedruna",
+      "name": "Fundació Vedruna Catalunya Educació",
+      "city": "Catalunya",
+      "phone": "",
+      "email": "",
+      "services": "0–6 · Xarxa d’escoles amb Educació Infantil",
+      "centres": "39 escoles a la xarxa; Infantil segons centre",
+      "web": "https://vedruna.cat/oferta-educativa/",
+      "careers": "https://vedruna.cat/",
+      "verified": "Xarxa educativa amb etapa Infantil"
+    },
+    {
+      "id": "xarxa_fedac",
+      "name": "FEDAC",
+      "city": "Catalunya",
+      "phone": "",
+      "email": "",
+      "services": "3–6 · Xarxa d’escoles concertades amb Educació Infantil",
+      "centres": "25 escoles a Catalunya",
+      "web": "https://escoles.fedac.cat/",
+      "careers": "https://escoles.fedac.cat/treballa-amb-nosaltres/",
+      "verified": "Borsa de treball per etapa i zona"
+    },
+    {
+      "id": "xarxa_escolapia",
+      "name": "Escola Pia de Catalunya",
+      "city": "Catalunya",
+      "phone": "",
+      "email": "",
+      "services": "0–6 · Xarxa educativa amb Educació Infantil segons centre",
+      "centres": "Escoles i institucions educatives arreu de Catalunya",
+      "web": "https://escolapia.cat/escola-pia/",
+      "careers": "https://escolapia.cat/treballa-amb-nosaltres/",
+      "verified": "Borsa pròpia d’educadors"
+    },
+    {
+      "id": "xarxa_manyanet",
+      "name": "Escoles Manyanet",
+      "city": "Barcelona / Catalunya",
+      "phone": "",
+      "email": "",
+      "services": "0–6 · Llars d’infants i Educació Infantil segons centre",
+      "centres": "Centres Manyanet amb etapa Infantil",
+      "web": "https://manyanet.org/",
+      "careers": "https://manyanet.org/",
+      "verified": "Xarxa educativa amb Educació Infantil"
+    },
+    {
+      "id": "xarxa_lasalle",
+      "name": "La Salle Catalunya",
+      "city": "Catalunya",
+      "phone": "93 418 35 00",
+      "email": "secretaria@lasalle.cat",
+      "services": "0–6 · Xarxa educativa; Infantil i llar segons centre",
+      "centres": "Centres La Salle de Catalunya",
+      "web": "https://lasalle.cat/",
+      "careers": "https://lasalle.cat/contacte/",
+      "verified": "Borsa de treball amb selecció de zona i etapa"
+    },
+    {
+      "id": "xarxa_maristes",
+      "name": "Maristes Catalunya",
+      "city": "Catalunya",
+      "phone": "",
+      "email": "fchampagnat@maristes.cat",
+      "services": "0–6 · Xarxa educativa amb llar i/o Infantil segons centre",
+      "centres": "Escoles Maristes de Catalunya",
+      "web": "https://www.maristes.cat/ca",
+      "careers": "https://www.maristes.cat/ca/treballa-amb-nosaltres",
+      "verified": "Portal central Treballa amb nosaltres"
+    },
+    {
+      "id": "xarxa_salesians",
+      "name": "Salesians Catalunya",
+      "city": "Catalunya",
+      "phone": "",
+      "email": "",
+      "services": "3–6 · Xarxa d’escoles amb Educació Infantil segons centre",
+      "centres": "Centres salesians amb portal compartit de selecció",
+      "web": "https://www.salesians.cat/",
+      "careers": "https://www.salesians.cat/",
+      "verified": "Els centres disposen de portal Treballa amb nosaltres"
+    },
+    {
+      "id": "entitat_engresca",
+      "name": "Associació Educativa Engresca",
+      "city": "Barcelona / Catalunya",
+      "phone": "93 296 50 62",
+      "email": "info@engresca.com",
+      "services": "0–6 · Educació i lleure; perfils TEI i Mestre/a d’Infantil",
+      "centres": "Projectes educatius i campanyes amb perfils d’Educació Infantil",
+      "web": "https://www.engresca.com/",
+      "careers": "https://www.engresca.com/treballa-amb-nosaltres",
+      "verified": "Portal de feina amb perfils d’Educació Infantil"
+    },
+    {
+      "id": "entitat_casaasil",
+      "name": "Fundació Casa Asil de Sant Andreu de Palomar · SAFA",
+      "city": "Barcelona",
+      "phone": "93 345 88 95",
+      "email": "",
+      "services": "3–6 · Escola amb Educació Infantil i altres etapes",
+      "centres": "Col·legi Sagrada Família de Sant Andreu de Palomar",
+      "web": "https://safa.casaasil.cat/",
+      "careers": "https://safa.casaasil.cat/",
+      "verified": "Centre amb Infantil i apartat Treballa amb nosaltres"
+    },
+    {
+      "id": "ass_llars",
+      "name": "Associació Catalana de Llars d’Infants (ASSLLARS)",
+      "city": "Catalunya",
+      "phone": "93 215 30 11",
+      "email": "assllars@assllars.org",
+      "services": "0–3 · Associació de llars d’infants privades i d’iniciativa social",
+      "centres": "Agrupa i representa llars d’infants privades de Catalunya",
+      "web": "https://www.assllars.org/",
+      "careers": "https://www.assllars.org/",
+      "verified": "Font sectorial per localitzar llars privades"
+    }
+  ],
+  "lleure": [
+    {
+      "id": "lleure_1",
+      "name": "Ecomenja, SL",
+      "city": "Barcelona",
+      "email": "jmribas.gerencia@ecomenja.com",
+      "phone": "93 453 51 19",
+      "services": "Menjador / serveis educatius"
+    },
+    {
+      "id": "lleure_2",
+      "name": "ACTING FIGUERES",
+      "city": "Figueres",
+      "email": "info@acting.cat",
+      "phone": "972 987 590",
+      "services": "Serveis educatius"
+    },
+    {
+      "id": "lleure_3",
+      "name": "CreaTIC",
+      "city": "Barcelona",
+      "email": "info@creaticnens.com",
+      "phone": "646 637 850",
+      "services": "Extraescolars / serveis educatius"
+    },
+    {
+      "id": "lleure_4",
+      "name": "La Plec, Serveis de Lleure",
+      "city": "L’Hospitalet de Llobregat",
+      "email": "laplec@hotmail.com",
+      "phone": "695 179 154",
+      "services": "Lleure educatiu"
+    },
+    {
+      "id": "lleure_5",
+      "name": "A Parts Iguals",
+      "city": "La Roca del Vallès",
+      "email": "apartsiguals@gmail.com",
+      "phone": "673 475 702",
+      "services": "Serveis educatius"
+    },
+    {
+      "id": "lleure_6",
+      "name": "Mou T",
+      "city": "Els Pallaresos",
+      "email": "moutserveis@moutserveis.com",
+      "phone": "646 864 632",
+      "services": "Casals / menjadors / acollida / extraescolars"
+    },
+    {
+      "id": "lleure_7",
+      "name": "Maxbot tecnologia i educació",
+      "city": "Sant Celoni",
+      "email": "info@maxbot.cat",
+      "phone": "935 103 365",
+      "services": "Serveis educatius"
+    },
+    {
+      "id": "lleure_8",
+      "name": "Servitabor - Escola Tabor",
+      "city": "Barcelona",
+      "email": "servitabor@gmail.com",
+      "phone": "660 598 839",
+      "services": "Lleure infantil"
+    },
+    {
+      "id": "lleure_9",
+      "name": "Abac",
+      "city": "Barcelona",
+      "email": "info@abacserveis.com",
+      "phone": "93 360 10 44",
+      "services": "Serveis educatius"
+    },
+    {
+      "id": "lleure_10",
+      "name": "Dacor Serveis Educatius",
+      "city": "Cervelló",
+      "email": "dacor@dacor.cat",
+      "phone": "676 722 558",
+      "services": "Extraescolars / acollida / casals / menjador"
+    },
+    {
+      "id": "lleure_11",
+      "name": "Tot Oci Educació Lleure i Esport, SL",
+      "city": "Salt",
+      "email": "totoci@totoci.net",
+      "phone": "972 244 645",
+      "services": "Lleure i serveis educatius"
+    },
+    {
+      "id": "lleure_12",
+      "name": "Anima'ns Grup",
+      "city": "Igualada",
+      "email": "maure@animans.cat",
+      "phone": "931 414 739",
+      "services": "Oci infantil i lleure"
+    },
+    {
+      "id": "lleure_13",
+      "name": "DOVELLA SERVEIS ESCOLARS",
+      "city": "Barcelona",
+      "email": "dovellase@gmail.com",
+      "phone": "655 402 538",
+      "services": "Serveis escolars"
+    },
+    {
+      "id": "lleure_14",
+      "name": "7itria",
+      "city": "El Prat de Llobregat",
+      "email": "7itria@7itria.cat",
+      "phone": "936 821 043",
+      "services": "Serveis educatius"
+    },
+    {
+      "id": "lleure_15",
+      "name": "Menjares",
+      "city": "Santa Maria de Palautordera",
+      "email": "jonathan@menjares.com",
+      "phone": "610 250 675",
+      "services": "Menjador / serveis educatius"
+    },
+    {
+      "id": "lleure_16",
+      "name": "CONTROL PLAY",
+      "city": "Sant Vicenç dels Horts",
+      "email": "info@controlplaysports.com",
+      "phone": "639 362 253",
+      "services": "Activitats i serveis educatius"
+    },
+    {
+      "id": "lleure_17",
+      "name": "TRESMES ECOACTIVA",
+      "city": "Granollers",
+      "email": "tresmes@tresmes.com",
+      "phone": "938 796 058",
+      "services": "Serveis educatius"
+    },
+    {
+      "id": "lleure_18",
+      "name": "Anèl·lides, Serveis Ambientals Marins",
+      "city": "Barcelona",
+      "email": "info@anellides.com",
+      "phone": "657 800 531",
+      "services": "Educació i lleure"
+    },
+    {
+      "id": "lleure_19",
+      "name": "AKELALLEURE",
+      "city": "Girona",
+      "email": "info@akelalleure.com",
+      "phone": "621 266 030",
+      "services": "Serveis educatius i socioculturals"
+    },
+    {
+      "id": "lleure_20",
+      "name": "Educació i temps lliure Ziga Zaga, SL",
+      "city": "Cornellà de Llobregat",
+      "email": "zigazaga@ziga-zaga.com",
+      "phone": "93 474 49 50",
+      "services": "Extraescolars / menjador / lleure"
+    },
+    {
+      "id": "lleure_21",
+      "name": "Niueduca",
+      "city": "Barcelona",
+      "email": "info@niueduca.com",
+      "phone": "653 373 578",
+      "services": "Serveis educatius"
+    },
+    {
+      "id": "lleure_22",
+      "name": "RACONS DE LLEURE",
+      "city": "Cornellà de Llobregat",
+      "email": "gerent@raconsdelleure.com",
+      "phone": "663 771 374",
+      "services": "Serveis educatius i lleure"
+    },
+    {
+      "id": "lleure_23",
+      "name": "Prat Actiu !!",
+      "city": "El Prat de Llobregat",
+      "email": "pere@pratactiu.cat",
+      "phone": "625 707 936",
+      "services": "Serveis educatius"
+    },
+    {
+      "id": "lleure_24",
+      "name": "Gumen serveis educatius S.L.",
+      "city": "Sabadell",
+      "email": "info@gumen.catering.com",
+      "phone": "937 178 335",
+      "services": "Menjador / serveis educatius"
+    },
+    {
+      "id": "lleure_25",
+      "name": "Engreskat",
+      "city": "Santa Coloma de Gramenet",
+      "email": "direccio@engreskat.com",
+      "phone": "650 147 301",
+      "services": "Serveis educatius"
+    },
+    {
+      "id": "lleure_26",
+      "name": "Sensación Activa, SL",
+      "city": "Cubelles",
+      "email": "info@sensacionactiva.com",
+      "phone": "930 153 536",
+      "services": "Serveis educatius"
+    },
+    {
+      "id": "lleure_27",
+      "name": "lleure.cat",
+      "city": "Barberà del Vallès",
+      "email": "lleure@lleure.cat",
+      "phone": "659 699 836",
+      "services": "Serveis educatius"
+    },
+    {
+      "id": "lleure_28",
+      "name": "Va de Lleure",
+      "city": "Granollers",
+      "email": "info@dlleure.cat",
+      "phone": "93 863 46 58",
+      "services": "Gestió de lleure"
+    },
+    {
+      "id": "lleure_29",
+      "name": "Monitoratge i Cuina",
+      "city": "L’Hospitalet de Llobregat",
+      "email": "rocagonzalez@rocagonzalez.com",
+      "phone": "93 656 59 69",
+      "services": "Monitoratge / menjador"
+    },
+    {
+      "id": "lleure_30",
+      "name": "PAIDEIA",
+      "city": "Sant Andreu de la Barca",
+      "email": "paideiacomptabilitat@gmail.com",
+      "phone": "691 603 712",
+      "services": "Serveis educatius"
+    },
+    {
+      "id": "lleure_31",
+      "name": "Teno",
+      "city": "Sant Cugat del Vallès",
+      "email": "info@teno.cat",
+      "phone": "933 278 400",
+      "services": "Serveis educatius / menjador"
+    },
+    {
+      "id": "lleure_32",
+      "name": "TOT OCI 2022 SL",
+      "city": "Salt",
+      "email": "anna@totoci.net",
+      "phone": "972 244 645",
+      "services": "Lleure i serveis educatius"
+    },
+    {
+      "id": "lleure_33",
+      "name": "AULA BGT",
+      "city": "Sant Adrià de Besòs",
+      "email": "info@aulabgt.com",
+      "phone": "930 328 365",
+      "services": "Activitats educatives i lleure"
+    },
+    {
+      "id": "lleure_34",
+      "name": "CET10 Esport i Lleure i Fundació CET10",
+      "city": "Barcelona",
+      "email": "",
+      "phone": "93 278 31 35",
+      "services": "Lleure educatiu / monitoratge / coordinació / extraescolars"
+    },
+    {
+      "id": "lleure_35",
+      "name": "Diverjoc",
+      "city": "Barcelona",
+      "email": "",
+      "phone": "93 435 89 36",
+      "services": "Extraescolars / monitoratge / serveis educatius"
+    },
+    {
+      "id": "lleure_36",
+      "name": "Som Valors",
+      "city": "Barcelona",
+      "email": "",
+      "phone": "93 427 47 34",
+      "services": "Menjador escolar / monitoratge / coordinació"
+    },
+    {
+      "id": "lleure_37",
+      "name": "Rosa Catalan",
+      "city": "Barcelona",
+      "email": "rosa.catalan@kidsandus.es",
+      "phone": "687 721 249",
+      "services": "Extraescolars / casals"
+    },
+    {
+      "id": "lleure_38",
+      "name": "La Forquilla Ecològica Cooperativa",
+      "city": "Barcelona",
+      "email": "info@laforquillaecologica.cat",
+      "phone": "644 581 936",
+      "services": "Menjador / serveis educatius"
+    },
+    {
+      "id": "lleure_39",
+      "name": "L'ESPIRALL MONITORATGE SCP",
+      "city": "Santa Coloma de Gramenet",
+      "email": "espirallmonitoratge@yahoo.es",
+      "phone": "935 933 779",
+      "services": "Monitoratge / espai migdia"
+    },
+    {
+      "id": "lleure_40",
+      "name": "La Bambalina",
+      "city": "Banyoles",
+      "email": "info@labambalina.com",
+      "phone": "629 507 776",
+      "services": "Lleure / activitats artístiques"
+    },
+    {
+      "id": "lleure_41",
+      "name": "ELLAP",
+      "city": "Vilafranca del Penedès",
+      "email": "ellappenedes@gmail.com",
+      "phone": "93 817 37 36",
+      "services": "Extraescolars / lleure / serveis educatius"
+    },
+    {
+      "id": "lleure_42",
+      "name": "Ecoarrels",
+      "city": "Mataró",
+      "email": "administracio@ecoarrels.cat",
+      "phone": "93 853 55 68",
+      "services": "Serveis educatius"
+    },
+    {
+      "id": "lleure_43",
+      "name": "Valor-s",
+      "city": "Gelida",
+      "email": "valorsitaca@gmail.com",
+      "phone": "679 540 503",
+      "services": "Serveis educatius"
+    },
+    {
+      "id": "lleure_44",
+      "name": "Diver's Associació d'Esplai",
+      "city": "Barcelona",
+      "email": "diversesplai@gmail.com",
+      "phone": "662 518 526",
+      "services": "Extraescolars / menjador / transport escolar"
+    },
+    {
+      "id": "lleure_45",
+      "name": "Meraki Jocs",
+      "city": "Barcelona",
+      "email": "info@merakijocs.com",
+      "phone": "640 953 903",
+      "services": "Lleure / activitats educatives"
+    },
+    {
+      "id": "lleure_46",
+      "name": "FUNBRAIN",
+      "city": "Cerdanyola del Vallès",
+      "email": "csanz@funbrain.cat",
+      "phone": "934 144 090",
+      "services": "Activitats educatives"
+    },
+    {
+      "id": "lleure_47",
+      "name": "mpt menjadors",
+      "city": "Castell-Platja d’Aro",
+      "email": "direccio@mptmenjadors.cat",
+      "phone": "",
+      "services": "Menjador / monitoratge"
+    },
+    {
+      "id": "lleure_48",
+      "name": "Edukem-nos",
+      "city": "Vilassar de Mar",
+      "email": "montse@edukem-nos.cat",
+      "phone": "636 970 434",
+      "services": "Serveis educatius"
+    },
+    {
+      "id": "lleure_49",
+      "name": "Viu Projecte Lleure",
+      "city": "Barcelona",
+      "email": "viu@viuprojectelleure.com",
+      "phone": "617 278 344",
+      "services": "Lleure educatiu"
+    },
+    {
+      "id": "lleure_50",
+      "name": "Fora d’Hores",
+      "city": "Catalunya",
+      "email": "",
+      "phone": "",
+      "services": "Extraescolars / lleure / coordinació"
+    },
+    {
+      "id": "lleure_51",
+      "name": "Sotrac, serveis educatius",
+      "city": "Catalunya",
+      "email": "",
+      "phone": "",
+      "services": "Extraescolars / ludoteques / menjadors / espais joves"
+    },
+    {
+      "id": "lleure_52",
+      "name": "Monitaula, SL",
+      "city": "Catalunya",
+      "email": "",
+      "phone": "",
+      "services": "Menjadors / extraescolars / lleure"
+    },
+    {
+      "id": "lleure_53",
+      "name": "PAM I PIPA",
+      "city": "Catalunya",
+      "email": "",
+      "phone": "",
+      "services": "Menjador / lleure escolar"
+    },
+    {
+      "id": "lleure_54",
+      "name": "La Xupxup SL",
+      "city": "Catalunya",
+      "email": "",
+      "phone": "",
+      "services": "Menjador / temps de migdia"
+    },
+    {
+      "id": "lleure_55",
+      "name": "FRoca",
+      "city": "Catalunya",
+      "email": "",
+      "phone": "",
+      "services": "Menjador / monitoratge escolar"
+    },
+    {
+      "id": "lleure_56",
+      "name": "Agora Col·lectivitats",
+      "city": "Catalunya",
+      "email": "",
+      "phone": "",
+      "services": "Menjador / lleure educatiu"
+    },
+    {
+      "id": "lleure_57",
+      "name": "Enlleura’t, serveis educatius i de lleure",
+      "city": "Catalunya",
+      "email": "",
+      "phone": "",
+      "services": "Menjador / extraescolars / casals"
+    },
+    {
+      "id": "lleure_58",
+      "name": "Crea i Creix",
+      "city": "Catalunya",
+      "email": "",
+      "phone": "",
+      "services": "Lleure / serveis educatius"
+    },
+    {
+      "id": "lleure_59",
+      "name": "Educació Cultura i Lleure S.L. - NEXXE",
+      "city": "Catalunya",
+      "email": "",
+      "phone": "",
+      "services": "Gestió de serveis educatius i socioculturals"
+    },
+    {
+      "id": "lleure_60",
+      "name": "Quiràlia",
+      "city": "Catalunya",
+      "email": "",
+      "phone": "",
+      "services": "Lleure educatiu / serveis"
+    },
+    {
+      "id": "lleure_61",
+      "name": "Campos Estela",
+      "city": "Catalunya",
+      "email": "",
+      "phone": "",
+      "services": "Menjador escolar / projectes educatius"
+    },
+    {
+      "id": "lleure_62",
+      "name": "ReCrea",
+      "city": "Catalunya",
+      "email": "",
+      "phone": "",
+      "services": "Monitoratge / menjador escolar"
+    },
+    {
+      "id": "lleure_63",
+      "name": "Eixos Creativa",
+      "city": "Catalunya",
+      "email": "",
+      "phone": "",
+      "services": "Extraescolars / monitoratge"
+    },
+    {
+      "id": "lleure_64",
+      "name": "Fundació Catalana del Lleure Educatiu i Sociocultural",
+      "city": "Catalunya",
+      "email": "",
+      "phone": "",
+      "services": "Lleure educatiu / coordinació / projectes"
+    }
+  ]
+}

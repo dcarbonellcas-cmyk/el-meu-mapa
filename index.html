@@ -1,0 +1,128 @@
+<!doctype html><html lang="ca"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>El meu mapa d'escoles</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<link rel="stylesheet" href="assets/css/styles.css"><script src="https://accounts.google.com/gsi/client" async defer></script>
+
+
+
+
+</head><body>
+<div class="top"><div class="brand">🌱 El meu mapa d’escoles</div><nav class="mainnav"><button class="navbtn active" data-page="home">⌂ Inici</button><button class="navbtn" data-page="explore">🎓 Infantil</button><button class="navbtn" data-page="leisure">☀️ Lleure</button><button class="navbtn" data-page="jobs">🔎 Ofertes</button><button class="navbtn" id="dashboardBtn" data-page="candidates">💌 Candidatures</button><button class="navbtn" data-page="renew">🔔 Per renovar</button><button class="navbtn" data-page="docs">📄 Documents</button></nav><input id="search" class="search" placeholder="Busca una escola, municipi o comarca..."></div>
+<section id="homePage" class="homePage homePlayful">
+  <div class="homeHero playfulHero"><div><div class="helloTag">🌈 EL TEU ESPAI PROFESSIONAL</div><h1>Hola 👋</h1><p>Educació infantil i lleure, tot ordenat perquè trobar la teva propera oportunitat sigui més fàcil.</p><div class="heroBtns"><button class="heroBtn primaryHome" data-go="explore">🎓 Anar a Infantil</button><button class="heroBtn secondaryHome" data-go="leisure">☀️ Anar a Lleure</button></div></div><div class="heroDoodles"><span>🧸</span><span>🎨</span><span>🌱</span><span>☀️</span></div></div>
+  <div class="homeStats"><div class="homeStat peach"><div class="n" id="homeSent">0</div><div class="lab">💌 Candidatures enviades</div></div><div class="homeStat mint"><div class="n" id="homeReplies">0</div><div class="lab">💬 Han contestat</div></div><div class="homeStat lilac"><div class="n" id="homeInterviews">0</div><div class="lab">✨ Entrevistes</div></div><div class="homeStat sunny"><div class="n" id="homeRenew">0</div><div class="lab">🔔 Per renovar</div></div></div>
+  <div class="journeyTitle"><span>🌼</span><div><h2>Per on vols començar avui?</h2><p>Tria el camí i ves directament al que necessites.</p></div></div>
+  <div id="dataUpdatePanel" style="margin:16px 0 22px;padding:14px 16px;border:1px solid #dce8df;border-radius:16px;background:#f4fff7;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap"><div><b style="color:#24613a">🔄 Dades actualitzables</b><div style="font-size:12px;color:#667a6d;margin-top:3px">Centres: Directori oficial de la Generalitat · Lleure: directoris sectorials · Ofertes: fonts de feina + Gmail</div><div id="dataUpdateDate" style="font-size:11px;color:#84938a;margin-top:4px"></div></div><button id="checkDataSources" style="border:1px solid #b9d9c1;background:white;color:#24613a;border-radius:10px;padding:9px 12px;font-weight:800;cursor:pointer">↻ Comprovar fonts</button></div><div class="pathGrid"><button class="pathCard infant" data-go="explore"><span class="pathIcon">🎓</span><b>Educació infantil</b><small>Mapa de centres 0–6 i entitats educatives</small></button><button class="pathCard leisure" data-go="leisure"><span class="pathIcon">☀️</span><b>Lleure educatiu</b><small>Direcció, coordinació i monitoratges</small></button><button class="pathCard jobs" data-go="jobs"><span class="pathIcon">🔎</span><b>Mirar ofertes</b><small>Les oportunitats que van arribant</small></button><button class="pathCard follow" data-go="candidates"><span class="pathIcon">💌</span><b>Fer seguiment</b><small>Candidatures, respostes i entrevistes</small></button></div>
+  <div class="homeGrid"><div class="homePanel tipPanel"><h2>🌱 La teva cerca, al teu ritme</h2><p>Guarda els llocs que t'interessen, envia candidatures i deixa que l'app t'ajudi a recordar quan toca tornar-hi.</p><div class="miniActions"><button data-go="renew">🔔 Veure renovacions</button><button data-go="docs">📄 Els meus documents</button></div></div><div class="homePanel"><h2>🔔 Properes renovacions</h2><div id="homeRenewList"><div class="muted">Encara no tens candidatures per renovar.</div></div></div></div>
+</section>
+
+
+<section id="leisurePage" class="leisurePage" style="display:none">
+ <div class="leisureHero"><span class="leisurePriority">⭐ PRIORITAT: DIRECCIÓ I COORDINACIÓ</span><h1>☀️ Lleure educatiu</h1><p style="color:#7183a4;margin:0">Empreses, cooperatives, fundacions i altres llocs on pots treballar en direcció/coordinació, monitoratge, menjador, extraescolars, casals i acollida. Sense colònies ni pernoctacions.</p></div>
+ <div class="leisureLayout"><aside class="leisureSide"><h3>🔎 Buscar i filtrar</h3><input id="leisureSearch" placeholder="Empresa, municipi o servei…"><select id="leisureStatus"><option value="">Tots els estats</option><option value="none">No contactada</option><option value="sent">CV enviat</option></select><div class="sideFilterTitle">Tipus de feina</div><div class="leisureFilters sideFilters"><button class="leisureFilter active" data-lf="all">Tots</button><button class="leisureFilter" data-lf="coord">⭐ Direcció / coordinació</button><button class="leisureFilter" data-lf="monitor">👩‍🏫 Monitoratge</button><button class="leisureFilter" data-lf="migdia">🍽️ Menjador</button><button class="leisureFilter" data-lf="extra">🎨 Extraescolars</button><button class="leisureFilter" data-lf="casal">☀️ Casals</button><button class="leisureFilter" data-lf="acollida">🌅 Acollida</button></div><div class="sideHint">💡 Pots combinar la cerca amb aquests filtres per anar directament al tipus de feina que t'interessa.</div></aside>
+ <main class="leisureMain"><div class="leisureMapWrap"><div class="leisureMapHead"><b>🗺️ Mapa de llocs on pots enviar candidatura</b><span><span id="leisureCount" class="leisureCount">0</span> llocs visibles</span></div><div id="leisureMap" class="leisureMap"></div></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin:14px 0"><button class="smallBtn" id="openAcellecJobs">🔎 Ofertes ACELLEC</button><button class="smallBtn" data-go="jobs">📨 Ofertes importades del Gmail</button></div><details class="entityDrop" open><summary>☀️ Veure empreses i entitats de lleure <span>▾</span></summary><div id="leisureGrid" class="leisureGrid"></div></details></main></div>
+</section>
+<section id="jobsPage" class="jobsPage" style="display:none">
+  <div class="jobsHero"><div><h1>🔎 Ofertes de feina</h1><p>Agrupa ofertes d’educació infantil i lleure de Feina Activa i Empléate/SEPE, i importa les teves alertes de LinkedIn, Indeed, InfoJobs i B4work des de Gmail.</p></div><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="smallBtn" id="syncJobsBtn">🔄 Actualitzar ofertes</button><button class="smallBtn" id="addJobBtn">＋ Afegir oferta</button></div></div><div id="jobsSyncNotice" style="display:none;margin:14px 0;padding:12px 14px;border-radius:12px;background:#eef6ff;border:1px solid #d5e7ff;color:#365d91;font-size:13px"></div>
+  <div class="jobsToolbar"><input id="jobSearch" placeholder="Busca per lloc, escola o municipi..."><select id="jobSource"><option value="">Totes les fonts</option><option>LinkedIn</option><option>InfoJobs</option><option>Indeed</option><option>Feina Activa</option><option>Empléate / SEPE</option><option>B4work</option><option>Facebook</option><option>Altres</option></select><select id="jobStatus"><option value="">Tots els estats</option><option value="saved">⭐ M’interessa</option><option value="applied">✅ Candidatura enviada</option><option value="discarded">🚫 Descartada</option></select></div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px"><button class="smallBtn jobTypeFilter active" data-jtype="">Totes</button><button class="smallBtn jobTypeFilter" data-jtype="infantil">🎓 Infantil</button><button class="smallBtn jobTypeFilter" data-jtype="direccio">⭐ Direcció / Coordinació</button><button class="smallBtn jobTypeFilter" data-jtype="lleure">☀️ Lleure</button><button class="smallBtn jobTypeFilter" data-jtype="menjador">🍽️ Menjador</button><button class="smallBtn jobTypeFilter" data-jtype="extraescolars">🎨 Extraescolars</button><button class="smallBtn jobTypeFilter" data-jtype="acollida">🌅 Acollida</button></div><div id="jobsGrid" class="jobsGrid"></div>
+  <div class="jobsInfo"><b>Importació automàtica:</b> prem “🔄 Actualitzar ofertes” i autoritza Gmail. L’app buscarà alertes recents de LinkedIn, InfoJobs, Indeed i B4work, n’importarà els enllaços d’ofertes i evitarà duplicats. Només es processen aquests correus dins del teu navegador; no es guarden en cap servidor de l’app.</div>
+</section>
+<div class="app" id="explorePage" style="display:none"><aside class="filters"><div class="filterIntro"><b>🎓 Educació infantil 0–6</b><span>Busca centres al mapa amb els filtres.</span></div>
+<div class="sec"><h3>Edat dels infants</h3><label class="check"><input type="checkbox" data-age="0-3" checked> 0–3 (escola bressol)</label><label class="check"><input type="checkbox" data-age="3-6" checked> 3–6 (educació infantil)</label><label class="check"><input type="checkbox" data-age="0-6"> 0–6 (tots dos cicles)</label></div>
+<div class="sec"><h3>Tipus de centre</h3><label class="check"><input type="checkbox" data-kind="Privada" checked> 🟣 Privada</label><label class="check"><input type="checkbox" data-kind="Concertada" checked> 🔵 <b>Concertada</b></label><label class="check"><input type="checkbox" data-kind="Pública"> ⚪ Pública</label></div>
+<div class="sec"><h3>Comarca</h3><select id="county" class="select"><option value="">Totes les comarques</option></select></div><div class="sec stats"><div class="muted">Centres visibles</div><div class="count" id="total">0</div><div class="legend"><span class="dot" style="background:#a855f7"></span>Privada &nbsp; <span class="dot" style="background:#2875e6"></span>Concertada &nbsp; <span class="dot" style="background:#9ca3af"></span>Pública &nbsp; <span class="dot" style="background:#16a34a"></span><b>CV enviat</b> &nbsp; <span class="dot" style="background:#f59e0b"></span><b>Toca renovar</b></div></div></aside>
+<main class="mapwrap"><div class="maphead">Clica un punt o una targeta per obrir l'escola</div><div class="mapbox"><div id="map"></div></div><details class="entityDrop infantDrop" open><summary>🏢 Veure empreses, entitats i xarxes d’educació infantil <span>▾</span></summary><div class="managersTools"><input id="managerSearch" placeholder="Busca empresa, entitat o xarxa educativa..."><button class="smallBtn" id="managerAll">Mostrar totes</button></div><div id="managerCount" class="muted" style="margin-bottom:12px"></div><div id="managerGrid" class="managerGrid"></div></details><div class="cards" id="cards"></div></main>
+<section class="detail emptyPanel" id="detail"><div class="empty">Selecciona una escola per veure'n les dades i gestionar la candidatura.</div></section></div>
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
+<div id="docsOverlay" class="docsOverlay"><div class="docsInner"><div style="font-size:13px;color:#7183a4;font-weight:800">DOCUMENTS DE CANDIDATURA</div><h1 style="margin:5px 0 6px">📄 Els meus documents</h1><p class="muted" style="font-size:14px">Aquests són els fitxers que s’adjunten quan envies una candidatura amb Gmail. Substitueix-los aquí sempre que actualitzis el CV o la carta.</p><div class="docCard"><div class="docMeta"><b>El meu perfil per a les candidatures</b><p class="muted">Es guarda només en aquest navegador.</p><label for="candidateName">Nom complet</label><input id="candidateName" autocomplete="name"><label for="candidateBio">Formació i experiència</label><textarea id="candidateBio" rows="4"></textarea><button id="legacyExcelBtn" class="smallBtn">📊 El meu Excel antic</button><button id="saveProfile" class="smallBtn">Guardar perfil</button><label class="smallBtn">Importar perfil JSON<input id="profileImport" type="file" accept=".json" hidden></label><span id="profileNotice" role="status"></span></div></div><div class="docCard"><div class="docIcon">📄</div><div class="docMeta"><b>Currículum</b><span id="docsCvName">Cap fitxer guardat</span></div><div class="docActions"><label class="smallBtn">Substituir<input id="docsCvInput" type="file" accept=".pdf,.doc,.docx" style="display:none"></label><button class="smallBtn" id="docsCvOpen" style="display:none">Obrir</button></div></div><div class="docCard"><div class="docIcon">✉️</div><div class="docMeta"><b>Carta de presentació</b><span id="docsLetterName">Cap fitxer guardat</span></div><div class="docActions"><label class="smallBtn">Substituir<input id="docsLetterInput" type="file" accept=".pdf,.doc,.docx" style="display:none"></label><button class="smallBtn" id="docsLetterOpen" style="display:none">Obrir</button></div></div><div style="margin-top:18px;padding:14px 16px;background:#edf7ef;border:1px solid #cfe8d5;border-radius:14px;color:#2c6b3d;font-size:13px">✓ Els documents es guarden al teu navegador i no s’envien fins que confirmes una candidatura.</div>
+</div></div>
+<section id="dashboardOverlay" class="dashboardDirect">
+  <div style="max-width:1180px;margin:auto;padding:24px">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div>
+        <div style="font-size:13px;color:#7183a4;font-weight:700">SEGUIMENT DE LA RECERCA DE FEINA</div>
+        <h1 id="dashboardTitle" style="margin:4px 0 0;font-size:28px">💌 Les meves candidatures</h1>
+      </div>
+      
+    </div>
+
+    <div id="dashCards" style="display:grid;grid-template-columns:repeat(5,minmax(150px,1fr));gap:12px;margin:24px 0"></div>
+
+    <div style="background:white;border:1px solid #dce5f2;border-radius:16px;padding:16px">
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px">
+        <select id="dashScope" style="padding:11px;border:1px solid #ccd9eb;border-radius:10px"><option value="">Totes</option><option value="infantil">🎓 Infantil</option><option value="gestora">🏢 Entitats 0–6</option><option value="lleure">☀️ Lleure</option></select><input id="dashSearch" placeholder="Busca escola, entitat o municipi..." style="flex:1;min-width:220px;padding:11px 13px;border:1px solid #ccd9eb;border-radius:10px">
+        <select id="dashStatus" style="padding:11px;border:1px solid #ccd9eb;border-radius:10px">
+          <option value="">Tots els estats</option>
+          <option>No contactada</option><option>CV preparat</option><option>CV enviat</option><option>Toca renovar candidatura</option><option>Han contestat</option><option>Entrevista</option>
+        </select>
+      </div>
+      <div style="overflow:auto">
+        <table style="width:100%;border-collapse:collapse;min-width:760px">
+          <thead><tr style="text-align:left;color:#7183a4;font-size:12px">
+            <th style="padding:10px">ESCOLA</th><th>MUNICIPI</th><th>TIPUS</th><th>ETAPA</th><th>ESTAT</th><th>ÚLTIMA ACCIÓ</th><th></th>
+          </tr></thead>
+          <tbody id="dashRows"></tbody>
+        </table>
+      </div>
+      <div id="otherCandidateRows"></div><div id="dashEmpty" style="display:none;padding:34px;text-align:center;color:#7183a4">
+        Encara no hi ha candidatures amb aquests filtres.
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<div id="mailDraftModal" style="display:none;position:fixed;inset:0;z-index:20000;background:rgba(17,35,64,.42);align-items:center;justify-content:center;padding:18px">
+  <div style="width:min(720px,96vw);max-height:90vh;overflow:auto;background:white;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.2);padding:22px;color:#173b72">
+    <div style="display:flex;justify-content:space-between;gap:16px;align-items:flex-start">
+      <div><div style="font-size:12px;color:#7384a2;font-weight:800">CANDIDATURA PREPARADA</div><h2 style="margin:5px 0 0">✉ Correu per enviar</h2></div>
+      <button id="closeMailDraft" type="button" style="border:0;background:#eef3fa;border-radius:10px;padding:8px 11px;cursor:pointer;font-weight:800">✕</button>
+    </div>
+    <p style="color:#667a9b;font-size:13px">Guarda el teu CV i la carta una vegada. El navegador els recordarà en aquest dispositiu i els tindràs sempre disponibles quan preparis una candidatura.</p>
+    <div style="margin:14px 0;padding:14px;background:#f6f9fd;border:1px solid #dce6f3;border-radius:14px">
+      <div style="font-weight:900;margin-bottom:10px">📎 Documents de candidatura</div>
+      <div style="display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;margin-bottom:10px">
+        <div><b>Currículum</b><div id="cvFileName" style="font-size:12px;color:#7183a0;margin-top:2px">Cap fitxer guardat</div></div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><label style="border:1px solid #cbd8eb;background:white;border-radius:9px;padding:8px 10px;font-weight:800;cursor:pointer">Seleccionar<input id="cvFileInput" type="file" accept=".pdf,.doc,.docx" style="display:none"></label><button id="cvOpen" type="button" style="display:none;border:1px solid #cbd8eb;background:white;border-radius:9px;padding:8px 10px;font-weight:800;cursor:pointer">Obrir</button></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center">
+        <div><b>Carta de presentació</b><div id="letterFileName" style="font-size:12px;color:#7183a0;margin-top:2px">Cap fitxer guardat</div></div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><label style="border:1px solid #cbd8eb;background:white;border-radius:9px;padding:8px 10px;font-weight:800;cursor:pointer">Seleccionar<input id="letterFileInput" type="file" accept=".pdf,.doc,.docx" style="display:none"></label><button id="letterOpen" type="button" style="display:none;border:1px solid #cbd8eb;background:white;border-radius:9px;padding:8px 10px;font-weight:800;cursor:pointer">Obrir</button></div>
+      </div>
+      <div style="font-size:11px;color:#7b8ba5;margin-top:9px">Els fitxers es guarden només al navegador d'aquest dispositiu. Si canvies d'ordinador o esborres les dades del navegador, els hauràs de seleccionar de nou.</div>
+    </div>
+    <label style="display:block;font-weight:800;margin-top:14px">Destinatari</label>
+    <input id="draftTo" readonly style="width:100%;box-sizing:border-box;padding:11px;border:1px solid #cedaeb;border-radius:10px;margin-top:5px">
+    <label style="display:block;font-weight:800;margin-top:14px">Assumpte</label>
+    <input id="draftSubject" readonly style="width:100%;box-sizing:border-box;padding:11px;border:1px solid #cedaeb;border-radius:10px;margin-top:5px">
+    <label style="display:block;font-weight:800;margin-top:14px">Missatge</label>
+    <textarea id="draftBody" readonly style="width:100%;box-sizing:border-box;min-height:300px;padding:12px;border:1px solid #cedaeb;border-radius:10px;margin-top:5px;line-height:1.45"></textarea>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+      <button id="sendGmail" type="button" style="border:0;background:#1769e8;color:white;border-radius:11px;padding:11px 16px;font-weight:900;cursor:pointer">✉ Enviar amb Gmail</button>
+      <button id="copyDraft" type="button" style="border:1px solid #cbd8eb;background:white;color:#173b72;border-radius:11px;padding:11px 16px;font-weight:800;cursor:pointer">📋 Copiar correu</button>
+      <button id="copyBody" type="button" style="border:1px solid #cbd8eb;background:white;color:#173b72;border-radius:11px;padding:11px 16px;font-weight:800;cursor:pointer">Copiar només el missatge</button>
+      <button id="closeMailDraft2" type="button" style="border:1px solid #cbd8eb;background:white;color:#173b72;border-radius:11px;padding:11px 16px;font-weight:800;cursor:pointer">Tancar</button>
+    </div>
+    <div id="copyNotice" style="display:none;margin-top:12px;padding:10px 12px;background:#edf8f1;border-radius:10px;color:#27613a;font-weight:700">✓ Copiat. Enganxa-ho al teu correu i adjunta els PDF.</div>
+    <div id="gmailNotice" style="display:none;margin-top:12px;padding:10px 12px;border-radius:10px;font-weight:800"></div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div id="legacyExcelOverlay" style="display:none;position:fixed;inset:0;z-index:25000;background:rgba(17,35,64,.42);padding:18px;overflow:auto"><div style="width:min(1120px,97vw);margin:25px auto;background:white;border-radius:20px;padding:22px;color:#173b72;box-shadow:0 20px 60px rgba(0,0,0,.2)"><div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start"><div><div style="font-size:12px;font-weight:800;color:#7183a4">HISTORIAL IMPORTAT</div><h2 style="margin:4px 0">📊 El meu Excel antic</h2><p id="legacySummary" style="margin:5px 0;color:#657897">Importa el teu historial local per consultar-lo aquí.</p><label class="smallBtn">Importar historial JSON<input id="legacyImport" type="file" accept=".json" hidden></label></div><button id="closeLegacyExcel" style="border:0;background:#eef3fa;border-radius:10px;padding:8px 11px;cursor:pointer;font-weight:800">✕</button></div><div style="display:flex;gap:10px;flex-wrap:wrap;margin:15px 0"><input id="legacySearch" placeholder="Buscar centre o municipi…" style="flex:1;min-width:220px;padding:10px;border:1px solid #dce5f2;border-radius:10px"><select id="legacyFilter" style="padding:10px;border:1px solid #dce5f2;border-radius:10px"><option value="">Tots</option><option value="matched">Coincideix amb el mapa</option><option value="unmatched">Per revisar</option></select></div><div style="overflow:auto;max-height:65vh"><table style="width:100%;border-collapse:collapse;font-size:13px"><thead><tr style="text-align:left;background:#f6f9fd"><th style="padding:10px">Centre</th><th>Municipi</th><th>Estat Excel</th><th>Data</th><th>Contacte</th><th>Interès</th><th>Coincidència</th></tr></thead><tbody id="legacyRows"></tbody></table></div></div></div>
+
+
+
+<script src="assets/js/app.js"></script>
+</body></html>
