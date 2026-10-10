@@ -7,7 +7,8 @@ Mapa de centres d’educació infantil i entitats de lleure de Catalunya, amb se
 ```text
 index.html
 assets/
-  css/styles.css
+  scss/styles.scss            # Fuente SCSS por secciones y variables
+  css/styles.css              # CSS generado para el navegador
   js/
     app.js                     # Càrrega ordenada de dades i scripts
     mapes.js                   # Mapa i filtres de centres
@@ -37,7 +38,17 @@ package.json
 
 Pots obrir `index.html` directament: la còpia `dades-local.js` permet carregar les dades sense servidor. Cal Internet per a Leaflet, les capes del mapa i Google.
 
-Amb Node.js 20 o superior, executa `npm run build` després de canviar les dades JSON. Això actualitza la còpia local i prepara `public/`, que només conté l’HTML i els recursos de la web. `npm run check` comprova sintaxi, rutes, estructura de dades i absència de secrets coneguts.
+Amb Node.js 20 o superior, instal·la les dependències amb `pnpm install --frozen-lockfile` (o `npm install`). Executa `npm run build` després de canviar les dades JSON o els estils SCSS. Això compila el SCSS, actualitza la còpia local i prepara `public/`, que només conté l’HTML i els recursos de la web. `npm run check` comprova sintaxi, rutes, estructura de dades i absència de secrets coneguts.
+
+## Estils SCSS
+
+Edita `assets/scss/styles.scss` i els parcials de la mateixa carpeta: base, ofertes, lleure, gestores, infantil-tabs, inici, infantil i perfil. `_variables.scss` centralitza els colors compartits. L’ordre dels mòduls manté la cascada original.
+
+- `npm run styles`: genera `assets/css/styles.css`.
+- `npm run styles:watch`: recompila els estils mentre els edites.
+- `npm run build`: compila els estils i prepara la web.
+
+El navegador continua carregant CSS. El CSS generat es conserva al repositori perquè també funcioni la vista directa amb `index.html`. No l’editis manualment: els canvis es fan al SCSS. La carpeta `public/` rep només CSS, JavaScript i dades; els fonts SCSS no es copien a la web. `pnpm-lock.yaml` fixa les dependències de Sass. La compilació no necessita el complement natiu opcional de vigilància de fitxers.
 
 ## Privacitat i migració
 

@@ -1,0 +1,87 @@
+@use "variables" as tokens;
+
+/* Infantil: mapa + empreses/entitats visibles sota el mapa, sense quedar retallades */ #explorePage {
+  height:auto!important;
+  min-height:calc(100vh - 78px);
+  align-items:start;
+}
+#explorePage .filters {
+  position:sticky;
+  top:78px;
+  max-height:calc(100vh - 78px);
+  overflow:auto;
+}
+#explorePage .mapwrap {
+  position:relative;
+  overflow:visible!important;
+  background:transparent;
+  padding:0 12px 28px;
+  min-width:0;
+}
+#explorePage .maphead {
+  top:14px;
+  left:26px;
+}
+#explorePage .mapbox {
+  position:relative!important;
+  inset:auto!important;
+  height:620px;
+  margin:0 -12px 12px;
+  background:#eaf1e8;
+}
+#explorePage .cards {
+  position:relative!important;
+  left:auto!important;
+  right:auto!important;
+  bottom:auto!important;
+  height:100px;
+  margin:10px 0 14px;
+  display:flex;
+  gap:10px;
+  overflow:auto;
+}
+#explorePage .infantDrop {
+  position:relative;
+  z-index:5;
+  margin:14px 0 18px;
+  background:#fff;
+  box-shadow:0 4px 18px #173b7210;
+}
+#explorePage .infantDrop summary {
+  font-size:14px;
+  padding:16px 18px;
+  background:linear-gradient(135deg,#eef6ff,#f5efff);
+}
+#explorePage .detail {
+  position:sticky;
+  top:78px;
+  height:calc(100vh - 78px);
+  overflow:auto;
+}
+@media(max-width:950px) {
+  #explorePage .filters {
+    position:static;
+    max-height:none;
+  }
+  #explorePage .detail {
+    position:fixed;
+    top:78px;
+    height:auto;
+  }
+  #explorePage .mapbox {
+    height:600px;
+  }
+}
+@media(max-width:700px) {
+  #explorePage .mapwrap {
+    padding:0 10px 24px;
+  }
+  #explorePage .mapbox {
+    height:520px;
+    margin:0 -10px 12px;
+  }
+  #explorePage .detail {
+    position:static;
+    height:auto;
+  }
+}

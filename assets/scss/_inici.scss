@@ -1,0 +1,250 @@
+@use "variables" as tokens;
+
+.homePlayful {
+  background:linear-gradient(180deg,#fffaf2 0,#f7fbff 48%,#f7fff9 100%);
+}
+.playfulHero {
+  background:linear-gradient(135deg,#fff0cf,#e9f7ff 48%,#efeaff)!important;
+  border:1px solid #f0dfc7!important;
+  position:relative;
+  overflow:hidden;
+}
+.helloTag {
+  display:inline-block;
+  background:#fff9;
+  border:1px solid #fff;
+  padding:7px 11px;
+  border-radius:999px;
+  color:#8a5a22;
+  font-size:12px;
+  font-weight:900;
+}
+.heroDoodles {
+  display:grid;
+  grid-template-columns:repeat(2,70px);
+  gap:8px;
+  font-size:46px;
+  transform:rotate(3deg);
+}
+.heroDoodles span {
+  display:grid;
+  place-items:center;
+  width:70px;
+  height:70px;
+  background:#fff9;
+  border-radius:22px;
+  box-shadow:0 8px 20px #7183a41a;
+}
+.homeStat.peach {
+  background:#fff2e9;
+}
+.homeStat.mint {
+  background:#eaf9f0;
+}
+.homeStat.lilac {
+  background:#f2edff;
+}
+.homeStat.sunny {
+  background:#fff8d9;
+}
+.journeyTitle {
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin:28px 0 12px;
+}
+.journeyTitle>span {
+  font-size:34px;
+}
+.journeyTitle h2 {
+  margin:0;
+  color:#173b72;
+}
+.journeyTitle p {
+  margin:3px 0;
+  color:#7183a4;
+}
+.pathGrid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-bottom:24px;
+}
+.pathCard {
+  border:0;
+  border-radius:20px;
+  padding:20px;
+  text-align:left;
+  cursor:pointer;
+  min-height:150px;
+  box-shadow:0 8px 24px #31557a12;
+  transition:.2s;
+}
+.pathCard:hover {
+  transform:translateY(-3px);
+}
+.pathCard.infant {
+  background:#e9f5ff;
+}
+.pathCard.leisure {
+  background:#fff1d6;
+}
+.pathCard.jobs {
+  background:#efeaff;
+}
+.pathCard.follow {
+  background:#e9f8ee;
+}
+.pathIcon {
+  font-size:34px;
+  display:block;
+  margin-bottom:14px;
+}
+.pathCard b {
+  display:block;
+  color:#173b72;
+  font-size:17px;
+  margin-bottom:6px;
+}
+.pathCard small {
+  color:#5f7394;
+  line-height:1.4;
+}
+.tipPanel {
+  background:linear-gradient(135deg,#fff,#f3fff6)!important;
+}
+.miniActions {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+.miniActions button {
+  border:1px solid #cbd8eb;
+  background:#fff;
+  border-radius:10px;
+  padding:9px 11px;
+  font-weight:800;
+  color:#173b72;
+  cursor:pointer;
+}
+.filterIntro {
+  background:linear-gradient(135deg,#e9f5ff,#f5efff);
+  padding:14px;
+  border-radius:14px;
+  margin-bottom:14px;
+  color:#173b72;
+}
+.filterIntro b {
+  display:block;
+}
+.filterIntro span {
+  font-size:12px;
+  color:#7183a4;
+}
+.entityDrop {
+  background:#fff;
+  border:1px solid #dce5f2;
+  border-radius:16px;
+  margin:18px 0;
+  overflow:hidden;
+}
+.entityDrop summary {
+  cursor:pointer;
+  padding:15px 17px;
+  font-weight:900;
+  color:#173b72;
+  background:#f8fbff;
+  display:flex;
+  justify-content:space-between;
+  list-style:none;
+}
+.entityDrop[open] summary {
+  border-bottom:1px solid #e6edf7;
+}
+.entityDrop .managerGrid,.entityDrop .leisureGrid {
+  padding:14px;
+}
+.entityDrop .managersTools {
+  padding:14px 14px 0;
+}
+.entityDrop #managerCount {
+  padding:0 14px;
+}
+.leisureLayout {
+  display:grid;
+  grid-template-columns:245px minmax(0,1fr);
+  gap:18px;
+  align-items:start;
+}
+.leisureSide {
+  background:#fff;
+  border:1px solid #dce5f2;
+  border-radius:16px;
+  padding:15px;
+  position:sticky;
+  top:90px;
+}
+.leisureSide h3 {
+  margin:0 0 12px;
+  color:#173b72;
+}
+.leisureSide input,.leisureSide select {
+  width:100%;
+  box-sizing:border-box;
+  padding:11px;
+  border:1px solid #ccd8e8;
+  border-radius:10px;
+  margin-bottom:9px;
+}
+.sideFilterTitle {
+  font-size:12px;
+  font-weight:900;
+  color:#7183a4;
+  margin:9px 0;
+}
+.sideFilters {
+  display:grid!important;
+  gap:7px!important;
+}
+.sideFilters .leisureFilter {
+  width:100%;
+  text-align:left;
+  margin:0;
+}
+.sideHint {
+  margin-top:12px;
+  background:#fff8df;
+  border-radius:11px;
+  padding:10px;
+  font-size:12px;
+  color:#6b5a22;
+}
+.leisureMain {
+  min-width:0;
+}
+.leisureTools {
+  display:none!important;
+}
+@media(max-width:900px) {
+  .pathGrid {
+    grid-template-columns:repeat(2,1fr);
+  }
+  .leisureLayout {
+    grid-template-columns:1fr;
+  }
+  .leisureSide {
+    position:static;
+  }
+  .sideFilters {
+    grid-template-columns:repeat(2,1fr)!important;
+  }
+}
+@media(max-width:560px) {
+  .pathGrid {
+    grid-template-columns:1fr;
+  }
+  .heroDoodles {
+    display:none;
+  }
+}

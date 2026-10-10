@@ -4,8 +4,18 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "styles": "node scripts/styles.mjs",
+    "styles:watch": "sass --watch --no-source-map assets/scss/styles.scss:assets/css/styles.css",
     "build": "node scripts/build.mjs",
     "check": "node scripts/check.mjs"
   },
-  "engines": {"node": ">=20"}
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "sass": "1.105.1"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": ["@parcel/watcher"]
+  }
 }

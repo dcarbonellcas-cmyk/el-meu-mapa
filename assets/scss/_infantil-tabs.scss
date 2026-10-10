@@ -1,0 +1,32 @@
+@use "variables" as tokens;
+
+.infantilTabs {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:0 0 14px;
+}
+.infantilTab {
+  border:1px solid #d6e1ef;
+  background:#fff;
+  color:#173b72;
+  border-radius:11px;
+  padding:10px 12px;
+  font-weight:800;
+  cursor:pointer;
+}
+.infantilTab.active {
+  background:#1769e8;
+  color:#fff;
+  border-color:#1769e8;
+}
+.dashboardDirect {
+  display:none;
+  background:#f5f8fc;
+  min-height:calc(100vh - 78px);
+  font-family:inherit;
+  color:#15386f;
+}
+.dashboardDirect #closeDashboard {
+  display:none!important;
+}

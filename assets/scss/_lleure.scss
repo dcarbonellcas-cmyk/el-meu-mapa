@@ -1,0 +1,129 @@
+@use "variables" as tokens;
+
+.leisurePage {
+  max-width:1180px;
+  margin:0 auto;
+  padding:34px 28px 60px;
+}
+.leisureHero {
+  background:linear-gradient(135deg,#fff7df,#fff);
+  border:1px solid #f2dfad;
+  border-radius:22px;
+  padding:24px;
+}
+.leisureHero h1 {
+  margin:0 0 7px;
+}
+.leisureTools {
+  display:grid;
+  grid-template-columns:1.5fr .8fr;
+  gap:10px;
+  margin:18px 0;
+}
+.leisureTools input,.leisureTools select {
+  padding:12px;
+  border:1px solid #ccd8e8;
+  border-radius:11px;
+  background:white;
+}
+.leisureGrid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+.leisureCard {
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:18px;
+}
+.leisureCard h3 {
+  margin:4px 0;
+}
+.leisurePriority {
+  display:inline-block;
+  background:#fff2c8;
+  color:#7a5900;
+  border-radius:999px;
+  padding:5px 8px;
+  font-size:11px;
+  font-weight:850;
+}
+.leisureActions {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+.leisureNote {
+  background:#eef8f2;
+  border:1px solid #d4eadb;
+  padding:14px;
+  border-radius:14px;
+  margin-top:14px;
+  color:#38624a;
+  font-size:13px;
+}
+@media(max-width:800px) {
+  .leisureGrid {
+    grid-template-columns:1fr;
+  }
+  .leisureTools {
+    grid-template-columns:1fr;
+  }
+  .leisurePage {
+    padding:22px 14px;
+  }
+}
+.leisureMapWrap {
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:12px;
+  margin:16px 0;
+}
+.leisureMapHead {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  padding:4px 4px 10px;
+  font-size:13px;
+  color:#61718d;
+}
+.leisureMapHead b {
+  color:#22324d;
+}
+.leisureMap {
+  height:440px;
+  border-radius:14px;
+  overflow:hidden;
+}
+.leisureFilters {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:12px 0 2px;
+}
+.leisureFilter {
+  border:1px solid #d8e1ed;
+  background:#fff;
+  border-radius:999px;
+  padding:8px 11px;
+  cursor:pointer;
+  font-weight:700;
+  font-size:12px;
+}
+.leisureFilter.active {
+  background:#fff2c8;
+  border-color:#e8c75f;
+}
+.leisureCount {
+  font-weight:850;
+  color:#22324d;
+}
+@media(max-width:800px) {
+  .leisureMap {
+    height:360px;
+  }
+}

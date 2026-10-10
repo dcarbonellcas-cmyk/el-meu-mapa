@@ -1,0 +1,22 @@
+@use "variables" as tokens;
+
+.docMeta label[for="candidateName"],.docMeta label[for="candidateBio"] {
+  display:block;
+  margin:10px 0 5px;
+}
+.docMeta #candidateName,.docMeta #candidateBio {
+  display:block;
+  width:100%;
+  padding:10px;
+  border:1px solid #dce5f2;
+  border-radius:9px;
+  font:inherit;
+}
+.docMeta #saveProfile,.docMeta #legacyExcelBtn {
+  margin-top:10px;
+  margin-right:8px;
+}
+#profileNotice {
+  display:block;
+  margin-top:8px;
+}
