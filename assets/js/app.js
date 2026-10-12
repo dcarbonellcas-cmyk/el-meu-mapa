@@ -14,7 +14,7 @@
       window.MAPA_DATA={centres,entitats,archived};
     }
     if(typeof L==='undefined')throw new Error('No s’ha pogut carregar el mapa. Comprova la connexió a Internet i recarrega la pàgina.');
-    for(const file of ['perfil','mapes','infantil','candidatures','documents','ofertes','lleure','gmail','gmail-feed','navegacio','historial','candidatures-entitats','fonts']){
+    for(const file of ['perfil','mapes','infantil','candidatures','documents','ofertes','lleure','gmail','gmail-feed','navegacio','historial','candidatures-entitats','directoris','fonts']){
       await loadScript('assets/js/'+file+'.js');
     }
     window.MAPA_READY=true;
