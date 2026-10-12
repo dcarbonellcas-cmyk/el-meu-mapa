@@ -15,7 +15,22 @@
       }).join('')}</details>`;
     }).join('')||'<p>No hi ha coincidències.</p>';
   }
-  function schoolsList(){render('schoolDirectory',schools.filter(x=>x.kind==='Privada'||x.kind==='Concertada'),norm(document.getElementById('schoolDirectorySearch').value))}
+  function schoolsList(){
+    const valid=x=>Number.isFinite(x.lat)&&Number.isFinite(x.lng);
+    const originPoints=schools.filter(x=>norm(x.city)==='teia'&&valid(x));
+    const origin=originPoints.length?[originPoints.reduce((n,x)=>n+x.lat,0)/originPoints.length,originPoints.reduce((n,x)=>n+x.lng,0)/originPoints.length]:null;
+    function distance(x){
+      if(!origin||!valid(x))return Infinity;
+      const rad=v=>v*Math.PI/180;
+      const dlat=rad(x.lat-origin[0]),dlng=rad(x.lng-origin[1]);
+      const a=Math.sin(dlat/2)**2+Math.cos(rad(origin[0]))*Math.cos(rad(x.lat))*Math.sin(dlng/2)**2;
+      return 6371*2*Math.atan2(Math.sqrt(a),Math.sqrt(Math.max(0,1-a)));
+    }
+    const q=norm(document.getElementById('schoolDirectorySearch').value);
+    const rows=schools.filter(x=>(x.kind==='Privada'||x.kind==='Concertada')&&(!q||norm(x.name+' '+x.city).includes(q))).map(x=>({school:x,km:distance(x)})).sort((a,b)=>a.km-b.km||sort(a.school.name,b.school.name));
+    document.getElementById('schoolDirectoryCount').textContent=rows.length+' escoles · de més a prop de Teià a més lluny · distància aproximada en línia recta';
+    document.getElementById('schoolDirectoryList').innerHTML=rows.map(({school:x,km})=>`<div style="padding:10px 0;border-bottom:1px solid #e4e8f0"><button type="button" class="smallBtn" data-directory-id="${esc(x.id)}">${esc(x.name)}</button><div class="muted" style="margin-top:4px">${esc(x.city)} · ${esc(x.kind)} · ${Number.isFinite(km)?km.toLocaleString('ca-ES',{maximumFractionDigits:1})+' km de Teià':'Distància no disponible'}</div></div>`).join('')||'<p>No hi ha coincidències.</p>';
+  }
   function leisureList(){render('leisureDirectory',LEISURE_ENTITIES,norm(document.getElementById('leisureDirectorySearch').value))}
   document.getElementById('schoolDirectorySearch').addEventListener('input',schoolsList);
   document.getElementById('leisureDirectorySearch').addEventListener('input',leisureList);
