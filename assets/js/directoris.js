@@ -29,7 +29,7 @@
     const q=norm(document.getElementById('schoolDirectorySearch').value);
     const rows=schools.filter(x=>(x.kind==='Privada'||x.kind==='Concertada')&&(!q||norm(x.name+' '+x.city).includes(q))).map(x=>({school:x,km:distance(x)})).sort((a,b)=>a.km-b.km||sort(a.school.name,b.school.name));
     document.getElementById('schoolDirectoryCount').textContent=rows.length+' escoles · de més a prop de Teià a més lluny · distància aproximada en línia recta';
-    document.getElementById('schoolDirectoryList').innerHTML=rows.map(({school:x,km})=>`<div style="padding:10px 0;border-bottom:1px solid #e4e8f0"><button type="button" class="smallBtn" data-directory-id="${esc(x.id)}">${esc(x.name)}</button><div class="muted" style="margin-top:4px">${esc(x.city)} · ${esc(x.kind)} · ${Number.isFinite(km)?km.toLocaleString('ca-ES',{maximumFractionDigits:1})+' km de Teià':'Distància no disponible'}</div></div>`).join('')||'<p>No hi ha coincidències.</p>';
+    document.getElementById('schoolDirectoryList').innerHTML=rows.map(({school:x,km})=>`<div style="padding:10px 0;border-bottom:1px solid #e4e8f0"><button type="button" class="smallBtn" data-directory-id="${esc(x.id)}">${esc(x.name)}</button> <button type="button" class="smallBtn" data-directory-apply="${esc(x.id)}" ${x.email?'':'disabled title="Aquest centre no té correu al directori"'} aria-label="Preparar candidatura per a ${esc(x.name)}">✉ Preparar candidatura</button>${x.email?'':' <small>Correu no disponible</small>'}<div class="muted" style="margin-top:4px">${esc(x.city)} · ${esc(x.kind)} · ${Number.isFinite(km)?km.toLocaleString('ca-ES',{maximumFractionDigits:1})+' km de Teià':'Distància no disponible'}</div></div>`).join('')||'<p>No hi ha coincidències.</p>';
   }
   function leisureList(){render('leisureDirectory',LEISURE_ENTITIES,norm(document.getElementById('leisureDirectorySearch').value))}
   document.getElementById('schoolDirectorySearch').addEventListener('input',schoolsList);
@@ -37,6 +37,8 @@
   document.getElementById('schoolDirectory').addEventListener('toggle',e=>{if(e.target.open)schoolsList()});
   document.getElementById('leisureDirectory').addEventListener('toggle',e=>{if(e.target.open)leisureList()});
   document.getElementById('schoolDirectoryList').addEventListener('click',e=>{
+    const apply=e.target.closest('[data-directory-apply]');
+    if(apply){const school=schools.find(x=>String(x.id)===apply.dataset.directoryApply);if(school)prepare(school);return;}
     const b=e.target.closest('[data-directory-id]');if(!b)return;
     const school=schools.find(x=>String(x.id)===b.dataset.directoryId);if(!school)return;
     document.getElementById('search').value='';document.getElementById('county').value='';
