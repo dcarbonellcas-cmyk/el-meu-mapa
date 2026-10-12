@@ -7,7 +7,7 @@
     for(const row of filteredRows){const city=row.city||'Localitat no indicada';if(!groups.has(city))groups.set(city,[]);groups.get(city).push(row)}
     document.getElementById(prefix+'Count').textContent=filteredRows.length+' noms · '+groups.size+' localitats o àmbits';
     list.innerHTML=[...groups].sort(([a],[b])=>sort(a,b)).map(([city,items])=>{
-      const kinds=prefix==='schoolDirectory'?['Privada','Concertada','Pública']:['Entitats de lleure'];
+      const kinds=prefix==='schoolDirectory'?['Privada','Concertada']:['Entitats de lleure'];
       return `<details class="entityDrop"><summary>${esc(city)} · ${items.length}</summary>${kinds.map(kind=>{
         const selected=items.filter(x=>prefix!=='schoolDirectory'||x.kind===kind).sort((a,b)=>sort(a.name,b.name));
         if(!selected.length)return '';
@@ -15,7 +15,7 @@
       }).join('')}</details>`;
     }).join('')||'<p>No hi ha coincidències.</p>';
   }
-  function schoolsList(){render('schoolDirectory',schools,norm(document.getElementById('schoolDirectorySearch').value))}
+  function schoolsList(){render('schoolDirectory',schools.filter(x=>x.kind==='Privada'||x.kind==='Concertada'),norm(document.getElementById('schoolDirectorySearch').value))}
   function leisureList(){render('leisureDirectory',LEISURE_ENTITIES,norm(document.getElementById('leisureDirectorySearch').value))}
   document.getElementById('schoolDirectorySearch').addEventListener('input',schoolsList);
   document.getElementById('leisureDirectorySearch').addEventListener('input',leisureList);
