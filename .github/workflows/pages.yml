@@ -1,7 +1,7 @@
 name: Publicar GitHub Pages
 on:
   push:
-    branches: [pages-release]
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
