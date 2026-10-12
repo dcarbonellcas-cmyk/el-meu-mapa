@@ -3,6 +3,7 @@
   const statusColors = {"No contactada":"#b9c6d8","CV preparat":"#f5a623","CV enviat":"#16a34a","Toca renovar candidatura":"#f59e0b","Han contestat":"#7b4de2","Entrevista":"#ec4b91"};
 
   function allSchools(){
+    if(window.MAPA_DATA) return [...window.MAPA_DATA.centres,...(window.MAPA_DATA.archived||[]).filter(s=>localStorage.getItem('status_'+s.id)||localStorage.getItem('history_'+s.id)).map(s=>({...s,name:s.name+' · no consta al directori actual d’infantil'}))];
     if (Array.isArray(window.SCHOOLS)) return window.SCHOOLS;
     if (typeof schools !== "undefined" && Array.isArray(schools)) return schools;
     if (typeof CENTRES !== "undefined" && Array.isArray(CENTRES)) return CENTRES;

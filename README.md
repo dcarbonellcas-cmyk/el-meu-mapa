@@ -68,4 +68,4 @@ La configuració queda preparada amb `npm run build`, directori de publicació `
 
 ## Dades
 
-La reorganització conserva 3.745 centres, 18 entitats gestores i 64 entitats de lleure, amb els contactes dels centres i entitats de la versió original. No s’ha fet una nova verificació externa dels contactes o de les ofertes.
+La versió automatitzada consulta el directori oficial i Feina Activa cada 6 hores. El nombre de centres i ofertes varia segons les fonts. Es conserven 18 entitats gestores i 64 entitats de lleure, pendents de revisió periòdica. Consulta GITHUB_PAGES.md per veure la cobertura, l’estat de SEPE i la connexió privada de Gmail.

@@ -3,6 +3,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: '31 */6 * * *'
 permissions:
   contents: read
 concurrency:
@@ -11,14 +13,36 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
       - run: npm install --ignore-scripts --no-audit --no-fund
+      - run: node --test scripts/sync.test.mjs
+      - run: node scripts/sync.mjs
+      - name: Actualitzar alertes privades, si estan connectades
+        run: node scripts/gmail-sync.mjs
+        env:
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          GMAIL_FEED_KEY: ${{ secrets.GMAIL_FEED_KEY }}
       - run: npm run build
       - run: npm run check
+      - name: Conservar la darrera còpia verificada
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/data/centres.json assets/data/centres-arxivats.json assets/data/canvis-centres.json assets/data/ofertes.json assets/data/sincronitzacio.json assets/data/dades-local.js
+          if test -f assets/data/gmail-xifrat.json; then git add assets/data/gmail-xifrat.json; fi
+          if ! git diff --cached --quiet; then
+            git commit -m "Actualitzar dades oficials i estat de les fonts"
+            git push origin HEAD:main
+          fi
       - uses: actions/upload-pages-artifact@v4
         with:
           path: public

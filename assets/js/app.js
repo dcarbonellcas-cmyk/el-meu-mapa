@@ -10,11 +10,11 @@
       await loadScript('assets/data/dades-local.js');
     }else{
       async function json(path){const r=await fetch(path);if(!r.ok)throw new Error('Dades no disponibles: '+path);return r.json()}
-      const [centres,entitats]=await Promise.all([json('assets/data/centres.json'),json('assets/data/entitats.json')]);
-      window.MAPA_DATA={centres,entitats};
+      const [centres,entitats,archived]=await Promise.all([json('assets/data/centres.json'),json('assets/data/entitats.json'),json('assets/data/centres-arxivats.json')]);
+      window.MAPA_DATA={centres,entitats,archived};
     }
     if(typeof L==='undefined')throw new Error('No s’ha pogut carregar el mapa. Comprova la connexió a Internet i recarrega la pàgina.');
-    for(const file of ['perfil','mapes','infantil','candidatures','documents','ofertes','lleure','gmail','navegacio','historial','candidatures-entitats','fonts']){
+    for(const file of ['perfil','mapes','infantil','candidatures','documents','ofertes','lleure','gmail','gmail-feed','navegacio','historial','candidatures-entitats','fonts']){
       await loadScript('assets/js/'+file+'.js');
     }
     window.MAPA_READY=true;

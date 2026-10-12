@@ -1,0 +1,31 @@
+{
+  "sources": {
+    "centres": {
+      "state": "ok",
+      "updatedAt": "2026-10-12T16:13:17.838Z",
+      "course": "2026/2027",
+      "count": 3738,
+      "concertCourse": "2024-2025",
+      "archiveCount": 15,
+      "url": "https://analisi.transparenciacatalunya.cat/d/kvmv-ahh4"
+    },
+    "feinaActiva": {
+      "state": "ok",
+      "updatedAt": "2026-10-12T16:13:17.838Z",
+      "count": 167,
+      "reviewed": 694,
+      "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
+    },
+    "sepe": {
+      "state": "error",
+      "attemptedAt": "2026-10-12T16:13:17.838Z",
+      "message": "fetch failed"
+    },
+    "gmail": {
+      "state": "pending",
+      "message": "Cal autorització de Google i credencials privades. Les alertes només es publiquen xifrades."
+    }
+  },
+  "checkedAt": "2026-10-12T16:13:17.838Z",
+  "schedule": "Cada 6 hores"
+}

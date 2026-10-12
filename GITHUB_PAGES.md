@@ -10,10 +10,18 @@ Comprovacions del 12/10/2026: compilació SCSS i npm run check superats localmen
 
 Comprovada la pàgina publicada al navegador: navegació entre Inici, Infantil, Lleure, Ofertes, Candidatures, Per renovar i Documents; cerca de Badalona (43 centres amb els filtres inicials), fitxa de centre en vista local, mapa infantil amb punts i capes OpenStreetMap, 64 entitats de lleure i filtre de direcció/coordinació (22 resultats). Sense errors de consola en les comprovacions de producció. Les dades i els recursos es carreguen amb rutes relatives compatibles amb /el-meu-mapa/.
 
-GitHub Pages no executa netlify/functions/jobs-feed.mjs. La versió Pages evita consultar aquesta ruta i ofereix un avís quan se sol·licita l’actualització. La consulta automàtica de Feina Activa/SEPE necessita un servidor compatible. Les ofertes inicials daten del 29/09/2026 i poden haver caducat.
+## Actualització automàtica
 
-L’enviament Gmail i la importació d’alertes funcionen al navegador via OAuth i Gmail API en la implementació actual. Cal autoritzar l’origen https://dcarbonellcas-cmyk.github.io a Google Cloud, habilitar Gmail API i disposar dels permisos OAuth corresponents. Aquestes operacions no s’han provat amb el compte personal: no s’ha llegit Gmail ni enviat cap candidatura. La sincronització desatesa amb refresh tokens requeriria un servidor segur.
+El workflow comprova i publica dades cada 6 hores (00:31, 06:31, 12:31 i 18:31 UTC, amb possibles retards de GitHub). L’execució es fa a GitHub Actions i funciona amb la pàgina tancada. Conserva la darrera còpia verificada al repositori; això també manté activitat i evita la desactivació del cron per 60 dies d’inactivitat. No s’han modificat les funcions ni la configuració del projecte actual de Netlify.
 
-Els CV, cartes, notes i perfil es guarden al navegador. Canviar d’origen no transfereix les dades del domini Netlify: cal importar-les voluntàriament si es vol recuperar el seguiment.
+Fonts: directori anual oficial kvmv-ahh4, darrer curs disponible; concerts oficials 8spq-9nx7, darrer curs disponible (actualment 2024-2025, que no acredita la situació actual de cada concert); Feina Activa categoria educativa, totes les pàgines de 20 resultats. Les absències del directori d’infantil s’arxiven i es conserva el seguiment local: no s’interpreten com un tancament confirmat. Les 82 entitats sectorials no tenen sincronització automàtica.
 
-No s’ha modificat ni eliminat el projecte actual de Netlify.
+Les ofertes es filtren per infantil i lleure, es descarten inscripcions tancades i caducitats conegudes. Un fallo de font conserva la còpia anterior i mostra l’error. El RSS de SEPE no ha respost a la prova inicial; es tornarà a provar a cada execució. LinkedIn, Indeed, InfoJobs i B4work només s’integren mitjançant alertes autoritzades de Gmail; no es garanteix exhaustivitat dels portals. Els exemples del 29/09/2026 ja no es mostren com ofertes vigents.
+
+## Gmail privat
+
+Preparat però pendent d’autorització de Google i Secrets de GitHub Actions: GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN i GMAIL_FEED_KEY (32 bytes aleatoris en base64). Mai s’afegeixen al codi, als fitxers públics ni als logs. L’autorització només demana gmail.readonly; aquest procés no envia candidatures ni adjunts. Les alertes dels darrers 30 dies s’importen durant el cron i es publica exclusivament un sobre AES-256-GCM, sense correus, capçaleres o cossos en clar. La clau personal s’introdueix a “Obrir alertes privades” i només es manté en memòria durant la sessió.
+
+Cal habilitar Gmail API, configurar OAuth amb accés offline i obtenir un refresh token. Si Google manté l’aplicació externa en mode de prova, l’autorització amb gmail.readonly pot caducar als 7 dies: configurar l’estat adequat abans de considerar-la desatesa. L’origen de Pages és https://dcarbonellcas-cmyk.github.io. No substituir ni retirar l’origen Netlify existent.
+
+Validació: node --test scripts/sync.test.mjs, npm run build i npm run check. Es proven l’arxiu i la reaparició dels centres, els ID estables, l’error de font, les ofertes caducades i el xifrat autenticat de les alertes.

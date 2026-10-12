@@ -1,0 +1,122 @@
+{
+  "updatedAt": "2026-10-12T16:07:00.424Z",
+  "added": [
+    {
+      "id": "8078543",
+      "name": "Institut Escola Xirinacs",
+      "city": "Barcelona"
+    },
+    {
+      "id": "8079869",
+      "name": "Canigó - Infantil",
+      "city": "Barcelona"
+    },
+    {
+      "id": "8079882",
+      "name": "Escola Nova de l'Hospitalet de LLobregat",
+      "city": "L'Hospitalet de Llobregat"
+    },
+    {
+      "id": "8079936",
+      "name": "Escola Bressol Privada Blisko Rotllana",
+      "city": "Sant Cugat del Vallès"
+    },
+    {
+      "id": "8079948",
+      "name": "La Gavina-Bonanova",
+      "city": "Barcelona"
+    },
+    {
+      "id": "17011182",
+      "name": "Escola de les Llosses",
+      "city": "Les Llosses"
+    },
+    {
+      "id": "25010498",
+      "name": "Llar d'infants El Triangle",
+      "city": "Tàrrega"
+    },
+    {
+      "id": "43013373",
+      "name": "Institut Escola Cap de Salou",
+      "city": "Salou"
+    }
+  ],
+  "absent": [
+    {
+      "id": "8005400",
+      "name": "Santa Claus",
+      "city": "Barcelona"
+    },
+    {
+      "id": "8008012",
+      "name": "San Rafael",
+      "city": "Barcelona"
+    },
+    {
+      "id": "8008826",
+      "name": "Miró",
+      "city": "Barcelona"
+    },
+    {
+      "id": "8018455",
+      "name": "Sanfeliu",
+      "city": "L'Hospitalet de Llobregat"
+    },
+    {
+      "id": "8023712",
+      "name": "Politécnico",
+      "city": "Rubí"
+    },
+    {
+      "id": "8029957",
+      "name": "Gresol",
+      "city": "Terrassa"
+    },
+    {
+      "id": "8052049",
+      "name": "LLI privada Tagarot",
+      "city": "Rubí"
+    },
+    {
+      "id": "8064593",
+      "name": "LLI privada Moixaina",
+      "city": "Palau-solità i Plegamans"
+    },
+    {
+      "id": "8064829",
+      "name": "Escola Valldeneu",
+      "city": "Sant Martí de Centelles"
+    },
+    {
+      "id": "8068112",
+      "name": "Escola Bressol Chiqui La Vila",
+      "city": "Barcelona"
+    },
+    {
+      "id": "8075700",
+      "name": "Escola Xirinacs",
+      "city": "Barcelona"
+    },
+    {
+      "id": "8076200",
+      "name": "Llar d'infants Bon Camí",
+      "city": "Barcelona"
+    },
+    {
+      "id": "17010931",
+      "name": "Escola Les Curculles-ZER Empordà",
+      "city": "Palau de Santa Eulàlia"
+    },
+    {
+      "id": "25000559",
+      "name": "Escola Sant Martí - ZER Val d'Aran",
+      "city": "Naut Aran"
+    },
+    {
+      "id": "43007981",
+      "name": "Bao Bab",
+      "city": "Tarragona"
+    }
+  ]
+}
