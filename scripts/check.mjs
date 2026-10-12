@@ -35,5 +35,5 @@ const files=['index.html','README.md','netlify.toml','package.json','pnpm-lock.y
 const secrets=[/gh[pousr]_[A-Za-z0-9]{20,}/,/github_pat_[A-Za-z0-9_]{20,}/,/AIza[0-9A-Za-z_-]{30,}/,/-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----/,/ya29\.[A-Za-z0-9_-]{20,}/,/["']client_secret["']\s*:\s*["'][^"']+/,/(?:Diana)\s+(?:Carbonell)/,/2026-07-1[4567]T12:00:00/];
 for(const path of files){const text=await read(path);for(const pattern of secrets)assert(!pattern.test(text),'Potential secret or private application data in '+path)}
 const published=await walk('public');
-assert(published.every(p=>p==='public/index.html'||['css','js','data'].some(folder=>p.startsWith('public/assets/'+folder+'/'))),'Private file in public directory');
+assert(published.every(p=>p==='public/index.html'||['css','js','data','icons'].some(folder=>p.startsWith('public/assets/'+folder+'/'))),'Private file in public directory');
 console.log('PASS: syntax, local routes, '+centres.length+' centres, 82 entities, JSON/file preview parity, privacy scan and publication allowlist.');
