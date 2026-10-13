@@ -1,16 +1,16 @@
 {
-  "checkedAt": "2026-10-13T00:59:18.810Z",
+  "checkedAt": "2026-10-13T06:59:32.941Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-13T00:59:18.810Z",
-      "count": 167,
-      "reviewed": 690,
+      "updatedAt": "2026-10-13T06:59:32.941Z",
+      "count": 165,
+      "reviewed": 689,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-13T00:59:18.810Z",
+      "attemptedAt": "2026-10-13T06:59:32.941Z",
       "message": "fetch failed"
     }
   },
@@ -1993,30 +1993,6 @@
       "snippet": "Monitors/monitores de menjador i dinamització e projecte",
       "created": "2026-07-15T07:38:25.097Z",
       "expires": "2026-10-13T07:38:25.096Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92320968",
-      "title": "PERSONAL MONITORATGE- SETEMBRE 2026 - AMICS GRANS DEL PROGRAMA ÈXIT ACOMPANYAMENT EDUCATIU",
-      "school": "FUNDACIO PERE TARRES",
-      "city": "BARCELONA - BARCELONÈS - 08032 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92320968",
-      "snippet": "Et vas quedar amb ganes de formar part del Projecte Èxit? No et preocupis, el projecte torna al setembre! El Programa Èxit és un projecte d'acompanyament escolar del Consorci d'Educació de Barcelona que es desenvolupa en diferents centres educatius de Barcelona durant el curs 2026-2027. A la Fundació Pere Tarrés cerque",
-      "created": "2026-07-15T06:53:28.522Z",
-      "expires": "2026-10-13T06:53:28.521Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92320956",
-      "title": "MONITOR/MONITORA DE LLEURE",
-      "school": "Asociación Enriquezarte",
-      "city": "BARCELONA - BARCELONÈS - 08031 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92320956",
-      "snippet": "Busquem monitor/monitora de lleure per acompanyar un infant amb diversitat funcional durant un casal inclusiu d'estiu de 9 h a 17 h.",
-      "created": "2026-07-15T06:19:17.353Z",
-      "expires": "2026-10-13T06:19:17.352Z",
       "automatic": true
     }
   ]
