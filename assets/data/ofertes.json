@@ -1,20 +1,80 @@
 {
-  "checkedAt": "2026-10-14T07:15:47.994Z",
+  "checkedAt": "2026-10-14T13:11:23.036Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-14T07:15:47.994Z",
-      "count": 169,
-      "reviewed": 694,
+      "updatedAt": "2026-10-14T13:11:23.036Z",
+      "count": 172,
+      "reviewed": 701,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-14T07:15:47.994Z",
+      "attemptedAt": "2026-10-14T13:11:23.036Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92326821",
+      "title": "MONITORS/MONITORES DE REFORÇ EDUCATIU A SANT ADRIÀ DEL BESÓS",
+      "school": "Empresa del sector educatiu",
+      "city": "BARCELONA - BARCELONÈS - 08930 SANT ADRIÀ DE BESÒS",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326821",
+      "snippet": "Es necessita incorporar monitors/monitores de reforç educatiu Aquest servei consisteix a realitzar activitats d'acompanyament, motivació i suport fora de l'horari lectiu durant el curs escolar 2026-27. L'objectiu principal és impulsar l'atenció educativa de l'alumnat de Sant Adrià de Besòs adaptant-se a les necessitats",
+      "created": "1791981881859",
+      "expires": "2027-01-12T12:44:41.856Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92326815",
+      "title": "MONITORS/ES -PROFESSORS/ES PER TALLERS D'ESTUDI ESCOLES DE PRIMARIA I SECUNDARIA ZONA PALAFRUGELL",
+      "school": "Centre de formació",
+      "city": "GIRONA - BAIX EMPORDÀ - 17200 PALAFRUGELL",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326815",
+      "snippet": "Busquem monitors/es i professors/es per impartir tallers d’estudi i reforç escolar a alumnes d’educació primària i secundària en centres educatius de la zona de Palafrugell.",
+      "created": "1791980621596",
+      "expires": "2027-01-12T12:23:41.592Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_09202630192",
+      "title": "MONITOR/A DE REFORÇ ESCOLAR",
+      "school": "Oficina de Treball del SOC",
+      "city": "GIRONA - ALT EMPORDÀ - 17130 ESCALA, L'",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/09202630192",
+      "snippet": "Empresa de lleure i oci cerca un/a monitor/a de reforç escolar per una escola situada a l’Escala. Ofereix contracte temporal fins al maig 2027, a jornada parcial de 4h/setmanals, en horari de: Dimarts: 16:45h a 17:45h, dimecres: 12:35h a 13:35h i dijous: 12:35h a 13:35 i 16:45h a 17:45h.",
+      "created": "1791973351508",
+      "expires": "2027-01-12T10:22:31.508Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92326775",
+      "title": "EDUCADORS/ES INFANTILS (SUBSTITUCIONS)",
+      "school": "EULEN.SA",
+      "city": "BARCELONA - BARCELONÈS - 08024 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326775",
+      "snippet": "¡Hola! Vols guanyar experiència en Educació Infantil mentre continues estudiant? A EULEN Serveis Sociosanitaris incorporem educadors/es infantils per a cobrir substitucions puntuals al servei de suport educatiu de les Escoles Bressol Municipals de Barcelona (IMEB) als districtes d'Horta - Guinardó, Sants - Montjuïc, Sa",
+      "created": "1791970346831",
+      "expires": "2027-01-12T09:32:26.825Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92326764",
+      "title": "TÈCNICS/ES EN EDUCACIÓ INFANTIL (TEI) – EQUIP DE CORRETORNS (IMEB)",
+      "school": "",
+      "city": "BARCELONA - BARCELONÈS - 08001 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326764",
+      "snippet": "Hola! T’apassiona la cura dels més petits i vols impactar positivament en el seu entorn educatiu? A EULEN Serveis Sociosanitaris busquem Tècnics/es en Educació Infantil (TEI) per integrar-se al nostre equip de suport educatiu de les Escoles Bressol Municipals de Barcelona (IMEB). Busquem professionals en format correto",
+      "created": "1791965557133",
+      "expires": "2027-01-12T08:12:37.129Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92326743",
       "title": "MONITORS/MONITORES DE MENJADOR (HOSPITALET)",
@@ -400,18 +460,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92326044",
-      "title": "MONITOR/A DE REFORÇ ESCOLAR - SANT FELIU DE CODINES",
-      "school": "FABRA FORMACIÓ S.L.",
-      "city": "BARCELONA - VALLÈS ORIENTAL - 08182 SANT FELIU DE CODINES",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326044",
-      "snippet": "Busquem un/a monitor/a per a realitzar reforç escolar a alumnat d'Educació Primària a la població de Sant Feliu Codines.",
-      "created": "1790855281037",
-      "expires": "2026-12-30T11:48:01.036Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92326023",
       "title": "MONITORS/MONITORES DE LLEURE - TALLER D'ART",
       "school": "ASSOCIACIO DIVERJOC FONT D'EN FARGAS",
@@ -781,18 +829,6 @@
       "snippet": "Es necessita un/a Monitor/monitora per a realitzar activitats de lecto-escriptura a infants d´educació Infantil Incorporació octubre 2026, en horari de migdia (12 a 13h) dilluns, dimarts, dimecres i dijous.",
       "created": "1790071670411",
       "expires": "2026-12-21T10:07:50.410Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92325307",
-      "title": "EXTRAESCOLAR DE BALL (SANT ANDREU DE LA BARCA)",
-      "school": "Com a casa menjadors escolars S.L",
-      "city": "BARCELONA - BAIX LLOBREGAT - 08740 SANT ANDREU DE LA BARCA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92325307",
-      "snippet": "Es necessita un/a monitor/a de menjador i dinamització de projecte.",
-      "created": "1790071550934",
-      "expires": "2026-12-21T10:05:50.934Z",
       "automatic": true
     },
     {
