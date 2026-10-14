@@ -2,7 +2,7 @@
   "sources": {
     "centres": {
       "state": "ok",
-      "updatedAt": "2026-10-13T19:01:22.906Z",
+      "updatedAt": "2026-10-14T01:11:43.410Z",
       "course": "2026/2027",
       "count": 3738,
       "concertCourse": "2024-2025",
@@ -10,17 +10,15 @@
       "url": "https://analisi.transparenciacatalunya.cat/d/kvmv-ahh4"
     },
     "feinaActiva": {
-      "state": "error",
-      "updatedAt": "2026-10-13T12:59:05.274Z",
+      "state": "ok",
+      "updatedAt": "2026-10-14T01:11:43.410Z",
       "count": 169,
-      "reviewed": 704,
-      "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08",
-      "attemptedAt": "2026-10-13T19:01:22.906Z",
-      "message": "HTTP 503"
+      "reviewed": 696,
+      "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-13T19:01:22.906Z",
+      "attemptedAt": "2026-10-14T01:11:43.410Z",
       "message": "fetch failed"
     },
     "gmail": {
@@ -28,6 +26,6 @@
       "message": "Pendent d’autorització de Google i configuració de credencials privades."
     }
   },
-  "checkedAt": "2026-10-13T19:01:22.906Z",
+  "checkedAt": "2026-10-14T01:11:43.410Z",
   "schedule": "Cada 6 hores"
 }
