@@ -7,3 +7,34 @@
 @use "inici";
 @use "infantil";
 @use "perfil";
+
+.homeProfessional { max-width:1060px; margin:0 auto; padding:56px 28px 32px; background:transparent; color:#292533; }
+.startHeading { margin-bottom:32px; }
+.startEyebrow { font-size:11px; font-weight:700; letter-spacing:.14em; color:#75657b; margin:0 0 14px; }
+.startHeading h1 { font-size:clamp(28px,4vw,38px); font-weight:700; letter-spacing:-.035em; margin:0 0 12px; color:#302236; }
+.startHeading>p:last-child { font-size:16px; color:#6b6670; margin:0; line-height:1.6; }
+.startGrid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.startCard { display:flex; align-items:flex-start; gap:18px; text-align:left; padding:28px; border:1px solid #e3dfe7; border-radius:14px; background:#fff; cursor:pointer; color:inherit; font:inherit; transition:border-color .15s,box-shadow .15s; }
+.startCard:hover { border-color:#815c8b; box-shadow:0 4px 18px #5132570b; }
+.startCard:focus-visible,.sourceDetails summary:focus-visible { outline:3px solid #8d639c; outline-offset:4px; }
+.startNumber { display:grid; place-items:center; flex-shrink:0; width:38px; height:38px; border-radius:10px; background:#f3eef5; color:#694474; font-size:12px; font-weight:700; }
+.startCard h2 { margin:3px 0 10px; font-size:19px; color:#302236; }
+.startCard p { margin:0 0 22px; color:#6b6670; font-size:14px; line-height:1.6; }
+.startAction { color:#694474; font-size:13px; font-weight:700; }
+.startAction span { margin-left:8px; }
+.sourceDetails { margin-top:30px; border-top:1px solid #e3dfe7; padding-top:18px; color:#77707c; font-size:12px; }
+.sourceDetails summary { cursor:pointer; padding:8px 0; width:fit-content; }
+.sourceDetailsBody { padding:12px 0; max-width:850px; line-height:1.7; }
+.sourceDetailsBody p { margin:0 0 12px; }
+.sourceDetailsBody #dataUpdateDate { font-size:12px; }
+.sourceDetailsBody button { margin-top:14px; }
+.brand { display:flex; align-items:center; gap:9px; }
+.brand img { border-radius:7px; flex-shrink:0; object-fit:contain; }
+@media(max-width:600px) {
+ .homeProfessional { padding:28px 18px 24px; }
+ .startHeading { margin-bottom:24px; }
+ .startGrid { grid-template-columns:1fr; gap:12px; }
+ .startCard { padding:20px; gap:14px; }
+ .startCard h2 { font-size:18px; }
+ .startCard p { margin-bottom:14px; }
+}
