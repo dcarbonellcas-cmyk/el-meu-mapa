@@ -1,20 +1,104 @@
 {
-  "checkedAt": "2026-10-15T07:16:18.563Z",
+  "checkedAt": "2026-10-15T13:16:20.864Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-15T07:16:18.563Z",
-      "count": 172,
-      "reviewed": 703,
+      "updatedAt": "2026-10-15T13:16:20.864Z",
+      "count": 178,
+      "reviewed": 720,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-15T07:16:18.563Z",
+      "attemptedAt": "2026-10-15T13:16:20.864Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_09202630296",
+      "title": "MONITOR/A DE PATINATGE – SANT FELIU DE GUÍXOLS (REF. 30296)",
+      "school": "Oficina de Treball del SOC",
+      "city": "GIRONA - BAIX EMPORDÀ - 17220 SANT FELIU DE GUÍXOLS",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/09202630296",
+      "snippet": "Es cerca un/a monitor/a per impartir una activitat extraescolar d'iniciació al patinatge en una escola de Sant Feliu de Guíxols. L'activitat està adreçada a infants i consisteix a ensenyar tècniques bàsiques de patinatge, equilibri i coordinació, així com preparar petites coreografies adaptades al nivell del grup. Es v",
+      "created": "1792067619344",
+      "expires": "2027-01-13T12:33:39.344Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92326927",
+      "title": "MONITOR/MONITORA ESPAI MIGDIA ESCOLA A CANOVELLES",
+      "school": "SANED",
+      "city": "BARCELONA - VALLÈS ORIENTAL - 08420 CANOVELLES",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326927",
+      "snippet": "Es precisa un/a monitor/monitora de menjador escolar pel curs 2026-27. Per reforç i suplencies.",
+      "created": "1792067563926",
+      "expires": "2027-01-13T12:32:43.914Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92326925",
+      "title": "MONITOR/MONITORA DE LLEURE",
+      "school": "Institució escolar",
+      "city": "BARCELONA - BARCELONÈS - 08028 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326925",
+      "snippet": "Busquem un/a monitor/a de lleure amb disponibilitat per fer suplències en serveis de menjador escolar, en horari de 12.30 h a 15.00 h.",
+      "created": "1792066969852",
+      "expires": "2027-01-13T12:22:49.841Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92326873",
+      "title": "BUSQUEM EDUCADOR/A SOCIOEDUCATIU/VA SERVEI SOCIOEDUCATIU – PREMIÀ DE DALT",
+      "school": "DIVERSPORT SL",
+      "city": "BARCELONA - MARESME - 08338 PREMIÀ DE DALT",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326873",
+      "snippet": "A Diversport busquem un/a Educador/a per incorporar-se al Servei Socioeducatiu de Premià de Dalt. Busquem una persona propera, dinàmica i amb sensibilitat educativa i social, que vulgui ajudar els infants i adolescents a créixer, aprendre i guanyar confiança en un entorn segur i acollidor. Una oportunitat per posar la ",
+      "created": "1792057245830",
+      "expires": "2027-01-13T09:40:45.823Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92326855",
+      "title": "MONITOR/MONITORA-PROFESSOR/PROFESSORA PER TALLERS D'ESTUDI ESCOLES DE PRIMARIA I SECUNDARIA ZONA SANT FELIU DE GUIXOLS",
+      "school": "Empresa del sector de l'educació",
+      "city": "GIRONA - BAIX EMPORDÀ - 17220 SANT FELIU DE GUÍXOLS",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326855",
+      "snippet": "Busquem monitors/monitores i professors/professores per impartir tallers d’estudi i reforç escolar a alumnes d’educació primària i secundària en centres educatius de la zona de Sant Feliu de Guixols. GIRONA - BAIX EMPORDÀ - 17220 Sant Feliu de Guíxols",
+      "created": "1792052126440",
+      "expires": "2027-01-13T08:15:26.436Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92326853",
+      "title": "EDUCADOR/A ESCUELA INFANTIL - GUISSONA -",
+      "school": "EULEN.SA",
+      "city": "LLEIDA - SEGARRA - 25210 GUISSONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326853",
+      "snippet": "¡Hola! ¿Tienes formación en Grado Superior en Educación Infantil? ¿Buscas un puesto relacionado que te permita seguir adquiriendo experiencia? Si es así, debes saber que EULEN Servicios Sociosanitarios selecciona un/a Educador/a para una escuela infantil ubicada en GUISSONA. Si crees que encajas con esta descripción, n",
+      "created": "1792051367668",
+      "expires": "2027-01-13T08:02:47.664Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92326847",
+      "title": "MONITOR/MONITORA DE COMEDOR ESCOLAR",
+      "school": "Empresa del sector de recursos humans",
+      "city": "GIRONA - SELVA - 17430 SANTA COLOMA DE FARNERS",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326847",
+      "snippet": "Eurofirms selecciona un/a monitor/monitora de comedor para empresa del sector educación situada en Santa Coloma de Farners.",
+      "created": "1792049880220",
+      "expires": "2027-01-13T07:38:00.214Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92326821",
       "title": "MONITORS/MONITORES DE REFORÇ EDUCATIU A SANT ADRIÀ DEL BESÓS",
@@ -2065,18 +2149,6 @@
       "snippet": "REVISA busca un/a monitor/monitora per a l’espai de migdia d’un centre escolar per incorporar-se al curs escolar 2026-2026, amb horari de dilluns a divendres de 13.00 a 15.00 h. Cerquem una persona responsable, dinàmica i amb sensibilitat per treballar amb infants.",
       "created": "1784532583362",
       "expires": "2026-10-18T07:29:43.361Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92321169",
-      "title": "TALLERISTA \"TEATRE PER INFANTS\" CASAL CÍVIC (LLINARS DEL VALLÈS)",
-      "school": "Estudi 6 Gestió Socioeducativa",
-      "city": "BARCELONA - VALLÈS ORIENTAL - 08450 LLINARS DEL VALLÈS",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92321169",
-      "snippet": "Cerquem una persona experta per impartir un taller de \"TEATRE PER INFANTS\" A UN CASAL CÍVIC DE LLINARS DEL VALLÈS El taller es realitzarà tots els dilluns de 17:30h a 18:30h amb inici el 05/10/2026 i finalització el 21/12/2026.",
-      "created": "1784276542489",
-      "expires": "2026-10-15T08:22:22.488Z",
       "automatic": true
     }
   ]
