@@ -1,20 +1,44 @@
 {
-  "checkedAt": "2026-10-15T13:16:20.864Z",
+  "checkedAt": "2026-10-15T19:10:24.707Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-15T13:16:20.864Z",
-      "count": 178,
-      "reviewed": 720,
+      "updatedAt": "2026-10-15T19:10:24.707Z",
+      "count": 180,
+      "reviewed": 722,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-15T13:16:20.864Z",
+      "attemptedAt": "2026-10-15T19:10:24.707Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_09202630338",
+      "title": "MONITOR DE SUPORT EDUCATIU 10/H SETMANA - PALAFRUGELL",
+      "school": "Oficina de Treball del SOC",
+      "city": "GIRONA - BAIX EMPORDÀ - 17200 PALAFRUGELL",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/09202630338",
+      "snippet": "Empresa del tercer sector necessita per treballar en un centre educatiu de Palafrugell 1 monitor/a. Es requereix experiència en lleure. Es requereix carnet de monitor/a. S’ofereix un contracte de 10h/setmana durant el curs escolar. Salari (brut mensual x 14): 552 €.",
+      "created": "1792072656263",
+      "expires": "2027-01-13T13:57:36.263Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_09202630323",
+      "title": "MONITOR DE SUPORT EDUCATIU 10/H SETMANA - L'ESTARTIT",
+      "school": "Oficina de Treball del SOC",
+      "city": "GIRONA - BAIX EMPORDÀ - 17258 TORROELLA DE MONTGRÍ",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/09202630323",
+      "snippet": "Empresa del tercer sector necessita per treballar en un centre educatiu de l’Estartit 1 monitor/a. Es requereix experiència en lleure. Es requereix carnet de monitor/a. S’ofereix un contracte de 10h/setmana durant el curs escolar. Salari (brut mensual x 14): 552 €.",
+      "created": "1792072468892",
+      "expires": "2027-01-13T13:54:28.892Z",
+      "automatic": true
+    },
     {
       "id": "fa_09202630296",
       "title": "MONITOR/A DE PATINATGE – SANT FELIU DE GUÍXOLS (REF. 30296)",
