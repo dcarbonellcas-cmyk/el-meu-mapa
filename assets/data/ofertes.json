@@ -1,20 +1,44 @@
 {
-  "checkedAt": "2026-10-16T07:14:28.289Z",
+  "checkedAt": "2026-10-16T13:13:58.410Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-16T07:14:28.289Z",
-      "count": 181,
-      "reviewed": 719,
+      "updatedAt": "2026-10-16T13:13:58.410Z",
+      "count": 180,
+      "reviewed": 720,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-16T07:14:28.289Z",
+      "attemptedAt": "2026-10-16T13:13:58.410Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92327004",
+      "title": "EDUCADOR/A SOCIAL UEC VILANOVA I LA GELTRÚ",
+      "school": "Empresa de l'àmbit de l'educació",
+      "city": "BARCELONA - GARRAF - 08800 VILANOVA I LA GELTRÚ",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327004",
+      "snippet": "Es convoca una plaça d’educador/a per a desenvolupar tasques d’atenció educativa amb adolescents de 14 a 16 anys amb necessitats educatives especials derivades de la inadaptació al medi escolar ordinari, al projecte UEC (Unitat d’Escolarització Compatida) de Vilanova i la Geltrú i/o Vilafranca del Penedès.",
+      "created": "1792149710940",
+      "expires": "2027-01-14T11:21:50.936Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92326991",
+      "title": "MONITOR/MONITORA DE REFORÇ ESCOLAR - ALMACELLES",
+      "school": "Puntuajocs SL",
+      "city": "LLEIDA - SEGRIÀ - 25100 ALMACELLES",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326991",
+      "snippet": "Aquest servei té com a finalitat oferir suport educatiu i acompanyament acadèmic a alumnat que requereix reforç en la seva trajectòria educativa, promovent hàbits d’estudi, autonomia personal, motivació vers l’aprenentatge i millora del rendiment escolar, així com reforçar el vincle amb l’entorn educatiu i comunitari. ",
+      "created": "1792146062996",
+      "expires": "2027-01-14T10:21:02.968Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92326946",
       "title": "MONITOR/A EN REFORÇ ESCOLAR-MANLLEU-(OSONA)",
@@ -349,18 +373,6 @@
       "snippet": "Es precisa un/a monitor/monitora de menjador escolar pel curs 2026-27.",
       "created": "1791541638685",
       "expires": "2027-01-07T10:27:18.683Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92326596",
-      "title": "PROFESSOR/PROFESSORA D'EXTRAESCOLARS D'ANGLÈS",
-      "school": "Escola Innova Salou SL",
-      "city": "TARRAGONA - TARRAGONÈS - 43840 SALOU",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326596",
-      "snippet": "Inspire. Create. Teach. Join Us! At our pioneering language school, we believe learning should be an adventure. We’re looking for a passionate, creative, and energetic English Teacher to bring that spirit to our after-school programs in Cambrils. This is more than a job, it’s a chance to spark curiosity, build confiden",
-      "created": "1791541067896",
-      "expires": "2027-01-07T10:17:47.896Z",
       "automatic": true
     },
     {
@@ -772,18 +784,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92325664",
-      "title": "EDUCADOR/A SOCIAL UEC VILANOVA I LA GELTRÚ",
-      "school": "Institució Escolar Balmes, SL",
-      "city": "BARCELONA - GARRAF - 08800 VILANOVA I LA GELTRÚ",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92325664",
-      "snippet": "Es convoca una plaça d’educador/a per a desenvolupar tasques d’atenció educativa amb adolescents de 14 a 16 anys amb necessitats educatives especials derivades de la inadaptació al medi escolar ordinari, al projecte UEC (Unitat d’Escolarització Compatida) de Vilanova i la Geltrú i/o Vilafranca del Penedès.",
-      "created": "1790574841696",
-      "expires": "2026-12-27T05:54:01.695Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92325611",
       "title": "EDUCADOR/A PEL SERVEI ANEM I TORNEM - CENTRE OBERT INFANTIL A SANTA COLOMA DE GRAMENET",
       "school": "Casal dels Infants",
@@ -841,18 +841,6 @@
       "snippet": "Busquem dinamitzadors/es per un espai de reforç escolar amb alumnat de secundària, oferint suport en les tasques acadèmiques i acompanyant els i les joves en l’adquisició d’hàbits d’estudi, organització i autonomia. La persona dinamitzadora haurà de generar un espai proper i motivador que afavoreixi l’aprenentatge i la",
       "created": "1790323641885",
       "expires": "2026-12-24T08:07:21.884Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92325497",
-      "title": "EDUCADOR/A SOCIAL UEC (MARTORELL)",
-      "school": "Institució Escolar Balmes, SL",
-      "city": "BARCELONA - BAIX LLOBREGAT - 08760 MARTORELL",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92325497",
-      "snippet": "Es convoca una plaça d’educador/a per a desenvolupar tasques d’atenció educativa amb adolescents de 14 a 16 anys amb necessitats educatives especials derivades de la inadaptació al medi escolar ordinari, al projecte UEC (Unitat d’Escolarització Compatida) de Martorell.",
-      "created": "1790317675455",
-      "expires": "2026-12-24T06:27:55.453Z",
       "automatic": true
     },
     {
