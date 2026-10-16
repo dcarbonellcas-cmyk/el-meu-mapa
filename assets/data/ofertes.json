@@ -1,20 +1,32 @@
 {
-  "checkedAt": "2026-10-16T01:08:14.413Z",
+  "checkedAt": "2026-10-16T07:14:28.289Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-16T01:08:14.413Z",
-      "count": 180,
-      "reviewed": 714,
+      "updatedAt": "2026-10-16T07:14:28.289Z",
+      "count": 181,
+      "reviewed": 719,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-16T01:08:14.413Z",
+      "attemptedAt": "2026-10-16T07:14:28.289Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92326946",
+      "title": "MONITOR/A EN REFORÇ ESCOLAR-MANLLEU-(OSONA)",
+      "school": "FABRA FORMACIÓ S.L.",
+      "city": "BARCELONA - OSONA - 08560 MANLLEU",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326946",
+      "snippet": "Busquem una persona amb experiència en reforç escolar a nens/es de Primària per a dur a terme a diferents escoles de la població de Manlleu (Osona).",
+      "created": "1792132929837",
+      "expires": "2027-01-14T06:42:09.833Z",
+      "automatic": true
+    },
     {
       "id": "fa_09202630338",
       "title": "MONITOR DE SUPORT EDUCATIU 10/H SETMANA - PALAFRUGELL",
