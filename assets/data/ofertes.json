@@ -1,16 +1,16 @@
 {
-  "checkedAt": "2026-10-18T07:09:46.599Z",
+  "checkedAt": "2026-10-18T13:04:15.070Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-18T07:09:46.599Z",
-      "count": 180,
+      "updatedAt": "2026-10-18T13:04:15.070Z",
+      "count": 177,
       "reviewed": 717,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-18T07:09:46.599Z",
+      "attemptedAt": "2026-10-18T13:04:15.070Z",
       "message": "fetch failed"
     }
   },
@@ -2137,42 +2137,6 @@
       "snippet": "Durant el curs 26-27 dinamitzarem el Menjallibres, un servei socioeducatiu dirigit a l’alumnat de 2n i 3r de primària de la ciutat de Barcelona. El programa es focalitza en el foment de les competències lingüístiques (comprensió oral i escrita, expressió oral i foment de la lectura) mitjançant metodologies dinàmiques i",
       "created": "1784630638335",
       "expires": "2026-10-19T10:43:58.334Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92321271",
-      "title": "MONITORS/MONITORES DE MENJADOR (LA POBLA DE MAFUMET)",
-      "school": "Com a casa menjadors escolars S.L",
-      "city": "TARRAGONA - TARRAGONÈS - 43140 POBLA DE MAFUMET, LA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92321271",
-      "snippet": "Monitors/monitores de menjador i dinamització e projecte",
-      "created": "1784537062128",
-      "expires": "2026-10-18T08:44:22.127Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92321264",
-      "title": "MONITORS/MONITORES DE MENJADOR (ULLASTRELL)",
-      "school": "Com a casa menjadors escolars S.L",
-      "city": "BARCELONA - VALLÈS OCCIDENTAL - 08231 ULLASTRELL",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92321264",
-      "snippet": "Monitors/monitores de menjador i dinamització e projecte",
-      "created": "1784536664699",
-      "expires": "2026-10-18T08:37:44.698Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92321249",
-      "title": "MONITOR/MONITORA DE MENJADOR - MONTCADA I REIXAC",
-      "school": "RESIDENCIAL VIELLA, S.A.",
-      "city": "BARCELONA - VALLÈS OCCIDENTAL - 08110 MONTCADA I REIXAC",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92321249",
-      "snippet": "REVISA busca un/a monitor/monitora per a l’espai de migdia d’un centre escolar per incorporar-se al curs escolar 2026-2026, amb horari de dilluns a divendres de 13.00 a 15.00 h. Cerquem una persona responsable, dinàmica i amb sensibilitat per treballar amb infants.",
-      "created": "1784532583362",
-      "expires": "2026-10-18T07:29:43.361Z",
       "automatic": true
     }
   ]
