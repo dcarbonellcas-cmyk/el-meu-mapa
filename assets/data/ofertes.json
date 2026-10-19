@@ -1,20 +1,92 @@
 {
-  "checkedAt": "2026-10-19T07:24:39.918Z",
+  "checkedAt": "2026-10-19T13:18:45.258Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-19T07:24:39.918Z",
-      "count": 178,
-      "reviewed": 713,
+      "updatedAt": "2026-10-19T13:18:45.258Z",
+      "count": 174,
+      "reviewed": 705,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-19T07:24:39.918Z",
+      "attemptedAt": "2026-10-19T13:18:45.258Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92327138",
+      "title": "MONITOR/A D’ACTIVITATS EXTRAESCOLARS DE MECANOGRAFIA I ROBÒTICA",
+      "school": "Centre de formació",
+      "city": "BARCELONA - VALLÈS ORIENTAL - 08186 LLIÇÀ D'AMUNT",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327138",
+      "snippet": "Centre de formació busca incorporar un/a monitor/a per impartir activitats extraescolars de mecanografia i robòtica educativa en centres escolars de Lliçà d’Amunt.",
+      "created": "1792411180203",
+      "expires": "2027-01-17T11:59:40.199Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327132",
+      "title": "COORDINADOR/A D'ACTIVITATS EXTRAESCOLARS",
+      "school": "ASSOCIACIO DIVERJOC FONT D'EN FARGAS",
+      "city": "BARCELONA - BARCELONÈS - 08012 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327132",
+      "snippet": "Diverjoc busca incorporar un/a Coordinador/a d’activitats extraescolars per a un centre educatiu de Badalona La persona seleccionada serà responsable de la coordinació i supervisió de les activitats extraescolars, així com del seguiment de l’equip de monitors/es i de la comunicació amb el centre educatiu. Busquem una p",
+      "created": "1792410936239",
+      "expires": "2027-01-17T11:55:36.234Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327131",
+      "title": "MONITOR/A D’ANGLÈS EXTRAESCOLAR",
+      "school": "Centre de formació",
+      "city": "GIRONA - ALT EMPORDÀ - 17472 ARMENTERA, L'",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327131",
+      "snippet": "Busca incorporar un/a monitor/a per impartir classes d’anglès extraescolar a alumnes d’educació infantil i cicle mitjà de primària a l’escola de l’Armentera.",
+      "created": "1792410918670",
+      "expires": "2027-01-17T11:55:18.667Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327130",
+      "title": "MONITORS/ES DE ROBÒTICA EDUCATIVA",
+      "school": "Centre de formació",
+      "city": "GIRONA - BAIX EMPORDÀ - 17200 PALAFRUGELL",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327130",
+      "snippet": "Es busca incorporar monitors/es per impartir activitats de robòtica educativa a infants i joves a Palafrugell, de novembre de 2026 a juny de 2027.",
+      "created": "1792410894213",
+      "expires": "2027-01-17T11:54:54.210Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327092",
+      "title": "MONITORS/MONITORES DE CORRETORNS",
+      "school": "ASSOCIACIO DIVERJOC FONT D'EN FARGAS",
+      "city": "BARCELONA - BARCELONÈS - 08041 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327092",
+      "snippet": "Diverjoc busca monitors/monitores de corretorns per cobrir suplències en el servei de menjador escolar.",
+      "created": "1792405793154",
+      "expires": "2027-01-17T10:29:53.151Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327082",
+      "title": "EDUCADOR/A SOCIAL - SIS - LLIÇÀ DE VALL",
+      "school": "Entitat del tercer sector",
+      "city": "BARCELONA - VALLÈS ORIENTAL - 08185 LLIÇÀ DE VALL",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327082",
+      "snippet": "Entitat del tercer sector busca un/a Educador/a Social per incorporar-se a un projecte SIS de Lliçà de Vall, en un projecte d’atenció a infants i adolescents en situació de risc i les seves famílies. Requereix dinamitzar un grup d’infants i adolescents des dels 0 als 18 anys, treballant conjuntament amb una parella edu",
+      "created": "1792405344278",
+      "expires": "2027-01-17T10:22:24.274Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92327055",
       "title": "COORDINADOR/A EDUCATIU/IVA -TARRAGONA-",
@@ -121,18 +193,6 @@
       "snippet": "Busquem un/a monitor/a de lleure amb disponibilitat per fer suplències en serveis de menjador escolar, en horari de 12.30 h a 15.00 h.",
       "created": "1792066969852",
       "expires": "2027-01-13T12:22:49.841Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92326873",
-      "title": "BUSQUEM EDUCADOR/A SOCIOEDUCATIU/VA SERVEI SOCIOEDUCATIU – PREMIÀ DE DALT",
-      "school": "DIVERSPORT SL",
-      "city": "BARCELONA - MARESME - 08338 PREMIÀ DE DALT",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326873",
-      "snippet": "A Diversport busquem un/a Educador/a per incorporar-se al Servei Socioeducatiu de Premià de Dalt. Busquem una persona propera, dinàmica i amb sensibilitat educativa i social, que vulgui ajudar els infants i adolescents a créixer, aprendre i guanyar confiança en un entorn segur i acollidor. Una oportunitat per posar la ",
-      "created": "1792057245830",
-      "expires": "2027-01-13T09:40:45.823Z",
       "automatic": true
     },
     {
@@ -568,18 +628,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92326090",
-      "title": "MONITOR/MONITORA DE REFORÇ ESCOLAR -GAVÀ (BAIX LLOBREGAT)",
-      "school": "FABRA FORMACIÓ S.L.",
-      "city": "BARCELONA - BAIX LLOBREGAT - 08850 GAVÀ",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326090",
-      "snippet": "Busquem un/a monitor/a per a realitzar reforç escolar a alumnat d'Educació Primària a un centre educatiu de la població de Gavà (Baix Llobregat). Horaris de grups: 16:30-18:45h de dilluns a dijous",
-      "created": "1790926435375",
-      "expires": "2026-12-31T07:33:55.373Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92326057",
       "title": "MONITOR/A DE PATINAJE EN UNA ESCUELA DE BARCELONA (SARRIÀ)",
       "school": "TEDI Gestión de Espacios Deportivos S.L.",
@@ -925,30 +973,6 @@
       "snippet": "Busquem monitors/es de gimnàstica rítmica per dinamitzar una activitat extraescolar a l'Escola Aula Europea. La persona seleccionada serà responsable de preparar i desenvolupar sessions de rítmica adaptades a l'edat dels infants, fomentant la coordinació, la motricitat, la participació i el treball en equip.",
       "created": "1790079404344",
       "expires": "2026-12-21T12:16:44.343Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92325349",
-      "title": "MONITORATGE TALLERS SUPORT I REFORÇ EDUCATIU A CONSTANTÍ (ALUMNAT ESO)",
-      "school": "FABRA FORMACIÓ S.L.",
-      "city": "TARRAGONA - TARRAGONÈS - 43120 CONSTANTÍ",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92325349",
-      "snippet": "Busquem monitors/monitores per a realitzar reforç escolar i treball de tècniques d'estudi a alumnat d'Educació Secundària a l'Institut de CONSTANTÍ. Horaris de grups: dilluns i dimecres de 15:30 a 16:45h",
-      "created": "1790076627564",
-      "expires": "2026-12-21T11:30:27.563Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92325308",
-      "title": "MONITOR/A PER DINAMITZAR ACTIVITATS DE LECTOESCRIPTURA AMB INFANTS D’EDUCACIÓ INFANTIL.",
-      "school": "FABRA FORMACIÓ S.L.",
-      "city": "BARCELONA - VALLÈS ORIENTAL - 08186 LLIÇÀ D'AMUNT",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92325308",
-      "snippet": "Es necessita un/a Monitor/monitora per a realitzar activitats de lecto-escriptura a infants d´educació Infantil Incorporació octubre 2026, en horari de migdia (12 a 13h) dilluns, dimarts, dimecres i dijous.",
-      "created": "1790071670411",
-      "expires": "2026-12-21T10:07:50.410Z",
       "automatic": true
     },
     {
@@ -1336,18 +1360,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92324664",
-      "title": "MONITORS/MONITORES DE LLEURE- PERAFITA I SANT HIPÒLIT VOLTREGÀ",
-      "school": "FABRA FORMACIÓ S.C.P.",
-      "city": "BARCELONA - OSONA - 08512 SANT HIPÒLIT DE VOLTREGÀ",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92324664",
-      "snippet": "Es precisa personal com a monitors/monitores de lleure per a realització d´activitats de cura d'infants en espais de joc a les poblacions de Perafita (dimecres) i Sant Hipòlit de Voltregà (dijous) en horari de tarda.",
-      "created": "1789388433184",
-      "expires": "2026-12-13T12:20:33.183Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92324646",
       "title": "MONITOR/MONITORA ESPAI MIGDIA ESCOLA A LLAVANERES.",
       "school": "SANED",
@@ -1357,30 +1369,6 @@
       "snippet": "Es precisa un/a monitor/monitora de menjador escolar pel curs 2026-27. Nivell d'angles alt.",
       "created": "1789382203212",
       "expires": "2026-12-13T10:36:43.211Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92324637",
-      "title": "MONITOR/MONITORA PER A TALLER DE SALSA A VIC",
-      "school": "Empresa Sector Educació",
-      "city": "BARCELONA - OSONA - 08500 VIC",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92324637",
-      "snippet": "Cerquem un/a monitor/a per impartir un taller de Salsa adreçat a infants a Vic els dilluns de 17:00 a 18:00 de finals de setembre a desembre amb opció a continuïtat. Ensenyar diferents estils de ball vinculats a la Salsa.",
-      "created": "1789380745020",
-      "expires": "2026-12-13T10:12:25.019Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92324628",
-      "title": "COORDINADOR/A EDUCATIU/IVA -GAVÀ- (BAIX LLOBREGAT)",
-      "school": "FABRA FORMACIÓ S.L.",
-      "city": "BARCELONA - BAIX LLOBREGAT - 08850 GAVÀ",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92324628",
-      "snippet": "Es necessita un/a coordinador/a educatiu/iva per a gestió del procés d'inscripcions, coordinació pedagògica dels diferents grups de suport educatiu, gestió, seguiment i avaluació dels infants a les diferents escoles on es realitza el projecte.",
-      "created": "1789378618462",
-      "expires": "2026-12-13T09:36:58.461Z",
       "automatic": true
     },
     {
@@ -1720,18 +1708,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92323875",
-      "title": "MONITOR/A PER A TALLER DE CUINA (IGUALADA)",
-      "school": "Empresa de formació",
-      "city": "BARCELONA - ANOIA - 08700 IGUALADA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92323875",
-      "snippet": "Se sol·licita un/a monitor/a per impartir dos tallers de cuina, un per infants i l'altre per a joves a dos Casals Cívics d'Igualada. El taller per infants que es realitzarà els dilluns de 17:45 a 19:15 el mes d'octubre. El segon taller per a joves que es realitzarà els dimarts de 17:30 a 19:30 d'octubre a desembre.",
-      "created": "1788417858185",
-      "expires": "2026-12-02T06:44:18.184Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92323864",
       "title": "EDUCADOR/A SOCIAL - PROJECTES PAIPI I SIS AULA DE COLORS",
       "school": "RECURSOS EDUCATIUS PER LA INFÀNCIA EN RISC",
@@ -1849,18 +1825,6 @@
       "snippet": "A Edukem-nos estem buscant monitors/monitores per dur a terme activitats extraescolars de robòtica i programació educativa en diverses escoles del Maresme durant el curs 2026-2027, principalment amb alumnat d’Educació Primària i, puntualment, de Secundària. Les activitats es realitzen de dilluns a divendres en horari d",
       "created": "1787739201543",
       "expires": "2026-11-24T10:13:21.542Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92323152",
-      "title": "MONITORS/ES DE REFORÇ ESCOLAR -CONSTANTÍ (TARRAGONA)-",
-      "school": "FABRA FORMACIÓ S.L.",
-      "city": "TARRAGONA - TARRAGONÈS - 43120 CONSTANTÍ",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92323152",
-      "snippet": "Busquem monitors/es per a realitzar reforç escolar a alumnat d'Educació Primària i Secundària a diferents centres educatius CONSTANTÍ. Horaris de grups: 14:15-15:30h, i/o 15:30-16:45 i/o 16:45-18:15h de dilluns a dijous",
-      "created": "1787570235917",
-      "expires": "2026-11-22T11:17:15.916Z",
       "automatic": true
     },
     {
@@ -2137,18 +2101,6 @@
       "snippet": "Precisem incorporar un/a vetllador/a per un menjador escolar de cara al curs 26-27 en un centre ubicat en Vilafranca del Penedès.",
       "created": "1784708273992",
       "expires": "2026-10-20T08:17:53.991Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92321374",
-      "title": "PERSONAL DE MONITORATGE PEL PROGRAMA MENJALLIBRES",
-      "school": "+educació, sccl",
-      "city": "BARCELONA - BARCELONÈS - 08001 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92321374",
-      "snippet": "Durant el curs 26-27 dinamitzarem el Menjallibres, un servei socioeducatiu dirigit a l’alumnat de 2n i 3r de primària de la ciutat de Barcelona. El programa es focalitza en el foment de les competències lingüístiques (comprensió oral i escrita, expressió oral i foment de la lectura) mitjançant metodologies dinàmiques i",
-      "created": "1784630638335",
-      "expires": "2026-10-19T10:43:58.334Z",
       "automatic": true
     }
   ]
