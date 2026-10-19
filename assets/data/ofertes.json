@@ -1,20 +1,32 @@
 {
-  "checkedAt": "2026-10-19T01:12:44.143Z",
+  "checkedAt": "2026-10-19T07:24:39.918Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-19T01:12:44.143Z",
-      "count": 177,
-      "reviewed": 709,
+      "updatedAt": "2026-10-19T07:24:39.918Z",
+      "count": 178,
+      "reviewed": 713,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-19T01:12:44.143Z",
+      "attemptedAt": "2026-10-19T07:24:39.918Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92327055",
+      "title": "COORDINADOR/A EDUCATIU/IVA -TARRAGONA-",
+      "school": "FABRA FORMACIÓ S.L.",
+      "city": "TARRAGONA - TARRAGONÈS - 43001 TARRAGONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327055",
+      "snippet": "Es necessita un/a coordinador/a educatiu/iva per a la coordinació pedagògica dels diferents grups de suport educatiu, gestió, seguiment i avaluació dels infants a les diferents escoles on es realitza el projecte. Jornada de 16:30-18:30 de dilluns a dijous, divendres migdia de 13:00-15:00h",
+      "created": "1792393265824",
+      "expires": "2027-01-17T07:01:05.821Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92327004",
       "title": "EDUCADOR/A SOCIAL UEC VILANOVA I LA GELTRÚ",
