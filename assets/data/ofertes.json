@@ -1,16 +1,16 @@
 {
-  "checkedAt": "2026-10-20T13:16:21.818Z",
+  "checkedAt": "2026-10-20T19:11:06.495Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-20T13:16:21.818Z",
-      "count": 173,
-      "reviewed": 697,
+      "updatedAt": "2026-10-20T19:11:06.495Z",
+      "count": 172,
+      "reviewed": 696,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-20T13:16:21.818Z",
+      "attemptedAt": "2026-10-20T19:11:06.495Z",
       "message": "fetch failed"
     }
   },
@@ -625,18 +625,6 @@
       "snippet": "Es necessiten monitors/es d’extraescolars de mecanografia i robòtica a escoles de Platja d'Aro i Sant Feliu de Guixols. Professor/a de Robòtica Educativa – Sant Feliu de Guíxols i Platja d’Aro.",
       "created": "1791270898852",
       "expires": "2027-01-04T07:14:58.849Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92326197",
-      "title": "MONITORS/MONITORES MENJADOR",
-      "school": "Escola Creixen Terrassa",
-      "city": "BARCELONA - VALLÈS OCCIDENTAL - 08221 TERRASSA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326197",
-      "snippet": "Precisem incorporar un/a monitor/a de menjador per a una substitució de llarga durada de 7,5h/setmana; dilluns, dimarts i dijous de 12:30 hores a 15:00 hores.",
-      "created": "1791186613428",
-      "expires": "2027-01-03T07:50:13.427Z",
       "automatic": true
     },
     {
