@@ -1,20 +1,56 @@
 {
-  "checkedAt": "2026-10-20T07:16:49.813Z",
+  "checkedAt": "2026-10-20T13:16:21.818Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-20T07:16:49.813Z",
-      "count": 175,
-      "reviewed": 695,
+      "updatedAt": "2026-10-20T13:16:21.818Z",
+      "count": 173,
+      "reviewed": 697,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-20T07:16:49.813Z",
+      "attemptedAt": "2026-10-20T13:16:21.818Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92327218",
+      "title": "MONITOR/MONITORA - EDUCACIÓN - SANTA EULALIA DE RONÇANA",
+      "school": "ARAMARK",
+      "city": "BARCELONA - VALLÈS ORIENTAL - 08187 SANTA EULÀLIA DE RONÇANA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327218",
+      "snippet": "Se precisa Monitores/monitoras para un comedor escolar en Santa Eulalia de Ronçana, a una escola Bressol. Se valorará disponer de certificado de discapacidad superior el 33%. Aramark valorará la idoneidad de las candidaturas inscritas para el puesto en función de la experiencia y las capacidades que aporta la persona q",
+      "created": "1792496791388",
+      "expires": "2027-01-18T11:46:31.384Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_09202630605",
+      "title": "MONITORS/ES I/O ANIMADORS/ES ESPORTIUS/VES",
+      "school": "Oficina de Treball del SOC",
+      "city": "BARCELONA - BAIX LLOBREGAT - 08840 VILADECANS",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/09202630605",
+      "snippet": "Associació de Viladecans cerca cobrir dos llocs de treball de Monitor/a Esportiu/va per a la dinamització d'activitats extraescolars esportives. S'ofereix contracte temporal de novembre a maig, de 4 h/setmana en horari de16:30-17:30h de dilluns a dijous. Salari brut 177€/mes. Es requereix formació de Tècnic Esportiu Gr",
+      "created": "1792495102277",
+      "expires": "2027-01-18T11:18:22.277Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327206",
+      "title": "EDUCADOR/A - PROGRAMA EDUCACIÓ AMBIENTAL COM FUNCIONA BARCELONA?",
+      "school": "LAVOLA 1981, SA",
+      "city": "BARCELONA - BARCELONÈS - 08005 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327206",
+      "snippet": "A Anthesis som l'equip activador de la sostenibilitat! Treballem per impulsar la transició cap a un món més sostenible. A través de projectes innovadors, assessorem empreses, institucions i comunitats per implementar pràctiques responsables que minimitzin l’impacte ambiental i fomentin un futur més verd. L’educació amb",
+      "created": "1792493127550",
+      "expires": "2027-01-18T10:45:27.546Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92327153",
       "title": "COORDINADOR/A DE MENJADOR (PER COBRIR BAIXA IT)",
@@ -508,18 +544,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92326463",
-      "title": "MONITORES/AS - ESCOLA JOAN MARAGALL - LLEIDA",
-      "school": "ARAMARK",
-      "city": "LLEIDA - SEGRIÀ - 25001 LLEIDA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326463",
-      "snippet": "Se precisa Monitores-as para un comedor escolar en Lleida, exactamente en el colegio Joan Maragall. Se valorará disponer de certificado de discapacidad superior el 33%. Aramark valorará la idoneidad de las candidaturas inscritas para el puesto en función de la experiencia y las capacidades que aporta la persona que par",
-      "created": "1791442232466",
-      "expires": "2027-01-06T06:50:32.465Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92326429",
       "title": "MONITOR/MONITORA ESPAI MIGDIA ESCOLA A SANT GERVASI",
       "school": "SANED",
@@ -736,18 +760,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92325866",
-      "title": "MONITORES/RAS DE COMEDOR (BARCELONA)",
-      "school": "ARAMARK",
-      "city": "BARCELONA - BARCELONÈS - 08022 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92325866",
-      "snippet": "Se precisan Monitores/ras para comedor escolar en Avinguda Tibidabo, (Barcelona), con catalán y inglés",
-      "created": "1790753163719",
-      "expires": "2026-12-29T07:26:03.718Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92325823",
       "title": "MONITORS/MONITORES CENTRE SOCIOEDUCATIU DIARI DIVERSITAT FUNCIONAL INTEL·LECTUAL",
       "school": "Associació Socioeducativa Tu Tries",
@@ -901,18 +913,6 @@
       "snippet": "Es precisen monitors/monitores de menjador escolar pel curs 2026-27. INCORPORACIÓ INMEDIATA",
       "created": "1790324923868",
       "expires": "2026-12-24T08:28:43.867Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92325544",
-      "title": "DINAMITZACIÓ D'ACTIVITATS EXTRAESCOLARS SECUNDÀRIA - RIPOLL",
-      "school": "Puntuajocs SL",
-      "city": "GIRONA - RIPOLLÈS - 17500 RIPOLL",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92325544",
-      "snippet": "Busquem dinamitzadors/es per un espai de reforç escolar amb alumnat de secundària, oferint suport en les tasques acadèmiques i acompanyant els i les joves en l’adquisició d’hàbits d’estudi, organització i autonomia. La persona dinamitzadora haurà de generar un espai proper i motivador que afavoreixi l’aprenentatge i la",
-      "created": "1790323641885",
-      "expires": "2026-12-24T08:07:21.884Z",
       "automatic": true
     },
     {
@@ -2089,30 +2089,6 @@
       "snippet": "Monitors/es de menjador i dinamització de projecte.",
       "created": "1784880670777",
       "expires": "2026-10-22T08:11:10.776Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92321493",
-      "title": "MONITORS/MONITORES DE MENJADOR (MATARÓ)",
-      "school": "Com a casa menjadors escolars S.L",
-      "city": "BARCELONA - MARESME - 08300 MATARÓ",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92321493",
-      "snippet": "Es necessiten monitors/monitores de menjador i dinamització de projectes",
-      "created": "1784717880142",
-      "expires": "2026-10-20T10:58:00.141Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92321449",
-      "title": "VETLLADOR/A MENJADOR ESCOLAR VILAFRANCA",
-      "school": "TENO CATERING",
-      "city": "BARCELONA - ALT PENEDÈS - 08720 VILAFRANCA DEL PENEDÈS",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92321449",
-      "snippet": "Precisem incorporar un/a vetllador/a per un menjador escolar de cara al curs 26-27 en un centre ubicat en Vilafranca del Penedès.",
-      "created": "1784708273992",
-      "expires": "2026-10-20T08:17:53.991Z",
       "automatic": true
     }
   ]
