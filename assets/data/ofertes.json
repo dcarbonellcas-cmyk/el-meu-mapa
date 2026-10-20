@@ -1,20 +1,32 @@
 {
-  "checkedAt": "2026-10-20T01:13:38.660Z",
+  "checkedAt": "2026-10-20T07:16:49.813Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-20T01:13:38.660Z",
-      "count": 174,
-      "reviewed": 697,
+      "updatedAt": "2026-10-20T07:16:49.813Z",
+      "count": 175,
+      "reviewed": 695,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-20T01:13:38.660Z",
+      "attemptedAt": "2026-10-20T07:16:49.813Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92327153",
+      "title": "COORDINADOR/A DE MENJADOR (PER COBRIR BAIXA IT)",
+      "school": "Empresa del sector del Catering",
+      "city": "BARCELONA - MARESME - 08391 TIANA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327153",
+      "snippet": "Precisem incorporar a un/a Coordinador/a de menjador temporal en una escola situada a Tiana. Es per cobrir una baixa mèdica. Escola de 220 menús diaris amb un equip de 14 monitors/es.",
+      "created": "1792478021682",
+      "expires": "2027-01-18T06:33:41.679Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92327138",
       "title": "MONITOR/A D’ACTIVITATS EXTRAESCOLARS DE MECANOGRAFIA I ROBÒTICA",
