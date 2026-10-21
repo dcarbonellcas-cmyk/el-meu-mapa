@@ -1,20 +1,80 @@
 {
-  "checkedAt": "2026-10-21T07:20:20.250Z",
+  "checkedAt": "2026-10-21T13:18:10.159Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-21T07:20:20.250Z",
-      "count": 173,
-      "reviewed": 686,
+      "updatedAt": "2026-10-21T13:18:10.159Z",
+      "count": 177,
+      "reviewed": 700,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-21T07:20:20.250Z",
+      "attemptedAt": "2026-10-21T13:18:10.159Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92327285",
+      "title": "MONITORS/MONITORES DE MIGDIA",
+      "school": "Centre de formació",
+      "city": "BARCELONA - BARCELONÈS - 08041 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327285",
+      "snippet": "Busquem monitors/monitores de menjador escolar per incorporar-se al nostre equip educatiu durant l'espai del migdia. La persona seleccionada s'encarregarà de la supervisió, dinamització i atenció dels infants durant el servei de dinar i el temps d'esbarjo posterior, promovent hàbits saludables i una bona convivència De",
+      "created": "1792575217446",
+      "expires": "2027-01-19T09:33:37.442Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327282",
+      "title": "PERSONAL DE CUINA - ESCOLA BRESSOL",
+      "school": "Empresa sector educatiu",
+      "city": "BARCELONA - BARCELONÈS - 08901 HOSPITALET DE LLOBREGAT, L'",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327282",
+      "snippet": "Incorporació de professional de cuina, amb experiència.",
+      "created": "1792575017251",
+      "expires": "2027-01-19T09:30:17.248Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327278",
+      "title": "EDUCADOR/A SOCIAL SERVEI D'ATENCIÓ DIÜRNA SAD INFÀNCIA GIRONA EST.",
+      "school": "Associació",
+      "city": "GIRONA - GIRONÈS - 17005 GIRONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327278",
+      "snippet": "Educador/a social referent del Servei d’Atenció Diürna (SAD) Infància de Girona Est. El SAD Infància, antic Centre Obert, és un servei socioeducatiu diürn i preventiu adreçat a infants en situació de risc social o vulnerabilitat. Ofereix atenció educativa fora de l’horari escolar, mitjançant activitats individuals i gr",
+      "created": "1792574870107",
+      "expires": "2027-01-19T09:27:50.103Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327256",
+      "title": "COORDINADOR/A ESPAI MIGDIA ESCOLA CALELLA",
+      "school": "SANED",
+      "city": "BARCELONA - MARESME - 08370 CALELLA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327256",
+      "snippet": "Es necessita un/a coordinador/a. La persona seleccionada serà la responsable de liderar l'equip de monitors/monitores, garantir el correcte funcionament del servei de menjador i oci educatiu, i assegurar un espai segur, saludable i pedagògic per als infants.",
+      "created": "1792569354107",
+      "expires": "2027-01-19T07:55:54.103Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_09202630591",
+      "title": "MONITOR/A D'EDUCACIÓ I TEMPS LLIURE",
+      "school": "Oficina de Treball del SOC",
+      "city": "TARRAGONA - TARRAGONÈS - 43100 TARRAGONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/09202630591",
+      "snippet": "Oferta de feina de monitor/a de lleure amb anglès per a reforç escolar . Imprescindible tenir reconegut el grau de discapacitat igual o superior al 33% ja que aquesta oferta d’oferta de treball va dirigida a aquest col·lectiu .",
+      "created": "1792569318588",
+      "expires": "2027-01-19T07:55:18.588Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92327234",
       "title": "EDUCADOR/A SOCIAL",
@@ -709,18 +769,6 @@
       "snippet": "T'agrada treballar amb infants i t'apassiona el món del patinatge? T'estem buscant! Estem cercant monitors/monitores de lleure-extraescolar de patinatge.",
       "created": "1790839191944",
       "expires": "2026-12-30T07:19:51.943Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92325951",
-      "title": "TALLERISTA DE GUITARRA CLÀSSICA",
-      "school": "COOPERATIVA DOBLE VIA SCCL",
-      "city": "BARCELONA - VALLÈS ORIENTAL - 08420 CANOVELLES",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92325951",
-      "snippet": "A Doble Via t'estem buscant! Si ets una persona amb iniciativa, dinàmica, entusiasta, amant del treball en equip i sents passió per atendre a les persones envia'ns el teu curriculum. Volem que formis part d’un gran equip! Amb 25 anys d'història, oferim serveis integrals de gestió d’equipaments i programes d’acció socia",
-      "created": "1790836528234",
-      "expires": "2026-12-30T06:35:28.233Z",
       "automatic": true
     },
     {
