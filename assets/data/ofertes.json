@@ -1,20 +1,92 @@
 {
-  "checkedAt": "2026-10-22T07:21:52.917Z",
+  "checkedAt": "2026-10-22T13:20:25.431Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-22T07:21:52.917Z",
-      "count": 177,
-      "reviewed": 700,
+      "updatedAt": "2026-10-22T13:20:25.431Z",
+      "count": 178,
+      "reviewed": 709,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-22T07:21:52.917Z",
+      "attemptedAt": "2026-10-22T13:20:25.431Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92327423",
+      "title": "EDUCADOR/A PEL CENTRE OBERT - EL RACÓ AL BARRI DE LA MINA (SANT ADRIÀ DEL BESÒS)",
+      "school": "Entitat sense ànim de lucre",
+      "city": "BARCELONA - BARCELONÈS - 08930 SANT ADRIÀ DE BESÒS",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327423",
+      "snippet": "Busquem incorporar una persona compromesa amb l’educació i l’acompanyament socioeducatiu d’infants i famílies en situació de vulnerabilitat social. La persona s’encarregarà de planificar, desenvolupar i avaluar accions socioeducatives, amb un treball coordinat amb l’equip educatiu i la xarxa de serveis del territori.",
+      "created": "1792661931875",
+      "expires": "2027-01-20T09:38:51.872Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327406",
+      "title": "DIRECTOR/A PER A CRAE A GIRONA",
+      "school": "FILLES CARITAT FUNDACIO SOCIAL",
+      "city": "GIRONA - GIRONÈS - 17004 GIRONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327406",
+      "snippet": "El CRAE La Caritat, obra social de les Filles de la Caritat de la Província Espanya Est, busca incorporar un/a Director/a Tècnic/a per liderar un projecte educatiu i social adreçat a infants i adolescents en situació de vulnerabilitat, així com a joves d’entre 18 i 21 anys en procés d’emancipació. La persona que s’inco",
+      "created": "1792660581478",
+      "expires": "2027-01-20T09:16:21.474Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327390",
+      "title": "PERSONAL DE MONITORATGE DE MENJADOR CEIP HOSPITALET DE LLOBREGAT",
+      "school": "NDAVANT",
+      "city": "BARCELONA - BARCELONÈS - 08901 HOSPITALET DE LLOBREGAT, L'",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327390",
+      "snippet": "En recerca de monitor/es de menjador per una escola pública situada a Hospitalet de Llobregat, enfocat a les edats d'educació primària.",
+      "created": "1792656225870",
+      "expires": "2027-01-20T08:03:45.867Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327386",
+      "title": "MONITOR/A DE SUPORT EDUCATIU-MANLLEU-(OSONA)",
+      "school": "FABRA FORMACIÓ S.L.",
+      "city": "BARCELONA - OSONA - 08560 MANLLEU",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327386",
+      "snippet": "Busquem una persona amb experiència en reforç i suport educatiu escolar a nens/es de Primària per a dur a terme a diferents escoles de la població de Manlleu (Osona).",
+      "created": "1792656100600",
+      "expires": "2027-01-20T08:01:40.596Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327366",
+      "title": "MONITOR/A D’EXTRAESCOLARS DE MECANOGRAFIA I ROBÒTICA (LLIÇA D'AMUNT)",
+      "school": "MECA CENTRE S.L.",
+      "city": "BARCELONA - VALLÈS ORIENTAL - 08186 LLIÇÀ D'AMUNT",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327366",
+      "snippet": "MECA CENTRE S.L., empresa especialitzada en serveis educatius i activitats extraescolars, busca incorporar un/a monitor/a per impartir activitats de mecanografia i robòtica educativa a alumnes de primària en un centre escolar de Lliçà d’Amunt. Busquem una persona responsable, dinàmica, amb vocació educativa i facilitat",
+      "created": "1792654236061",
+      "expires": "2027-01-20T07:30:36.057Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327362",
+      "title": "MONITORS/MONITORES DE MENJADOR ESCOLAR EL PAPIOL (SUPLÈNCIES)",
+      "school": "TENO CATERING",
+      "city": "BARCELONA - BAIX LLOBREGAT - 08754 PAPIOL, EL",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327362",
+      "snippet": "Precisem incorporar a monitors/monitores de menjador per cobrir suplències de curta i llarga durada en centre situat al Papiol. Cerquem perfils polivalents que puguin estar a qualsevol curs d' infantil i primària.",
+      "created": "1792654040374",
+      "expires": "2027-01-20T07:27:20.371Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92327285",
       "title": "MONITORS/MONITORES DE MIGDIA",
@@ -244,18 +316,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92326946",
-      "title": "MONITOR/A EN REFORÇ ESCOLAR-MANLLEU-(OSONA)",
-      "school": "FABRA FORMACIÓ S.L.",
-      "city": "BARCELONA - OSONA - 08560 MANLLEU",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326946",
-      "snippet": "Busquem una persona amb experiència en reforç escolar a nens/es de Primària per a dur a terme a diferents escoles de la població de Manlleu (Osona).",
-      "created": "1792132929837",
-      "expires": "2027-01-14T06:42:09.833Z",
-      "automatic": true
-    },
-    {
       "id": "fa_09202630338",
       "title": "MONITOR DE SUPORT EDUCATIU 10/H SETMANA - PALAFRUGELL",
       "school": "Oficina de Treball del SOC",
@@ -277,18 +337,6 @@
       "snippet": "Empresa del tercer sector necessita per treballar en un centre educatiu de l’Estartit 1 monitor/a. Es requereix experiència en lleure. Es requereix carnet de monitor/a. S’ofereix un contracte de 10h/setmana durant el curs escolar. Salari (brut mensual x 14): 552 €.",
       "created": "1792072468892",
       "expires": "2027-01-13T13:54:28.892Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_09202630296",
-      "title": "MONITOR/A DE PATINATGE – SANT FELIU DE GUÍXOLS (REF. 30296)",
-      "school": "Oficina de Treball del SOC",
-      "city": "GIRONA - BAIX EMPORDÀ - 17220 SANT FELIU DE GUÍXOLS",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/09202630296",
-      "snippet": "Es cerca un/a monitor/a per impartir una activitat extraescolar d'iniciació al patinatge en una escola de Sant Feliu de Guíxols. L'activitat està adreçada a infants i consisteix a ensenyar tècniques bàsiques de patinatge, equilibri i coordinació, així com preparar petites coreografies adaptades al nivell del grup. Es v",
-      "created": "1792067619344",
-      "expires": "2027-01-13T12:33:39.344Z",
       "automatic": true
     },
     {
@@ -2101,42 +2149,6 @@
       "snippet": "Es necessiten monitors/es per a entrades i sortides escolars",
       "created": "1785138695575",
       "expires": "2026-10-25T07:51:35.575Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92321656",
-      "title": "EDUCADORS/ES SOCIOESPORTIUS - MAÇANET DE LA SELVA",
-      "school": "Puntuajocs SL",
-      "city": "GIRONA - SELVA - 17412 MAÇANET DE LA SELVA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92321656",
-      "snippet": "Servei extraescolar socioesportiu adreçat a infants de tres a vuit anys de Maçanet de la Selva, que promou desenvolupament motriu, hàbits saludables, convivència, educació emocional, cohesió social i valors educatius, necessita incorporar educadors/es socioesportius.",
-      "created": "1784892623223",
-      "expires": "2026-10-22T11:30:23.222Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92321655",
-      "title": "COORDINADOR/A D'ACTIVITATS SOCIOESPORTIVES - MAÇANET DE LA SELVA",
-      "school": "Puntuajocs SL",
-      "city": "GIRONA - SELVA - 17412 MAÇANET DE LA SELVA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92321655",
-      "snippet": "Servei extraescolar socioesportiu adreçat a infants de tres a vuit anys de Maçanet de la Selva, que promou desenvolupament motriu, hàbits saludables, convivència, educació emocional, cohesió social i valors educatius, necessita incorporar un coordinador/a d'activitats socioesportives.",
-      "created": "1784892281946",
-      "expires": "2026-10-22T11:24:41.945Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92321634",
-      "title": "MONITORS/ES DE MENJADOR (CORBERA)",
-      "school": "Com a casa menjadors escolars S.L",
-      "city": "BARCELONA - BAIX LLOBREGAT - 08757 CORBERA DE LLOBREGAT",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92321634",
-      "snippet": "Monitors/es de menjador i dinamització de projecte.",
-      "created": "1784880670777",
-      "expires": "2026-10-22T08:11:10.776Z",
       "automatic": true
     }
   ]
