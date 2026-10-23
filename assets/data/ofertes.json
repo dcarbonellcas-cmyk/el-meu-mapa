@@ -1,20 +1,32 @@
 {
-  "checkedAt": "2026-10-23T01:17:03.682Z",
+  "checkedAt": "2026-10-23T07:19:47.753Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-23T01:17:03.682Z",
-      "count": 177,
-      "reviewed": 702,
+      "updatedAt": "2026-10-23T07:19:47.753Z",
+      "count": 178,
+      "reviewed": 703,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-23T01:17:03.682Z",
+      "attemptedAt": "2026-10-23T07:19:47.753Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_09202630724",
+      "title": "MONITOR/A DE TEMPS DE LLEURE - ANIMADOR/A - REF 30724",
+      "school": "Oficina de Treball del SOC",
+      "city": "TARRAGONA - BAIX CAMP - 43201 REUS",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/09202630724",
+      "snippet": "S’OFEREIX: - Contracte INDEFINIT - Jornada: COMPLETA - Horari: de 10 a 13 i de 15 a 20h - Sou: 1488,38 € REQUISITS: - Monitor/a de lleure infantil i juvenil. Educador/a infantil. Animador/a sociocultural. Animador/a turístic/a. - Habilitats artístiques: teatre, música, dansa, expressió corporal, manualitats i altres di",
+      "created": "1792736400210",
+      "expires": "2027-01-21T06:20:00.210Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92327423",
       "title": "EDUCADOR/A PEL CENTRE OBERT - EL RACÓ AL BARRI DE LA MINA (SANT ADRIÀ DEL BESÒS)",
