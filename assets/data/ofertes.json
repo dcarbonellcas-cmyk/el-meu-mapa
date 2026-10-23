@@ -1,20 +1,68 @@
 {
-  "checkedAt": "2026-10-23T07:19:47.753Z",
+  "checkedAt": "2026-10-23T13:14:40.858Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-23T07:19:47.753Z",
-      "count": 178,
-      "reviewed": 703,
+      "updatedAt": "2026-10-23T13:14:40.858Z",
+      "count": 180,
+      "reviewed": 710,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-23T07:19:47.753Z",
+      "attemptedAt": "2026-10-23T13:14:40.858Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92327561",
+      "title": "MONITORATGE CASAL DE NADAL",
+      "school": "Puntuajocs SL",
+      "city": "LLEIDA - SEGRIÀ - 25001 LLEIDA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327561",
+      "snippet": "Busquem monitors/monitores de lleure per dinamitzar els Casals de Nadal de l'Ajuntament de Lleida, que es desenvoluparan en tres escoles de la ciutat amb un màxim de 64 infants per centre",
+      "created": "1792760009663",
+      "expires": "2027-01-21T12:53:29.660Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327534",
+      "title": "MONITOR/MONITORA DE MENJADOR PER REFOÇ A INFANTIL",
+      "school": "CATERING",
+      "city": "BARCELONA - BARCELONÈS - 08017 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327534",
+      "snippet": "Precisem incorporar a un/a monitor/monitora de menjador per fer un reforç amb els grups d'infantil de forma estable, fins a final de curs. Cerquem un perfil amb formació i experiència amb infants de grups d'infantil.",
+      "created": "1792755216625",
+      "expires": "2027-01-21T11:33:36.622Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327518",
+      "title": "TALLERISTA DE REFORÇ EDUCATIU ESO – CASTELLDEFELS",
+      "school": "Nascor Formación SLU",
+      "city": "BARCELONA - BAIX LLOBREGAT - 08860 CASTELLDEFELS",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327518",
+      "snippet": "Nascor Formació som una empresa referent a nivell estatal en l'àmbit de la formació, l'educació i la intervenció socioeducativa. Treballem desenvolupant projectes que promouen la inclusió, la igualtat d'oportunitats i l'acompanyament educatiu d'infants i joves, col·laborant amb administracions públiques, centres educat",
+      "created": "1792747277861",
+      "expires": "2027-01-21T09:21:17.857Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327511",
+      "title": "MONITOR/MONITORA DE MENJADOR A L'ESCOLA POMPEU FABRA - L'HOSPITALET DE LLOBREGAT",
+      "school": "TEDI Gestión de Espacios Deportivos S.L.",
+      "city": "BARCELONA - BARCELONÈS - 08902 HOSPITALET DE LLOBREGAT, L'",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327511",
+      "snippet": "Es busca un/a monitor/monitora de menjador per treballar a l'Escola Pompeu Fabra de L'Hospitalet de Llobregat per diferents grups d'edats de infantil fins a primària. Per cobrir una baixa laboral. Horari: Dilluns a Divendres de 12:30 a 15h",
+      "created": "1792740096131",
+      "expires": "2027-01-21T07:21:36.128Z",
+      "automatic": true
+    },
     {
       "id": "fa_09202630724",
       "title": "MONITOR/A DE TEMPS DE LLEURE - ANIMADOR/A - REF 30724",
@@ -433,18 +481,6 @@
       "snippet": "Busquem monitors/es i professors/es per impartir tallers d’estudi i reforç escolar a alumnes d’educació primària i secundària en centres educatius de la zona de Palafrugell.",
       "created": "1791980621596",
       "expires": "2027-01-12T12:23:41.592Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_09202630192",
-      "title": "MONITOR/A DE REFORÇ ESCOLAR",
-      "school": "Oficina de Treball del SOC",
-      "city": "GIRONA - ALT EMPORDÀ - 17130 ESCALA, L'",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/09202630192",
-      "snippet": "Empresa de lleure i oci cerca un/a monitor/a de reforç escolar per una escola situada a l’Escala. Ofereix contracte temporal fins al maig 2027, a jornada parcial de 4h/setmanals, en horari de: Dimarts: 16:45h a 17:45h, dimecres: 12:35h a 13:35h i dijous: 12:35h a 13:35 i 16:45h a 17:45h.",
-      "created": "1791973351508",
-      "expires": "2027-01-12T10:22:31.508Z",
       "automatic": true
     },
     {
@@ -925,18 +961,6 @@
       "snippet": "Actualment, estem seleccionant un/a Tècnic/a de Formació laboral, Orientació i Inserció Laboral, i de Lleure Educatiu per incorporar-se a l’equip de l’Àrea Laboral i Formativa, i de Lleure Educatiu de l’entitat. La persona seleccionada desenvoluparà tasques de formació, orientació, acompanyament i suport en els process",
       "created": "1790669952068",
       "expires": "2026-12-28T08:19:12.067Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92325744",
-      "title": "TÈCNIC/A DE FORMACIÓ LABORAL, SUPORT A L'AUTONOMIA A LA PRÒPIA LLAR, I DE LLEURE EDUCATIU",
-      "school": "Fundació Astrid-21",
-      "city": "GIRONA - GIRONÈS - 17001 GIRONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92325744",
-      "snippet": "Actualment, estem seleccionant un/a Tècnic/a de Formació I Orientació laboral, Suport a l’autonomia a la pròpia llar (SAPLL) i de Lleure Educatiu, per incorporar-se a l’equip de l’Àrea Formativa, de Vida Independent i de Lleure Educatiu de l’entitat. La persona seleccionada desenvoluparà tasques de formació, orientació",
-      "created": "1790662256063",
-      "expires": "2026-12-28T06:10:56.062Z",
       "automatic": true
     },
     {
