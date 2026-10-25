@@ -1,16 +1,16 @@
 {
-  "checkedAt": "2026-10-25T07:14:35.819Z",
+  "checkedAt": "2026-10-25T13:09:19.301Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-25T07:14:35.819Z",
-      "count": 180,
+      "updatedAt": "2026-10-25T13:09:19.301Z",
+      "count": 177,
       "reviewed": 710,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-25T07:14:35.819Z",
+      "attemptedAt": "2026-10-25T13:09:19.301Z",
       "message": "fetch failed"
     }
   },
@@ -2137,42 +2137,6 @@
       "snippet": "Cerquem un/a tallerista per impartir l'activitat «Games, Fun & English», adreçada a fomentar l'aprenentatge de l'anglès a través del joc i d'activitats dinàmiques i participatives; destinada a infants (fins els 11 anys) i joves (12 a 18 anys), al Casal Cívic i Comunitari Reus - La Rambla.",
       "created": "1785240432471",
       "expires": "2026-10-26T12:07:12.470Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92321780",
-      "title": "MONITOR/A DE AJEDREZ",
-      "school": "ASSOCIACIO DIVERJOC FONT D'EN FARGAS",
-      "city": "BARCELONA - BARCELONÈS - 08041 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92321780",
-      "snippet": "T'agrada treballar amb infants i t'apassiona el món dels escacs? T'estem buscant! A L'Escola Mare de Deu del Coll, estem en cerca d'un/a monitor/a amb experiència ens escacs, els dimecres de 17:00-18:15 amb disponibilitat fins a final de curs",
-      "created": "1785151522356",
-      "expires": "2026-10-25T11:25:22.355Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92321773",
-      "title": "MONITORS/MONITORES DE MENJADOR 2026-2027",
-      "school": "ASSOCIACIO DIVERJOC FONT D'EN FARGAS",
-      "city": "BARCELONA - BARCELONÈS - 08041 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92321773",
-      "snippet": "T'agrada treballar amb infants i vols formar part del seu creixement i educació en el temps de lleure? T'estem buscant! Horari concentrat i compatible: Treballaràs en una franja aproximada de 12.30 h a 15.00 h, de dilluns a divendres. És un horari ideal i molt compacte, perfecte per combinar amb estudis universitaris d",
-      "created": "1785151010520",
-      "expires": "2026-10-25T11:16:50.520Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92321732",
-      "title": "MONITORS/ES ENTRADES I SORTIDES ESCOLES",
-      "school": "PONREC",
-      "city": "BARCELONA - BARCELONÈS - 08915 BADALONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92321732",
-      "snippet": "Es necessiten monitors/es per a entrades i sortides escolars",
-      "created": "1785138695575",
-      "expires": "2026-10-25T07:51:35.575Z",
       "automatic": true
     }
   ]
