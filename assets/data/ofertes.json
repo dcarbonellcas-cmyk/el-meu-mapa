@@ -1,16 +1,16 @@
 {
-  "checkedAt": "2026-10-26T15:02:34.386Z",
+  "checkedAt": "2026-10-26T19:18:43.190Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-26T15:02:34.386Z",
-      "count": 180,
-      "reviewed": 703,
+      "updatedAt": "2026-10-26T19:18:43.190Z",
+      "count": 181,
+      "reviewed": 704,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-26T15:02:34.386Z",
+      "attemptedAt": "2026-10-26T19:18:43.190Z",
       "message": "fetch failed"
     }
   },
@@ -2089,6 +2089,18 @@
       "snippet": "Es precisa personal com a monitors/monitores de lleure per a realització d´activitats de cura d'intants per a diferents poblacions de la comarca d'Osona.",
       "created": "1786624069181",
       "expires": "2026-11-11T12:27:49.180Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92322258",
+      "title": "MONITOR/MONITORA DE MENJADOR ESCOLAR A FIGUERES O RODALIES",
+      "school": "TECA & XERINOLA S.L",
+      "city": "GIRONA - ALT EMPORDÀ - 17600 FIGUERES",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92322258",
+      "snippet": "Cerquem un/a monitor/monitora de menjador escolar per una escola de Figueres ciutat i/o rodalies.",
+      "created": "1785760010349",
+      "expires": "2026-11-01T12:26:50.348Z",
       "automatic": true
     },
     {
