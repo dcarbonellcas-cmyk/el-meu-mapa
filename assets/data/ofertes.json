@@ -1,20 +1,116 @@
 {
-  "checkedAt": "2026-10-26T07:27:52.865Z",
+  "checkedAt": "2026-10-26T15:02:34.386Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-26T07:27:52.865Z",
-      "count": 177,
-      "reviewed": 693,
+      "updatedAt": "2026-10-26T15:02:34.386Z",
+      "count": 180,
+      "reviewed": 703,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-26T07:27:52.865Z",
+      "attemptedAt": "2026-10-26T15:02:34.386Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92327666",
+      "title": "MONITOR/MONITORA - EDUCACIÓN - VEDRUNA BELLPUIG",
+      "school": "Empresa d'educació",
+      "city": "LLEIDA - URGELL - 25250 BELLPUIG",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327666",
+      "snippet": "Se precisa un/a monitor/monitora para un comedor escolar en Bellpuig (Vedruna) Se valorará disponer de certificado de discapacidad superior el 33%. Aramark valorará la idoneidad de las candidaturas inscritas para el puesto en función de la experiencia y las capacidades que aporta la persona que participa en el proceso ",
+      "created": "1793023724113",
+      "expires": "2027-01-24T14:08:44.110Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327663",
+      "title": "MONITOR/MONITORA ACTIVITAT INFANTIL",
+      "school": "Nascor Formación SLU",
+      "city": "TARRAGONA - BAIX PENEDÈS - 43881 CUNIT",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327663",
+      "snippet": "Busquem un/a monitor/monitora per col·laborar en l’activitat del Tió de Nadal que tindrà lloc a Cunit, amb l’objectiu d’acompanyar les famílies participants i donar suport en l’organització de l’activitat. Si t’agrada el tracte amb els infants i les famílies i vols formar part d’una activitat nadalenca plena de màgia, ",
+      "created": "1793023076476",
+      "expires": "2027-01-24T13:57:56.473Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327651",
+      "title": "MONITORS/MONITORES DE LLEURE- TARADELL (OSONA)",
+      "school": "Empresa de formació",
+      "city": "BARCELONA - OSONA - 08552 TARADELL",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327651",
+      "snippet": "Es precisa personal com a monitors/monitores de lleure per a realització d´activitats de cura d'infants en espais de joc a les poblacions de Taradell en horari de tarda, els dimecres de 14:50-17:10h",
+      "created": "1793019423526",
+      "expires": "2027-01-24T12:57:03.522Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327643",
+      "title": "INTEGRADOR/A SOCIAL ( SERVEI SOCIOEDUCATIU )",
+      "school": "DIVERSPORT SL",
+      "city": "GIRONA - GIRONÈS - 17244 CASSÀ DE LA SELVA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327643",
+      "snippet": "Busquem un/a INTEGRADOR/A SOCIAL per incorporar-se al Servei Socioeducatiu Diürn de Cassà de la Selva. Volem una persona dinàmica, propera i amb iniciativa, que gaudeixi acompanyant infants i adolescents, creant vincles i ajudant-los a desenvolupar les seves capacitats. Jornada laboral : 20h/set de dilluns a divendres ",
+      "created": "1793018191004",
+      "expires": "2027-01-24T12:36:31.001Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327639",
+      "title": "EDUCADOR/A SOCIAL – CASSÀ DE LA SELVA ( SERVEI SOCIOEDUCATIU )",
+      "school": "DIVERSPORT SL",
+      "city": "GIRONA - GIRONÈS - 17244 CASSÀ DE LA SELVA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327639",
+      "snippet": "Busquem un/a EDUCADOR/A SOCIAL per incorporar-se al Servei Socioeducatiu Diürn de Cassà de la Selva. Busquem una persona compromesa, empàtica i amb vocació social, que vulgui formar part d’un projecte on els infants, adolescents i les seves famílies són els protagonistes. Perquè educar és molt més que ensenyar: és acom",
+      "created": "1793016607196",
+      "expires": "2027-01-24T12:10:07.193Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327626",
+      "title": "EDUCADOR/A PEL CENTRE OBERT - EL RACÓ AL BARRI DE LA MINA (SANT ADRIÀ DE BESÒS)",
+      "school": "Casal dels Infants",
+      "city": "BARCELONA - BARCELONÈS - 08930 SANT ADRIÀ DE BESÒS",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327626",
+      "snippet": "Busquem incorporar un/a educador/a. La persona compromesa amb l’educació i l’acompanyament socioeducatiu d’infants i famílies en situació de vulnerabilitat social. La persona s’encarregarà de planificar, desenvolupar i avaluar accions socioeducatives, amb un treball coordinat amb l’equip educatiu i la xarxa de serveis ",
+      "created": "1793013672513",
+      "expires": "2027-01-24T11:21:12.509Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327617",
+      "title": "MONITORS/MONITORES DE LLEURE – EXTRAESCOLAR DE PATINATGE",
+      "school": "ASSOCIACIO DIVERJOC FONT D'EN FARGAS",
+      "city": "BARCELONA - BARCELONÈS - 08041 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327617",
+      "snippet": "T'agrada treballar amb infants i t'apassiona el món del patinatge? T'estem buscant! Estem cercant monitors/monitores de lleure-extraescolar de patinatge.",
+      "created": "1793011759889",
+      "expires": "2027-01-24T10:49:19.886Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327581",
+      "title": "ASSISTENTS/ES ACTIVITAT EXTRAESCOLAR",
+      "school": "Empresa del sector educatiu",
+      "city": "BARCELONA - BARCELONÈS - 08018 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327581",
+      "snippet": "Busquem assistents/es. Estudiants de matemàtiques o graduats per un centre d'activitats extraescolar disposats a personalitzar i desenvolupar el potencial de l'alumne. Disponibilitat a les tardes.",
+      "created": "1793002825265",
+      "expires": "2027-01-24T08:20:25.262Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92327561",
       "title": "MONITORATGE CASAL DE NADAL",
@@ -61,30 +157,6 @@
       "snippet": "Es busca un/a monitor/monitora de menjador per treballar a l'Escola Pompeu Fabra de L'Hospitalet de Llobregat per diferents grups d'edats de infantil fins a primària. Per cobrir una baixa laboral. Horari: Dilluns a Divendres de 12:30 a 15h",
       "created": "1792740096131",
       "expires": "2027-01-21T07:21:36.128Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_09202630724",
-      "title": "MONITOR/A DE TEMPS DE LLEURE - ANIMADOR/A - REF 30724",
-      "school": "Oficina de Treball del SOC",
-      "city": "TARRAGONA - BAIX CAMP - 43201 REUS",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/09202630724",
-      "snippet": "S’OFEREIX: - Contracte INDEFINIT - Jornada: COMPLETA - Horari: de 10 a 13 i de 15 a 20h - Sou: 1488,38 € REQUISITS: - Monitor/a de lleure infantil i juvenil. Educador/a infantil. Animador/a sociocultural. Animador/a turístic/a. - Habilitats artístiques: teatre, música, dansa, expressió corporal, manualitats i altres di",
-      "created": "1792736400210",
-      "expires": "2027-01-21T06:20:00.210Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92327423",
-      "title": "EDUCADOR/A PEL CENTRE OBERT - EL RACÓ AL BARRI DE LA MINA (SANT ADRIÀ DEL BESÒS)",
-      "school": "Entitat sense ànim de lucre",
-      "city": "BARCELONA - BARCELONÈS - 08930 SANT ADRIÀ DE BESÒS",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327423",
-      "snippet": "Busquem incorporar una persona compromesa amb l’educació i l’acompanyament socioeducatiu d’infants i famílies en situació de vulnerabilitat social. La persona s’encarregarà de planificar, desenvolupar i avaluar accions socioeducatives, amb un treball coordinat amb l’equip educatiu i la xarxa de serveis del territori.",
-      "created": "1792661931875",
-      "expires": "2027-01-20T09:38:51.872Z",
       "automatic": true
     },
     {
@@ -438,7 +510,7 @@
     {
       "id": "fa_FA92326853",
       "title": "EDUCADOR/A ESCUELA INFANTIL - GUISSONA -",
-      "school": "EULEN.SA",
+      "school": "",
       "city": "LLEIDA - SEGARRA - 25210 GUISSONA",
       "source": "Feina Activa",
       "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326853",
@@ -486,7 +558,7 @@
     {
       "id": "fa_FA92326775",
       "title": "EDUCADORS/ES INFANTILS (SUBSTITUCIONS)",
-      "school": "EULEN.SA",
+      "school": "",
       "city": "BARCELONA - BARCELONÈS - 08024 BARCELONA",
       "source": "Feina Activa",
       "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326775",
@@ -1756,18 +1828,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92324153",
-      "title": "MONITORS/MONITORES ACTIVITATS ESPORTIVES- VALLBONA D'ANOIA",
-      "school": "Espai Küra",
-      "city": "BARCELONA - ANOIA - 08785 VALLBONA D'ANOIA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92324153",
-      "snippet": "Espai Küra busca incorporar monitors/monitores per dinamitzar activitats esportives durant el curs 2026-2027 a Vallbona d'Anoia. Busquem persones responsables, dinàmiques i amb ganes de treballar amb infants, que gaudeixin de l’àmbit educatiu i siguin capaces de crear un ambient proper, segur i participatiu. Busquem mo",
-      "created": "1788774857778",
-      "expires": "2026-12-06T09:54:17.778Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92324121",
       "title": "MONITORS/ES D’EXTRAESCOLARS DE MECANOGRAFIA I ROBÒTICA PER GIRONA I VOLTANTS",
       "school": "MECA CENTRE S.L.",
@@ -2008,18 +2068,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92322836",
-      "title": "MONITORS/MONITORES ACTIVITATS EXTRAESCOLARS- ANOIA",
-      "school": "Espai Küra",
-      "city": "BARCELONA - ANOIA - 08788 VILANOVA DEL CAMÍ",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92322836",
-      "snippet": "Espai Küra busca incorporar monitors/monitores per dinamitzar activitats extraescolars durant el curs 2026-2027. Busquem persones responsables, dinàmiques i amb ganes de treballar amb infants, que gaudeixin de l’àmbit educatiu i siguin capaces de crear un ambient proper, segur i participatiu. Busquem monitors/es per di",
-      "created": "1786947995486",
-      "expires": "2026-11-15T06:26:35.486Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92322822",
       "title": "MONITOR/A DE TRANSPORT ESCOLAR A BARCELONA",
       "school": "Nascor Formación SLU",
@@ -2125,18 +2173,6 @@
       "snippet": "Precisem incorporar monitors/monitores de menjador escolar per cobrir places estables en un centre escolar ubicat a Olivella.",
       "created": "1785314651122",
       "expires": "2026-10-27T08:44:11.121Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92321905",
-      "title": "TALLERISTA ANGLÈS - REUS(H/D)",
-      "school": "JAN BCS, S.L",
-      "city": "TARRAGONA - BAIX CAMP - 43204 REUS",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92321905",
-      "snippet": "Cerquem un/a tallerista per impartir l'activitat «Games, Fun & English», adreçada a fomentar l'aprenentatge de l'anglès a través del joc i d'activitats dinàmiques i participatives; destinada a infants (fins els 11 anys) i joves (12 a 18 anys), al Casal Cívic i Comunitari Reus - La Rambla.",
-      "created": "1785240432471",
-      "expires": "2026-10-26T12:07:12.470Z",
       "automatic": true
     }
   ]
