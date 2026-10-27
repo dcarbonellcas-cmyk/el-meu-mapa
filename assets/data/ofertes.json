@@ -1,20 +1,92 @@
 {
-  "checkedAt": "2026-10-27T07:23:25.189Z",
+  "checkedAt": "2026-10-27T13:25:13.314Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-27T07:23:25.189Z",
-      "count": 181,
-      "reviewed": 684,
+      "updatedAt": "2026-10-27T13:25:13.314Z",
+      "count": 183,
+      "reviewed": 690,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-27T07:23:25.189Z",
+      "attemptedAt": "2026-10-27T13:25:13.314Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92327723",
+      "title": "MONITORS/ES DE REFORÇ ESCOLAR - BAGES SUD",
+      "school": "Puntuajocs SL",
+      "city": "BARCELONA - BAGES - 08295 SANT VICENÇ DE CASTELLET",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327723",
+      "snippet": "Busquem monitors/es de reforç escolar per acompanyar infants i joves de Primària i Secundària en el seu procés d'aprenentatge a diferents municipis del Bages Sud.",
+      "created": "1793105114271",
+      "expires": "2027-01-25T12:45:14.267Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327719",
+      "title": "MONITORS/MONITORES DE MENJADOR ESCOLAR PER SUPLENCIES (FIGUERES)",
+      "school": "EMPRESA CATERING",
+      "city": "GIRONA - ALT EMPORDÀ - 17740 VILAFANT",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327719",
+      "snippet": "Precisem incorporar monitors/monitores de menjador escolar per cobrir places de curta i llarga durada en un centre escolar ubicat a Vilafant.",
+      "created": "1793103425824",
+      "expires": "2027-01-25T12:17:05.821Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327706",
+      "title": "MONITOR REFORÇ ESCOLAR",
+      "school": "Nascor Formación SLU",
+      "city": "TARRAGONA - TARRAGONÈS - 43830 TORREDEMBARRA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327706",
+      "snippet": "Nascor Formación és una consultoria especialitzada en projecte formatius i socioculturals i creiem en el poder de l'aprenentatge per a connectar persones i inquietuds i generar experiències enriquidores per la comunitat. Acualment estem buscant un/a docent per tal de dinamitzar i donar suport escolar a Instituts de Tor",
+      "created": "1793099834508",
+      "expires": "2027-01-25T11:17:14.504Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327698",
+      "title": "MONITOR/MONITORA DE MENJADOR ESCOLAR A FIGUERES O RODALIES",
+      "school": "Empresa d'educació",
+      "city": "GIRONA - ALT EMPORDÀ - 17600 FIGUERES",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327698",
+      "snippet": "Cerquem un/a monitor/monitora de menjador escolar per una escola de Figueres ciutat.",
+      "created": "1793093694049",
+      "expires": "2027-01-25T09:34:54.045Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327697",
+      "title": "MONITORS/MONITORES DE MENJADOR (REUS)",
+      "school": "Com a casa menjadors escolars S.L",
+      "city": "TARRAGONA - BAIX CAMP - 43204 REUS",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327697",
+      "snippet": "Es necessiten Monitors/monitores de menjador i dinamització de projecte",
+      "created": "1793093392815",
+      "expires": "2027-01-25T09:29:52.797Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327695",
+      "title": "MONITORS/MONITORES DE MENJADOR (EL PRAT DE LLOBREGAT)",
+      "school": "Com a casa menjadors escolars S.L",
+      "city": "BARCELONA - BAIX LLOBREGAT - 08820 PRAT DE LLOBREGAT, EL",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327695",
+      "snippet": "Se sol·liciten monitors/monitores de menjador i dinamització de projecte.",
+      "created": "1793091068415",
+      "expires": "2027-01-25T08:51:08.412Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92327666",
       "title": "MONITOR/MONITORA - EDUCACIÓN - VEDRUNA BELLPUIG",
@@ -313,18 +385,6 @@
       "snippet": "Associació de Viladecans cerca cobrir dos llocs de treball de Monitor/a Esportiu/va per a la dinamització d'activitats extraescolars esportives. S'ofereix contracte temporal de novembre a maig, de 4 h/setmana en horari de16:30-17:30h de dilluns a dijous. Salari brut 177€/mes. Es requereix formació de Tècnic Esportiu Gr",
       "created": "1792495102277",
       "expires": "2027-01-18T11:18:22.277Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92327206",
-      "title": "EDUCADOR/A - PROGRAMA EDUCACIÓ AMBIENTAL COM FUNCIONA BARCELONA?",
-      "school": "LAVOLA 1981, SA",
-      "city": "BARCELONA - BARCELONÈS - 08005 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327206",
-      "snippet": "A Anthesis som l'equip activador de la sostenibilitat! Treballem per impulsar la transició cap a un món més sostenible. A través de projectes innovadors, assessorem empreses, institucions i comunitats per implementar pràctiques responsables que minimitzin l’impacte ambiental i fomentin un futur més verd. L’educació amb",
-      "created": "1792493127550",
-      "expires": "2027-01-18T10:45:27.546Z",
       "automatic": true
     },
     {
@@ -1888,18 +1948,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92323885",
-      "title": "MONITORS/MONITORES DE MENJADOR ESCOLAR CURS 26-27 (FIGUERES)",
-      "school": "TENO CATERING",
-      "city": "GIRONA - ALT EMPORDÀ - 17740 VILAFANT",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92323885",
-      "snippet": "Precisem incorporar monitors/monitores de menjador escolar per cobrir places estables en un centre escolar ubicat a Vilafant.",
-      "created": "1788418411660",
-      "expires": "2026-12-02T06:53:31.659Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92323864",
       "title": "EDUCADOR/A SOCIAL - PROJECTES PAIPI I SIS AULA DE COLORS",
       "school": "RECURSOS EDUCATIUS PER LA INFÀNCIA EN RISC",
@@ -2092,18 +2140,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92322258",
-      "title": "MONITOR/MONITORA DE MENJADOR ESCOLAR A FIGUERES O RODALIES",
-      "school": "TECA & XERINOLA S.L",
-      "city": "GIRONA - ALT EMPORDÀ - 17600 FIGUERES",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92322258",
-      "snippet": "Cerquem un/a monitor/monitora de menjador escolar per una escola de Figueres ciutat i/o rodalies.",
-      "created": "1785760010349",
-      "expires": "2026-11-01T12:26:50.348Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92322244",
       "title": "MONITORES/AS DE TRANSPORTE ESCOLAR - MANRESA",
       "school": "INTERIM GROUP",
@@ -2173,18 +2209,6 @@
       "snippet": "Desde INTERIM GROUP, estamos seleccionando monitores/as de Transporte Escolar para trabajar en Sant Sadurní d'Anoia (Barcelona). Si tienes experiencia en acompañante de transporte escolar y resides en la zona ¡esta oportunidad es para ti!",
       "created": "1785493890753",
       "expires": "2026-10-29T10:31:30.752Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92321954",
-      "title": "MONITORS/MONITORES DE MENJADOR ESCOLAR CURS 26-27",
-      "school": "TENO CATERING",
-      "city": "BARCELONA - GARRAF - 08818 OLIVELLA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92321954",
-      "snippet": "Precisem incorporar monitors/monitores de menjador escolar per cobrir places estables en un centre escolar ubicat a Olivella.",
-      "created": "1785314651122",
-      "expires": "2026-10-27T08:44:11.121Z",
       "automatic": true
     }
   ]
