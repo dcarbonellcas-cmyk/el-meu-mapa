@@ -1,16 +1,16 @@
 {
-  "checkedAt": "2026-10-27T13:25:13.314Z",
+  "checkedAt": "2026-10-27T19:19:49.561Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-27T13:25:13.314Z",
-      "count": 183,
+      "updatedAt": "2026-10-27T19:19:49.561Z",
+      "count": 182,
       "reviewed": 690,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-27T13:25:13.314Z",
+      "attemptedAt": "2026-10-27T19:19:49.561Z",
       "message": "fetch failed"
     }
   },
@@ -337,18 +337,6 @@
       "snippet": "Es necessita un/a coordinador/a. La persona seleccionada serà la responsable de liderar l'equip de monitors/monitores, garantir el correcte funcionament del servei de menjador i oci educatiu, i assegurar un espai segur, saludable i pedagògic per als infants.",
       "created": "1792569354107",
       "expires": "2027-01-19T07:55:54.103Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_09202630591",
-      "title": "MONITOR/A D'EDUCACIÓ I TEMPS LLIURE",
-      "school": "Oficina de Treball del SOC",
-      "city": "TARRAGONA - TARRAGONÈS - 43100 TARRAGONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/09202630591",
-      "snippet": "Oferta de feina de monitor/a de lleure amb anglès per a reforç escolar . Imprescindible tenir reconegut el grau de discapacitat igual o superior al 33% ja que aquesta oferta d’oferta de treball va dirigida a aquest col·lectiu .",
-      "created": "1792569318588",
-      "expires": "2027-01-19T07:55:18.588Z",
       "automatic": true
     },
     {
