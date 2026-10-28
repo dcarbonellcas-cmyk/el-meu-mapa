@@ -1,30 +1,78 @@
 {
-  "checkedAt": "2026-10-28T07:35:08.208Z",
+  "checkedAt": "2026-10-28T13:32:53.297Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-28T07:35:08.208Z",
-      "count": 184,
-      "reviewed": 673,
+      "updatedAt": "2026-10-28T13:32:53.297Z",
+      "count": 186,
+      "reviewed": 695,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-28T07:35:08.208Z",
+      "attemptedAt": "2026-10-28T13:32:53.297Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
     {
-      "id": "fa_FA92327758",
-      "title": "MAESTRO/TRA ESCUELA INFANTIL - SUPLENCIA (LA ROCA DEL VALLÉS)",
-      "school": "EULEN.SA",
-      "city": "BARCELONA - VALLÈS ORIENTAL - 08430 ROCA DEL VALLÈS, LA",
+      "id": "fa_FA92327808",
+      "title": "EDUCADOR/A SOCIAL BARBERÀ-19 HR/SEMANA-",
+      "school": "",
+      "city": "BARCELONA - VALLÈS OCCIDENTAL - 08210 BARBERÀ DEL VALLÈS",
       "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327758",
-      "snippet": "¡Hola! ¿Dispones del Grado en Educación Infantil? Entonces, tal vez te interese nuestra propuesta. EULEN Servicios Sociosanitarios selecciona, para una escuela infantil (0-3 años) ubicada en la Roca del Vallés, un/a Maestro/tra para cubrir una sustitución por enfermedad de la titular. En Grupo EULEN, nos comprometemos ",
-      "created": "1793172483631",
-      "expires": "2027-01-26T07:28:03.627Z",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327808",
+      "snippet": "¡Hola! ¿Dispones del Grado Universitario en Educación Social y quieres transformar el futuro de la juventud? EULEN Servicios Sociosanitarios seleccionamos un/a Educador/a Social con experiencia en infancia/adolescencia para incorporarse a un Servicio de Intervención Socioeducativa (SIS) ubicado en Barberà del Vallès pa",
+      "created": "1793182776049",
+      "expires": "2027-01-26T10:19:36.045Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327787",
+      "title": "PROFESSIONAL D’INTERVENCIÓ SOCIOEDUCATIVA (H/D)",
+      "school": "Nascor Formación SLU",
+      "city": "GIRONA - SELVA - 17300 BLANES",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327787",
+      "snippet": "Des de Nascor Formació, busquem un/a professional d’intervenció socioeducativa per incorporar-se al nostre equip a Blanes i participar en un projecte de prevenció i reducció de l’absentisme escolar. Cerquem una persona compromesa amb l’educació, amb habilitats d’intervenció amb infants, adolescents i famílies, i capaci",
+      "created": "1793178416131",
+      "expires": "2027-01-26T09:06:56.128Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327783",
+      "title": "MONITORS/MONITORES DE MENJADOR (ABRERA)",
+      "school": "Empresa de càtering",
+      "city": "BARCELONA - BAIX LLOBREGAT - 08630 ABRERA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327783",
+      "snippet": "Es necessiten Monitors/monitores de menjador i dinamització de projecte",
+      "created": "1793177933420",
+      "expires": "2027-01-26T08:58:53.417Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327773",
+      "title": "TÈCNIC/A D'EDUCACIÓ INFANTIL",
+      "school": "Col.legi Sant Marc de Sarrià",
+      "city": "BARCELONA - BARCELONÈS - 08017 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327773",
+      "snippet": "Busquem un/a professional apassionat/ada per l’educació infantil per incorporar-se al nostre equip de la Llar 0 anys.",
+      "created": "1793174440407",
+      "expires": "2027-01-26T08:00:40.404Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327764",
+      "title": "TALLERISTA REFORÇ EDUCATIU SECUNDARIA",
+      "school": "Nascor Formación SLU",
+      "city": "BARCELONA - BAIX LLOBREGAT - 08860 CASTELLDEFELS",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327764",
+      "snippet": "Nascor Formació som una empresa referent a nivell estatal en l'àmbit de la formació, l'educació i la intervenció socioeducativa. Treballem desenvolupant projectes que promouen la inclusió, la igualtat d'oportunitats i l'acompanyament educatiu d'infants i joves, col·laborant amb administracions públiques, centres educat",
+      "created": "1793173145850",
+      "expires": "2027-01-26T07:39:05.846Z",
       "automatic": true
     },
     {
@@ -580,18 +628,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92326853",
-      "title": "EDUCADOR/A ESCUELA INFANTIL - GUISSONA -",
-      "school": "",
-      "city": "LLEIDA - SEGARRA - 25210 GUISSONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326853",
-      "snippet": "¡Hola! ¿Tienes formación en Grado Superior en Educación Infantil? ¿Buscas un puesto relacionado que te permita seguir adquiriendo experiencia? Si es así, debes saber que EULEN Servicios Sociosanitarios selecciona un/a Educador/a para una escuela infantil ubicada en GUISSONA. Si crees que encajas con esta descripción, n",
-      "created": "1792051367668",
-      "expires": "2027-01-13T08:02:47.664Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92326847",
       "title": "MONITOR/MONITORA DE COMEDOR ESCOLAR",
       "school": "Empresa del sector de recursos humans",
@@ -817,18 +853,6 @@
       "snippet": "A Doble Via t'estem buscant! Si ets una persona amb iniciativa, dinàmica, entusiasta, amant del treball en equip volem que formis part d’un gran equip! Amb 25 anys d'història, oferim serveis integrals de gestió d’equipaments i programes d’acció social i cultural, d’educació, d’animació sociocultural i dinamització comu",
       "created": "1791540212843",
       "expires": "2027-01-07T10:03:32.841Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_09202629955",
-      "title": "MONITOR/A D’ACTIVITATS EXTRAESCOLARS DE MECANOGRAFIA I ROBÒTICA EDUCATIVA (REF. 29955)",
-      "school": "Oficina de Treball del SOC",
-      "city": "GIRONA - BAIX EMPORDÀ - 17220 SANT FELIU DE GUÍXOLS",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/09202629955",
-      "snippet": "Empresa especialitzada en activitats educatives cerca un/a monitor/a d’activitats extraescolars de mecanografia i robòtica educativa per impartir activitats dirigides a alumnat d’educació primària en centres educatius de Sant Feliu de Guíxols i Platja d’Aro. La persona seleccionada treballarà amb grups reduïts seguint ",
-      "created": "1791538102778",
-      "expires": "2027-01-07T09:28:22.778Z",
       "automatic": true
     },
     {
