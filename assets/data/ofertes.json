@@ -1,20 +1,44 @@
 {
-  "checkedAt": "2026-10-28T01:31:43.232Z",
+  "checkedAt": "2026-10-28T07:35:08.208Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-28T01:31:43.232Z",
-      "count": 182,
-      "reviewed": 671,
+      "updatedAt": "2026-10-28T07:35:08.208Z",
+      "count": 184,
+      "reviewed": 673,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-28T01:31:43.232Z",
+      "attemptedAt": "2026-10-28T07:35:08.208Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92327758",
+      "title": "MAESTRO/TRA ESCUELA INFANTIL - SUPLENCIA (LA ROCA DEL VALLÉS)",
+      "school": "EULEN.SA",
+      "city": "BARCELONA - VALLÈS ORIENTAL - 08430 ROCA DEL VALLÈS, LA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327758",
+      "snippet": "¡Hola! ¿Dispones del Grado en Educación Infantil? Entonces, tal vez te interese nuestra propuesta. EULEN Servicios Sociosanitarios selecciona, para una escuela infantil (0-3 años) ubicada en la Roca del Vallés, un/a Maestro/tra para cubrir una sustitución por enfermedad de la titular. En Grupo EULEN, nos comprometemos ",
+      "created": "1793172483631",
+      "expires": "2027-01-26T07:28:03.627Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327756",
+      "title": "MONITORS/MONITORES DE MENJADOR (ST.VICENTS DEL HORTS)",
+      "school": "Com a casa menjadors escolars S.L",
+      "city": "BARCELONA - BAIX LLOBREGAT - 08620 SANT VICENÇ DELS HORTS",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327756",
+      "snippet": "Es necessiten Monitors/monitores de menjador i dinamització de projecte",
+      "created": "1793172325130",
+      "expires": "2027-01-26T07:25:25.126Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92327723",
       "title": "MONITORS/ES DE REFORÇ ESCOLAR - BAGES SUD",
