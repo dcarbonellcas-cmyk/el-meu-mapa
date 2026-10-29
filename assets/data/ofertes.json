@@ -1,20 +1,80 @@
 {
-  "checkedAt": "2026-10-29T07:36:18.042Z",
+  "checkedAt": "2026-10-29T13:36:50.644Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-29T07:36:18.042Z",
-      "count": 187,
+      "updatedAt": "2026-10-29T13:36:50.644Z",
+      "count": 189,
       "reviewed": 688,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-29T07:36:18.042Z",
+      "attemptedAt": "2026-10-29T13:36:50.644Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92327923",
+      "title": "SUPLÈNCIA MONITOR/MONITORA DE LLEURE",
+      "school": "AFA ESCOLA BARRUFET",
+      "city": "BARCELONA - BARCELONÈS - 08028 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327923",
+      "snippet": "Es necessita un/a Monitor/monitora de lleure i menjador per a una suplència.",
+      "created": "1793280918121",
+      "expires": "2027-01-27T13:35:18.117Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327915",
+      "title": "MONITORS/MONITORES DE REFORÇ EDUCATIU-SANTA PERPÈTUA DE LA MOGODA- (VALLÈS OCCIDENTAL)",
+      "school": "EMPRESA DE FORMACIÓ",
+      "city": "BARCELONA - VALLÈS OCCIDENTAL - 08130 SANTA PERPÈTUA DE MOGODA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327915",
+      "snippet": "Es necessiten monitors/monitores per realitzar activitats educatives i dinamització d'infants en horari de tarda, garantint el seu benestar i seguiment educatiu.",
+      "created": "1793276445249",
+      "expires": "2027-01-27T12:20:45.246Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327908",
+      "title": "MONITORS/MONITORES ACTIVITATS DE LLEURE- PERAFITA (LLUÇANÈS)",
+      "school": "Empresa de formació",
+      "city": "BARCELONA - LLUÇANÈS - 08589 PERAFITA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327908",
+      "snippet": "Es precisa personal com a monitors/monitores de lleure per a realització d´activitats de cura d'infants serveis esporàdics de canguratge a la població de Perafita, i possibilitat en altres zones del Lluçanès. Els dimecres en horari de tarda.",
+      "created": "1793274997593",
+      "expires": "2027-01-27T11:56:37.590Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327900",
+      "title": "MONITORS/MONITORES DE MENJADOR (SANTA COLOMA)",
+      "school": "Empresa de càtering",
+      "city": "BARCELONA - BARCELONÈS - 08923 SANTA COLOMA DE GRAMENET",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327900",
+      "snippet": "Es necessiten Monitors/monitores de menjador i dinamització de projecte",
+      "created": "1793273020455",
+      "expires": "2027-01-27T11:23:40.451Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327898",
+      "title": "MONITORS/MONITORES DE MENJADOR (BADALONA)",
+      "school": "Com a casa menjadors escolars S.L",
+      "city": "BARCELONA - BARCELONÈS - 08913 BADALONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327898",
+      "snippet": "Es necessiten Monitors/monitores de menjador i dinamització de projecte",
+      "created": "1793272522414",
+      "expires": "2027-01-27T11:15:22.410Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92327853",
       "title": "EDUCADOR/A-DOCENT REFORÇ EDUCATIU ASSISTIT PROGRAMA CAIXA PROINFÀNCIA",
@@ -217,30 +277,6 @@
       "snippet": "Es precisa personal com a monitors/monitores de lleure per a realització d´activitats de cura d'infants en espais de joc a les poblacions de Taradell en horari de tarda, els dimecres de 14:50-17:10h",
       "created": "1793019423526",
       "expires": "2027-01-24T12:57:03.522Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92327643",
-      "title": "INTEGRADOR/A SOCIAL ( SERVEI SOCIOEDUCATIU )",
-      "school": "DIVERSPORT SL",
-      "city": "GIRONA - GIRONÈS - 17244 CASSÀ DE LA SELVA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327643",
-      "snippet": "Busquem un/a INTEGRADOR/A SOCIAL per incorporar-se al Servei Socioeducatiu Diürn de Cassà de la Selva. Volem una persona dinàmica, propera i amb iniciativa, que gaudeixi acompanyant infants i adolescents, creant vincles i ajudant-los a desenvolupar les seves capacitats. Jornada laboral : 20h/set de dilluns a divendres ",
-      "created": "1793018191004",
-      "expires": "2027-01-24T12:36:31.001Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92327639",
-      "title": "EDUCADOR/A SOCIAL – CASSÀ DE LA SELVA ( SERVEI SOCIOEDUCATIU )",
-      "school": "DIVERSPORT SL",
-      "city": "GIRONA - GIRONÈS - 17244 CASSÀ DE LA SELVA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327639",
-      "snippet": "Busquem un/a EDUCADOR/A SOCIAL per incorporar-se al Servei Socioeducatiu Diürn de Cassà de la Selva. Busquem una persona compromesa, empàtica i amb vocació social, que vulgui formar part d’un projecte on els infants, adolescents i les seves famílies són els protagonistes. Perquè educar és molt més que ensenyar: és acom",
-      "created": "1793016607196",
-      "expires": "2027-01-24T12:10:07.193Z",
       "automatic": true
     },
     {
@@ -2245,18 +2281,6 @@
       "snippet": "Nascor Formació som una empresa referent a nivell estatal en l'àmbit de la formació, l'educació i la intervenció socioeducativa. Treballem desenvolupant projectes que promouen la inclusió, la igualtat d'oportunitats i l'acompanyament educatiu d'infants i joves, col·laborant amb administracions públiques, centres educat",
       "created": "1785744079581",
       "expires": "2026-11-01T08:01:19.580Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92322144",
-      "title": "MONITORES/AS DE TRANSPORTE ESCOLAR - SANT SADURNÍ D'ANOIA",
-      "school": "INTERIM GROUP",
-      "city": "BARCELONA - ALT PENEDÈS - 08770 SANT SADURNÍ D'ANOIA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92322144",
-      "snippet": "Desde INTERIM GROUP, estamos seleccionando monitores/as de Transporte Escolar para trabajar en Sant Sadurní d'Anoia (Barcelona). Si tienes experiencia en acompañante de transporte escolar y resides en la zona ¡esta oportunidad es para ti!",
-      "created": "1785493890753",
-      "expires": "2026-10-29T10:31:30.752Z",
       "automatic": true
     }
   ]
