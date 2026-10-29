@@ -1,20 +1,32 @@
 {
-  "checkedAt": "2026-10-29T01:31:56.503Z",
+  "checkedAt": "2026-10-29T07:36:18.042Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-29T01:31:56.503Z",
-      "count": 186,
-      "reviewed": 682,
+      "updatedAt": "2026-10-29T07:36:18.042Z",
+      "count": 187,
+      "reviewed": 688,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-29T01:31:56.503Z",
+      "attemptedAt": "2026-10-29T07:36:18.042Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92327853",
+      "title": "EDUCADOR/A-DOCENT REFORÇ EDUCATIU ASSISTIT PROGRAMA CAIXA PROINFÀNCIA",
+      "school": "FUNDACIÓ",
+      "city": "BARCELONA - BARCELONÈS - 08033 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327853",
+      "snippet": "A través de CaixaProinfància, a la Fundació ”la Caixa” treballem per oferir una vida millor a infants i adolescents que viuen en entorns desafavorits, a través d’un model d’acció social i educativa que ajuda a impulsar-ne la integració social, i la de les seves famílies. Dins del programa prestem diferents serveis com ",
+      "created": "1793258255419",
+      "expires": "2027-01-27T07:17:35.415Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92327839",
       "title": "MONITOR/MONITORA MENJADOR- ESPAI MIGDIA",
