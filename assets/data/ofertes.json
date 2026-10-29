@@ -1,20 +1,32 @@
 {
-  "checkedAt": "2026-10-29T13:36:50.644Z",
+  "checkedAt": "2026-10-29T19:26:07.599Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-29T13:36:50.644Z",
-      "count": 189,
-      "reviewed": 688,
+      "updatedAt": "2026-10-29T19:26:07.599Z",
+      "count": 190,
+      "reviewed": 689,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-29T13:36:50.644Z",
+      "attemptedAt": "2026-10-29T19:26:07.599Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92327926",
+      "title": "MONITOR/MONITORA REFORÇ ESCOLAR-LLIÇÀ D'AMUNT-(VALLÈS ORIENTAL)",
+      "school": "EMPRESA DE FORMACIÓ",
+      "city": "BARCELONA - VALLÈS ORIENTAL - 08186 LLIÇÀ D'AMUNT",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327926",
+      "snippet": "Es necessita un/a Monitor/monitora per a realitzar activitats de lecto-escriptura a infants d´educació Infantil Incorporació octubre 2026, en horari de migdia (12 a 13h) dilluns, dimarts, dimecres i dijous.",
+      "created": "1793281554040",
+      "expires": "2027-01-27T13:45:54.037Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92327923",
       "title": "SUPLÈNCIA MONITOR/MONITORA DE LLEURE",
