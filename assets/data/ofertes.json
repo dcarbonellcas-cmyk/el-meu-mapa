@@ -1,20 +1,56 @@
 {
-  "checkedAt": "2026-10-30T07:35:40.299Z",
+  "checkedAt": "2026-10-30T13:34:11.779Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-10-30T07:35:40.299Z",
-      "count": 190,
-      "reviewed": 688,
+      "updatedAt": "2026-10-30T13:34:11.779Z",
+      "count": 193,
+      "reviewed": 698,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-10-30T07:35:40.299Z",
+      "attemptedAt": "2026-10-30T13:34:11.779Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92327967",
+      "title": "MONITORS/MONITORES DE MENJADORS ESCOLARS (SUPLÈNCIES) OLIVELLA",
+      "school": "TENO CATERING",
+      "city": "BARCELONA - GARRAF - 08818 OLIVELLA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327967",
+      "snippet": "Precisem incorporar a monitors/monitores per menjadors escolars per cobrir suplències de dies puntuals, baixes mèdiques i/o permisos en centre ubicat en Olivella. Cerquem perfils polivalents que puguin estar a qualsevol curs d' infantil i primària.",
+      "created": "1793362737628",
+      "expires": "2027-01-28T12:18:57.624Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327953",
+      "title": "EDUCADOR/A INFANTIL - TREMP",
+      "school": "EULEN.SA",
+      "city": "LLEIDA - PALLARS JUSSÀ - 22583 TREMP",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327953",
+      "snippet": "Hola! Tens vocació per la petita infància i busques una oportunitat per créixer professionalment? A EULEN Serveis Sociosanitaris busquem un/a professional de l'Educació Infantil per unir-se al nostre equip en una de les nostres escoles ubicades a Tremp (Pallars Jussà)*. Si t'apassiona l'educació infantil i vols fer cré",
+      "created": "1793351715388",
+      "expires": "2027-01-28T09:15:15.384Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92327947",
+      "title": "PERSONAL MONITORATGE PER A TALLERS EN CATALÀ I REUS",
+      "school": "Centre de formació",
+      "city": "TARRAGONA - BAIX CAMP - 43200 REUS",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327947",
+      "snippet": "Busquem monitors/es per dinamitzar tallers de català amb infants a Reus! Busquem una persona amb domini del català, iniciativa i habilitats comunicatives per dinamitzar tallers de llengua catalana, mitjançant jocs, activitats participatives i dinàmiques orals que fomentin l’ús del català de manera lúdica i natural.",
+      "created": "1793345885641",
+      "expires": "2027-01-28T07:38:05.637Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92327926",
       "title": "MONITOR/MONITORA REFORÇ ESCOLAR-LLIÇÀ D'AMUNT-(VALLÈS ORIENTAL)",
