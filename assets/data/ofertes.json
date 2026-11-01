@@ -1,16 +1,16 @@
 {
-  "checkedAt": "2026-11-01T07:33:54.615Z",
+  "checkedAt": "2026-11-01T13:24:22.813Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-01T07:33:54.615Z",
-      "count": 193,
+      "updatedAt": "2026-11-01T13:24:22.813Z",
+      "count": 188,
       "reviewed": 700,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-01T07:33:54.615Z",
+      "attemptedAt": "2026-11-01T13:24:22.813Z",
       "message": "fetch failed"
     }
   },
@@ -2269,66 +2269,6 @@
       "snippet": "Es precisa personal com a monitors/monitores de lleure per a realització d´activitats de cura d'intants per a diferents poblacions de la comarca d'Osona.",
       "created": "1786624069181",
       "expires": "2026-11-11T12:27:49.180Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92322244",
-      "title": "MONITORES/AS DE TRANSPORTE ESCOLAR - MANRESA",
-      "school": "INTERIM GROUP",
-      "city": "BARCELONA - BAGES - 08241 MANRESA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92322244",
-      "snippet": "Desde INTERIM GROUP, estamos seleccionando monitores/as de Transporte Escolar para trabajar en Manresa o alrededores. Si tienes experiencia en acompañante de transporte escolar y resides en la zona ¡esta oportunidad es para ti!",
-      "created": "1785756876476",
-      "expires": "2026-11-01T11:34:36.475Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92322243",
-      "title": "MONITORES/AS DE TRANSPORTE ESCOLAR - VALLÈS ORIENTAL",
-      "school": "INTERIM GROUP",
-      "city": "BARCELONA - VALLÈS ORIENTAL - 08403 GRANOLLERS",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92322243",
-      "snippet": "Desde INTERIM GROUP, estamos seleccionando monitores/as de Transporte Escolar para trabajar en la zona del Vallès Oriental. Si tienes experiencia en acompañante de transporte escolar y resides en la zona ¡esta oportunidad es para ti!",
-      "created": "1785756819873",
-      "expires": "2026-11-01T11:33:39.872Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92322242",
-      "title": "MONITORES/AS DE TRANSPORTE ESCOLAR - VIC",
-      "school": "INTERIM GROUP",
-      "city": "BARCELONA - OSONA - 08500 VIC",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92322242",
-      "snippet": "Desde INTERIM GROUP, estamos seleccionando monitores/as de Transporte Escolar para trabajar en Vic o alrededores. Si tienes experiencia en acompañante de transporte escolar y resides en la zona ¡esta oportunidad es para ti!",
-      "created": "1785756772518",
-      "expires": "2026-11-01T11:32:52.517Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92322241",
-      "title": "MONITORES/AS DE TRANSPORTE ESCOLAR - BARCELONA",
-      "school": "INTERIM GROUP",
-      "city": "BARCELONA - BARCELONÈS - 08001 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92322241",
-      "snippet": "Desde INTERIM GROUP, estamos seleccionando monitores/as de Transporte Escolar para trabajar en la zona de Barcelona. Si tienes experiencia en acompañante de transporte escolar y resides en la zona ¡esta oportunidad es para ti!",
-      "created": "1785756709198",
-      "expires": "2026-11-01T11:31:49.197Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92322209",
-      "title": "COORDINADOR/A PROJECTE SUPORT EDUCATIU DE SECUNDÀRIA",
-      "school": "Nascor Formación SLU",
-      "city": "BARCELONA - BAIX LLOBREGAT - 08860 CASTELLDEFELS",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92322209",
-      "snippet": "Nascor Formació som una empresa referent a nivell estatal en l'àmbit de la formació, l'educació i la intervenció socioeducativa. Treballem desenvolupant projectes que promouen la inclusió, la igualtat d'oportunitats i l'acompanyament educatiu d'infants i joves, col·laborant amb administracions públiques, centres educat",
-      "created": "1785744079581",
-      "expires": "2026-11-01T08:01:19.580Z",
       "automatic": true
     }
   ]
