@@ -1,20 +1,32 @@
 {
-  "checkedAt": "2026-11-02T13:42:45.772Z",
+  "checkedAt": "2026-11-02T19:26:46.844Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-02T13:42:45.772Z",
+      "updatedAt": "2026-11-02T19:26:46.844Z",
       "count": 185,
-      "reviewed": 686,
+      "reviewed": 687,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-02T13:42:45.772Z",
+      "attemptedAt": "2026-11-02T19:26:46.844Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92328050",
+      "title": "EDUCADOR/A SOCIAL",
+      "school": "Associació l'Esquitx",
+      "city": "BARCELONA - BARCELONÈS - 08003 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328050",
+      "snippet": "L’Associació l’Esquitx és una entitat sense ànim de lucre, ubicada al Casc Antic de Barcelona i declarada d’utilitat pública l’any 2014. L’entitat des del 1985 porta a terme una tasca d’educació i acompanyament dels infants del barri i les seves famílies, promovent el seu desenvolupament harmònic. L’entitat necessita i",
+      "created": "1793627331744",
+      "expires": "2027-01-31T13:48:51.740Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92328016",
       "title": "BUSQUEM MONITORS/MONITORES DE LLEURE!",
@@ -481,18 +493,6 @@
       "snippet": "Educador/a social referent del Servei d’Atenció Diürna (SAD) Infància de Girona Est. El SAD Infància, antic Centre Obert, és un servei socioeducatiu diürn i preventiu adreçat a infants en situació de risc social o vulnerabilitat. Ofereix atenció educativa fora de l’horari escolar, mitjançant activitats individuals i gr",
       "created": "1792574870107",
       "expires": "2027-01-19T09:27:50.103Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92327256",
-      "title": "COORDINADOR/A ESPAI MIGDIA ESCOLA CALELLA",
-      "school": "SANED",
-      "city": "BARCELONA - MARESME - 08370 CALELLA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327256",
-      "snippet": "Es necessita un/a coordinador/a. La persona seleccionada serà la responsable de liderar l'equip de monitors/monitores, garantir el correcte funcionament del servei de menjador i oci educatiu, i assegurar un espai segur, saludable i pedagògic per als infants.",
-      "created": "1792569354107",
-      "expires": "2027-01-19T07:55:54.103Z",
       "automatic": true
     },
     {
