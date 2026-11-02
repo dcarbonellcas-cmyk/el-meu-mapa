@@ -1,20 +1,44 @@
 {
-  "checkedAt": "2026-11-02T07:54:17.516Z",
+  "checkedAt": "2026-11-02T13:42:45.772Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-02T07:54:17.516Z",
-      "count": 188,
-      "reviewed": 690,
+      "updatedAt": "2026-11-02T13:42:45.772Z",
+      "count": 185,
+      "reviewed": 686,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-02T07:54:17.516Z",
+      "attemptedAt": "2026-11-02T13:42:45.772Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92328016",
+      "title": "BUSQUEM MONITORS/MONITORES DE LLEURE!",
+      "school": "Empresa d'educació",
+      "city": "BARCELONA - MARESME - 08390 MONTGAT",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328016",
+      "snippet": "T’agrada treballar amb infants? Tens energia, creativitat i ganes de viure la màgia del Nadal des de dins?. A Diversport busquem MONITORS/MONITORES DE LLEURE per formar part de l’equip del Parc de Nadal de Montgat! Busquem persones dinàmiques, responsables i amb moltes ganes de fer que els més petits gaudeixin d’unes j",
+      "created": "1793613911270",
+      "expires": "2027-01-31T10:05:11.266Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92328011",
+      "title": "MONITOR/MONITORA DE MENJADOR ESCOLAR",
+      "school": "Escola",
+      "city": "BARCELONA - BAIX LLOBREGAT - 08640 OLESA DE MONTSERRAT",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328011",
+      "snippet": "Precisem incorporar un/a monitor/monitora de menjador per a una nova vacant al nostre Servei Migdia escolar de dilluns a divendres de 12:30 hores a 15:00 hores.",
+      "created": "1793608676436",
+      "expires": "2027-01-31T08:37:56.433Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92327967",
       "title": "MONITORS/MONITORES DE MENJADORS ESCOLARS (SUPLÈNCIES) OLIVELLA",
@@ -292,18 +316,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92327666",
-      "title": "MONITOR/MONITORA - EDUCACIÓN - VEDRUNA BELLPUIG",
-      "school": "Empresa d'educació",
-      "city": "LLEIDA - URGELL - 25250 BELLPUIG",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327666",
-      "snippet": "Se precisa un/a monitor/monitora para un comedor escolar en Bellpuig (Vedruna) Se valorará disponer de certificado de discapacidad superior el 33%. Aramark valorará la idoneidad de las candidaturas inscritas para el puesto en función de la experiencia y las capacidades que aporta la persona que participa en el proceso ",
-      "created": "1793023724113",
-      "expires": "2027-01-24T14:08:44.110Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92327663",
       "title": "MONITOR/MONITORA ACTIVITAT INFANTIL",
       "school": "Nascor Formación SLU",
@@ -412,30 +424,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92327406",
-      "title": "DIRECTOR/A PER A CRAE A GIRONA",
-      "school": "FILLES CARITAT FUNDACIO SOCIAL",
-      "city": "GIRONA - GIRONÈS - 17004 GIRONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327406",
-      "snippet": "El CRAE La Caritat, obra social de les Filles de la Caritat de la Província Espanya Est, busca incorporar un/a Director/a Tècnic/a per liderar un projecte educatiu i social adreçat a infants i adolescents en situació de vulnerabilitat, així com a joves d’entre 18 i 21 anys en procés d’emancipació. La persona que s’inco",
-      "created": "1792660581478",
-      "expires": "2027-01-20T09:16:21.474Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92327390",
-      "title": "PERSONAL DE MONITORATGE DE MENJADOR CEIP HOSPITALET DE LLOBREGAT",
-      "school": "NDAVANT",
-      "city": "BARCELONA - BARCELONÈS - 08901 HOSPITALET DE LLOBREGAT, L'",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327390",
-      "snippet": "En recerca de monitor/es de menjador per una escola pública situada a Hospitalet de Llobregat, enfocat a les edats d'educació primària.",
-      "created": "1792656225870",
-      "expires": "2027-01-20T08:03:45.867Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92327386",
       "title": "MONITOR/A DE SUPORT EDUCATIU-MANLLEU-(OSONA)",
       "school": "FABRA FORMACIÓ S.L.",
@@ -484,18 +472,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92327282",
-      "title": "PERSONAL DE CUINA - ESCOLA BRESSOL",
-      "school": "Empresa sector educatiu",
-      "city": "BARCELONA - BARCELONÈS - 08901 HOSPITALET DE LLOBREGAT, L'",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327282",
-      "snippet": "Incorporació de professional de cuina, amb experiència.",
-      "created": "1792575017251",
-      "expires": "2027-01-19T09:30:17.248Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92327278",
       "title": "EDUCADOR/A SOCIAL SERVEI D'ATENCIÓ DIÜRNA SAD INFÀNCIA GIRONA EST.",
       "school": "Associació",
@@ -529,18 +505,6 @@
       "snippet": "Busquem un/a Educador/a Social per integrar-se a l'equip del Servei d'Intervenció Socioeducativa no residencial (SIS) per a la infància i l'adolescència en situació de risc social i les seves famílies de l'Ajuntament de la Llagosta, d'acord amb el marc de la Cartera de Serveis Socials de Catalunya. El servei desenvolup",
       "created": "1792563945727",
       "expires": "2027-01-19T06:25:45.720Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92327218",
-      "title": "MONITOR/MONITORA - EDUCACIÓN - SANTA EULALIA DE RONÇANA",
-      "school": "ARAMARK",
-      "city": "BARCELONA - VALLÈS ORIENTAL - 08187 SANTA EULÀLIA DE RONÇANA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327218",
-      "snippet": "Se precisa Monitores/monitoras para un comedor escolar en Santa Eulalia de Ronçana, a una escola Bressol. Se valorará disponer de certificado de discapacidad superior el 33%. Aramark valorará la idoneidad de las candidaturas inscritas para el puesto en función de la experiencia y las capacidades que aporta la persona q",
-      "created": "1792496791388",
-      "expires": "2027-01-18T11:46:31.384Z",
       "automatic": true
     },
     {
