@@ -1,16 +1,16 @@
 {
-  "checkedAt": "2026-11-02T01:42:03.758Z",
+  "checkedAt": "2026-11-02T07:54:17.516Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-02T01:42:03.758Z",
+      "updatedAt": "2026-11-02T07:54:17.516Z",
       "count": 188,
-      "reviewed": 687,
+      "reviewed": 690,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-02T01:42:03.758Z",
+      "attemptedAt": "2026-11-02T07:54:17.516Z",
       "message": "fetch failed"
     }
   },
@@ -30,7 +30,7 @@
     {
       "id": "fa_FA92327953",
       "title": "EDUCADOR/A INFANTIL - TREMP",
-      "school": "EULEN.SA",
+      "school": "",
       "city": "LLEIDA - PALLARS JUSSÀ - 22583 TREMP",
       "source": "Feina Activa",
       "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327953",
