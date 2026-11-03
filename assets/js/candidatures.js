@@ -15,7 +15,7 @@
     const key=localStorage.getItem("status_"+id)||"none";
     const labels={none:"No contactada",prepared:"CV preparat",sent:"CV enviat",replied:"Han contestat",interview:"Entrevista"};
     let h=[]; try{h=JSON.parse(localStorage.getItem("history_"+id)||"[]")}catch(e){}
-    const last=h.find(x=>x.type==="sent"); let label=labels[key]||"No contactada"; if(key==="sent"&&last){const d=new Date(last.date);d.setMonth(d.getMonth()+3);if(Date.now()>=d.getTime())label="Toca renovar candidatura";} return {status:label, date:(last&&last.date)||((h[0]&&h[0].date)||"")};
+    const last=h.find(x=>x.type==="sent"); let label=labels[key]||"No contactada"; if(key==="sent"&&last){const d=nextRenewalDate(last.date);if(d&&Date.now()>=d.getTime())label="Toca renovar candidatura";} return {status:label, date:(last&&last.date)||((h[0]&&h[0].date)||"")};
   }
   function val(s, keys, fallback=""){
     for(const k of keys) if(s && s[k]!==undefined && s[k]!==null && String(s[k]).trim()!=="") return s[k];
