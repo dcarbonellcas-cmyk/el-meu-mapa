@@ -17,7 +17,7 @@ for(const path of ['scripts/build.mjs','scripts/styles.mjs','netlify/functions/j
 }
 const html=await read('index.html');
 assert(!/<style\b/i.test(html),'Styles should be external');
-for(const [,path] of html.matchAll(/(?:src|href)="((?:assets\/)[^"]+)"/g))assert((await stat(resolve(root,path))).isFile(),'Missing asset '+path);
+for(const [,path] of html.matchAll(/(?:src|href)="((?:assets\/)[^"]+)"/g))assert((await stat(resolve(root,path.split(/[?#]/)[0]))).isFile(),'Missing asset '+path);
 const centres=JSON.parse(await read('assets/data/centres.json'));
 const entitats=JSON.parse(await read('assets/data/entitats.json'));
 assert(centres.length>=3000&&centres.length<=10000);assert.equal(entitats.infantil.length,18);assert.equal(entitats.lleure.length,64);
