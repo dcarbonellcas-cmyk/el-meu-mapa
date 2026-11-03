@@ -39,7 +39,7 @@ async function actuallySendGmail(accessToken){
 }
 function sendWithGmail(){
   const draft=document.getElementById('draftSubject').value+' '+document.getElementById('draftBody').value;
-  if(draft.includes('[El teu nom]')||draft.includes('[La teva formació i experiència]')){gmailNotice('Completa el teu nom i formació a Documents o edita l’esborrany abans d’enviar.');return}
+  if(draft.includes('[El teu nom]')||draft.includes('[La teva formació i experiència]')||draft.includes('[Completa l’experiència')){gmailNotice('Completa el teu nom i formació a Documents o edita l’esborrany abans d’enviar.');return}
 
   const btn=document.getElementById('sendGmail'); btn.disabled=true; btn.textContent='Connectant amb Gmail…'; gmailNotice('Autoritza el teu compte de Gmail a la finestra de Google.');
   if(!(window.google&&google.accounts&&google.accounts.oauth2)){gmailNotice('Google encara no s’ha carregat. Espera uns segons i torna-ho a provar.');btn.disabled=false;btn.textContent='✉ Enviar amb Gmail';return}

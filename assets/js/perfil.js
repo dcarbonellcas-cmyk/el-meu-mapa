@@ -8,24 +8,24 @@ function loadLegacyRows(){
 }
 (function(){
   const name=document.getElementById('candidateName'),bio=document.getElementById('candidateBio'),notice=document.getElementById('profileNotice');
-  function paint(){const p=candidateProfile();name.value=p.name||'';bio.value=p.bio||''}
+  function paint(){const p=candidateProfile();name.value=p.name||'';bio.value=p.bio||'';document.querySelectorAll('[data-role-bio]').forEach(x=>x.value=p.roleBio?.[x.dataset.roleBio]||'')}
   function save(){
     try{
-      const old=candidateProfile(),p={name:name.value.trim(),bio:bio.value.trim()};
-      if(p.name===old.name&&p.bio===old.bio)return;
+      const old=candidateProfile(),roleBio={};document.querySelectorAll('[data-role-bio]').forEach(x=>{if(x.value.trim())roleBio[x.dataset.roleBio]=x.value.trim()});const p={name:name.value.trim(),bio:bio.value.trim(),roleBio};
+      if(p.name===old.name&&p.bio===old.bio&&JSON.stringify(p.roleBio)===JSON.stringify(old.roleBio||{}))return;
       localStorage.setItem('mapaEscolesProfile_v1',JSON.stringify({...p,updated:new Date().toISOString()}));
       notice.textContent='✓ Perfil guardat automàticament en aquest dispositiu.';
       document.dispatchEvent(new Event('private-data-changed'));
     }catch{notice.textContent='No s’ha pogut guardar. Conserva una còpia del text i revisa l’espai del navegador.'}
   }
-  name.addEventListener('input',save);bio.addEventListener('input',save);
+  name.addEventListener('input',save);bio.addEventListener('input',save);document.querySelectorAll('[data-role-bio]').forEach(x=>x.addEventListener('input',save));
   document.getElementById('saveProfile').addEventListener('click',save);
   document.getElementById('profileImport').addEventListener('change',async e=>{
     try{
       const file=e.target.files[0];if(!file)return;
       const p=JSON.parse(await file.text());
       if(!p||typeof p.name!=='string'||typeof p.bio!=='string')throw new Error('El perfil ha de tenir nom i formació.');
-      name.value=p.name;bio.value=p.bio;save();
+      name.value=p.name;bio.value=p.bio;document.querySelectorAll('[data-role-bio]').forEach(x=>x.value=typeof p.roleBio?.[x.dataset.roleBio]==='string'?p.roleBio[x.dataset.roleBio]:'');save();
     }catch(err){notice.textContent='No s’ha pogut importar: '+err.message}finally{e.target.value=''}
   });
   document.addEventListener('private-data-restored',paint);

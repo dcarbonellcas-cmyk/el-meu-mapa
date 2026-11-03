@@ -14,7 +14,7 @@ function setup({profile={},docs={},remote={},failure=0}={}){
   const context={URLSearchParams,Blob,File,Uint8Array,Event,crypto:webcrypto,atob,Date,JSON,Math,Number,Error,
     setTimeout:()=>0,clearTimeout:()=>{},setInterval:()=>0,
     localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},
-    document:{hidden:false,getElementById:node,addEventListener:(type,fn)=>events.set(type,fn),dispatchEvent:e=>events.get(e.type)?.(e)},
+    document:{hidden:false,getElementById:node,querySelectorAll:()=>[],addEventListener:(type,fn)=>events.set(type,fn),dispatchEvent:e=>events.get(e.type)?.(e)},
     window:{addEventListener:()=>{}},
     candidateProfile:()=>JSON.parse(storage.get('mapaEscolesProfile_v1')||'{}'),
     getDoc:async key=>docs[key]||null,

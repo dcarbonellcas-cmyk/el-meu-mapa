@@ -27,20 +27,20 @@
   function validate(key,r){
     if(!r||r.version!==1||r.key!==key||typeof r.updated!=='string'||!stamp(r.updated))throw Error('Còpia privada no vàlida. Es conserva la còpia local.');
     if(key==='profile'){
-      if(typeof r.name!=='string'||typeof r.bio!=='string'||r.name.length>500||r.bio.length>100000)throw Error('Perfil privat no vàlid.');
+      if(typeof r.name!=='string'||typeof r.bio!=='string'||r.name.length>500||r.bio.length>100000|| (r.roleBio&& (typeof r.roleBio!=='object'||Array.isArray(r.roleBio)||Object.entries(r.roleBio).some(([k,v])=>!['infantil03','infantil36','infantil','primaria','monitoratge','direccio','coordinacio','menjador','extraescolars','acollida'].includes(k)||typeof v!=='string'||v.length>10000))))throw Error('Perfil privat no vàlid.');
     }else if(typeof r.name!=='string'||typeof r.type!=='string'||typeof r.data!=='string'||r.data.length>28000000||!/^[A-Za-z0-9+/]*={0,2}$/.test(r.data))throw Error('Document privat no vàlid.');
   }
   async function ownRecord(key){
     if(key==='profile'){
       const p=candidateProfile();if(!p.name&&!p.bio)return null;
-      return {version:1,key,name:p.name||'',bio:p.bio||'',updated:p.updated||'1970-01-01T00:00:00.001Z'};
+      return {version:1,key,name:p.name||'',bio:p.bio||'',roleBio:p.roleBio||{},updated:p.updated||'1970-01-01T00:00:00.001Z'};
     }
     const d=await getDoc(key);if(!d)return null;
     if(d.blob.size>20000000)throw Error('El document supera els 20 MB. La còpia local es conserva.');
     return {version:1,key,name:d.name,type:d.type,updated:d.updated||'1970-01-01T00:00:00.001Z',data:await blobBase64(d.blob)};
   }
   async function restore(key,r){
-    if(key==='profile')localStorage.setItem('mapaEscolesProfile_v1',JSON.stringify({name:r.name,bio:r.bio,updated:r.updated}));
+    if(key==='profile')localStorage.setItem('mapaEscolesProfile_v1',JSON.stringify({name:r.name,bio:r.bio,roleBio:r.roleBio||{},updated:r.updated}));
     else await saveDoc(key,new File([Uint8Array.from(atob(r.data),c=>c.charCodeAt(0))],r.name,{type:r.type}),{updated:r.updated,restoring:true});
     document.dispatchEvent(new Event('private-data-restored'));
   }

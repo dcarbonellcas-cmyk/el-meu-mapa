@@ -18,6 +18,7 @@ function showMailDraft(s,subject,body){
   const cvDigitalUrl='https://diana-carbonell-curriculum.wiryrose64.chatgpt.site/';
   const missatge=String(body||'');
   document.getElementById('draftBody').value=missatge.includes(cvDigitalUrl)?missatge:missatge.trimEnd()+'\n\nPodeu consultar el meu currículum professional aquí:\n'+cvDigitalUrl;
+  if(window.beginTailoredDraft)window.beginTailoredDraft(s);
   document.getElementById('copyNotice').style.display='none';
   document.getElementById('gmailNotice').style.display='none';
   document.getElementById('mailDraftModal').style.display='flex';
