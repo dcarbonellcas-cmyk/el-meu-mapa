@@ -9,17 +9,26 @@ function loadLegacyRows(){
 (function(){
   const name=document.getElementById('candidateName'),bio=document.getElementById('candidateBio'),notice=document.getElementById('profileNotice');
   function paint(){const p=candidateProfile();name.value=p.name||'';bio.value=p.bio||''}
-  document.getElementById('saveProfile').addEventListener('click',()=>{
-    localStorage.setItem('mapaEscolesProfile_v1',JSON.stringify({name:name.value.trim(),bio:bio.value.trim()}));
-    notice.textContent='✓ Perfil guardat en aquest navegador.';
-  });
+  function save(){
+    try{
+      const old=candidateProfile(),p={name:name.value.trim(),bio:bio.value.trim()};
+      if(p.name===old.name&&p.bio===old.bio)return;
+      localStorage.setItem('mapaEscolesProfile_v1',JSON.stringify({...p,updated:new Date().toISOString()}));
+      notice.textContent='✓ Perfil guardat automàticament en aquest dispositiu.';
+      document.dispatchEvent(new Event('private-data-changed'));
+    }catch{notice.textContent='No s’ha pogut guardar. Conserva una còpia del text i revisa l’espai del navegador.'}
+  }
+  name.addEventListener('input',save);bio.addEventListener('input',save);
+  document.getElementById('saveProfile').addEventListener('click',save);
   document.getElementById('profileImport').addEventListener('change',async e=>{
     try{
       const file=e.target.files[0];if(!file)return;
       const p=JSON.parse(await file.text());
       if(!p||typeof p.name!=='string'||typeof p.bio!=='string')throw new Error('El perfil ha de tenir nom i formació.');
-      localStorage.setItem('mapaEscolesProfile_v1',JSON.stringify({name:p.name,bio:p.bio}));paint();notice.textContent='✓ Perfil importat al navegador.';
+      name.value=p.name;bio.value=p.bio;save();
     }catch(err){notice.textContent='No s’ha pogut importar: '+err.message}finally{e.target.value=''}
   });
+  document.addEventListener('private-data-restored',paint);
+  window.addEventListener('storage',e=>{if(e.key==='mapaEscolesProfile_v1')paint()});
   paint();
 })();
