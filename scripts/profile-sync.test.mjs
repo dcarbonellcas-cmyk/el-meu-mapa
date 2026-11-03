@@ -75,3 +75,8 @@ test('invalid private data does not replace existing local data',async()=>{
   const p={name:'Example',bio:'Training'};const s=setup({profile:p,remote:{profile:{version:99}}});await s.connect();
   assert.deepEqual(JSON.parse(s.storage.get('mapaEscolesProfile_v1')),p);assert.match(s.node('privateSyncStatus').textContent,/no vàlida/);
 });
+test('role-specific experience is restored privately on the second device',async()=>{
+  const roleBio={infantil03:'Nursery experience',direccio:'Director experience'};
+  const s=setup({remote:{profile:record('profile','2026-11-02T12:00:00Z',{roleBio})}});await s.connect();
+  assert.deepEqual(JSON.parse(s.storage.get('mapaEscolesProfile_v1')).roleBio,roleBio);
+});
