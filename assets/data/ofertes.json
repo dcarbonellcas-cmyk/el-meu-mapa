@@ -1,20 +1,32 @@
 {
-  "checkedAt": "2026-11-03T13:40:22.939Z",
+  "checkedAt": "2026-11-03T19:13:42.548Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-03T13:40:22.939Z",
+      "updatedAt": "2026-11-03T19:13:42.548Z",
       "count": 184,
       "reviewed": 688,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-03T13:40:22.939Z",
+      "attemptedAt": "2026-11-03T19:13:42.548Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92328161",
+      "title": "EDUCADOR/A SOCIOCULTURAL (ESPAI LUDOTECA)",
+      "school": "Empresa del sector dels serveis culturals",
+      "city": "BARCELONA - BARCELONÈS - 08012 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328161",
+      "snippet": "Cerquem una persona per a incorporar-se al nostre equip de treball com a Tècnic/a especialitzada Nivell A, segons el Conveni del Lleure, per treballar en una ludoteca de Barcelona 30 hores setmanals.",
+      "created": "1793713865200",
+      "expires": "2027-02-01T13:51:05.196Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92328123",
       "title": "MONITORS/MONITORES DE MIGDIA",
@@ -133,18 +145,6 @@
       "snippet": "Es necessiten monitors/monitores per realitzar activitats educatives i dinamització d'infants en horari de tarda, garantint el seu benestar i seguiment educatiu.",
       "created": "1793276445249",
       "expires": "2027-01-27T12:20:45.246Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92327908",
-      "title": "MONITORS/MONITORES ACTIVITATS DE LLEURE- PERAFITA (LLUÇANÈS)",
-      "school": "Empresa de formació",
-      "city": "BARCELONA - LLUÇANÈS - 08589 PERAFITA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327908",
-      "snippet": "Es precisa personal com a monitors/monitores de lleure per a realització d´activitats de cura d'infants serveis esporàdics de canguratge a la població de Perafita, i possibilitat en altres zones del Lluçanès. Els dimecres en horari de tarda.",
-      "created": "1793274997593",
-      "expires": "2027-01-27T11:56:37.590Z",
       "automatic": true
     },
     {
