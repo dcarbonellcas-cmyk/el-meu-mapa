@@ -20,17 +20,18 @@ function inferCandidatureRole(place,filter='all'){
 }
 function composeCandidature(place,role,profile){
   const config=CANDIDATURE_ROLES[role]||CANDIDATURE_ROLES.monitoratge;
-  const name=String(profile.name||'[El teu nom]').trim();
-  const experience=String(profile.roleBio?.[role]||'').trim()||'[Completa l’experiència d’aquest àmbit a Documents]';
+  const name=String(profile.name||'Diana').trim();
+  const experience=String(profile.roleBio?.[role]||'').trim();
   const centre=String(place.name||'el vostre centre').trim(),city=String(place.city||'').trim();
   const subject='Candidatura – '+config.label+' – '+centre+' – '+name;
+  if(!experience)return {subject,body:'',ready:false};
   const body='A l’equip de '+centre+',\n\n'+
     'Em dic '+name+' i us faig arribar la meva candidatura com a '+config.title+' a '+centre+(city?' ('+city+')':'')+'. M’agradaria que poguéssiu valorar el meu perfil per a les oportunitats actuals o futures del vostre equip.\n\n'+
     experience+'\n\n'+
     'M’interessa aportar aquesta experiència a '+centre+' per '+config.focus+'.\n\n'+
     'Us adjunto la documentació de la candidatura. Podeu consultar també el meu currículum professional complet aquí:\nhttps://diana-carbonell-curriculum.dcarbonellcas.chatgpt.site/\n\n'+
-    'Resto a la vostra disposició per ampliar la informació o conversar sobre com podria encaixar en el vostre equip.\n\nMoltes gràcies pel vostre temps.\n\nAtentament,\n'+name;
-  return {subject,body};
+    'Resto a la vostra disposició per ampliar la informació o conversar sobre com podria encaixar en el vostre equip.\n\nMoltes gràcies pel vostre temps.\n\nAtentament,\nDiana';
+  return {subject,body,ready:true};
 }
 (() => {
   const select=document.getElementById('draftRole'),hint=document.getElementById('draftRoleHint');
@@ -42,7 +43,9 @@ function composeCandidature(place,role,profile){
     if(checkEdits&&lastGenerated&&(subject.value!==lastGenerated.subject||body.value!==lastGenerated.body)&&!confirm('Has editat l’escrit. Vols substituir-lo pel text del nou tipus de candidatura?')){select.value=lastRole;return}
     const role=select.value;lastGenerated=composeCandidature(place,role,candidateProfile());lastRole=role;
     subject.value=lastGenerated.subject;body.value=lastGenerated.body;
-    hint.textContent=candidateProfile().roleBio?.[role]?'Text adaptat a '+place.name+' i al tipus de candidatura. El pots editar abans d’enviar.':'Falta l’experiència d’aquest àmbit. Completa-la a Documents per preparar l’escrit.';
+    document.getElementById('sendGmail').disabled=!lastGenerated.ready;
+    document.getElementById('sendGmail').textContent='✉ Enviar amb Gmail';
+    hint.textContent=candidateProfile().roleBio?.[role]?'Text adaptat a '+place.name+' i al tipus de candidatura. El pots editar abans d’enviar.':'Aquest navegador no té guardada l’experiència d’aquest àmbit. Recupera el teu perfil a Documents per generar el correu complet. No s’ha preparat cap text incomplet.';
   }
   window.beginTailoredDraft=target=>{place=target;const filter=typeof leisureFilter!=='undefined'?leisureFilter:'all';select.value=inferCandidatureRole(target,filter);lastGenerated=null;generate(false)};
   select.addEventListener('change',()=>generate());document.getElementById('regenerateDraft').addEventListener('click',()=>generate());

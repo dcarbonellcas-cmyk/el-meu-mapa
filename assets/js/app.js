@@ -1,7 +1,7 @@
 // Classic scripts retain the shared functions used by existing controls.
 (async function(){
   function loadScript(path){return new Promise((resolve,reject)=>{
-    const script=document.createElement('script');script.src=path+'?v=20261103-gmail-popup';script.async=false;
+    const script=document.createElement('script');script.src=path+'?v=20261103-correu-complet';script.async=false;
     script.onload=resolve;script.onerror=()=>reject(new Error('No s’ha pogut carregar '+path));document.body.appendChild(script);
   })}
   try{
