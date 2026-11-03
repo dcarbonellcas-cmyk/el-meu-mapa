@@ -49,12 +49,14 @@ async function sendWithGmail(){
     if(!snapshot.to||/[\r\n]/.test(snapshot.to))throw new Error('Correu del destinatari no vàlid.');
     const last=hist(id).find(x=>x.type==='sent');
     if(last&&!confirm('Ja consta un enviament el '+fmt(last.date)+'. Vols preparar un altre enviament?'))return;
-    if(!await reviewApplication(snapshot))return;
+    await reviewApplication(snapshot,()=>authorizeReviewedGmail(snapshot));
   }catch(e){gmailNotice(e.message);return}finally{sendReviewBusy=false}
+}
+function authorizeReviewedGmail(snapshot){
   const btn=document.getElementById('sendGmail'); btn.disabled=true; btn.textContent='Connectant amb Gmail…'; gmailNotice('Autoritza el teu compte de Gmail a la finestra de Google.');
   if(!(window.google&&google.accounts&&google.accounts.oauth2)){gmailNotice('Google encara no s’ha carregat. Espera uns segons i torna-ho a provar.');btn.disabled=false;btn.textContent='✉ Enviar amb Gmail';return}
-  gmailTokenClient=google.accounts.oauth2.initTokenClient({client_id:GMAIL_CLIENT_ID,scope:GMAIL_SCOPE,callback:(resp)=>{if(resp.error){gmailNotice('No s’ha pogut autoritzar Gmail: '+resp.error);btn.disabled=false;btn.textContent='✉ Enviar amb Gmail';return}actuallySendGmail(resp.access_token,snapshot)}});
-  gmailTokenClient.requestAccessToken({prompt:''});
+  gmailTokenClient=google.accounts.oauth2.initTokenClient({client_id:GMAIL_CLIENT_ID,scope:GMAIL_SCOPE,error_callback:(err)=>{gmailNotice(err?.type==='popup_closed'?'Has tancat la finestra de Google. No s’ha enviat cap correu.':'No s’ha pogut obrir Google. Obre aquesta web amb Safari o Chrome i permet les finestres emergents. No s’ha enviat cap correu.');btn.disabled=false;btn.textContent='✉ Enviar amb Gmail'},callback:(resp)=>{if(resp.error||!resp.access_token){gmailNotice('No s’ha pogut autoritzar Gmail: '+resp.error);btn.disabled=false;btn.textContent='✉ Enviar amb Gmail';return}actuallySendGmail(resp.access_token,snapshot)}});
+  try{gmailTokenClient.requestAccessToken({prompt:''})}catch(err){gmailNotice('No s’ha pogut iniciar Google: '+err.message+'. No s’ha enviat cap correu.');btn.disabled=false;btn.textContent='✉ Enviar amb Gmail'}
 }
 document.getElementById('sendGmail').addEventListener('click',sendWithGmail);
 

@@ -21,7 +21,7 @@ async function renderSentArchive(){
     if(!rows.length){const p=document.createElement('p');p.textContent='Encara no hi ha enviaments arxivats.';host.append(p)}
   }catch(e){host.textContent='No s’ha pogut llegir l’historial privat: '+e.message}
 }
-function reviewApplication(snapshot){return new Promise(resolve=>{
+function reviewApplication(snapshot,onConfirm){return new Promise(resolve=>{
   const dialog=document.createElement('dialog');dialog.style.cssText='max-width:640px;width:calc(100% - 48px);border:1px solid #ccd9eb;border-radius:16px;padding:24px';
   const title=document.createElement('h2');title.textContent='Revisió abans d’enviar';
   const text=document.createElement('pre');text.style.cssText='white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;max-height:55vh;overflow:auto';
@@ -29,7 +29,7 @@ function reviewApplication(snapshot){return new Promise(resolve=>{
   const cancel=document.createElement('button');cancel.className='smallBtn';cancel.textContent='Tornar a editar';
   const send=document.createElement('button');send.className='smallBtn';send.textContent='Confirmar i connectar Gmail';
   let done=false;const finish=value=>{if(done)return;done=true;dialog.close();dialog.remove();resolve(value)};
-  cancel.onclick=()=>finish(false);send.onclick=()=>finish(true);dialog.oncancel=e=>{e.preventDefault();finish(false)};
+  cancel.onclick=()=>finish(false);send.onclick=()=>{finish(true);onConfirm?.()};dialog.oncancel=e=>{e.preventDefault();finish(false)};
   dialog.append(title,text,cancel,send);document.body.append(dialog);dialog.showModal();
 })}
 document.getElementById('refreshSentArchive')?.addEventListener('click',renderSentArchive);

@@ -13,3 +13,19 @@ const snapshot={id:'centre-1',centre:'Escola de prova',role:'Infantil',to:'prova
 test('send uses reviewed snapshot and archives exact message after Gmail success',async()=>{const x=setup();await x.ctx.actuallySendGmail('token',snapshot);assert.equal(x.requests.length,1);assert.equal(x.saved[0].body,snapshot.body);assert.equal(x.saved[0].gmailId,'gmail-123');assert.deepEqual(x.saved[0].attachments[0].name,'CV.pdf');assert.equal(x.statuses[0][0],'status_centre-1')});
 test('Gmail rejection never archives a sent message',async()=>{const x=setup({httpFails:true});await x.ctx.actuallySendGmail('token',snapshot);assert.equal(x.saved.length,0);assert.equal(x.statuses.length,0);assert.match(x.elements.gmailNotice.textContent,/No s’ha enviat/)});
 test('archive failure after delivery warns without encouraging duplicate send',async()=>{const x=setup({archiveFails:true});await x.ctx.actuallySendGmail('token',snapshot);assert.match(x.elements.gmailNotice.textContent,/Gmail ha enviat/);assert.equal(x.elements.sendGmail.disabled,true);assert.equal(x.requests.length,1)});
+
+test('blocked Google popup re-enables sending and never calls Gmail send',()=>{
+ const x=setup();let config;
+ x.ctx.google={accounts:{oauth2:{initTokenClient:c=>{config=c;return {requestAccessToken(){c.error_callback({type:'popup_failed_to_open'})}}}}}};x.ctx.window.google=x.ctx.google;
+ x.ctx.authorizeReviewedGmail(snapshot);
+ assert.equal(x.elements.sendGmail.disabled,false);assert.match(x.elements.gmailNotice.textContent,/No s’ha pogut obrir Google/);assert.equal(x.requests.length,0);assert(config.error_callback);
+});
+test('closing Google authorization never sends and permits retry',()=>{
+ const x=setup();x.ctx.google={accounts:{oauth2:{initTokenClient:c=>({requestAccessToken(){c.error_callback({type:'popup_closed'})}})}}};x.ctx.window.google=x.ctx.google;
+ x.ctx.authorizeReviewedGmail(snapshot);assert.equal(x.elements.sendGmail.disabled,false);assert.equal(x.requests.length,0);assert.match(x.elements.gmailNotice.textContent,/Has tancat/);
+});
+test('review confirmation invokes authorization inside the click handler',async()=>{
+ const reviewSource=fs.readFileSync(new URL('../assets/js/enviaments.js',import.meta.url),'utf8');const nodes=[];let confirmed=false;
+ const context={document:{getElementById:()=>null,createElement:tag=>{const n={tag,style:{},append(){},showModal(){},close(){},remove(){}};nodes.push(n);return n},body:{append(){}}}};
+ vm.createContext(context);vm.runInContext(reviewSource,context);const pending=context.reviewApplication(snapshot,()=>{confirmed=true});nodes.find(n=>n.textContent==='Confirmar i connectar Gmail').onclick();assert.equal(confirmed,true);assert.equal(await pending,true);
+});
