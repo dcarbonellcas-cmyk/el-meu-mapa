@@ -15,10 +15,16 @@
       }).join('')}</details>`;
     }).join('')||'<p>No hi ha coincidències.</p>';
   }
-  function tracking(x){const id=String(x.id),favorite=localStorage.getItem('favorite_'+id)==='true',sent=hist(id).some(h=>h.type==='sent');return '<button type="button" class="smallBtn" data-favorite="'+esc(id)+'" aria-pressed="'+favorite+'" aria-label="Guardar '+esc(x.name)+' com a favorit">'+(favorite?'★ Favorit':'☆ Guardar')+'</button> '+(sent?'<small>Ja contactat</small>':'<small>Sense enviaments registrats</small>')}
+  function hasSent(id){return state(id)==='sent'||hist(id).some(h=>h.type==='sent')}
+  function tracking(x){
+    const id=String(x.id),favorite=localStorage.getItem('favorite_'+id)==='true',last=hist(id).find(h=>h.type==='sent');
+    const sent=hasSent(id),label=sent?'✓ CV enviat':'Sense enviaments registrats';
+    return '<button type="button" class="smallBtn" data-favorite="'+esc(id)+'" aria-pressed="'+favorite+'" aria-label="Guardar '+esc(x.name)+' com a favorit">'+(favorite?'★ Favorit':'☆ Guardar')+'</button> '+(sent?'<button type="button" class="smallBtn" data-directory-id="'+esc(id)+'" style="background:#dcfce7;border-color:#86c99a;color:#166534;font-weight:800" aria-label="Veure enviaments de '+esc(x.name)+'" title="'+(last?'CV enviat el '+esc(fmt(last.date)):'Candidatura marcada com a enviada')+'">'+label+'</button>':'<small>'+label+'</small>');
+  }
   for(const prefix of ['schoolDirectory','leisureDirectory']){const filter=document.createElement('select');filter.id=prefix+'Tracking';filter.className='smallBtn';filter.innerHTML='<option value="">Tots els llocs</option><option value="favorites">Només favorits</option><option value="new">Sense contactar</option><option value="sent">Ja contactats</option>';document.getElementById(prefix+'Search').after(filter);filter.addEventListener('change',()=>{schoolsList();leisureList()})}
-  function matchesTracking(x,prefix){const f=document.getElementById(prefix+'Tracking').value;return f==='favorites'?localStorage.getItem('favorite_'+x.id)==='true':f==='new'?!hist(x.id).some(h=>h.type==='sent'):f==='sent'?hist(x.id).some(h=>h.type==='sent'):true}
+  function matchesTracking(x,prefix){const f=document.getElementById(prefix+'Tracking').value;return f==='favorites'?localStorage.getItem('favorite_'+x.id)==='true':f==='new'?!hasSent(x.id):f==='sent'?hasSent(x.id):true}
   document.addEventListener('click',e=>{const b=e.target.closest('[data-favorite]');if(!b)return;const key='favorite_'+b.dataset.favorite;localStorage.setItem(key,localStorage.getItem(key)==='true'?'false':'true');schoolsList();leisureList()});
+  document.addEventListener('candidature-history-changed',()=>{schoolsList();leisureList()});
   window.addEventListener('storage',()=>{schoolsList();leisureList()});
   function schoolsList(){
     const valid=x=>Number.isFinite(x.lat)&&Number.isFinite(x.lng);
