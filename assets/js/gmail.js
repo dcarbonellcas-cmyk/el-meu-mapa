@@ -19,31 +19,41 @@ async function buildGmailRaw(to,subject,body,docs){
   }
   mime+='--'+boundary+'--'; return base64urlUtf8(mime);
 }
-async function actuallySendGmail(accessToken){
+async function actuallySendGmail(accessToken,snapshot){
+  let delivered=false;
   const btn=document.getElementById('sendGmail');
   try{
-    const to=document.getElementById('draftTo').value.trim(), subject=document.getElementById('draftSubject').value, body=document.getElementById('draftBody').value;
-    if(!to) throw new Error('Aquest centre no té correu electrònic.');
-    const docs=await candidatureDocuments();
-    const h=hist(currentDraftSchoolId), last=h.find(x=>x.type==='sent');
-    if(last&&!confirm('⚠️ Ja consta un CV enviat el '+fmt(last.date)+'. Vols tornar a enviar una candidatura a aquest centre?')){btn.disabled=false;btn.textContent='✉ Enviar amb Gmail';return}
-    if(!confirm('Enviar ara aquesta candidatura a '+to+' des del teu compte de Gmail?\n\nAdjunts:\n'+docs.map(d=>'• '+d.name).join('\n'))){btn.disabled=false;btn.textContent='✉ Enviar amb Gmail';return}
+    const {to,subject,body,docs,id}=snapshot;
     gmailNotice('Enviant candidatura…');
     const raw=await buildGmailRaw(to,subject,body,docs);
     const res=await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send',{method:'POST',headers:{Authorization:'Bearer '+accessToken,'Content-Type':'application/json'},body:JSON.stringify({raw})});
     if(!res.ok){let detail='';try{detail=(await res.json()).error?.message||''}catch(e){};throw new Error(detail||('Error de Gmail ('+res.status+')'))}
-    localStorage.setItem('status_'+currentDraftSchoolId,'sent'); addHist(currentDraftSchoolId,'sent',lastSent(currentDraftSchoolId)?'CV renovat i enviat amb Gmail':'CV enviat amb Gmail');
+    delivered=true; const receipt=await res.json();
+    localStorage.setItem('status_'+id,'sent'); addHist(id,'sent',lastSent(id)?'CV renovat i enviat amb Gmail':'CV enviat amb Gmail');
+    await applicationArchive('put',{gmailId:receipt.id,threadId:receipt.threadId,id,centre:snapshot.centre,role:snapshot.role,to,subject,body,sentAt:new Date().toISOString(),attachments:docs.map(d=>({name:d.name,type:d.type,size:d.blob.size}))});
+    await renderSentArchive();
     gmailNotice('✓ Candidatura enviada correctament amb Gmail.',true); btn.textContent='✓ Enviat';
     if(typeof draw==='function') draw(); if(typeof drawMap==='function') drawMap(); if(typeof window.__renderLeisure==='function') window.__renderLeisure(); if(typeof select==='function' && !String(currentDraftSchoolId).startsWith('lleure_')) setTimeout(()=>select(currentDraftSchoolId),700);
-  }catch(err){gmailNotice('No s’ha enviat: '+(err.message||err));btn.disabled=false;btn.textContent='✉ Enviar amb Gmail'}
+  }catch(err){gmailNotice((delivered?'Gmail ha enviat la candidatura, però no s’ha pogut guardar la còpia local. No la tornis a enviar: ':'No s’ha enviat: ')+(err.message||err),delivered);btn.disabled=delivered;btn.textContent=delivered?'✓ Enviat':'✉ Enviar amb Gmail'}
 }
-function sendWithGmail(){
+let sendReviewBusy=false;
+async function sendWithGmail(){
+  if(sendReviewBusy)return;
   const draft=document.getElementById('draftSubject').value+' '+document.getElementById('draftBody').value;
   if(draft.includes('[El teu nom]')||draft.includes('[La teva formació i experiència]')||draft.includes('[Completa l’experiència')){gmailNotice('Completa el teu nom i formació a Documents o edita l’esborrany abans d’enviar.');return}
 
+  let snapshot;sendReviewBusy=true;
+  try{
+    const id=String(currentDraftSchoolId),place=[...schools,...LEISURE_ENTITIES,...(typeof INFANT_ENTITIES!=='undefined'?INFANT_ENTITIES:[])].find(x=>String(x.id)===id);
+    snapshot={id,centre:place?.name||document.getElementById('draftSubject').value,role:document.getElementById('draftRole').selectedOptions[0]?.textContent||'',to:document.getElementById('draftTo').value.trim(),subject:document.getElementById('draftSubject').value,body:document.getElementById('draftBody').value,docs:await candidatureDocuments()};
+    if(!snapshot.to||/[\r\n]/.test(snapshot.to))throw new Error('Correu del destinatari no vàlid.');
+    const last=hist(id).find(x=>x.type==='sent');
+    if(last&&!confirm('Ja consta un enviament el '+fmt(last.date)+'. Vols preparar un altre enviament?'))return;
+    if(!await reviewApplication(snapshot))return;
+  }catch(e){gmailNotice(e.message);return}finally{sendReviewBusy=false}
   const btn=document.getElementById('sendGmail'); btn.disabled=true; btn.textContent='Connectant amb Gmail…'; gmailNotice('Autoritza el teu compte de Gmail a la finestra de Google.');
   if(!(window.google&&google.accounts&&google.accounts.oauth2)){gmailNotice('Google encara no s’ha carregat. Espera uns segons i torna-ho a provar.');btn.disabled=false;btn.textContent='✉ Enviar amb Gmail';return}
-  gmailTokenClient=google.accounts.oauth2.initTokenClient({client_id:GMAIL_CLIENT_ID,scope:GMAIL_SCOPE,callback:(resp)=>{if(resp.error){gmailNotice('No s’ha pogut autoritzar Gmail: '+resp.error);btn.disabled=false;btn.textContent='✉ Enviar amb Gmail';return}actuallySendGmail(resp.access_token)}});
+  gmailTokenClient=google.accounts.oauth2.initTokenClient({client_id:GMAIL_CLIENT_ID,scope:GMAIL_SCOPE,callback:(resp)=>{if(resp.error){gmailNotice('No s’ha pogut autoritzar Gmail: '+resp.error);btn.disabled=false;btn.textContent='✉ Enviar amb Gmail';return}actuallySendGmail(resp.access_token,snapshot)}});
   gmailTokenClient.requestAccessToken({prompt:''});
 }
 document.getElementById('sendGmail').addEventListener('click',sendWithGmail);

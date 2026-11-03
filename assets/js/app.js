@@ -1,7 +1,7 @@
 // Classic scripts retain the shared functions used by existing controls.
 (async function(){
   function loadScript(path){return new Promise((resolve,reject)=>{
-    const script=document.createElement('script');script.src=path+'?v=20261103-personalitzat';script.async=false;
+    const script=document.createElement('script');script.src=path+'?v=20261103-seguiment';script.async=false;
     script.onload=resolve;script.onerror=()=>reject(new Error('No s’ha pogut carregar '+path));document.body.appendChild(script);
   })}
   try{
@@ -14,7 +14,7 @@
       window.MAPA_DATA={centres,entitats,archived};
     }
     if(typeof L==='undefined')throw new Error('No s’ha pogut carregar el mapa. Comprova la connexió a Internet i recarrega la pàgina.');
-    for(const file of ['perfil','renovacions','mapes','infantil','candidatures','documents','candidatura-personalitzada','ofertes','lleure','gmail','gmail-feed','private-sync','navegacio','historial','candidatures-entitats','directoris','fonts']){
+    for(const file of ['perfil','renovacions','mapes','infantil','candidatures','documents','candidatura-personalitzada','ofertes','lleure','enviaments','gmail','gmail-feed','private-sync','navegacio','historial','candidatures-entitats','directoris','fonts']){
       await loadScript('assets/js/'+file+'.js');
     }
     window.MAPA_READY=true;
