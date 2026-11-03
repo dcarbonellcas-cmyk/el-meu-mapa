@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: '22'
       - run: npm install --ignore-scripts --no-audit --no-fund
-      - run: node --test scripts/sync.test.mjs scripts/profile-sync.test.mjs scripts/renovacions.test.mjs
+      - run: node --test scripts/*.test.mjs
       - run: node scripts/sync.mjs
       - name: Actualitzar alertes privades, si estan connectades
         run: node scripts/gmail-sync.mjs

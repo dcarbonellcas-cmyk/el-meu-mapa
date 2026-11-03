@@ -7,10 +7,12 @@ async function saveDoc(key,file,options={}){
   if(!options.restoring)document.dispatchEvent(new Event('private-data-changed'));
 }
 async function getDoc(key){const db=await docDB();return new Promise((resolve,reject)=>{const r=db.transaction(DOC_STORE,'readonly').objectStore(DOC_STORE).get(key);r.onsuccess=()=>resolve(r.result||null);r.onerror=()=>reject(r.error)})}
-async function refreshDocs(){for(const [key,nameId,btnId] of [['cv','cvFileName','cvOpen'],['letter','letterFileName','letterOpen']]){let d=null;try{d=await getDoc(key)}catch(e){};document.getElementById(nameId).textContent=d?('✓ '+d.name):'Cap fitxer guardat';document.getElementById(btnId).style.display=d?'inline-block':'none'}}
+async function refreshDocs(){for(const [key,nameId,btnId] of [['cv','cvFileName','cvOpen'],['letter','letterFileName','letterOpen']]){let d=null;try{d=await getDoc(key)}catch(e){};document.getElementById(nameId).textContent=d?('✓ '+d.name):'Cap fitxer guardat';document.getElementById(btnId).style.display=d?'inline-block':'none'}await refreshOptionalDocs()}
 async function openDoc(key){const d=await getDoc(key);if(!d)return;const u=URL.createObjectURL(d.blob);window.open(u,'_blank');setTimeout(()=>URL.revokeObjectURL(u),60000)}
 function showMailDraft(s,subject,body){
   currentDraftSchoolId=String(s.id);
+  document.getElementById('includeCvAlternative').checked=true;
+  document.getElementById('includeRecommendation').checked=false;
   document.getElementById('draftTo').value=s.email||'';
   document.getElementById('draftSubject').value=subject||'';
   const cvDigitalUrl='https://diana-carbonell-curriculum.wiryrose64.chatgpt.site/';
@@ -41,3 +43,22 @@ document.getElementById('cvFileInput').addEventListener('change',async e=>{const
 document.getElementById('letterFileInput').addEventListener('change',async e=>{const f=e.target.files[0];if(f){await saveDoc('letter',f);await refreshDocs();}e.target.value=''});
 document.getElementById('cvOpen').addEventListener('click',()=>openDoc('cv'));
 document.getElementById('letterOpen').addEventListener('click',()=>openDoc('letter'));
+
+async function refreshOptionalDocs(){
+  for(const [key,id] of [['cvAlternative','draftCvAlternativeName'],['recommendation','draftRecommendationName']]){
+    const file=await getDoc(key);document.getElementById(id).textContent=file?'— '+file.name:'— falta seleccionar el fitxer a Documents';
+  }
+  const cv=await getDoc('cv'),letter=await getDoc('letter');
+  document.getElementById('draftAttachmentsNotice').textContent=(!cv||!letter)?'Falta el currículum complet o la carta de presentació. Selecciona’ls abans d’enviar.':'';
+}
+async function candidatureDocuments(){
+  const cv=await getDoc('cv'),letter=await getDoc('letter');
+  if(!cv||!letter)throw new Error('Selecciona el currículum complet i la carta de presentació abans d’enviar.');
+  const docs=[cv,letter];
+  for(const [key,id,label] of [['cvAlternative','includeCvAlternative','segon currículum'],['recommendation','includeRecommendation','carta de recomanació']]){
+    if(!document.getElementById(id).checked)continue;
+    const file=await getDoc(key);if(!file)throw new Error('Has seleccionat adjuntar '+label+', però falta el fitxer. Carrega’l a Documents o desmarca aquesta opció.');
+    docs.push(file);
+  }
+  return docs;
+}

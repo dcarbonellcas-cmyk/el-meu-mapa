@@ -1,7 +1,7 @@
 // Google Drive appDataFolder only. Access tokens stay in memory.
 (() => {
   const CLIENT='326278371839-alsvhik4agj0jqp6ps16ve3j722q6p2k.apps.googleusercontent.com';
-  const names={profile:'mapa-profile-v1.json',cv:'mapa-cv-v1.json',letter:'mapa-letter-v1.json'};
+  const names={profile:'mapa-profile-v1.json',cv:'mapa-cv-v1.json',letter:'mapa-letter-v1.json',cvAlternative:'mapa-cvAlternative-v1.json',recommendation:'mapa-recommendation-v1.json'};
   const button=document.getElementById('connectPrivateDrive'),status=document.getElementById('privateSyncStatus');
   let token='',expiry=0,busy=false,again=false,timer=null,connected=false,revision=0;
   const say=text=>{status.textContent=text};

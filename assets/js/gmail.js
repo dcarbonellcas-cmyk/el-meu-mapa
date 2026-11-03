@@ -24,13 +24,12 @@ async function actuallySendGmail(accessToken){
   try{
     const to=document.getElementById('draftTo').value.trim(), subject=document.getElementById('draftSubject').value, body=document.getElementById('draftBody').value;
     if(!to) throw new Error('Aquest centre no té correu electrònic.');
-    const cv=await getDoc('cv'), letter=await getDoc('letter');
-    if(!cv||!letter) throw new Error('Abans d’enviar, selecciona el currículum i la carta de presentació.');
+    const docs=await candidatureDocuments();
     const h=hist(currentDraftSchoolId), last=h.find(x=>x.type==='sent');
     if(last&&!confirm('⚠️ Ja consta un CV enviat el '+fmt(last.date)+'. Vols tornar a enviar una candidatura a aquest centre?')){btn.disabled=false;btn.textContent='✉ Enviar amb Gmail';return}
-    if(!confirm('Enviar ara aquesta candidatura a '+to+' des del teu compte de Gmail, amb el CV i la carta adjunts?')){btn.disabled=false;btn.textContent='✉ Enviar amb Gmail';return}
+    if(!confirm('Enviar ara aquesta candidatura a '+to+' des del teu compte de Gmail?\n\nAdjunts:\n'+docs.map(d=>'• '+d.name).join('\n'))){btn.disabled=false;btn.textContent='✉ Enviar amb Gmail';return}
     gmailNotice('Enviant candidatura…');
-    const raw=await buildGmailRaw(to,subject,body,[cv,letter]);
+    const raw=await buildGmailRaw(to,subject,body,docs);
     const res=await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send',{method:'POST',headers:{Authorization:'Bearer '+accessToken,'Content-Type':'application/json'},body:JSON.stringify({raw})});
     if(!res.ok){let detail='';try{detail=(await res.json()).error?.message||''}catch(e){};throw new Error(detail||('Error de Gmail ('+res.status+')'))}
     localStorage.setItem('status_'+currentDraftSchoolId,'sent'); addHist(currentDraftSchoolId,'sent',lastSent(currentDraftSchoolId)?'CV renovat i enviat amb Gmail':'CV enviat amb Gmail');
