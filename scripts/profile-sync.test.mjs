@@ -17,8 +17,8 @@ function setup({profile={},docs={},remote={},failure=0}={}){
     document:{hidden:false,getElementById:node,querySelectorAll:()=>[],addEventListener:(type,fn)=>events.set(type,fn),dispatchEvent:e=>events.get(e.type)?.(e)},
     window:{addEventListener:()=>{}},
     candidateProfile:()=>JSON.parse(storage.get('mapaEscolesProfile_v1')||'{}'),
-    getDoc:async key=>docs[key]||null,
-    saveDoc:async(key,file,options)=>{docs[key]={blob:file,name:file.name,type:file.type,updated:options.updated}},
+    getDoc:async(key,options={})=>docs[key]&&(!docs[key].deleted||options.includeDeleted)?docs[key]:null,
+    saveDoc:async(key,file,options)=>{docs[key]={blob:file,name:file.name,type:file.type,deleted:!!options.deleted,updated:options.updated}},
     blobBase64:async blob=>Buffer.from(await blob.arrayBuffer()).toString('base64'),
     fetch:async(url,options)=>{
       calls.push({url,options});
@@ -79,4 +79,14 @@ test('role-specific experience is restored privately on the second device',async
   const roleBio={infantil03:'Nursery experience',direccio:'Director experience'};
   const s=setup({remote:{profile:record('profile','2026-11-02T12:00:00Z',{roleBio})}});await s.connect();
   assert.deepEqual(JSON.parse(s.storage.get('mapaEscolesProfile_v1')).roleBio,roleBio);
+});
+
+test('newer trash marker reaches second device without resurrecting the PDF',async()=>{
+ const s=setup({docs:{cv:{name:'Old.pdf',type:'application/pdf',blob:new Blob(['old']),updated:'2026-11-01T12:00:00Z'}},remote:{cv:record('cv','2026-11-02T12:00:00Z',{deleted:true})}});await s.connect();assert.equal(s.docs.cv.deleted,true);assert.equal(await s.docs.cv.blob.text(),'pdf');assert(!s.calls.some(x=>x.options.method==='PATCH'));
+});
+test('moving local document to trash updates cloud marker and preserves recoverable data',async()=>{
+ const s=setup({docs:{cv:{name:'CV.pdf',type:'application/pdf',blob:new Blob(['pdf']),deleted:true,updated:'2026-11-03T12:00:00Z'}},remote:{cv:record('cv','2026-11-02T12:00:00Z')}});await s.connect();assert.equal(s.files.get('cv').value.deleted,true);assert.equal(s.files.get('cv').value.data,'cGRm');
+});
+test('restoring a newer local document clears remote trash state',async()=>{
+ const s=setup({docs:{cv:{name:'CV.pdf',type:'application/pdf',blob:new Blob(['pdf']),deleted:false,updated:'2026-11-03T12:00:00Z'}},remote:{cv:record('cv','2026-11-02T12:00:00Z',{deleted:true})}});await s.connect();assert.equal(s.files.get('cv').value.deleted,false);
 });

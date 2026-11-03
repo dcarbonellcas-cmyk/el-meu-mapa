@@ -3,10 +3,11 @@ const DOC_DB='mapaEscolesDocuments', DOC_STORE='files';
 function docDB(){return new Promise((resolve,reject)=>{const r=indexedDB.open(DOC_DB,1);r.onupgradeneeded=()=>{if(!r.result.objectStoreNames.contains(DOC_STORE))r.result.createObjectStore(DOC_STORE)};r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})}
 async function saveDoc(key,file,options={}){
   const db=await docDB();
-  await new Promise((resolve,reject)=>{const tx=db.transaction(DOC_STORE,'readwrite');tx.objectStore(DOC_STORE).put({name:file.name,type:file.type||'application/octet-stream',blob:file,updated:options.updated||new Date().toISOString()},key);tx.oncomplete=()=>{db.close();resolve()};tx.onerror=()=>{db.close();reject(tx.error)};tx.onabort=()=>{db.close();reject(tx.error||new Error('No s’ha guardat el document'))}});
+  await new Promise((resolve,reject)=>{const tx=db.transaction(DOC_STORE,'readwrite');tx.objectStore(DOC_STORE).put({name:file.name,type:file.type||'application/octet-stream',blob:file,deleted:!!options.deleted,updated:options.updated||new Date().toISOString()},key);tx.oncomplete=()=>{db.close();resolve()};tx.onerror=()=>{db.close();reject(tx.error)};tx.onabort=()=>{db.close();reject(tx.error||new Error('No s’ha guardat el document'))}});
+  if(typeof navigator!=='undefined'&&navigator.storage?.persist)navigator.storage.persist().catch(()=>{});
   if(!options.restoring)document.dispatchEvent(new Event('private-data-changed'));
 }
-async function getDoc(key){const db=await docDB();return new Promise((resolve,reject)=>{const r=db.transaction(DOC_STORE,'readonly').objectStore(DOC_STORE).get(key);r.onsuccess=()=>resolve(r.result||null);r.onerror=()=>reject(r.error)})}
+async function getDoc(key,options={}){const db=await docDB();return new Promise((resolve,reject)=>{const r=db.transaction(DOC_STORE,'readonly').objectStore(DOC_STORE).get(key);r.onsuccess=()=>{db.close();resolve(r.result&&(!r.result.deleted||options.includeDeleted)?r.result:null)};r.onerror=()=>reject(r.error)})}
 async function refreshDocs(){for(const [key,nameId,btnId] of [['cv','cvFileName','cvOpen'],['letter','letterFileName','letterOpen']]){let d=null;try{d=await getDoc(key)}catch(e){};document.getElementById(nameId).textContent=d?('✓ '+d.name):'Cap fitxer guardat';document.getElementById(btnId).style.display=d?'inline-block':'none'}await refreshOptionalDocs()}
 async function openDoc(key){const d=await getDoc(key);if(!d)return;const u=URL.createObjectURL(d.blob);window.open(u,'_blank');setTimeout(()=>URL.revokeObjectURL(u),60000)}
 function showMailDraft(s,subject,body){
@@ -63,3 +64,22 @@ async function candidatureDocuments(){
   }
   return docs;
 }
+
+async function setDocumentDeleted(key,deleted){const record=await getDoc(key,{includeDeleted:true});if(!record)return;await saveDoc(key,new File([record.blob],record.name,{type:record.type}),{deleted});document.dispatchEvent(new Event('private-data-restored'));}
+
+(() => {
+  const slots=[['cv','docsCvOpen','currículum complet'],['cvAlternative','docsCvAlternativeOpen','segon currículum'],['letter','docsLetterOpen','carta de presentació'],['recommendation','docsRecommendationOpen','carta de recomanació']];
+  async function updateDocumentActions(){
+    for(const [key,open,label] of slots){
+      const host=document.getElementById(open)?.parentElement;if(!host)continue;
+      let button=host.querySelector('[data-document-trash]');
+      if(!button){button=document.createElement('button');button.type='button';button.className='smallBtn';button.dataset.documentTrash=key;host.append(button);
+        button.addEventListener('click',async()=>{button.disabled=true;try{const record=await getDoc(key,{includeDeleted:true});if(!record)return;if(!record.deleted&&!confirm('Vols moure aquest document a la paperera? El podràs recuperar amb «Restaurar». Si connectes Google, el canvi se sincronitzarà amb els altres dispositius.'))return;await setDocumentDeleted(key,!record.deleted)}catch(e){alert('No s’ha pogut canviar el document: '+e.message)}finally{button.disabled=false;updateDocumentActions()}});
+      }
+      try{const record=await getDoc(key,{includeDeleted:true});button.hidden=!record;button.textContent=record?.deleted?'↶ Restaurar':'🗑 Paperera';button.setAttribute('aria-label',(record?.deleted?'Restaurar ':'Moure a la paperera: ')+label)}catch{button.hidden=true}
+    }
+  }
+  document.addEventListener('private-data-changed',updateDocumentActions);
+  document.addEventListener('private-data-restored',updateDocumentActions);
+  updateDocumentActions();
+})();
