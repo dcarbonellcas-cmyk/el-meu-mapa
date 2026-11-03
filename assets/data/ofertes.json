@@ -1,20 +1,32 @@
 {
-  "checkedAt": "2026-11-03T07:45:16.897Z",
+  "checkedAt": "2026-11-03T13:40:22.939Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-03T07:45:16.897Z",
-      "count": 185,
-      "reviewed": 687,
+      "updatedAt": "2026-11-03T13:40:22.939Z",
+      "count": 184,
+      "reviewed": 688,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-03T07:45:16.897Z",
+      "attemptedAt": "2026-11-03T13:40:22.939Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92328123",
+      "title": "MONITORS/MONITORES DE MIGDIA",
+      "school": "Centre de formació",
+      "city": "BARCELONA - BARCELONÈS - 08041 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328123",
+      "snippet": "Busquem monitors/monitores de menjador escolar per incorporar-se al nostre equip educatiu durant l'espai del migdia. La persona seleccionada s'encarregarà de la supervisió, dinamització i atenció dels infants durant el servei de dinar i el temps d'esbarjo posterior, promovent hàbits saludables i una bona convivència De",
+      "created": "1793704845587",
+      "expires": "2027-02-01T11:20:45.584Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92328050",
       "title": "EDUCADOR/A SOCIAL",
@@ -988,18 +1000,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92326341",
-      "title": "MONITOR/MONITORA DE MENJADOR",
-      "school": "Escola Proa",
-      "city": "BARCELONA - BARCELONÈS - 08014 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326341",
-      "snippet": "Cerquem un/a monitor/monitora de menjador per l'espai Migdia del curs 2026-2027. Incorporació octubre 2026.",
-      "created": "1791289060443",
-      "expires": "2027-01-04T12:17:40.442Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92326325",
       "title": "EDUCADOR/A CASAL EN FAMÍLIA",
       "school": "FUNDACIÓ IRES",
@@ -1261,18 +1261,6 @@
       "snippet": "Es precisa un/a monitor/monitora de menjador escolar pel curs 2026-27.",
       "created": "1790329420828",
       "expires": "2026-12-24T09:43:40.828Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92325554",
-      "title": "MONITORS/MONITORES ESPAI MIGDIA ESCOLA A SANT ISCLE DE VALLALTA",
-      "school": "SANED",
-      "city": "BARCELONA - MARESME - 08359 SANT ISCLE DE VALLALTA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92325554",
-      "snippet": "Es precisen monitors/monitores de menjador escolar pel curs 2026-27. INCORPORACIÓ INMEDIATA",
-      "created": "1790324923868",
-      "expires": "2026-12-24T08:28:43.867Z",
       "automatic": true
     },
     {
