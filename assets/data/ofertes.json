@@ -1,20 +1,140 @@
 {
-  "checkedAt": "2026-11-04T07:48:06.213Z",
+  "checkedAt": "2026-11-04T13:42:23.458Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-04T07:48:06.213Z",
-      "count": 183,
-      "reviewed": 682,
+      "updatedAt": "2026-11-04T13:42:23.458Z",
+      "count": 192,
+      "reviewed": 700,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-04T07:48:06.213Z",
+      "attemptedAt": "2026-11-04T13:42:23.458Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92328254",
+      "title": "PERSONAL DE MONITORATGE DE CORRETORNS",
+      "school": "Empresa d'Educació i lleure infantil",
+      "city": "BARCELONA - BARCELONÈS - 08041 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328254",
+      "snippet": "Se sol·liciten monitors/monitores de corretorns per cobrir suplències en el servei de menjador escolar.",
+      "created": "1793799452431",
+      "expires": "2027-02-02T13:37:32.427Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92328246",
+      "title": "PROFESSORS/PROFESSORES D'ANGLÈS D'EXTRAESCOLARS - ZONA ST. FELIU CODINES",
+      "school": "Advance Language Training Services, S.L.",
+      "city": "BARCELONA - VALLÈS ORIENTAL - 08182 SANT FELIU DE CODINES",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328246",
+      "snippet": "Es necessiten professors/professores d'Anglès d'extraescolars.",
+      "created": "1793798296110",
+      "expires": "2027-02-02T13:18:16.107Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92328244",
+      "title": "MESTRE/A D'EDUCACIÓ INFANTIL – ESCOLA BRESSOL (LA LLAGOSTA)",
+      "school": "",
+      "city": "BARCELONA - VALLÈS ORIENTAL - 08120 LLAGOSTA, LA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328244",
+      "snippet": "Hola! Tens el Grau en Mestre/a d'Educació Infantil i busques un lloc de feina que et permeti continuar guanyant experiència? EULEN Serveis Sociosanitaris selecciona un/a mestre/a per a una escola bressol ubicada a La Llagosta. Si creus que encaixes amb aquesta descripció, no dubtis a inscriure't. Tenim moltes ganes de ",
+      "created": "1793798230921",
+      "expires": "2027-02-02T13:17:10.918Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92328212",
+      "title": "MONITORS/MONITORES DE MENJADORS ESCOLARS (SUPLÈNCIES) TIANA",
+      "school": "EMPRESA CATERING",
+      "city": "BARCELONA - MARESME - 08391 TIANA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328212",
+      "snippet": "Precisem incorporar a monitors/monitores per menjadors escolars per cobrir suplències de dies puntuals, baixes mèdiques i/o permisos en centre ubicat a Tiana. Cerquem perfils polivalents que puguin estar a qualsevol curs d' infantil i primària.",
+      "created": "1793783605019",
+      "expires": "2027-02-02T09:13:25.016Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92328203",
+      "title": "MONITOR/MONITORA DE REFORÇ ESCOLAR -GAVÀ (BAIX LLOBREGAT)",
+      "school": "FABRA FORMACIÓ S.L.",
+      "city": "BARCELONA - BAIX LLOBREGAT - 08850 GAVÀ",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328203",
+      "snippet": "Busquem un/a monitor/a per a realitzar reforç escolar a alumnat d'Educació Primària a un centre educatiu de la població de Gavà (Baix Llobregat). Horaris de grups: 16:30-18:45h de dilluns a dijous",
+      "created": "1793780502585",
+      "expires": "2027-02-02T08:21:42.582Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92328201",
+      "title": "DIRECTOR/A DE LLEURE- RIUDOMS",
+      "school": "FABRA FORMACIÓ S.L.",
+      "city": "TARRAGONA - BAIX CAMP - 43330 RIUDOMS",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328201",
+      "snippet": "Busquem un/a Director/a de lleure per liderar, coordinar i supervisar activitats de lleure destinades a infants i joves pels dies 23 i 24 de novembre en horari de matí de 9:00-14:00h",
+      "created": "1793780465538",
+      "expires": "2027-02-02T08:21:05.534Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92328199",
+      "title": "PERSONAL DE MONITORATGE DE LLEURE- RIUDOMS (TARRAGONA)",
+      "school": "FABRA FORMACIÓ S.L.",
+      "city": "TARRAGONA - BAIX CAMP - 43330 RIUDOMS",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328199",
+      "snippet": "Busquem monitors/es de lleure per realització d'activitats de lleure destinades a infants i joves.",
+      "created": "1793780434201",
+      "expires": "2027-02-02T08:20:34.198Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92328183",
+      "title": "MONITOR/A PER A SERVEI DE MIGDIA A LLAR D'INFANTS - SANT ADRIÀ - BARCELONA",
+      "school": "Associació Educativa Tropezando con Suerte",
+      "city": "BARCELONA - BARCELONÈS - 08930 SANT ADRIÀ DE BESÒS",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328183",
+      "snippet": "Es necessita monitor/a d'oci i temps lleure per a realitzar una SUBSTITUCIÓ de 5 dies a una llar d'infants a Sant Adrià de Besòs.",
+      "created": "1793779538474",
+      "expires": "2027-02-02T08:05:38.471Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92328182",
+      "title": "MONITOR/A - PERAFITA (LLUÇANÈS- OSONA)",
+      "school": "Empresa de formació",
+      "city": "BARCELONA - LLUÇANÈS - 08589 PERAFITA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328182",
+      "snippet": "Es precisa un/a monitor/a de lleure per a realització d´activitats de lleure educatiu ala població de Perafita (Osona), i possibilitat en altres zones del Lluçanès. Els dimecres en horari de tarda.",
+      "created": "1793779511715",
+      "expires": "2027-02-02T08:05:11.710Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92328180",
+      "title": "MONITOR/A D'EXTRAESCOLAR DE ROBÒTICA A PINEDA DE MAR",
+      "school": "Associació Educativa Tropezando con Suerte",
+      "city": "BARCELONA - MARESME - 08397 PINEDA DE MAR",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328180",
+      "snippet": "Cerquem una persona amb titulació i/o experiència en el món educatiu per dinamitzar una extraescolar de robòtica a Pineda de Mar. Programació i planificació llestes per a impartir cada sessió. Formacions per a la persona dinamitzadora",
+      "created": "1793779403496",
+      "expires": "2027-02-02T08:03:23.492Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92328161",
       "title": "EDUCADOR/A SOCIOCULTURAL (ESPAI LUDOTECA)",
@@ -652,30 +772,6 @@
       "automatic": true
     },
     {
-      "id": "fa_09202630338",
-      "title": "MONITOR DE SUPORT EDUCATIU 10/H SETMANA - PALAFRUGELL",
-      "school": "Oficina de Treball del SOC",
-      "city": "GIRONA - BAIX EMPORDÀ - 17200 PALAFRUGELL",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/09202630338",
-      "snippet": "Empresa del tercer sector necessita per treballar en un centre educatiu de Palafrugell 1 monitor/a. Es requereix experiència en lleure. Es requereix carnet de monitor/a. S’ofereix un contracte de 10h/setmana durant el curs escolar. Salari (brut mensual x 14): 552 €.",
-      "created": "1792072656263",
-      "expires": "2027-01-13T13:57:36.263Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_09202630323",
-      "title": "MONITOR DE SUPORT EDUCATIU 10/H SETMANA - L'ESTARTIT",
-      "school": "Oficina de Treball del SOC",
-      "city": "GIRONA - BAIX EMPORDÀ - 17258 TORROELLA DE MONTGRÍ",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/09202630323",
-      "snippet": "Empresa del tercer sector necessita per treballar en un centre educatiu de l’Estartit 1 monitor/a. Es requereix experiència en lleure. Es requereix carnet de monitor/a. S’ofereix un contracte de 10h/setmana durant el curs escolar. Salari (brut mensual x 14): 552 €.",
-      "created": "1792072468892",
-      "expires": "2027-01-13T13:54:28.892Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92326927",
       "title": "MONITOR/MONITORA ESPAI MIGDIA ESCOLA A CANOVELLES",
       "school": "SANED",
@@ -697,6 +793,18 @@
       "snippet": "Busquem un/a monitor/a de lleure amb disponibilitat per fer suplències en serveis de menjador escolar, en horari de 12.30 h a 15.00 h.",
       "created": "1792066969852",
       "expires": "2027-01-13T12:22:49.841Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92326873",
+      "title": "BUSQUEM EDUCADOR/A SOCIOEDUCATIU/VA SERVEI SOCIOEDUCATIU – PREMIÀ DE DALT",
+      "school": "DIVERSPORT SL",
+      "city": "BARCELONA - MARESME - 08338 PREMIÀ DE DALT",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326873",
+      "snippet": "A Diversport busquem un/a Educador/a per incorporar-se al Servei Socioeducatiu de Premià de Dalt. Busquem una persona propera, dinàmica i amb sensibilitat educativa i social, que vulgui ajudar els infants i adolescents a créixer, aprendre i guanyar confiança en un entorn segur i acollidor. Una oportunitat per posar la ",
+      "created": "1792057245830",
+      "expires": "2027-01-13T09:40:45.823Z",
       "automatic": true
     },
     {
