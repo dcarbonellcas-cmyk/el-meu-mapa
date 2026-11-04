@@ -1,16 +1,16 @@
 {
-  "checkedAt": "2026-11-04T01:38:03.028Z",
+  "checkedAt": "2026-11-04T07:48:06.213Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-04T01:38:03.028Z",
-      "count": 184,
-      "reviewed": 681,
+      "updatedAt": "2026-11-04T07:48:06.213Z",
+      "count": 183,
+      "reviewed": 682,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-04T01:38:03.028Z",
+      "attemptedAt": "2026-11-04T07:48:06.213Z",
       "message": "fetch failed"
     }
   },
@@ -1933,18 +1933,6 @@
       "snippet": "Busquem monitors/monitores de menjador escolar per incorporar-se al nostre equip educatiu durant l'espai del migdia. La persona seleccionada s'encarregarà de la supervisió, dinamització i atenció dels infants durant el servei de dinar i el temps d'esbarjo posterior, promovent hàbits saludables i una bona convivència.",
       "created": "1788857473317",
       "expires": "2026-12-07T08:51:13.316Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_09202626669",
-      "title": "PERSONAL PER MENJADOR ESCOLAR_26669",
-      "school": "Oficina de Treball del SOC",
-      "city": "BARCELONA - VALLÈS OCCIDENTAL - 08174 SANT CUGAT DEL VALLÈS",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/09202626669",
-      "snippet": "Col·legi ubicat a Sant Cugat del Vallès cerca 4 monitors/es de menjador",
-      "created": "1788853881183",
-      "expires": "2026-12-07T07:51:21.183Z",
       "automatic": true
     },
     {
