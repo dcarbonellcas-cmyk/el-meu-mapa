@@ -20,3 +20,5 @@
 @media(max-width:1000px){#explorePage{grid-template-columns:1fr;}#explorePage #detail{grid-column:auto;}#explorePage .mapwrap{padding:14px;}.educationActions .smallBtn{white-space:normal;}}
 
 #explorePage #jobPortals {display:none!important;}
+#explorePage .educationMap .maphead {position:static;margin:0 14px 12px;box-shadow:none;}
+#explorePage .educationMap:not([open]) > .maphead,#explorePage .educationMap:not([open]) > .mapbox {display:none;}
