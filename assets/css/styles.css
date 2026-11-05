@@ -1504,6 +1504,137 @@ body {
   margin-top: 8px;
 }
 
+#explorePage {
+  grid-template-columns: minmax(0, 1fr) 340px;
+  max-width: 1500px;
+  margin: auto;
+}
+
+#explorePage > aside:not(#detail) {
+  display: none;
+}
+
+#explorePage #detail {
+  grid-column: 2;
+}
+
+#explorePage .mapwrap {
+  min-width: 0;
+  padding: 24px;
+}
+
+#explorePage [hidden] {
+  display: none !important;
+}
+
+.educationHub h1 {
+  margin: 4px 0 12px;
+}
+
+.educationStages, .educationViews, .educationTools, .educationActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+  align-items: center;
+}
+
+.educationStages .selected, .educationViews .selected {
+  background: #173b72;
+  color: white;
+  border-color: #173b72;
+}
+
+.educationViews {
+  border-bottom: 1px solid #dce5f2;
+  padding-bottom: 14px;
+}
+
+.educationTools .search {
+  flex: 1;
+  min-width: 180px;
+  width: auto;
+}
+
+.educationSchool {
+  background: white;
+  border: 1px solid #dce5f2;
+  border-radius: 14px;
+  padding: 18px;
+  margin: 12px 0;
+}
+
+.educationSchool h3 {
+  margin: 0 0 8px;
+}
+
+.educationSchool p {
+  margin: 6px 0;
+}
+
+.educationSchool small, .educationGroup summary span {
+  color: #64758a;
+  display: block;
+}
+
+.educationSent {
+  display: inline-block;
+  background: #e2f4e7;
+  color: #176332;
+  padding: 5px 9px;
+  border-radius: 12px;
+  margin-top: 8px;
+}
+
+.educationGroup, .educationMap, .educationCoverage {
+  border: 1px solid #dce5f2;
+  background: white;
+  border-radius: 14px;
+  margin: 14px 0;
+}
+
+.educationGroup summary, .educationMap summary, .educationCoverage summary {
+  padding: 18px;
+  cursor: pointer;
+}
+
+.educationGroup summary span {
+  margin-top: 6px;
+}
+
+.educationGroupBody {
+  padding: 0 18px 18px;
+}
+
+.educationNotice {
+  padding: 14px;
+  background: #fff8e8;
+  border-radius: 10px;
+}
+
+.educationCoverage p, .educationCoverage a {
+  margin: 14px 18px;
+  display: block;
+}
+
+@media (max-width: 1000px) {
+  #explorePage {
+    grid-template-columns: 1fr;
+  }
+  #explorePage #detail {
+    grid-column: auto;
+  }
+  #explorePage .mapwrap {
+    padding: 14px;
+  }
+  .educationActions .smallBtn {
+    white-space: normal;
+  }
+}
+#explorePage #jobPortals {
+  display: none !important;
+}
+
 .homeProfessional {
   max-width: 1060px;
   margin: 0 auto;

@@ -28,7 +28,7 @@
     if(!r||r.version!==1||r.key!==key||typeof r.updated!=='string'||!stamp(r.updated))throw Error('Còpia privada no vàlida. Es conserva la còpia local.');
     if(r.deleted!==undefined&&typeof r.deleted!=='boolean')throw Error('Estat del document no vàlid.');
     if(key==='profile'){
-      if(typeof r.name!=='string'||typeof r.bio!=='string'||r.name.length>500||r.bio.length>100000|| (r.roleBio&& (typeof r.roleBio!=='object'||Array.isArray(r.roleBio)||Object.entries(r.roleBio).some(([k,v])=>!['infantil03','infantil36','infantil','primaria','monitoratge','direccio','coordinacio','menjador','extraescolars','acollida'].includes(k)||typeof v!=='string'||v.length>10000))))throw Error('Perfil privat no vàlid.');
+      if(typeof r.name!=='string'||typeof r.bio!=='string'||r.name.length>500||r.bio.length>100000|| (r.roleBio&& (typeof r.roleBio!=='object'||Array.isArray(r.roleBio)||Object.entries(r.roleBio).some(([k,v])=>!['infantil03','infantil36','infantil','primaria','monitoratge','vetlladora','direccio','coordinacio','menjador','extraescolars','acollida'].includes(k)||typeof v!=='string'||v.length>10000))))throw Error('Perfil privat no vàlid.');
     }else if(typeof r.name!=='string'||typeof r.type!=='string'||typeof r.data!=='string'||r.data.length>28000000||!/^[A-Za-z0-9+/]*={0,2}$/.test(r.data))throw Error('Document privat no vàlid.');
   }
   async function ownRecord(key){

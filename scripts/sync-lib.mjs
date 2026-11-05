@@ -1,4 +1,5 @@
 import {createHash} from 'node:crypto';
+import {schoolNetwork} from './school-networks.mjs';
 export const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 export const id=s=>String(Number(s));
 export const decode=s=>String(s||'').replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g,'$1').replace(/&#(?:x([\da-f]+)|(\d+));/gi,(_,h,d)=>String.fromCodePoint(parseInt(h||d,h?16:10))).replace(/&(?:amp|lt|gt|quot|apos|nbsp);/g,x=>({'&amp;':'&','&lt;':'<','&gt;':'>','&quot;':'"','&apos;':"'",'&nbsp;':' '}[x]));
@@ -11,7 +12,7 @@ export function relevant(title,description=''){
 }
 export function schoolRows(rows,concerts){
   const funded=new Set(concerts.filter(x=>Object.entries(x).some(([k,v])=>k.startsWith('unitats_concertades_')&&Number(v)>0)).map(x=>id(x.codi_centre)));
-  return rows.filter(x=>x.einf1c||x.einf2c).map(x=>({id:id(x.codi_centre),name:x.denominaci_completa,city:x.nom_municipi,county:x.nom_comarca,age:x.einf1c?(x.einf2c?'0-6':'0-3'):'3-6',kind:x.nom_naturalesa==='Públic'?'Pública':funded.has(id(x.codi_centre))?'Concertada':'Privada',lat:Number(x.coordenades_geo_y)||null,lng:Number(x.coordenades_geo_x)||null,email:x.e_mail_centre||'',phone:x.tel_fon||'',address:x.adre_a||'',postal:x.codi_postal||''}));
+  return rows.filter(x=>x.einf1c||x.einf2c||x.epri).map(x=>({id:id(x.codi_centre),name:x.denominaci_completa,city:x.nom_municipi,county:x.nom_comarca,age:x.einf1c?(x.einf2c?'0-6':'0-3'):x.einf2c?'3-6':'primaria',stages:[...(x.einf1c?['bressol']:[]),...(x.einf2c?['infantil']:[]),...(x.epri?['primaria']:[])],web:/^https?:\/\//i.test(x.url||'')?x.url:'',...schoolNetwork(x),kind:x.nom_naturalesa==='Públic'?'Pública':funded.has(id(x.codi_centre))?'Concertada':'Privada',lat:Number(x.coordenades_geo_y)||null,lng:Number(x.coordenades_geo_x)||null,email:x.e_mail_centre||'',phone:x.tel_fon||'',address:x.adre_a||'',postal:x.codi_postal||''}));
 }
 export function reconcile(previous,current,archived=[]){
   const now=new Set(current.map(x=>x.id)),before=new Set(previous.map(x=>x.id));

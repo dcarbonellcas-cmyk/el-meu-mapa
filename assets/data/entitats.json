@@ -1,6 +1,18 @@
 {
   "infantil": [
     {
+      "id": "xarxa_fep",
+      "name": "Fundació Escoles Parroquials · FEP",
+      "city": "Barcelona / àrea metropolitana",
+      "phone": "93 317 42 85",
+      "email": "",
+      "services": "Educació Infantil i Primària · Xarxa d’escoles parroquials",
+      "centres": "Centres verificats al directori oficial de la FEP",
+      "web": "https://fep.cat/escoles/",
+      "careers": "https://www.borsafecc.cat/",
+      "verified": "La FEP indica presentar les candidatures a Borsa FECC: https://fep.cat/contacte/"
+    },
+    {
       "id": "gestora_cavall",
       "name": "Cavall de Cartró Serveis Educatius",
       "city": "Catalunya",
@@ -226,7 +238,7 @@
       "centres": "Borsa compartida: els centres poden constar també al mapa",
       "web": "https://fecc.cat/",
       "careers": "https://www.borsafecc.cat/accedeix-candidats/",
-      "verified": "Portal oficial de candidats; registrar-se no equival a inscriure’s a cada oferta"
+      "verified": "Borsa compartida per escoles de diferents titularitats. No és la titular de totes les escoles que aplega."
     },
     {
       "id": "xarxa_jesuites",

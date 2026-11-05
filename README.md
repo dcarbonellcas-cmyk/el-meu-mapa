@@ -1,6 +1,6 @@
 # El meu mapa d’escoles
 
-Mapa de centres d’educació infantil i entitats de lleure de Catalunya, amb seguiment local de candidatures, documents, ofertes i connexió opcional a Gmail.
+Mapa de centres d’educació infantil i primària i entitats de lleure de Catalunya, amb seguiment local de candidatures, documents, ofertes i connexió opcional a Gmail.
 
 ## Estructura
 
@@ -69,3 +69,11 @@ La configuració queda preparada amb `npm run build`, directori de publicació `
 ## Dades
 
 La versió automatitzada consulta el directori oficial i Feina Activa cada 6 hores. El nombre de centres i ofertes varia segons les fonts. Es conserven 18 entitats gestores i 64 entitats de lleure, pendents de revisió periòdica. Consulta GITHUB_PAGES.md per veure la cobertura, l’estat de SEPE i la connexió privada de Gmail.
+
+## Cerca docent i xarxes
+
+Educació separa Bressol, Infantil i Primària, amb escoles per proximitat a Teià, xarxes amb els centres vinculats i accessos a les borses. El directori oficial del curs 2026/2027 inclou 3.760 centres amb alguna d’aquestes etapes; 2.347 imparteixen Primària. No és una garantia de cobertura en temps real.
+
+Les relacions de xarxa són parcials: només s’assignen quan coincideixen amb una llista contrastada o un domini institucional. Les fonts són a `scripts/school-networks.mjs`. La FEP utilitza la borsa FECC; la FECC no és la titular de totes les escoles adherides. Un web de centre no implica que s’hi hagi verificat una borsa pròpia.
+
+Els esborranys no queden buits si falta l’experiència privada del dispositiu: es prepara un text complet que no inventa trajectòria ni titulacions. El perfil i els documents continuen sent privats; recuperar-los entre dispositius requereix autoritzar la sincronització. Una inscripció a una borsa no equival a una candidatura enviada ni a un compte confirmat.
