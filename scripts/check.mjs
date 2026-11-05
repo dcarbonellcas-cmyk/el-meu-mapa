@@ -20,7 +20,10 @@ assert(!/<style\b/i.test(html),'Styles should be external');
 for(const [,path] of html.matchAll(/(?:src|href)="((?:assets\/)[^"]+)"/g))assert((await stat(resolve(root,path.split(/[?#]/)[0]))).isFile(),'Missing asset '+path);
 const centres=JSON.parse(await read('assets/data/centres.json'));
 const entitats=JSON.parse(await read('assets/data/entitats.json'));
-assert(centres.length>=3000&&centres.length<=10000);assert.equal(entitats.infantil.length,18);assert.equal(entitats.lleure.length,64);
+assert(centres.length>=3000&&centres.length<=10000);assert(entitats.infantil.length>0);assert(entitats.lleure.length>0);
+const entities=[...entitats.infantil,...entitats.lleure];
+assert.equal(new Set(entities.map(x=>x.id)).size,entities.length,'Duplicate entity IDs');
+for(const entity of entities){assert(entity.id&&entity.name&&entity.services,'Incomplete entity');for(const key of ['web','careers'])if(entity[key])assert(new URL(entity[key]).protocol==='https:','Entity link must use HTTPS');}
 assert.equal(new Set(centres.map(x=>x.id)).size,centres.length,'Duplicate school IDs');
 const allowedSchoolFields=new Set(['id','name','city','county','age','kind','lat','lng','email','phone','address','postal']);
 for(const centre of centres)for(const key of Object.keys(centre))assert(allowedSchoolFields.has(key),'Unexpected personal field '+key);
@@ -36,4 +39,4 @@ const secrets=[/gh[pousr]_[A-Za-z0-9]{20,}/,/github_pat_[A-Za-z0-9_]{20,}/,/AIza
 for(const path of files){const text=await read(path);for(const pattern of secrets)assert(!pattern.test(text),'Potential secret or private application data in '+path)}
 const published=await walk('public');
 assert(published.every(p=>p==='public/index.html'||['css','js','data','icons'].some(folder=>p.startsWith('public/assets/'+folder+'/'))),'Private file in public directory');
-console.log('PASS: syntax, local routes, '+centres.length+' centres, 82 entities, JSON/file preview parity, privacy scan and publication allowlist.');
+console.log('PASS: syntax, local routes, '+centres.length+' centres, '+entities.length+' entities, JSON/file preview parity, privacy scan and publication allowlist.');

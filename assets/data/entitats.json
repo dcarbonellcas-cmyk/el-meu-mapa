@@ -103,9 +103,9 @@
       "phone": "",
       "email": "",
       "services": "0–6 · Xarxa d’escoles amb Educació Infantil",
-      "centres": "39 escoles a la xarxa; Infantil segons centre",
+      "centres": "Xarxa d’escoles; consulta els centres al portal oficial",
       "web": "https://vedruna.cat/oferta-educativa/",
-      "careers": "https://vedruna.cat/",
+      "careers": "https://treballa.vedrunacatalunya.cat/",
       "verified": "Xarxa educativa amb etapa Infantil"
     },
     {
@@ -215,6 +215,30 @@
       "web": "https://www.assllars.org/",
       "careers": "https://www.assllars.org/",
       "verified": "Font sectorial per localitzar llars privades"
+    },
+    {
+      "id": "xarxa_fecc",
+      "name": "Fundació Escola Cristiana de Catalunya · Borsa FECC",
+      "city": "Catalunya",
+      "phone": "93 302 70 13",
+      "email": "borsatreball@fecc.cat",
+      "services": "Educació Infantil i Primària · Borsa d’escoles cristianes",
+      "centres": "Borsa compartida: els centres poden constar també al mapa",
+      "web": "https://fecc.cat/",
+      "careers": "https://www.borsafecc.cat/accedeix-candidats/",
+      "verified": "Portal oficial de candidats; registrar-se no equival a inscriure’s a cada oferta"
+    },
+    {
+      "id": "xarxa_jesuites",
+      "name": "Fundació Jesuïtes Educació",
+      "city": "Catalunya",
+      "phone": "",
+      "email": "",
+      "services": "Educació Infantil i Primària · Xarxa educativa",
+      "centres": "Equip docent i equip de gestió de la xarxa",
+      "web": "https://www.fje.edu/ca/fje/treballa-la-fundacio-jesuites-educacio",
+      "careers": "https://talent.net.fje.edu/",
+      "verified": "Portal docent enllaçat des del web oficial"
     }
   ],
   "lleure": [
