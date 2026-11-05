@@ -1,16 +1,16 @@
 {
-  "checkedAt": "2026-11-05T13:46:33.446Z",
+  "checkedAt": "2026-11-05T15:18:53.546Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-05T13:46:33.446Z",
+      "updatedAt": "2026-11-05T15:18:53.546Z",
       "count": 195,
       "reviewed": 705,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-05T13:46:33.446Z",
+      "attemptedAt": "2026-11-05T15:18:53.546Z",
       "message": "fetch failed"
     }
   },
