@@ -1,20 +1,56 @@
 {
-  "checkedAt": "2026-11-05T07:49:51.007Z",
+  "checkedAt": "2026-11-05T13:46:33.446Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-05T07:49:51.007Z",
-      "count": 192,
-      "reviewed": 697,
+      "updatedAt": "2026-11-05T13:46:33.446Z",
+      "count": 195,
+      "reviewed": 705,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-05T07:49:51.007Z",
+      "attemptedAt": "2026-11-05T13:46:33.446Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92328319",
+      "title": "MONITOR/MONITORA ESPAI MIGDIA ESCOLA A BARCELONA. ZONA EIXAMPLE ESQUERRA",
+      "school": "SANED",
+      "city": "BARCELONA - BARCELONÈS - 08002 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328319",
+      "snippet": "Es precisa un/a monitor/monitora de menjador escolar pel curs 2026-27.",
+      "created": "1793876746038",
+      "expires": "2027-02-03T11:05:46.035Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92328305",
+      "title": "MONITOR/MONITORA ESPAI MIGDIA ESCOLA A BARCELONA. ZONA HORTA",
+      "school": "SANED",
+      "city": "BARCELONA - BARCELONÈS - 08002 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328305",
+      "snippet": "Es precisa un/a monitor/monitora de menjador escolar pel curs 2026-27.",
+      "created": "1793869296728",
+      "expires": "2027-02-03T09:01:36.725Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92328304",
+      "title": "MONITOR/MONITORA REFUERZO EDUCATIVO",
+      "school": "EMPRESA DE FORMACIÓ",
+      "city": "BARCELONA - BAIX LLOBREGAT - 08860 CASTELLDEFELS",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328304",
+      "snippet": "Somos una empresa referente a nivel estatal en el ámbito de la formación, la educación y la intervención socioeducativa. Trabajamos desarrollando proyectos que promueven la inclusión, la igualdad de oportunidades y el acompañamiento educativo de niños, niñas y jóvenes, colaborando con administraciones públicas, centros",
+      "created": "1793868638997",
+      "expires": "2027-02-03T08:50:38.993Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92328254",
       "title": "PERSONAL DE MONITORATGE DE CORRETORNS",
