@@ -1,20 +1,32 @@
 {
-  "checkedAt": "2026-11-06T10:27:37.547Z",
+  "checkedAt": "2026-11-06T13:42:03.116Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-06T10:27:37.547Z",
+      "updatedAt": "2026-11-06T13:42:03.116Z",
       "count": 195,
-      "reviewed": 714,
+      "reviewed": 719,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-06T10:27:37.547Z",
+      "attemptedAt": "2026-11-06T13:42:03.116Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92328438",
+      "title": "EDUCADOR/A SOCIAL O INTEGRADOR/A SOCIAL",
+      "school": "Escola Pia Balaguer",
+      "city": "LLEIDA - NOGUERA - 25600 BALAGUER",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328438",
+      "snippet": "Es necessita un/a Educador/a social o integrador/a social per treballar amb infants nouvinguts o en situació de vulnerabilitat o discapacitat.",
+      "created": "1793968322496",
+      "expires": "2027-02-04T12:32:02.493Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92328385",
       "title": "MONITOR/MONITORA MENJADOR CASTELLBISBAL",
@@ -853,18 +865,6 @@
       "snippet": "Busquem un/a monitor/a de lleure amb disponibilitat per fer suplències en serveis de menjador escolar, en horari de 12.30 h a 15.00 h.",
       "created": "1792066969852",
       "expires": "2027-01-13T12:22:49.841Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92326873",
-      "title": "BUSQUEM EDUCADOR/A SOCIOEDUCATIU/VA SERVEI SOCIOEDUCATIU – PREMIÀ DE DALT",
-      "school": "DIVERSPORT SL",
-      "city": "BARCELONA - MARESME - 08338 PREMIÀ DE DALT",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326873",
-      "snippet": "A Diversport busquem un/a Educador/a per incorporar-se al Servei Socioeducatiu de Premià de Dalt. Busquem una persona propera, dinàmica i amb sensibilitat educativa i social, que vulgui ajudar els infants i adolescents a créixer, aprendre i guanyar confiança en un entorn segur i acollidor. Una oportunitat per posar la ",
-      "created": "1792057245830",
-      "expires": "2027-01-13T09:40:45.823Z",
       "automatic": true
     },
     {
