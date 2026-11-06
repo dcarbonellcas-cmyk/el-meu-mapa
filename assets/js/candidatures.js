@@ -3,7 +3,7 @@
   const statusColors = {"No contactada":"#b9c6d8","CV preparat":"#f5a623","CV enviat":"#16a34a","Toca renovar candidatura":"#f59e0b","Han contestat":"#7b4de2","Entrevista":"#ec4b91"};
 
   function allSchools(){
-    if(window.MAPA_DATA) return [...window.MAPA_DATA.centres,...(window.MAPA_DATA.archived||[]).filter(s=>localStorage.getItem('status_'+s.id)||localStorage.getItem('history_'+s.id)).map(s=>({...s,name:s.name+' · no consta al directori actual d’infantil'}))];
+    if(window.MAPA_DATA) return [...window.MAPA_DATA.centres,...window.MAPA_DATA.entitats.infantil.filter(s=>localStorage.getItem("history_"+s.id)),...(window.MAPA_DATA.archived||[]).filter(s=>localStorage.getItem('status_'+s.id)||localStorage.getItem('history_'+s.id)).map(s=>({...s,name:s.name+' · no consta al directori actual d’infantil'}))];
     if (Array.isArray(window.SCHOOLS)) return window.SCHOOLS;
     if (typeof schools !== "undefined" && Array.isArray(schools)) return schools;
     if (typeof CENTRES !== "undefined" && Array.isArray(CENTRES)) return CENTRES;
@@ -15,7 +15,7 @@
     const key=localStorage.getItem("status_"+id)||"none";
     const labels={none:"No contactada",prepared:"CV preparat",sent:"CV enviat",replied:"Han contestat",interview:"Entrevista"};
     let h=[]; try{h=JSON.parse(localStorage.getItem("history_"+id)||"[]")}catch(e){}
-    const last=h.find(x=>x.type==="sent"); let label=labels[key]||"No contactada"; if(key==="sent"&&last){const d=nextRenewalDate(last.date);if(d&&Date.now()>=d.getTime())label="Toca renovar candidatura";} return {status:label, date:(last&&last.date)||((h[0]&&h[0].date)||"")};
+    const last=h.find(x=>x.type==="sent"); let label=labels[key]||"No contactada"; if(key==="sent"&&last){const d=nextRenewalDate(last.date);if(d&&Date.now()>=d.getTime())label="Toca renovar candidatura";} return {status:label, source:last?.source, date:(last&&last.date)||((h[0]&&h[0].date)||"")};
   }
   function val(s, keys, fallback=""){
     for(const k of keys) if(s && s[k]!==undefined && s[k]!==null && String(s[k]).trim()!=="") return s[k];
@@ -48,7 +48,7 @@
         <td style="padding:12px 10px;font-weight:700">${esc(val(s,["name","nom","Denominació_completa"],"Centre"))}</td>
         <td>${esc(val(s,["city","municipality","municipi","Nom_municipi"],""))}</td>
         <td>${esc(type)}</td><td>${esc(stage)}</td>
-        <td><span style="display:inline-block;padding:5px 9px;border-radius:999px;background:${statusColors[st.status]}22;color:#173b72;font-weight:700;font-size:12px">${esc(st.status)}</span></td>
+        <td><span style="display:inline-block;padding:5px 9px;border-radius:999px;background:${statusColors[st.status]}22;color:#173b72;font-weight:700;font-size:12px">${esc(st.status)}</span>${st.source==='website'?'<small> · Confirmada per tu · web</small>':''}</td>
         <td style="color:#7183a4">${esc(st.date||"—")}</td>
         <td><button class="openSchoolDash" data-id="${esc(sid(s))}" style="border:0;background:#edf4ff;color:#1769e8;border-radius:9px;padding:7px 10px;cursor:pointer;font-weight:700">Obrir</button></td>
       </tr>`;
@@ -74,6 +74,7 @@
     const id=String(b.dataset.id); closeDash();
     const s=allSchools().find(x=>sid(x)===id);
     if(!s)return;
+    if(s.careers){window.open(s.careers,'_blank','noopener');return;}
     if(typeof window.openSchool==="function") window.openSchool(id);
     else if(typeof openSchool==="function") openSchool(id);
     else {

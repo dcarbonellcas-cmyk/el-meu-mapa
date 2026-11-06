@@ -35,3 +35,4 @@ test('stage and active service filter determine the initial role',()=>{
 });
 
 test('finished draft signs Diana and has no completion markers',()=>{const d=context.composeCandidature({name:'School'},'infantil03',profile);assert(d.body.endsWith('Atentament,\nDiana'));assert(!d.body.includes('[Completa'));assert(d.ready)});
+test('user preferred wording is complete and addresses the specific vacancy',()=>{const d=context.composeCandidature({name:'School B',jobTitle:'Mestra I3'},'infantil36',profile);assert(d.body.startsWith('Bon dia,\n\nEm dic Example'));assert(d.body.includes('oferta «Mestra I3»'));assert(d.body.includes('en aquesta vacant'));assert(d.body.includes('Moltes gràcies pel vostre temps i per valorar la meva candidatura.'));assert(!d.body.includes('Graduada en Educació Primària'));});
