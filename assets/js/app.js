@@ -1,7 +1,7 @@
 // Classic scripts retain the shared functions used by existing controls.
 (async function(){
   function loadScript(path){return new Promise((resolve,reject)=>{
-    const script=document.createElement('script');script.src=path+'?v=20261106-borses';script.async=false;
+    const script=document.createElement('script');script.src=path+'?v=20261106-borses-final';script.async=false;
     script.onload=resolve;script.onerror=()=>reject(new Error('No s’ha pogut carregar '+path));document.body.appendChild(script);
   })}
   try{
@@ -9,7 +9,7 @@
       // Generated from the JSON files; permits the original double-click preview.
       await loadScript('assets/data/dades-local.js');
     }else{
-      async function json(path){const r=await fetch(path);if(!r.ok)throw new Error('Dades no disponibles: '+path);return r.json()}
+      async function json(path){const r=await fetch(path+'?v=20261106-borses-final',{cache:'no-store'});if(!r.ok)throw new Error('Dades no disponibles: '+path);return r.json()}
       const [centres,entitats,archived]=await Promise.all([json('assets/data/centres.json'),json('assets/data/entitats.json'),json('assets/data/centres-arxivats.json')]);
       window.MAPA_DATA={centres,entitats,archived};
     }
