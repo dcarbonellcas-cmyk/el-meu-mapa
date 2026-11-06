@@ -15,3 +15,10 @@ test('concerted classification uses the funding list rather than the school name
  const x={codi_centre:'08000001',denominaci_completa:'Example',einf2c:'EINF2C',epri:'EPRI',nom_naturalesa:'Privat'};
  const rows=schoolRows([x],[{codi_centre:'08000001',unitats_concertades_epri:'2'}]);assert.equal(rows[0].kind,'Concertada');assert.deepEqual(rows[0].stages,['infantil','primaria']);
 });
+
+test('verified ID overrides obsolete school domain and similar names remain unassigned',()=>{
+ assert.equal(schoolNetwork({codi_centre:'17002570',url:'https://palamos.lasalle.cat'}).networkId,'xarxa_vedruna');
+ assert.equal(schoolNetwork({codi_centre:'08020772'}).networkId,'xarxa_escolapies');
+ assert.equal(schoolNetwork({codi_centre:'08019575'}).networkId,'xarxa_escolapies');
+ assert.deepEqual(schoolNetwork({denominaci_completa:'Unrelated Escola Pia Example',url:'https://example.org'}),{});
+});

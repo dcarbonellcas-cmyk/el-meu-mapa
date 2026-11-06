@@ -13,6 +13,18 @@
       "verified": "La FEP indica presentar les candidatures a Borsa FECC: https://fep.cat/contacte/"
     },
     {
+      "id": "xarxa_escolapies",
+      "name": "Fundació Escolàpies",
+      "city": "Catalunya",
+      "phone": "",
+      "email": "",
+      "services": "Educació Infantil i Primària · Xarxa d’escoles",
+      "centres": "Centres catalans del directori oficial de la Fundació Escolàpies",
+      "web": "https://fundacioescolapies.org/oferta-educativa/",
+      "careers": "https://docs.google.com/forms/d/e/1FAIpQLSdmj5PjnfQayrb-NVnu1LClyTO9g38wv6B94k8ZvmXMiAjGeQ/viewform",
+      "verified": "Formulari compartit de candidatures enllaçat des d’Escolàpies El Masnou: https://escolapieselmasnou.org/treballa-amb-nosaltres-2/"
+    },
+    {
       "id": "gestora_cavall",
       "name": "Cavall de Cartró Serveis Educatius",
       "city": "Catalunya",
@@ -118,7 +130,7 @@
       "centres": "Xarxa d’escoles; consulta els centres al portal oficial",
       "web": "https://vedruna.cat/oferta-educativa/",
       "careers": "https://treballa.vedrunacatalunya.cat/",
-      "verified": "Xarxa educativa amb etapa Infantil"
+      "verified": "Centres de la xarxa i adherits al projecte educatiu: https://vedruna.cat/oferta-educativa/"
     },
     {
       "id": "xarxa_fedac",
@@ -141,8 +153,8 @@
       "services": "0–6 · Xarxa educativa amb Educació Infantil segons centre",
       "centres": "Escoles i institucions educatives arreu de Catalunya",
       "web": "https://escolapia.cat/escola-pia/",
-      "careers": "https://escolapia.cat/treballa-amb-nosaltres/",
-      "verified": "Borsa pròpia d’educadors"
+      "careers": "https://gestio.escolapia.cat/sRRHH/sRRHH_001.aspx",
+      "verified": "Entrada al perfil general de candidatures. Ofertes i informació: https://escolapia.cat/treballa-amb-nosaltres/"
     },
     {
       "id": "xarxa_manyanet",
@@ -165,8 +177,8 @@
       "services": "0–6 · Xarxa educativa; Infantil i llar segons centre",
       "centres": "Centres La Salle de Catalunya",
       "web": "https://lasalle.cat/",
-      "careers": "https://lasalle.cat/contacte/",
-      "verified": "Borsa de treball amb selecció de zona i etapa"
+      "careers": "https://sallejob.com/",
+      "verified": "Borsa SalleJob enllaçada des del web oficial: https://lasalle.cat/"
     },
     {
       "id": "xarxa_maristes",
@@ -177,8 +189,8 @@
       "services": "0–6 · Xarxa educativa amb llar i/o Infantil segons centre",
       "centres": "Escoles Maristes de Catalunya",
       "web": "https://www.maristes.cat/ca",
-      "careers": "https://www.maristes.cat/ca/treballa-amb-nosaltres",
-      "verified": "Portal central Treballa amb nosaltres"
+      "careers": "https://fmkts.maristes.org/curriculum.html",
+      "verified": "Formulari de CV enllaçat des de: https://www.maristes.cat/ca/treballa-amb-nosaltres"
     },
     {
       "id": "xarxa_salesians",
@@ -189,8 +201,8 @@
       "services": "3–6 · Xarxa d’escoles amb Educació Infantil segons centre",
       "centres": "Centres salesians amb portal compartit de selecció",
       "web": "https://www.salesians.cat/",
-      "careers": "https://www.salesians.cat/",
-      "verified": "Els centres disposen de portal Treballa amb nosaltres"
+      "careers": "https://bolsatrabajo.salesianos.edu/",
+      "verified": "Borsa comuna Salesians SMX enllaçada des del directori oficial: https://www.salesians.cat/escoles/"
     },
     {
       "id": "entitat_engresca",

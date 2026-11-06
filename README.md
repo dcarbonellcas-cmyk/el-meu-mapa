@@ -68,7 +68,7 @@ La configuració queda preparada amb `npm run build`, directori de publicació `
 
 ## Dades
 
-La versió automatitzada consulta el directori oficial i Feina Activa cada 6 hores. El nombre de centres i ofertes varia segons les fonts. Es conserven 18 entitats gestores i 64 entitats de lleure, pendents de revisió periòdica. Consulta GITHUB_PAGES.md per veure la cobertura, l’estat de SEPE i la connexió privada de Gmail.
+La versió automatitzada consulta el directori oficial i Feina Activa cada 6 hores. El nombre de centres i ofertes varia segons les fonts. Les entitats i els canals de candidatura es revisen per separat; no es considera que totes les webs continguin una borsa pròpia. Consulta GITHUB_PAGES.md per veure la cobertura, l’estat de SEPE i la connexió privada de Gmail.
 
 ## Cerca docent i xarxes
 
@@ -77,3 +77,5 @@ Educació separa Bressol, Infantil i Primària, amb escoles per proximitat a Tei
 Les relacions de xarxa són parcials: només s’assignen quan coincideixen amb una llista contrastada o un domini institucional. Les fonts són a `scripts/school-networks.mjs`. La FEP utilitza la borsa FECC; la FECC no és la titular de totes les escoles adherides. Un web de centre no implica que s’hi hagi verificat una borsa pròpia.
 
 Els esborranys no queden buits si falta l’experiència privada del dispositiu: es prepara un text complet que no inventa trajectòria ni titulacions. El perfil i els documents continuen sent privats; recuperar-los entre dispositius requereix autoritzar la sincronització. Una inscripció a una borsa no equival a una candidatura enviada ni a un compte confirmat.
+
+Revisió de xarxes de novembre de 2026: 153 centres vinculats amb fonts explícites, inclosos els centres de Vedruna, Maristes, Escola Pia i Escolàpies contrastats. SalleJob i Salesians SMX tenen accessos directes al seu portal de feina. Els estats personals d’inscripció es desen únicament al navegador; no hi ha inscripcions predefinides al codi públic.

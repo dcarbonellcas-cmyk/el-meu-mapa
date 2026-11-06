@@ -25,7 +25,7 @@ const entities=[...entitats.infantil,...entitats.lleure];
 assert.equal(new Set(entities.map(x=>x.id)).size,entities.length,'Duplicate entity IDs');
 for(const entity of entities){assert(entity.id&&entity.name&&entity.services,'Incomplete entity');for(const key of ['web','careers'])if(entity[key])assert(new URL(entity[key]).protocol==='https:','Entity link must use HTTPS');}
 assert.equal(new Set(centres.map(x=>x.id)).size,centres.length,'Duplicate school IDs');
-const allowedSchoolFields=new Set(['id','name','city','county','age','kind','lat','lng','email','phone','address','postal','stages','web','networkId','networkSource']);
+const allowedSchoolFields=new Set(['id','name','city','county','age','kind','lat','lng','email','phone','address','postal','stages','web','networkId','networkSource','careers','careersSource']);
 for(const centre of centres)for(const key of Object.keys(centre))assert(allowedSchoolFields.has(key),'Unexpected personal field '+key);
 const sandbox={window:{}};vm.runInNewContext(await read('assets/data/dades-local.js'),sandbox);
 const archived=JSON.parse(await read('assets/data/centres-arxivats.json'));
