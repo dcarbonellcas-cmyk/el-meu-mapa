@@ -8923,6 +8923,10 @@
       "primaria"
     ],
     "web": "http://WWW.fundaciomeritxell.cat",
+    "networkId": "xarxa_meritxell",
+    "networkSource": "https://www.fundaciomeritxell.cat/treballa-amb-nosaltres/",
+    "careers": "https://www.fundaciomeritxell.cat/treballa-amb-nosaltres/",
+    "careersSource": "https://www.fundaciomeritxell.cat/faqs/",
     "kind": "Concertada",
     "lat": 41.55606,
     "lng": 2.464332,
@@ -9997,6 +10001,8 @@
       "primaria"
     ],
     "web": "https://povillolesa.creixen.coop/",
+    "networkId": "xarxa_creixen",
+    "networkSource": "https://www.creixen.coop/",
     "kind": "Concertada",
     "lat": 41.54467,
     "lng": 1.893877,
@@ -15131,6 +15137,8 @@
       "primaria"
     ],
     "web": "http://www.creixenterrassa.cat",
+    "networkId": "xarxa_creixen",
+    "networkSource": "https://www.creixen.coop/",
     "kind": "Concertada",
     "lat": 41.56403,
     "lng": 2.011809,
@@ -16606,6 +16614,8 @@
       "primaria"
     ],
     "web": "http://www.escolagoar.cat",
+    "networkId": "xarxa_creixen",
+    "networkSource": "https://www.creixen.coop/",
     "kind": "Concertada",
     "lat": 41.32293,
     "lng": 2.006507,
