@@ -33,8 +33,9 @@
       "services": "0–3 · Gestió d’escoles bressol municipals i serveis educatius",
       "centres": "Especialistes en llars d’infants municipals",
       "web": "https://www.cavallcartro.cat/",
-      "careers": "https://www.cavallcartro.cat/",
-      "verified": "Web corporativa amb enviament de CV"
+      "careers": "https://canaldeempleo.es/CAVALLDECARTRO",
+      "verified": "Web corporativa amb enviament de CV",
+      "careersSource": "https://www.cavallcartro.cat/es/contacto"
     },
     {
       "id": "gestora_creixer",
@@ -81,8 +82,9 @@
       "services": "0–3 · Serveis educatius i escoles bressol",
       "centres": "Projectes educatius i de petita infància",
       "web": "https://suara.coop/ca",
-      "careers": "https://suara.coop/ca/contactans",
-      "verified": "Cooperativa de serveis educatius i socials"
+      "careers": "https://talent.suara.coop/connect",
+      "verified": "Cooperativa de serveis educatius i socials",
+      "careersSource": "https://talent.suara.coop/"
     },
     {
       "id": "gestora_fundesplai",
@@ -93,8 +95,9 @@
       "services": "0–6 · Escoles bressol, espais familiars i serveis educatius",
       "centres": "Gestió integral de bressol i serveis per a infants i famílies",
       "web": "https://escoles.fundesplai.org/serveis-per-a-la-petita-infancia/",
-      "careers": "https://fundesplai.org/collabora/treballa-amb-nosaltres/",
-      "verified": "Àrea específica de petita infància"
+      "careers": "https://fundesplai.epreselec.com/Ofertas/Ofertas.aspx",
+      "verified": "Àrea específica de petita infància",
+      "careersSource": "https://fundesplai.org/collabora/treballa-amb-nosaltres/"
     },
     {
       "id": "gestora_peretarres",
@@ -105,8 +108,19 @@
       "services": "0–6 · Petita infància, escoles bressol i serveis educatius",
       "centres": "Gestió i coordinació d’escoles bressol i projectes educatius",
       "web": "https://www.peretarres.org/",
-      "careers": "https://www.peretarres.org/treballa-nosaltres",
-      "verified": "Borsa pròpia amb vacants de petita infància"
+      "careers": "https://www.peretarres.org/treballa-nosaltres/treballa-nosaltres-intervencio",
+      "verified": "Borsa pròpia amb vacants de petita infància",
+      "careersSource": "https://www.peretarres.org/treballa-nosaltres",
+      "applicationLinks": [
+        {
+          "label": "Borsa d’escoles bressol · Maresme",
+          "url": "https://peretarres.talentclue.com/ca/node/127554552/4590"
+        },
+        {
+          "label": "Borsa d’escoles bressol · Badalona",
+          "url": "https://peretarres.talentclue.com/ca/node/129205560/4590"
+        }
+      ]
     },
     {
       "id": "gestora_eulen",
