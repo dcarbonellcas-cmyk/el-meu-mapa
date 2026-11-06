@@ -14,6 +14,8 @@ export const networkRules=[
 // Official centre IDs disambiguate shared names and obsolete directory domains.
 // Membership in an educational network does not necessarily mean common ownership.
 const verifiedRosters=[
+ ['xarxa_creixen','https://www.creixen.coop/',['08022422','08030017','08032555']],
+ ['xarxa_meritxell','https://www.fundaciomeritxell.cat/treballa-amb-nosaltres/',['08020991']],
  ['xarxa_manyanet','https://manyanet.org/colegios/',['08009673','08008462','08014590','08021417','08031401','17000512','43002429']],
  ['xarxa_betlem','https://escolesbetlem.com/en/work-with-us/',['08036986','08063655']],
  ['xarxa_nordanglia','https://www.hamelinschool.com/careers',['08051239']],

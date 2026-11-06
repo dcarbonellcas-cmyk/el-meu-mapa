@@ -4,7 +4,7 @@
  const labels={bressol:'Escola bressol · 0–3',infantil:'Mestra d’Infantil · 3–6',primaria:'Educació Primària'};
  const roles={bressol:'infantil03',infantil:'infantil36',primaria:'primaria'};
  const entities=window.MAPA_DATA.entitats.infantil;
- const verifiedPortals=new Set(['xarxa_fep','xarxa_borsadocent','xarxa_manyanet','xarxa_betlem','xarxa_nordanglia','xarxa_escolapies','xarxa_fecc','xarxa_fedac','xarxa_vedruna','xarxa_escolapia','xarxa_jesuites','xarxa_lasalle','xarxa_maristes','xarxa_salesians','gestora_cavall','gestora_suara','gestora_incoop','gestora_grupip','gestora_fundesplai','gestora_peretarres']);
+ const verifiedPortals=new Set(['xarxa_fep','xarxa_borsadocent','xarxa_manyanet','xarxa_betlem','xarxa_creixen','xarxa_meritxell','xarxa_nordanglia','xarxa_escolapies','xarxa_fecc','xarxa_fedac','xarxa_vedruna','xarxa_escolapia','xarxa_jesuites','xarxa_lasalle','xarxa_maristes','xarxa_salesians','gestora_cavall','gestora_suara','gestora_incoop','gestora_grupip','gestora_fundesplai','gestora_peretarres']);
  const networkIDs=new Set(entities.filter(x=>x.id.startsWith('xarxa_')).map(x=>x.id));
  const h=document.createElement('section');h.id='educationHub';h.className='educationHub';main.prepend(h);
  document.getElementById('schoolDirectory').hidden=true;

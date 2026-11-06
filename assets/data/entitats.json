@@ -318,6 +318,32 @@
       "careersSource": "https://reus.manyanet.org/",
       "verified": "Portal de candidatures enllaçat des de Manyanet. Registre gratuït disponible; les eines premium són opcionals.",
       "relationshipType": "job-board"
+    },
+    {
+      "id": "xarxa_creixen",
+      "name": "Creixen Educació",
+      "city": "Terrassa / Olesa de Montserrat / Viladecans",
+      "email": "",
+      "phone": "93 254 76 90",
+      "services": "Educació Infantil i Primària segons el centre",
+      "centres": "Creixen Terrassa, Povill Olesa i GOAR Viladecans",
+      "web": "https://www.creixen.coop/",
+      "careers": "https://www.creixen.coop/treballa-amb-nosaltres/",
+      "careersSource": "https://www.creixen.coop/",
+      "verified": "Tres escoles enllaçades al directori oficial de la xarxa i formulari general amb CV."
+    },
+    {
+      "id": "xarxa_meritxell",
+      "name": "Fundació Meritxell · Escola Meritxell",
+      "city": "Mataró",
+      "email": "",
+      "phone": "937 556 550",
+      "services": "Educació Infantil · 3–6 i Primària",
+      "centres": "Escola Meritxell de Mataró",
+      "web": "https://www.fundaciomeritxell.cat/",
+      "careers": "https://www.fundaciomeritxell.cat/treballa-amb-nosaltres/",
+      "careersSource": "https://www.fundaciomeritxell.cat/faqs/",
+      "verified": "Formulari de Google enllaçat des del web oficial per a futurs processos de selecció."
     }
   ],
   "lleure": [
