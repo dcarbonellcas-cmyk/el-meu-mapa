@@ -178,9 +178,10 @@
       "email": "",
       "services": "0–6 · Llars d’infants i Educació Infantil segons centre",
       "centres": "Centres Manyanet amb etapa Infantil",
-      "web": "https://manyanet.org/",
-      "careers": "https://manyanet.org/",
-      "verified": "Xarxa educativa amb Educació Infantil"
+      "web": "https://manyanet.org/colegios/",
+      "careers": "https://borsadocent.cat/treballa-manyanet-general.html",
+      "verified": "BorsaDocent enllaçada des del web oficial de Manyanet Reus; set escoles catalanes amb accés propi.",
+      "careersSource": "https://reus.manyanet.org/"
     },
     {
       "id": "xarxa_lasalle",
@@ -277,6 +278,46 @@
       "web": "https://www.fje.edu/ca/fje/treballa-la-fundacio-jesuites-educacio",
       "careers": "https://talent.net.fje.edu/",
       "verified": "Portal docent enllaçat des del web oficial"
+    },
+    {
+      "id": "xarxa_betlem",
+      "name": "Escoles Betlem",
+      "city": "Premià de Dalt",
+      "phone": "",
+      "email": "",
+      "services": "Escola bressol, Educació Infantil i Primària",
+      "centres": "Betlem i Betlem-2 · dos centres del directori oficial",
+      "web": "https://escolesbetlem.com/",
+      "careers": "https://escolesbetlem.com/en/work-with-us/",
+      "careersSource": "https://escolesbetlem.com/en/work-with-us/",
+      "verified": "Formulari propi de candidatura general; un CV en PDF de fins a 2 MB."
+    },
+    {
+      "id": "xarxa_nordanglia",
+      "name": "Nord Anglia Education · Hamelin-Laie",
+      "city": "Montgat / internacional",
+      "phone": "",
+      "email": "",
+      "services": "Escola bressol, Educació Infantil i Primària segons el centre",
+      "centres": "Hamelin-Laie de Montgat: pertinença al grup confirmada pel web del centre",
+      "web": "https://www.hamelinschool.com/",
+      "careers": "https://www.hamelinschool.com/careers",
+      "careersSource": "https://www.hamelinschool.com/careers",
+      "verified": "Pàgina de feina del centre amb accés al portal de Nord Anglia; cal revisar els requisits de cada vacant."
+    },
+    {
+      "id": "xarxa_borsadocent",
+      "name": "BorsaDocent · borsa compartida",
+      "city": "Catalunya",
+      "email": "",
+      "phone": "",
+      "services": "Educació Infantil, Primària i altres etapes",
+      "centres": "Plataforma de selecció compartida; no és la titular dels centres",
+      "web": "https://borsadocent.cat/",
+      "careers": "https://borsadocent.cat/login.html",
+      "careersSource": "https://reus.manyanet.org/",
+      "verified": "Portal de candidatures enllaçat des de Manyanet. Registre gratuït disponible; les eines premium són opcionals.",
+      "relationshipType": "job-board"
     }
   ],
   "lleure": [

@@ -14,6 +14,9 @@ export const networkRules=[
 // Official centre IDs disambiguate shared names and obsolete directory domains.
 // Membership in an educational network does not necessarily mean common ownership.
 const verifiedRosters=[
+ ['xarxa_manyanet','https://manyanet.org/colegios/',['08009673','08008462','08014590','08021417','08031401','17000512','43002429']],
+ ['xarxa_betlem','https://escolesbetlem.com/en/work-with-us/',['08036986','08063655']],
+ ['xarxa_nordanglia','https://www.hamelinschool.com/careers',['08051239']],
  ['xarxa_maristes','https://www.maristes.cat/ca/noticies/acord-entre-la-caseta-dels-infants-i-fundacio-champagnat-maristes-catalunya',['17007646']],
  ['xarxa_escolapies','https://fundacioescolapies.org/oferta-educativa/',['08005382','08007858','08019575','08020772','08022410','08024613','17001206']],
  ['xarxa_lasalle','https://lasalle.cat/educacio/educacio-obligatoria/',['08005102','08007032','08025745']],

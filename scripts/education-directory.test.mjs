@@ -22,3 +22,9 @@ test('verified ID overrides obsolete school domain and similar names remain unas
  assert.equal(schoolNetwork({codi_centre:'08019575'}).networkId,'xarxa_escolapies');
  assert.deepEqual(schoolNetwork({denominaci_completa:'Unrelated Escola Pia Example',url:'https://example.org'}),{});
 });
+test('verified Manyanet address matches do not capture unrelated Sagrada Familia schools',()=>{
+ assert.equal(schoolNetwork({codi_centre:'08008462',denominaci_completa:'Jesús, Maria i Josep'}).networkId,'xarxa_manyanet');
+ assert.deepEqual(schoolNetwork({codi_centre:'08003041',denominaci_completa:'Sagrada Família',url:'https://example.org'}),{});
+ const rows=schoolRows([{codi_centre:'08063655',denominaci_completa:'Betlem-2',einf1c:'EINF1C'}],[]);
+ assert.equal(rows[0].networkId,'xarxa_betlem');assert.match(rows[0].careers,/escolesbetlem.com/);
+});
