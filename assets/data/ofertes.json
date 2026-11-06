@@ -1,20 +1,44 @@
 {
-  "checkedAt": "2026-11-06T01:44:40.101Z",
+  "checkedAt": "2026-11-06T07:46:57.410Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-06T01:44:40.101Z",
+      "updatedAt": "2026-11-06T07:46:57.410Z",
       "count": 195,
       "reviewed": 704,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-06T01:44:40.101Z",
+      "attemptedAt": "2026-11-06T07:46:57.410Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92328362",
+      "title": "MONITOR/MONITORA REFORÇ EDUCATIU -GAVÀ (BAIX LLOBREGAT)",
+      "school": "FABRA FORMACIÓ S.L.",
+      "city": "BARCELONA - BAIX LLOBREGAT - 08850 GAVÀ",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328362",
+      "snippet": "Busquem un/a monitor/a per a realitzar reforç escolar a alumnat d'Educació Primària a un centre educatiu de la població de Gavà (Baix Llobregat). Horaris de grups: 16:30-18:45h de dilluns a dijous",
+      "created": "1793951156960",
+      "expires": "2027-02-04T07:45:56.957Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92328351",
+      "title": "MONITOR/MONITORA DE REFORÇ ESCOLAR-MANLLEU-(OSONA)",
+      "school": "EMPRESA DE FORMACIÓ",
+      "city": "BARCELONA - OSONA - 08560 MANLLEU",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328351",
+      "snippet": "Busquem un/a monitor/monitora amb experiència en reforç i suport educatiu escolar a nens/es de Primària a una escola de la població de Manlleu (Osona).",
+      "created": "1793949001991",
+      "expires": "2027-02-04T07:10:01.988Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92328319",
       "title": "MONITOR/MONITORA ESPAI MIGDIA ESCOLA A BARCELONA. ZONA EIXAMPLE ESQUERRA",
@@ -97,18 +121,6 @@
       "snippet": "Precisem incorporar a monitors/monitores per menjadors escolars per cobrir suplències de dies puntuals, baixes mèdiques i/o permisos en centre ubicat a Tiana. Cerquem perfils polivalents que puguin estar a qualsevol curs d' infantil i primària.",
       "created": "1793783605019",
       "expires": "2027-02-02T09:13:25.016Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92328203",
-      "title": "MONITOR/MONITORA DE REFORÇ ESCOLAR -GAVÀ (BAIX LLOBREGAT)",
-      "school": "FABRA FORMACIÓ S.L.",
-      "city": "BARCELONA - BAIX LLOBREGAT - 08850 GAVÀ",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328203",
-      "snippet": "Busquem un/a monitor/a per a realitzar reforç escolar a alumnat d'Educació Primària a un centre educatiu de la població de Gavà (Baix Llobregat). Horaris de grups: 16:30-18:45h de dilluns a dijous",
-      "created": "1793780502585",
-      "expires": "2027-02-02T08:21:42.582Z",
       "automatic": true
     },
     {
@@ -2341,18 +2353,6 @@
       "snippet": "Des de Nascor Formació cerquem incorporar un/a monitor/a de transport escolar per acompanyar i supervisar l'alumnat durant els trajectes d'anada i tornada del centre educatiu. Busquem una persona responsable, atenta i amb habilitats per treballar amb infants i joves, que contribueixi a garantir un trajecte segur, tranq",
       "created": "1786713409893",
       "expires": "2026-11-12T13:16:49.892Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92322768",
-      "title": "MONITORS/ES DE LLEURE- POBLACIONS COMARCA D'OSONA",
-      "school": "FABRA FORMACIÓ S.C.P.",
-      "city": "BARCELONA - OSONA - 08500 VIC",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92322768",
-      "snippet": "Es precisa personal com a monitors/monitores de lleure per a realització d´activitats de cura d'intants per a diferents poblacions de la comarca d'Osona.",
-      "created": "1786624069181",
-      "expires": "2026-11-11T12:27:49.180Z",
       "automatic": true
     }
   ]
