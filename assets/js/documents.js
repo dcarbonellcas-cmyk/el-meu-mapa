@@ -16,7 +16,7 @@ function showMailDraft(s,subject,body){
   document.getElementById('includeRecommendation').checked=false;
   document.getElementById('draftTo').value=s.email||'';
   document.getElementById('draftSubject').value=subject||'';
-  const cvDigitalUrl='https://diana-carbonell-curriculum.wiryrose64.chatgpt.site/';
+  const cvDigitalUrl='https://diana-carbonell-curriculum.dcarbonellcas.chatgpt.site/';
   const missatge=String(body||'');
   document.getElementById('draftBody').value=missatge.includes(cvDigitalUrl)?missatge:missatge.trimEnd()+'\n\nPodeu consultar el meu currículum professional aquí:\n'+cvDigitalUrl;
   if(window.beginTailoredDraft)window.beginTailoredDraft(s);

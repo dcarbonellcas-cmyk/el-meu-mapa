@@ -5,7 +5,7 @@ import fs from 'node:fs';
 const source=fs.readFileSync(new URL('../assets/js/gmail.js',import.meta.url),'utf8').split('document.getElementById(\'sendGmail\').addEventListener')[0];
 function setup({archiveFails=false,httpFails=false}={}){
  const elements={sendGmail:{},gmailNotice:{style:{}}},saved=[],requests=[],statuses=[];
- const ctx={document:{getElementById:id=>elements[id]},TextEncoder,btoa:s=>Buffer.from(s,'binary').toString('base64'),Date,localStorage:{setItem:(...x)=>statuses.push(x)},addHist(){},lastSent(){return null},window:{},setTimeout(){},applicationArchive:async(op,x)=>{if(archiveFails)throw Error('disk full');saved.push(x)},renderSentArchive:async()=>{},fetch:async(url,args)=>{requests.push(args);return {ok:!httpFails,status:403,json:async()=>httpFails?{error:{message:'denied'}}:{id:'gmail-123',threadId:'thread-1'}}}};
+ const ctx={document:{getElementById:id=>elements[id]},TextEncoder,btoa:s=>Buffer.from(s,'binary').toString('base64'),Date,localStorage:{setItem:(...x)=>statuses.push(x)},addHist(){},lastSent(){return null},window:{},setTimeout(){},clearTimeout(){},applicationArchive:async(op,x)=>{if(archiveFails)throw Error('disk full');saved.push(x)},renderSentArchive:async()=>{},fetch:async(url,args)=>{requests.push(args);return {ok:!httpFails,status:403,json:async()=>httpFails?{error:{message:'denied'}}:{id:'gmail-123',threadId:'thread-1'}}}};
  vm.createContext(ctx);vm.runInContext(source,ctx);vm.runInContext('buildGmailRaw=async(to,subject,body,docs)=>JSON.stringify({to,subject,body,names:docs.map(d=>d.name)})',ctx);
  return {ctx,elements,saved,requests,statuses};
 }
@@ -28,4 +28,11 @@ test('review confirmation invokes authorization inside the click handler',async(
  const reviewSource=fs.readFileSync(new URL('../assets/js/enviaments.js',import.meta.url),'utf8');const nodes=[];let confirmed=false;
  const context={document:{getElementById:()=>null,createElement:tag=>{const n={tag,style:{},append(){},showModal(){},close(){},remove(){}};nodes.push(n);return n},body:{append(){}}}};
  vm.createContext(context);vm.runInContext(reviewSource,context);const pending=context.reviewApplication(snapshot,()=>{confirmed=true});nodes.find(n=>n.textContent==='Confirmar i connectar Gmail').onclick();assert.equal(confirmed,true);assert.equal(await pending,true);
+});
+
+test('late OAuth callback after timeout cannot send a stale reviewed application',()=>{
+ const x=setup();let timeout,config;x.ctx.setTimeout=fn=>{timeout=fn};
+ x.ctx.google={accounts:{oauth2:{initTokenClient:c=>{config=c;return {requestAccessToken(){}}}}}};x.ctx.window.google=x.ctx.google;
+ x.ctx.authorizeReviewedGmail(snapshot);timeout();config.callback({access_token:'late-token'});
+ assert.equal(x.elements.sendGmail.disabled,false);assert.equal(x.requests.length,0);assert.match(x.elements.gmailNotice.textContent,/No s’ha enviat/);
 });

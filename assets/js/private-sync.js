@@ -1,7 +1,7 @@
 // Google Drive appDataFolder only. Access tokens stay in memory.
 (() => {
   const CLIENT='326278371839-alsvhik4agj0jqp6ps16ve3j722q6p2k.apps.googleusercontent.com';
-  const names={profile:'mapa-profile-v1.json',cv:'mapa-cv-v1.json',letter:'mapa-letter-v1.json',cvAlternative:'mapa-cvAlternative-v1.json',recommendation:'mapa-recommendation-v1.json'};
+  const names={profile:'mapa-profile-v1.json',cv:'mapa-cv-v1.json',letter:'mapa-letter-v1.json',cvAlternative:'mapa-cvAlternative-v1.json',recommendation:'mapa-recommendation-v1.json',tracking:'mapa-tracking-v1.json'};
   const button=document.getElementById('connectPrivateDrive'),status=document.getElementById('privateSyncStatus');
   let token='',expiry=0,busy=false,again=false,timer=null,connected=false,revision=0;
   const say=text=>{status.textContent=text};
@@ -27,11 +27,13 @@
   function validate(key,r){
     if(!r||r.version!==1||r.key!==key||typeof r.updated!=='string'||!stamp(r.updated))throw Error('Còpia privada no vàlida. Es conserva la còpia local.');
     if(r.deleted!==undefined&&typeof r.deleted!=='boolean')throw Error('Estat del document no vàlid.');
+    if(key==='tracking'){validatePrivateTracking(r);return}
     if(key==='profile'){
       if(typeof r.name!=='string'||typeof r.bio!=='string'||r.name.length>500||r.bio.length>100000|| (r.roleBio&& (typeof r.roleBio!=='object'||Array.isArray(r.roleBio)||Object.entries(r.roleBio).some(([k,v])=>!['infantil03','infantil36','infantil','primaria','monitoratge','vetlladora','direccio','coordinacio','menjador','extraescolars','acollida'].includes(k)||typeof v!=='string'||v.length>10000))))throw Error('Perfil privat no vàlid.');
     }else if(typeof r.name!=='string'||typeof r.type!=='string'||typeof r.data!=='string'||r.data.length>28000000||!/^[A-Za-z0-9+/]*={0,2}$/.test(r.data))throw Error('Document privat no vàlid.');
   }
   async function ownRecord(key){
+    if(key==='tracking')return privateTrackingSnapshot();
     if(key==='profile'){
       const p=candidateProfile();if(!p.name&&!p.bio)return null;
       return {version:1,key,name:p.name||'',bio:p.bio||'',roleBio:p.roleBio||{},updated:p.updated||'1970-01-01T00:00:00.001Z'};
@@ -41,7 +43,8 @@
     return {version:1,key,deleted:!!d.deleted,name:d.name,type:d.type,updated:d.updated||'1970-01-01T00:00:00.001Z',data:await blobBase64(d.blob)};
   }
   async function restore(key,r){
-    if(key==='profile')localStorage.setItem('mapaEscolesProfile_v1',JSON.stringify({name:r.name,bio:r.bio,roleBio:r.roleBio||{},updated:r.updated}));
+    if(key==='tracking')restorePrivateTracking(r);
+    else if(key==='profile')localStorage.setItem('mapaEscolesProfile_v1',JSON.stringify({name:r.name,bio:r.bio,roleBio:r.roleBio||{},updated:r.updated}));
     else await saveDoc(key,new File([Uint8Array.from(atob(r.data),c=>c.charCodeAt(0))],r.name,{type:r.type}),{updated:r.updated,restoring:true,deleted:!!r.deleted});
     document.dispatchEvent(new Event('private-data-restored'));
   }
@@ -57,7 +60,7 @@
   }
   async function sync(){
     if(!connected)return;if(busy){again=true;return}
-    busy=true;button.disabled=true;say('Sincronitzant el perfil, el CV i la carta amb la còpia privada…');
+    busy=true;button.disabled=true;say('Sincronitzant perfil, documents, borses i seguiment amb la còpia privada…');
     try{
       const files=await listFiles();
       for(const key of Object.keys(names)){
@@ -65,6 +68,11 @@
         const file=matches[0],before=revision;let remote=null,etag=null;
         if(file){const r=await api('https://www.googleapis.com/drive/v3/files/'+encodeURIComponent(file.id)+'?alt=media');const raw=await r.text();if(raw.length>30000000)throw Error('La còpia privada és massa gran.');remote=JSON.parse(raw);validate(key,remote);etag=r.headers.get('ETag');}
         const own=await ownRecord(key);if(before!==revision){again=true;continue}
+        if(key==='tracking'){
+          const merged=mergePrivateTracking(own,remote);
+          if(merged){await restore(key,merged);if(JSON.stringify(merged)!==JSON.stringify(remote))await upload(file,merged,etag)}
+          continue;
+        }
         if(remote&&(!own||stamp(remote.updated)>stamp(own.updated)))await restore(key,remote);
         else if(own&&(!remote||stamp(own.updated)>stamp(remote.updated)))await upload(file,own,etag);
       }
@@ -78,7 +86,9 @@
     const client=google.accounts.oauth2.initTokenClient({client_id:CLIENT,scope:'https://www.googleapis.com/auth/drive.appdata',include_granted_scopes:false,
       callback:async r=>{if(r.error||!r.access_token){say('No s’ha autoritzat la connexió privada. Es conserva la còpia local.');button.disabled=false;return}token=r.access_token;expiry=Date.now()+Math.max(0,Number(r.expires_in||3600)-60)*1000;connected=true;await sync();},
       error_callback:()=>{button.disabled=false;say('Connexió cancel·lada o finestra bloquejada. Torna-ho a provar.');}});
-    button.disabled=true;say('Tria el mateix compte de Google a l’ordinador i a l’iPhone.');client.requestAccessToken({prompt:'select_account'});
+    button.disabled=true;say('Tria el mateix compte de Google a l’ordinador i a l’iPhone.');
+    try{client.requestAccessToken({prompt:'select_account'})}catch{button.disabled=false;say('No s’ha pogut obrir Google. Torna-ho a provar des de Safari o Chrome.')}
+    setTimeout(()=>{if(button.disabled&&!busy&&!connected){button.disabled=false;say('Google no ha completat la connexió. Permet la finestra emergent i torna-ho a provar; les dades locals es conserven.')}},60000);
   }
   document.addEventListener('private-data-changed',()=>{revision++;if(!connected)return;clearTimeout(timer);timer=setTimeout(sync,1500)});
   document.addEventListener('visibilitychange',()=>{if(!document.hidden&&connected)sync()});

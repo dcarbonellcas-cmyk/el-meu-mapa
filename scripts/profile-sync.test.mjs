@@ -4,6 +4,7 @@ import vm from 'node:vm';
 import {readFile} from 'node:fs/promises';
 import {webcrypto} from 'node:crypto';
 const source=await readFile(new URL('../assets/js/private-sync.js',import.meta.url),'utf8');
+const trackingSource=await readFile(new URL('../assets/js/private-tracking.js',import.meta.url),'utf8');
 const profileSource=await readFile(new URL('../assets/js/perfil.js',import.meta.url),'utf8');
 const record=(key,updated,extra={})=>({version:1,key,updated,name:'Example',...(key==='profile'?{bio:'Training'}:{type:'application/pdf',data:'cGRm'}),...extra});
 function setup({profile={},docs={},remote={},failure=0}={}){
@@ -13,8 +14,8 @@ function setup({profile={},docs={},remote={},failure=0}={}){
   let pending;
   const context={URLSearchParams,Blob,File,Uint8Array,Event,crypto:webcrypto,atob,Date,JSON,Math,Number,Error,
     setTimeout:()=>0,clearTimeout:()=>{},setInterval:()=>0,
-    localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},
-    document:{hidden:false,getElementById:node,querySelectorAll:()=>[],addEventListener:(type,fn)=>events.set(type,fn),dispatchEvent:e=>events.get(e.type)?.(e)},
+    localStorage:{get length(){return storage.size},key:i=>[...storage.keys()][i],getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},
+    document:{hidden:false,getElementById:node,querySelectorAll:()=>[],addEventListener:(type,fn)=>events.set(type,[...(events.get(type)||[]),fn]),dispatchEvent:e=>(events.get(e.type)||[]).forEach(fn=>fn(e))},
     window:{addEventListener:()=>{}},
     candidateProfile:()=>JSON.parse(storage.get('mapaEscolesProfile_v1')||'{}'),
     getDoc:async(key,options={})=>docs[key]&&(!docs[key].deleted||options.includeDeleted)?docs[key]:null,
@@ -39,6 +40,7 @@ function setup({profile={},docs={},remote={},failure=0}={}){
     google:{accounts:{oauth2:{initTokenClient:options=>({requestAccessToken:()=>{pending=options.callback({access_token:'test-token',expires_in:3600})}})}}}
   };
   context.window.google=context.google;
+  vm.runInNewContext(trackingSource,context);
   vm.runInNewContext(source,context);
   return {calls,files,docs,node,storage,context,connect:async()=>{node('connectPrivateDrive').click();await pending}};
 }
@@ -89,4 +91,27 @@ test('moving local document to trash updates cloud marker and preserves recovera
 });
 test('restoring a newer local document clears remote trash state',async()=>{
  const s=setup({docs:{cv:{name:'CV.pdf',type:'application/pdf',blob:new Blob(['pdf']),deleted:false,updated:'2026-11-03T12:00:00Z'}},remote:{cv:record('cv','2026-11-02T12:00:00Z',{deleted:true})}});await s.connect();assert.equal(s.files.get('cv').value.deleted,false);
+});
+
+test('tracking restores registrations and merges histories without losing either device',async()=>{
+ const older='2026-11-01T12:00:00Z',newer='2026-11-02T12:00:00Z';
+ const a={date:older,type:'sent',text:'Confirmed send'},b={date:newer,type:'status',text:'Reply recorded'};
+ const tracking={version:1,key:'tracking',updated:newer,entries:{jobPortal_example:{updated:newer,value:JSON.stringify({status:'registered'})},history_123:{updated:newer,value:JSON.stringify([b])}}};
+ const s=setup({remote:{tracking}});
+ s.storage.set('history_123',JSON.stringify([a]));
+ await s.connect();
+ assert.equal(JSON.parse(s.storage.get('jobPortal_example')).status,'registered');
+ assert.deepEqual(JSON.parse(s.storage.get('history_123')),[b,a]);
+ assert.equal(JSON.parse(s.files.get('tracking').value.entries.history_123.value).length,2);
+});
+test('tracking rejects arbitrary storage keys and never includes OAuth tokens',async()=>{
+ const s=setup();s.storage.set('access_token','private-token');s.storage.set('jobPortal_example',JSON.stringify({status:'registered'}));
+ await s.connect();assert(!JSON.stringify(s.files.get('tracking').value).includes('private-token'));
+ const bad=setup({remote:{tracking:{version:1,key:'tracking',updated:'2026-11-02T12:00:00Z',entries:{access_token:{value:'bad',updated:'2026-11-02T12:00:00Z'}}}}});
+ await bad.connect();assert(!bad.storage.has('access_token'));assert.match(bad.node('privateSyncStatus').textContent,/no vàlid/);
+});
+test('a newer registration status wins without changing another bank',async()=>{
+ const s=setup({remote:{tracking:{version:1,key:'tracking',updated:'2026-11-02T12:00:00Z',entries:{jobPortal_a:{value:JSON.stringify({status:'pending'}),updated:'2026-11-01T12:00:00Z'},jobPortal_b:{value:JSON.stringify({status:'registered'}),updated:'2026-11-02T12:00:00Z'}}}}});
+ s.storage.set('jobPortal_a',JSON.stringify({status:'registered'}));s.context.document.dispatchEvent(new Event('private-data-changed'));
+ await s.connect();assert.equal(JSON.parse(s.storage.get('jobPortal_a')).status,'registered');assert.equal(JSON.parse(s.storage.get('jobPortal_b')).status,'registered');
 });
