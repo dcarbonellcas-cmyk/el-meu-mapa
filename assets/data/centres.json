@@ -163,15 +163,15 @@
       "primaria"
     ],
     "web": "http://www.escolavedrunaartes.cat",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.79786,
     "lng": 1.952682,
     "email": "a8000220@xtec.cat",
     "phone": "938305212",
     "address": "c. Carme, 16",
-    "postal": "08271",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "08271"
   },
   {
     "id": "8000244",
@@ -317,15 +317,15 @@
       "primaria"
     ],
     "web": "http://badalona.salesians.cat",
+    "networkId": "xarxa_salesians",
+    "networkSource": "https://www.salesians.cat/",
     "kind": "Concertada",
     "lat": 41.4436,
     "lng": 2.239351,
     "email": "a8000499@xtec.cat",
     "phone": "933877254",
     "address": "c. Alfons XII, 111",
-    "postal": "08912",
-    "networkId": "xarxa_salesians",
-    "networkSource": "https://www.salesians.cat/"
+    "postal": "08912"
   },
   {
     "id": "8000517",
@@ -396,15 +396,15 @@
       "primaria"
     ],
     "web": "http://www.escolamds.cat",
+    "networkId": "xarxa_fep",
+    "networkSource": "https://fep.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.44034,
     "lng": 2.227628,
     "email": "a8000670@xtec.cat",
     "phone": "933876243",
     "address": "pg. de la  Salut, 36-38",
-    "postal": "08914",
-    "networkId": "xarxa_fep",
-    "networkSource": "https://fep.cat/escoles/"
+    "postal": "08914"
   },
   {
     "id": "8000700",
@@ -417,15 +417,15 @@
       "primaria"
     ],
     "web": "http://www.maristes.cat",
+    "networkId": "xarxa_maristes",
+    "networkSource": "https://www.maristes.cat/ca/escoles",
     "kind": "Concertada",
     "lat": 41.44779,
     "lng": 2.244565,
     "email": "a8000700@xtec.cat",
     "phone": "933895650",
     "address": "c. Dos de Maig, 67",
-    "postal": "08912",
-    "networkId": "xarxa_maristes",
-    "networkSource": "https://www.maristes.cat/ca/escoles"
+    "postal": "08912"
   },
   {
     "id": "8000761",
@@ -2020,15 +2020,15 @@
       "primaria"
     ],
     "web": "",
+    "networkId": "xarxa_maristes",
+    "networkSource": "https://www.maristes.cat/ca/escoles",
     "kind": "Concertada",
     "lat": 41.37207,
     "lng": 2.1622,
     "email": "a8003361@xtec.cat",
     "phone": "934425027",
     "address": "c. Blasco de Garay, 52",
-    "postal": "08004",
-    "networkId": "xarxa_maristes",
-    "networkSource": "https://www.maristes.cat/ca/escoles"
+    "postal": "08004"
   },
   {
     "id": "8003491",
@@ -2060,15 +2060,15 @@
       "primaria"
     ],
     "web": "http://rocafort.salesians.cat",
+    "networkId": "xarxa_salesians",
+    "networkSource": "https://www.salesians.cat/",
     "kind": "Concertada",
     "lat": 41.3771,
     "lng": 2.1564,
     "email": "a8003543@xtec.cat",
     "phone": "934231234",
     "address": "c. Rocafort, 42",
-    "postal": "08015",
-    "networkId": "xarxa_salesians",
-    "networkSource": "https://www.salesians.cat/"
+    "postal": "08015"
   },
   {
     "id": "8003592",
@@ -2118,15 +2118,15 @@
       "primaria"
     ],
     "web": "http://www.spclaver.fje.edu",
+    "networkId": "xarxa_jesuites",
+    "networkSource": "https://www.fje.edu/ca/fje/treballa-la-fundacio-jesuites-educacio",
     "kind": "Concertada",
     "lat": 41.3729,
     "lng": 2.173431,
     "email": "a8003671@xtec.cat",
     "phone": "934418006",
     "address": "c. Vila Vilà, 14",
-    "postal": "08004",
-    "networkId": "xarxa_jesuites",
-    "networkSource": "https://www.fje.edu/ca/fje/treballa-la-fundacio-jesuites-educacio"
+    "postal": "08004"
   },
   {
     "id": "8003695",
@@ -2215,15 +2215,15 @@
       "primaria"
     ],
     "web": "http://www.bonanova.lasalle.cat",
+    "networkId": "xarxa_lasalle",
+    "networkSource": "https://lasalle.cat/",
     "kind": "Concertada",
     "lat": 41.406,
     "lng": 2.132376,
     "email": "a8003907@xtec.cat",
     "phone": "932540954",
     "address": "pg. de la Bonanova, 8",
-    "postal": "08022",
-    "networkId": "xarxa_lasalle",
-    "networkSource": "https://lasalle.cat/"
+    "postal": "08022"
   },
   {
     "id": "8003993",
@@ -2277,15 +2277,15 @@
       "primaria"
     ],
     "web": "http://www.santignasi.fje.edu",
+    "networkId": "xarxa_jesuites",
+    "networkSource": "https://www.fje.edu/ca/fje/treballa-la-fundacio-jesuites-educacio",
     "kind": "Concertada",
     "lat": 41.40293,
     "lng": 2.121492,
     "email": "a8004067@xtec.cat",
     "phone": "936023000",
     "address": "c. Carrasco i Formiguera, 32",
-    "postal": "08017",
-    "networkId": "xarxa_jesuites",
-    "networkSource": "https://www.fje.edu/ca/fje/treballa-la-fundacio-jesuites-educacio"
+    "postal": "08017"
   },
   {
     "id": "8004080",
@@ -2416,15 +2416,15 @@
       "primaria"
     ],
     "web": "https://www.escolapissarria.cat/",
+    "networkId": "xarxa_escolapia",
+    "networkSource": "https://escolapia.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.4069,
     "lng": 2.124686,
     "email": "a8004286@xtec.cat",
     "phone": "932120908",
     "address": "c. Immaculada, 25-35",
-    "postal": "08017",
-    "networkId": "xarxa_escolapia",
-    "networkSource": "https://escolapia.cat/escoles/"
+    "postal": "08017"
   },
   {
     "id": "8004316",
@@ -2574,15 +2574,15 @@
       "primaria"
     ],
     "web": "http://www.santgervasi.fje.edu",
+    "networkId": "xarxa_jesuites",
+    "networkSource": "https://www.fje.edu/ca/fje/treballa-la-fundacio-jesuites-educacio",
     "kind": "Concertada",
     "lat": 41.39715,
     "lng": 2.149243,
     "email": "a8004626@xtec.cat",
     "phone": "933622058",
     "address": "c. Avenir, 19",
-    "postal": "08006",
-    "networkId": "xarxa_jesuites",
-    "networkSource": "https://www.fje.edu/ca/fje/treballa-la-fundacio-jesuites-educacio"
+    "postal": "08006"
   },
   {
     "id": "8004641",
@@ -2770,15 +2770,15 @@
       "primaria"
     ],
     "web": "http://www.lasallecomtal.org",
+    "networkId": "xarxa_lasalle",
+    "networkSource": "https://lasalle.cat/educacio/educacio-obligatoria/",
     "kind": "Concertada",
     "lat": 41.38795,
     "lng": 2.175221,
     "email": "a8005102@xtec.cat",
     "phone": "932682033",
     "address": "c. Amadeu Vives, 6",
-    "postal": "08003",
-    "networkId": "xarxa_lasalle",
-    "networkSource": "https://lasalle.cat/educacio/educacio-obligatoria/"
+    "postal": "08003"
   },
   {
     "id": "8005114",
@@ -2811,15 +2811,15 @@
       "primaria"
     ],
     "web": "http://www.casp.fje.edu/",
+    "networkId": "xarxa_jesuites",
+    "networkSource": "https://www.fje.edu/ca/fje/treballa-la-fundacio-jesuites-educacio",
     "kind": "Concertada",
     "lat": 41.38991,
     "lng": 2.17116,
     "email": "a8005199@xtec.cat",
     "phone": "933183704",
     "address": "c. Casp, 25",
-    "postal": "08010",
-    "networkId": "xarxa_jesuites",
-    "networkSource": "https://www.fje.edu/ca/fje/treballa-la-fundacio-jesuites-educacio"
+    "postal": "08010"
   },
   {
     "id": "8005205",
@@ -2872,15 +2872,15 @@
       "primaria"
     ],
     "web": "http://www.kostka.fje.edu",
+    "networkId": "xarxa_jesuites",
+    "networkSource": "https://www.fje.edu/ca/fje/treballa-la-fundacio-jesuites-educacio",
     "kind": "Concertada",
     "lat": 41.41425,
     "lng": 2.1573,
     "email": "a8005370@xtec.cat",
     "phone": "932103605",
     "address": "c. Antequera, 2-4",
-    "postal": "08024",
-    "networkId": "xarxa_jesuites",
-    "networkSource": "https://www.fje.edu/ca/fje/treballa-la-fundacio-jesuites-educacio"
+    "postal": "08024"
   },
   {
     "id": "8005382",
@@ -2894,15 +2894,15 @@
       "primaria"
     ],
     "web": "http://escolapieslluria.org/web/",
+    "networkId": "xarxa_escolapies",
+    "networkSource": "https://fundacioescolapies.org/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.39374,
     "lng": 2.168282,
     "email": "a8005382@xtec.cat",
     "phone": "934882166",
     "address": "c. Roger de Llúria, 64",
-    "postal": "08009",
-    "networkId": "xarxa_escolapies",
-    "networkSource": "https://fundacioescolapies.org/oferta-educativa/"
+    "postal": "08009"
   },
   {
     "id": "8005394",
@@ -2993,15 +2993,15 @@
       "primaria"
     ],
     "web": "http://imma.maristes.cat/",
+    "networkId": "xarxa_maristes",
+    "networkSource": "https://www.maristes.cat/ca/escoles",
     "kind": "Concertada",
     "lat": 41.39901,
     "lng": 2.172044,
     "email": "a8005564@xtec.cat",
     "phone": "934582904",
     "address": "c. València, 370",
-    "postal": "08009",
-    "networkId": "xarxa_maristes",
-    "networkSource": "https://www.maristes.cat/ca/escoles"
+    "postal": "08009"
   },
   {
     "id": "8005618",
@@ -3014,15 +3014,15 @@
       "primaria"
     ],
     "web": "http://vedruna-angels.org",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.38317,
     "lng": 2.167689,
     "email": "a8005618@xtec.cat",
     "phone": "933186298",
     "address": "pl. dels Àngels, 3",
-    "postal": "08001",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "08001"
   },
   {
     "id": "8005746",
@@ -3035,15 +3035,15 @@
       "primaria"
     ],
     "web": "http://santantoni.escolapia.cat",
+    "networkId": "xarxa_escolapia",
+    "networkSource": "https://escolapia.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.37828,
     "lng": 2.163964,
     "email": "a8005746@xtec.cat",
     "phone": "934410605",
     "address": "rda. Sant Pau, 72",
-    "postal": "08001",
-    "networkId": "xarxa_escolapia",
-    "networkSource": "https://escolapia.cat/escoles/"
+    "postal": "08001"
   },
   {
     "id": "8005761",
@@ -3134,15 +3134,15 @@
       "primaria"
     ],
     "web": "http://www.escolasantjoseporiol.org",
+    "networkId": "xarxa_fep",
+    "networkSource": "https://fep.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.38443,
     "lng": 2.157587,
     "email": "a8006052@xtec.cat",
     "phone": "934536268",
     "address": "c. Villarroel, 85",
-    "postal": "08011",
-    "networkId": "xarxa_fep",
-    "networkSource": "https://fep.cat/escoles/"
+    "postal": "08011"
   },
   {
     "id": "8006118",
@@ -3194,15 +3194,15 @@
       "primaria"
     ],
     "web": "http://www.escolasantmedir.cat",
+    "networkId": "xarxa_fep",
+    "networkSource": "https://fep.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.3699,
     "lng": 2.137869,
     "email": "a8006209@xtec.cat",
     "phone": "934217150",
     "address": "c. Constitució, 15",
-    "postal": "08014",
-    "networkId": "xarxa_fep",
-    "networkSource": "https://fep.cat/escoles/"
+    "postal": "08014"
   },
   {
     "id": "8006477",
@@ -3254,15 +3254,15 @@
       "primaria"
     ],
     "web": "http://slc.maristes.cat",
+    "networkId": "xarxa_maristes",
+    "networkSource": "https://www.maristes.cat/ca/escoles",
     "kind": "Concertada",
     "lat": 41.38295,
     "lng": 2.134823,
     "email": "a8006532@xtec.cat",
     "phone": "934908625",
     "address": "c. Vallespir, 160",
-    "postal": "08014",
-    "networkId": "xarxa_maristes",
-    "networkSource": "https://www.maristes.cat/ca/escoles"
+    "postal": "08014"
   },
   {
     "id": "8006702",
@@ -3314,15 +3314,15 @@
       "primaria"
     ],
     "web": "http://www.vedrunagracia.cat",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.4046,
     "lng": 2.15157,
     "email": "a8006908@xtec.cat",
     "phone": "932188269",
     "address": "c. Gran de Gràcia, 228-240",
-    "postal": "08012",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "08012"
   },
   {
     "id": "8006945",
@@ -3393,15 +3393,15 @@
       "primaria"
     ],
     "web": "http://www.lasallegracia.cat/",
+    "networkId": "xarxa_lasalle",
+    "networkSource": "https://lasalle.cat/educacio/educacio-obligatoria/",
     "kind": "Concertada",
     "lat": 41.40696,
     "lng": 2.154952,
     "email": "a8007032@xtec.cat",
     "phone": "932922118",
     "address": "pl. del Nord, 14",
-    "postal": "08024",
-    "networkId": "xarxa_lasalle",
-    "networkSource": "https://lasalle.cat/educacio/educacio-obligatoria/"
+    "postal": "08024"
   },
   {
     "id": "8007101",
@@ -3453,15 +3453,15 @@
       "primaria"
     ],
     "web": "http://luzcasanova.escolapia.cat/",
+    "networkId": "xarxa_escolapia",
+    "networkSource": "https://escolapia.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.44311,
     "lng": 2.175233,
     "email": "a8007445@xtec.cat",
     "phone": "933596181",
     "address": "c. Almansa, 52-54",
-    "postal": "08042",
-    "networkId": "xarxa_escolapia",
-    "networkSource": "https://escolapia.cat/escoles/"
+    "postal": "08042"
   },
   {
     "id": "8007469",
@@ -3474,15 +3474,15 @@
       "primaria"
     ],
     "web": "http://www.fedac.cat/amilcar/",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.42977,
     "lng": 2.171925,
     "email": "a8007469@xtec.cat",
     "phone": "933571554",
     "address": "c. Amílcar, 10",
-    "postal": "08031",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "08031"
   },
   {
     "id": "8007482",
@@ -3591,15 +3591,15 @@
       "primaria"
     ],
     "web": "http://escolapiessantmarti.org",
+    "networkId": "xarxa_escolapies",
+    "networkSource": "https://fundacioescolapies.org/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.41303,
     "lng": 2.18182,
     "email": "a8007858@xtec.cat",
     "phone": "934569303",
     "address": "c. Joan de Peguera, 42",
-    "postal": "08026",
-    "networkId": "xarxa_escolapies",
-    "networkSource": "https://fundacioescolapies.org/oferta-educativa/"
+    "postal": "08026"
   },
   {
     "id": "8007871",
@@ -3688,15 +3688,15 @@
       "primaria"
     ],
     "web": "http://escolaesperanca.cat",
+    "networkId": "xarxa_fep",
+    "networkSource": "https://fep.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.44666,
     "lng": 2.200885,
     "email": "a8008267@xtec.cat",
     "phone": "933457745",
     "address": "c. Quito, 25-37",
-    "postal": "08030",
-    "networkId": "xarxa_fep",
-    "networkSource": "https://fep.cat/escoles/"
+    "postal": "08030"
   },
   {
     "id": "8008279",
@@ -3709,15 +3709,15 @@
       "primaria"
     ],
     "web": "http://www.fedac.cat/santandreu.php",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.43207,
     "lng": 2.191689,
     "email": "a8008279@xtec.cat",
     "phone": "933468001",
     "address": "c. Ramon Batlle, 39-45",
-    "postal": "08030",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "08030"
   },
   {
     "id": "8008309",
@@ -3730,15 +3730,15 @@
       "primaria"
     ],
     "web": "http://www.marealfonsacavin.cat/",
+    "networkId": "xarxa_fep",
+    "networkSource": "https://fep.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.46041,
     "lng": 2.175342,
     "email": "a8008309@xtec.cat",
     "phone": "933594996",
     "address": "av. Rasos de Peguera, 57 bis",
-    "postal": "08033",
-    "networkId": "xarxa_fep",
-    "networkSource": "https://fep.cat/escoles/"
+    "postal": "08033"
   },
   {
     "id": "8008361",
@@ -3790,15 +3790,15 @@
       "primaria"
     ],
     "web": "http://www.bonpastor.com",
+    "networkId": "xarxa_fep",
+    "networkSource": "https://fep.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.43579,
     "lng": 2.204033,
     "email": "a8008401@xtec.cat",
     "phone": "933140451",
     "address": "c. Sant Adrià, 134",
-    "postal": "08030",
-    "networkId": "xarxa_fep",
-    "networkSource": "https://fep.cat/escoles/"
+    "postal": "08030"
   },
   {
     "id": "8008449",
@@ -3830,15 +3830,15 @@
       "primaria"
     ],
     "web": "http://www.santandreu.manyanet.org",
+    "networkId": "xarxa_manyanet",
+    "networkSource": "https://manyanet.org/",
     "kind": "Concertada",
     "lat": 41.42831,
     "lng": 2.191514,
     "email": "a8008462@xtec.cat",
     "phone": "933112161",
     "address": "c. Sant Sebastià, 55",
-    "postal": "08030",
-    "networkId": "xarxa_manyanet",
-    "networkSource": "https://manyanet.org/"
+    "postal": "08030"
   },
   {
     "id": "8008474",
@@ -4080,15 +4080,15 @@
       "primaria"
     ],
     "web": "http://www.stmatrinitat.org",
+    "networkId": "xarxa_fep",
+    "networkSource": "https://fep.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.45042,
     "lng": 2.191164,
     "email": "a8009235@xtec.cat",
     "phone": "932744195",
     "address": "c. Mare de Déu de Lorda, 3-5",
-    "postal": "08033",
-    "networkId": "xarxa_fep",
-    "networkSource": "https://fep.cat/escoles/"
+    "postal": "08033"
   },
   {
     "id": "8009247",
@@ -4120,15 +4120,15 @@
       "primaria"
     ],
     "web": "http://www.clot.fje.edu",
+    "networkId": "xarxa_jesuites",
+    "networkSource": "https://www.fje.edu/ca/fje/treballa-la-fundacio-jesuites-educacio",
     "kind": "Concertada",
     "lat": 41.41282,
     "lng": 2.1905,
     "email": "a8009260@xtec.cat",
     "phone": "933516011",
     "address": "c. València, 680",
-    "postal": "08027",
-    "networkId": "xarxa_jesuites",
-    "networkSource": "https://www.fje.edu/ca/fje/treballa-la-fundacio-jesuites-educacio"
+    "postal": "08027"
   },
   {
     "id": "8009430",
@@ -4159,15 +4159,15 @@
       "primaria"
     ],
     "web": "http://www.santramonnonat.org",
+    "networkId": "xarxa_fep",
+    "networkSource": "https://fep.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.37591,
     "lng": 2.116644,
     "email": "a8009454@xtec.cat",
     "phone": "933339972",
     "address": "c. Collblanc, 72",
-    "postal": "08028",
-    "networkId": "xarxa_fep",
-    "networkSource": "https://fep.cat/escoles/"
+    "postal": "08028"
   },
   {
     "id": "8009466",
@@ -4199,15 +4199,15 @@
       "primaria"
     ],
     "web": "http://www.stlisieux.org",
+    "networkId": "xarxa_fep",
+    "networkSource": "https://fep.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.38844,
     "lng": 2.135168,
     "email": "a8009508@xtec.cat",
     "phone": "934309318",
     "address": "c. Déu i Mata, 67",
-    "postal": "08029",
-    "networkId": "xarxa_fep",
-    "networkSource": "https://fep.cat/escoles/"
+    "postal": "08029"
   },
   {
     "id": "8009636",
@@ -4220,15 +4220,15 @@
       "primaria"
     ],
     "web": "http://www.csm.cat",
+    "networkId": "xarxa_escolapia",
+    "networkSource": "https://escolapia.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.39098,
     "lng": 2.153951,
     "email": "a8009636@xtec.cat",
     "phone": "934104005",
     "address": "c. Rosselló, 175",
-    "postal": "08036",
-    "networkId": "xarxa_escolapia",
-    "networkSource": "https://escolapia.cat/escoles/"
+    "postal": "08036"
   },
   {
     "id": "8009673",
@@ -4242,15 +4242,15 @@
       "primaria"
     ],
     "web": "https://www.lescorts.manyanet.org/",
+    "networkId": "xarxa_manyanet",
+    "networkSource": "https://manyanet.org/",
     "kind": "Concertada",
     "lat": 41.38869,
     "lng": 2.138116,
     "email": "a8009673@xtec.cat",
     "phone": "934396700",
     "address": "Travessera de les Corts, 331",
-    "postal": "08029",
-    "networkId": "xarxa_manyanet",
-    "networkSource": "https://manyanet.org/"
+    "postal": "08029"
   },
   {
     "id": "8009697",
@@ -4301,15 +4301,15 @@
       "primaria"
     ],
     "web": "https://horta.fedac.cat/",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.43449,
     "lng": 2.155184,
     "email": "a8009806@xtec.cat",
     "phone": "934275496",
     "address": "c. Campoamor, 49",
-    "postal": "08031",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "08031"
   },
   {
     "id": "8009934",
@@ -4322,15 +4322,15 @@
       "primaria"
     ],
     "web": "http://www.horta.lasalle.cat",
+    "networkId": "xarxa_lasalle",
+    "networkSource": "https://lasalle.cat/",
     "kind": "Concertada",
     "lat": 41.43666,
     "lng": 2.1611,
     "email": "a8009934@xtec.cat",
     "phone": "934271500",
     "address": "c. Doctor Letamendi, 63",
-    "postal": "08031",
-    "networkId": "xarxa_lasalle",
-    "networkSource": "https://lasalle.cat/"
+    "postal": "08031"
   },
   {
     "id": "8009971",
@@ -4515,15 +4515,15 @@
       "primaria"
     ],
     "web": "http://www.vedrunaimmaculada.cat",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.40727,
     "lng": 2.181543,
     "email": "a8010341@xtec.cat",
     "phone": "932463200",
     "address": "c. Dos de Maig, 247-251",
-    "postal": "08013",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "08013"
   },
   {
     "id": "8010432",
@@ -4708,15 +4708,15 @@
       "primaria"
     ],
     "web": "http://horta.salesians.cat",
+    "networkId": "xarxa_salesians",
+    "networkSource": "https://www.salesians.cat/",
     "kind": "Concertada",
     "lat": 41.43609,
     "lng": 2.14904,
     "email": "a8011394@xtec.cat",
     "phone": "934280250",
     "address": "pg. Vall d'Hebron, 258-260",
-    "postal": "08035",
-    "networkId": "xarxa_salesians",
-    "networkSource": "https://www.salesians.cat/"
+    "postal": "08035"
   },
   {
     "id": "8011448",
@@ -4768,15 +4768,15 @@
       "primaria"
     ],
     "web": "http://balmes.escolapia.cat",
+    "networkId": "xarxa_escolapia",
+    "networkSource": "https://escolapia.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.3978,
     "lng": 2.151927,
     "email": "a8011941@xtec.cat",
     "phone": "932178612",
     "address": "c. Balmes, 208",
-    "postal": "08006",
-    "networkId": "xarxa_escolapia",
-    "networkSource": "https://escolapia.cat/escoles/"
+    "postal": "08006"
   },
   {
     "id": "8012027",
@@ -4998,15 +4998,15 @@
       "primaria"
     ],
     "web": "http://www.escolaroser-lesplanes.cat",
+    "networkId": "xarxa_fep",
+    "networkSource": "https://fep.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.42812,
     "lng": 2.092249,
     "email": "a8014449@xtec.cat",
     "phone": "934069417",
     "address": "av. Rectoret, s/n",
-    "postal": "08017",
-    "networkId": "xarxa_fep",
-    "networkSource": "https://fep.cat/escoles/"
+    "postal": "08017"
   },
   {
     "id": "8014589",
@@ -5038,15 +5038,15 @@
       "primaria"
     ],
     "web": "https://begues.manyanet.org/",
+    "networkId": "xarxa_manyanet",
+    "networkSource": "https://manyanet.org/",
     "kind": "Concertada",
     "lat": 41.33151,
     "lng": 1.9425,
     "email": "a8014590@xtec.cat",
     "phone": "936390011",
     "address": "c. Sant Climent, s/n",
-    "postal": "08859",
-    "networkId": "xarxa_manyanet",
-    "networkSource": "https://manyanet.org/"
+    "postal": "08859"
   },
   {
     "id": "8014620",
@@ -5079,15 +5079,15 @@
       "primaria"
     ],
     "web": "http://www.vedrunaberga.cat",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 42.101,
     "lng": 1.839686,
     "email": "a8014656@xtec.cat",
     "phone": "938210186",
     "address": "c. Cervantes, 34",
-    "postal": "08600",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "08600"
   },
   {
     "id": "8014668",
@@ -5293,15 +5293,15 @@
       "primaria"
     ],
     "web": "http://caldes.escolapia.cat",
+    "networkId": "xarxa_escolapia",
+    "networkSource": "https://escolapia.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.62639,
     "lng": 2.170715,
     "email": "a8015041@xtec.cat",
     "phone": "938650333",
     "address": "c. Pare Poch, 15",
-    "postal": "08140",
-    "networkId": "xarxa_escolapia",
-    "networkSource": "https://escolapia.cat/escoles/"
+    "postal": "08140"
   },
   {
     "id": "8015077",
@@ -5371,15 +5371,15 @@
       "primaria"
     ],
     "web": "http://calella.escolapia.cat/",
+    "networkId": "xarxa_escolapia",
+    "networkSource": "https://escolapia.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.61215,
     "lng": 2.656714,
     "email": "a8015120@xtec.cat",
     "phone": "937690455",
     "address": "c. Jovara, 39",
-    "postal": "08370",
-    "networkId": "xarxa_escolapia",
-    "networkSource": "https://escolapia.cat/escoles/"
+    "postal": "08370"
   },
   {
     "id": "8015144",
@@ -5468,15 +5468,15 @@
       "primaria"
     ],
     "web": "http://www.coleyglesias.com/",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://analisi.transparenciacatalunya.cat/d/kvmv-ahh4",
     "kind": "Concertada",
     "lat": 41.58992,
     "lng": 2.582142,
     "email": "a8015272@xtec.cat",
     "phone": "937940795",
     "address": "c. Eusebi Golart, 13",
-    "postal": "08360",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://analisi.transparenciacatalunya.cat/d/kvmv-ahh4"
+    "postal": "08360"
   },
   {
     "id": "8015296",
@@ -5489,15 +5489,15 @@
       "primaria"
     ],
     "web": "http://www.fedac.cat/canet/",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.58824,
     "lng": 2.584158,
     "email": "a8015296@xtec.cat",
     "phone": "937940790",
     "address": "c. Vall, 12",
-    "postal": "08360",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "08360"
   },
   {
     "id": "8015302",
@@ -5644,15 +5644,15 @@
       "primaria"
     ],
     "web": "http://www.vedrunacardona.org",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.91212,
     "lng": 1.675381,
     "email": "a8015545@xtec.cat",
     "phone": "938692876",
     "address": "av. Mare de Déu del Carme, s/n",
-    "postal": "08261",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "08261"
   },
   {
     "id": "8015582",
@@ -5760,15 +5760,15 @@
       "primaria"
     ],
     "web": "http://www.fedac.cat/castellar.php",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.61688,
     "lng": 2.089004,
     "email": "a8015703@xtec.cat",
     "phone": "937145385",
     "address": "pg. de Tolrà, 2",
-    "postal": "08211",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "08211"
   },
   {
     "id": "8015806",
@@ -6068,15 +6068,15 @@
       "primaria"
     ],
     "web": "http://www.sagratscorscentelles.cat",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.79824,
     "lng": 2.219983,
     "email": "a8016203@xtec.cat",
     "phone": "938810261",
     "address": "c. Hospital, 11",
-    "postal": "08540",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "08540"
   },
   {
     "id": "8016240",
@@ -6914,15 +6914,15 @@
       "primaria"
     ],
     "web": "http://www.fedac.cat/gironella",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 42.03391,
     "lng": 1.878743,
     "email": "a8017657@xtec.cat",
     "phone": "938250426",
     "address": "c. Sant Joan Baptista de la Salle, 2",
-    "postal": "08680",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "08680"
   },
   {
     "id": "8017682",
@@ -7030,15 +7030,15 @@
       "primaria"
     ],
     "web": "http://www.epiagranollers.cat",
+    "networkId": "xarxa_escolapia",
+    "networkSource": "https://escolapia.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.60484,
     "lng": 2.290317,
     "email": "a8017785@xtec.cat",
     "phone": "938793400",
     "address": "av. Sant Esteve, 14",
-    "postal": "08402",
-    "networkId": "xarxa_escolapia",
-    "networkSource": "https://escolapia.cat/escoles/"
+    "postal": "08402"
   },
   {
     "id": "8017797",
@@ -7607,15 +7607,15 @@
       "primaria"
     ],
     "web": "http://www.joan23.fje.edu/",
+    "networkId": "xarxa_jesuites",
+    "networkSource": "https://www.fje.edu/ca/fje/treballa-la-fundacio-jesuites-educacio",
     "kind": "Concertada",
     "lat": 41.34995,
     "lng": 2.107404,
     "email": "a8018871@xtec.cat",
     "phone": "933351543",
     "address": "av.Mare de Déu de Bellvitge,100-110",
-    "postal": "08907",
-    "networkId": "xarxa_jesuites",
-    "networkSource": "https://www.fje.edu/ca/fje/treballa-la-fundacio-jesuites-educacio"
+    "postal": "08907"
   },
   {
     "id": "8018901",
@@ -7665,15 +7665,15 @@
       "primaria"
     ],
     "web": "http://www.santjaumefep.org",
+    "networkId": "xarxa_fep",
+    "networkSource": "https://fep.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.37,
     "lng": 2.123298,
     "email": "a8019009@xtec.cat",
     "phone": "934497196",
     "address": "c. Santiago Apóstol, 36-38-40",
-    "postal": "08903",
-    "networkId": "xarxa_fep",
-    "networkSource": "https://fep.cat/escoles/"
+    "postal": "08903"
   },
   {
     "id": "8019058",
@@ -7686,15 +7686,15 @@
       "primaria"
     ],
     "web": "http://www.teclasala.cat",
+    "networkId": "xarxa_fep",
+    "networkSource": "https://fep.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.36055,
     "lng": 2.098428,
     "email": "a8019058@xtec.cat",
     "phone": "933373566",
     "address": "c. Tecla Sala, 18",
-    "postal": "08901",
-    "networkId": "xarxa_fep",
-    "networkSource": "https://fep.cat/escoles/"
+    "postal": "08901"
   },
   {
     "id": "8019149",
@@ -7956,15 +7956,15 @@
       "primaria"
     ],
     "web": "http://www.epiaigualada.cat",
+    "networkId": "xarxa_escolapia",
+    "networkSource": "https://escolapia.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.5804,
     "lng": 1.610277,
     "email": "a8019502@xtec.cat",
     "phone": "938032700",
     "address": "pl. Castells, 10",
-    "postal": "08700",
-    "networkId": "xarxa_escolapia",
-    "networkSource": "https://escolapia.cat/escoles/"
+    "postal": "08700"
   },
   {
     "id": "8019514",
@@ -7998,15 +7998,15 @@
       "primaria"
     ],
     "web": "http://www.maristesigualada.com",
+    "networkId": "xarxa_maristes",
+    "networkSource": "https://www.maristes.cat/ca/escoles",
     "kind": "Concertada",
     "lat": 41.5927,
     "lng": 1.619637,
     "email": "a8019541@xtec.cat",
     "phone": "938055575",
     "address": "c. de Salvador Espriu, 10",
-    "postal": "08700",
-    "networkId": "xarxa_maristes",
-    "networkSource": "https://www.maristes.cat/ca/escoles"
+    "postal": "08700"
   },
   {
     "id": "8019551",
@@ -8039,15 +8039,15 @@
       "primaria"
     ],
     "web": "http://www.escolapiesigualada.org",
+    "networkId": "xarxa_escolapies",
+    "networkSource": "https://fundacioescolapies.org/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.57874,
     "lng": 1.620476,
     "email": "a8019575@xtec.cat",
     "phone": "938030409",
     "address": "c. Vidre, 1",
-    "postal": "08700",
-    "networkId": "xarxa_escolapies",
-    "networkSource": "https://fundacioescolapies.org/oferta-educativa/"
+    "postal": "08700"
   },
   {
     "id": "8019599",
@@ -8310,15 +8310,15 @@
       "primaria"
     ],
     "web": "http://www.santperechanel.com/",
+    "networkId": "xarxa_maristes",
+    "networkSource": "https://www.maristes.cat/ca/escoles",
     "kind": "Concertada",
     "lat": 41.64586,
     "lng": 2.739899,
     "email": "a8019903@xtec.cat",
     "phone": "937610239",
     "address": "c. Nova, 12",
-    "postal": "08380",
-    "networkId": "xarxa_maristes",
-    "networkSource": "https://www.maristes.cat/ca/escoles"
+    "postal": "08380"
   },
   {
     "id": "8019915",
@@ -8331,15 +8331,15 @@
       "primaria"
     ],
     "web": "http://vedrunamalgrat.org/",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.6449,
     "lng": 2.742597,
     "email": "a8019915@xtec.cat",
     "phone": "937610327",
     "address": "c. Mar, 30-32",
-    "postal": "08380",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "08380"
   },
   {
     "id": "8019927",
@@ -8390,15 +8390,15 @@
       "primaria"
     ],
     "web": "http://www.carmevedrunamanlleu.org/",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.99923,
     "lng": 2.284107,
     "email": "a8019976@xtec.cat",
     "phone": "938510180",
     "address": "c. Bisbe Morgadas, 4",
-    "postal": "08560",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "08560"
   },
   {
     "id": "8020012",
@@ -8525,15 +8525,15 @@
       "primaria"
     ],
     "web": "http://www.fedac.cat/manresa.php",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.72448,
     "lng": 1.818417,
     "email": "a8020140@xtec.cat",
     "phone": "938728400",
     "address": "c. Nou de Valldaura, 19-21 (ctda. Bruc)",
-    "postal": "08241",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "08241"
   },
   {
     "id": "8020218",
@@ -8547,15 +8547,15 @@
       "primaria"
     ],
     "web": "http://www.manresa.lasalle.cat",
+    "networkId": "xarxa_lasalle",
+    "networkSource": "https://lasalle.cat/",
     "kind": "Concertada",
     "lat": 41.7421,
     "lng": 1.837876,
     "email": "a8020218@xtec.cat",
     "phone": "938740351",
     "address": "c. Pau, s/n",
-    "postal": "08240",
-    "networkId": "xarxa_lasalle",
-    "networkSource": "https://lasalle.cat/"
+    "postal": "08240"
   },
   {
     "id": "8020267",
@@ -8626,15 +8626,15 @@
       "primaria"
     ],
     "web": "http://www.vedrunamanresa.com",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.7436,
     "lng": 1.83646,
     "email": "a8020383@xtec.cat",
     "phone": "938739947",
     "address": "c. Santa Joaquima, 2-4",
-    "postal": "08243",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "08243"
   },
   {
     "id": "8020498",
@@ -8780,17 +8780,17 @@
       "primaria"
     ],
     "web": "https://escolapieselmasnou.org/web/",
+    "networkId": "xarxa_escolapies",
+    "networkSource": "https://fundacioescolapies.org/oferta-educativa/",
+    "careers": "https://escolapieselmasnou.org/treballa-amb-nosaltres-2/",
+    "careersSource": "https://escolapieselmasnou.org/treballa-amb-nosaltres-2/",
     "kind": "Concertada",
     "lat": 41.48086,
     "lng": 2.319419,
     "email": "a8020772@xtec.cat",
     "phone": "935403136",
     "address": "c. Jaume I, 3",
-    "postal": "08320",
-    "networkId": "xarxa_escolapies",
-    "networkSource": "https://fundacioescolapies.org/oferta-educativa/",
-    "careers": "https://escolapieselmasnou.org/treballa-amb-nosaltres-2/",
-    "careersSource": "https://escolapieselmasnou.org/treballa-amb-nosaltres-2/"
+    "postal": "08320"
   },
   {
     "id": "8020841",
@@ -9012,15 +9012,15 @@
       "primaria"
     ],
     "web": "http://mataro.salesians.cat",
+    "networkId": "xarxa_salesians",
+    "networkSource": "https://www.salesians.cat/",
     "kind": "Concertada",
     "lat": 41.54063,
     "lng": 2.431402,
     "email": "a8021089@xtec.cat",
     "phone": "937578489",
     "address": "av. Puig i Cadafalch, 80",
-    "postal": "08303",
-    "networkId": "xarxa_salesians",
-    "networkSource": "https://www.salesians.cat/"
+    "postal": "08303"
   },
   {
     "id": "8021107",
@@ -9033,15 +9033,15 @@
       "primaria"
     ],
     "web": "http://mataro.escolapia.cat",
+    "networkId": "xarxa_escolapia",
+    "networkSource": "https://escolapia.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.53782,
     "lng": 2.444931,
     "email": "a8021107@xtec.cat",
     "phone": "937901627",
     "address": "pl. Santa Anna, 1",
-    "postal": "08302",
-    "networkId": "xarxa_escolapia",
-    "networkSource": "https://escolapia.cat/escoles/"
+    "postal": "08302"
   },
   {
     "id": "8021119",
@@ -9073,15 +9073,15 @@
       "primaria"
     ],
     "web": "http://www.maristesvalldemia.com",
+    "networkId": "xarxa_maristes",
+    "networkSource": "https://www.maristes.cat/ca/escoles",
     "kind": "Concertada",
     "lat": 41.54379,
     "lng": 2.442735,
     "email": "a8021144@xtec.cat",
     "phone": "937554860",
     "address": "c. de la Riera, 124-182",
-    "postal": "08301",
-    "networkId": "xarxa_maristes",
-    "networkSource": "https://www.maristes.cat/ca/escoles"
+    "postal": "08301"
   },
   {
     "id": "8021168",
@@ -9247,15 +9247,15 @@
       "primaria"
     ],
     "web": "http://www.molins.manyanet.org",
+    "networkId": "xarxa_manyanet",
+    "networkSource": "https://manyanet.org/",
     "kind": "Concertada",
     "lat": 41.41377,
     "lng": 2.017379,
     "email": "a8021417@xtec.cat",
     "phone": "936683450",
     "address": "c. del Pintor Carbonell, 4",
-    "postal": "08750",
-    "networkId": "xarxa_manyanet",
-    "networkSource": "https://manyanet.org/"
+    "postal": "08750"
   },
   {
     "id": "8021442",
@@ -9439,15 +9439,15 @@
       "primaria"
     ],
     "web": "http://www.fedac.cat/montcada/",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.48536,
     "lng": 2.187998,
     "email": "a8021727@xtec.cat",
     "phone": "935641696",
     "address": "c. Major, 29",
-    "postal": "08110",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "08110"
   },
   {
     "id": "8021740",
@@ -9461,15 +9461,15 @@
       "primaria"
     ],
     "web": "http://www.montcada.lasalle.cat",
+    "networkId": "xarxa_lasalle",
+    "networkSource": "https://lasalle.cat/",
     "kind": "Concertada",
     "lat": 41.48876,
     "lng": 2.187508,
     "email": "a8021740@xtec.cat",
     "phone": "935641590",
     "address": "pg. de la Salle, 1",
-    "postal": "08110",
-    "networkId": "xarxa_lasalle",
-    "networkSource": "https://lasalle.cat/"
+    "postal": "08110"
   },
   {
     "id": "8021764",
@@ -9559,15 +9559,15 @@
       "primaria"
     ],
     "web": "http://www.fedac.cat/monistrol.php",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.61,
     "lng": 1.842548,
     "email": "a8021909@xtec.cat",
     "phone": "938350179",
     "address": "c. Germanes Dominiques, 1-3",
-    "postal": "08691",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "08691"
   },
   {
     "id": "8021910",
@@ -9791,15 +9791,15 @@
       "primaria"
     ],
     "web": "http://www.moia.escolapia.cat",
+    "networkId": "xarxa_escolapia",
+    "networkSource": "https://escolapia.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.814,
     "lng": 2.095868,
     "email": "a8022100@xtec.cat",
     "phone": "938300348",
     "address": "av. de l'Escola Pia, 15",
-    "postal": "08180",
-    "networkId": "xarxa_escolapia",
-    "networkSource": "https://escolapia.cat/escoles/"
+    "postal": "08180"
   },
   {
     "id": "8022197",
@@ -9832,15 +9832,15 @@
       "primaria"
     ],
     "web": "http://collegisantjosep.blogspot.com.es/",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.90019,
     "lng": 1.876045,
     "email": "a8022288@xtec.cat",
     "phone": "938390747",
     "address": "ctra. de Viver, 16",
-    "postal": "08670",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "08670"
   },
   {
     "id": "8022331",
@@ -9968,15 +9968,15 @@
       "primaria"
     ],
     "web": "https://escolapiesolesa.org/web/",
+    "networkId": "xarxa_escolapies",
+    "networkSource": "https://fundacioescolapies.org/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.54536,
     "lng": 1.894974,
     "email": "a8022410@xtec.cat",
     "phone": "937780296",
     "address": "c. Paula Montalt, 6",
-    "postal": "08640",
-    "networkId": "xarxa_escolapies",
-    "networkSource": "https://fundacioescolapies.org/oferta-educativa/"
+    "postal": "08640"
   },
   {
     "id": "8022422",
@@ -10372,15 +10372,15 @@
       "primaria"
     ],
     "web": "http://www.fedac.cat/pineda.php",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.62588,
     "lng": 2.690485,
     "email": "a8022811@xtec.cat",
     "phone": "937623292",
     "address": "c. del Mar, 44",
-    "postal": "08397",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "08397"
   },
   {
     "id": "8022835",
@@ -10623,15 +10623,15 @@
       "primaria"
     ],
     "web": "http://www.fedac.cat/prats.php",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 42.00983,
     "lng": 2.029419,
     "email": "a8023189@xtec.cat",
     "phone": "938560229",
     "address": "c. Escoles, 2",
-    "postal": "08513",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "08513"
   },
   {
     "id": "8023207",
@@ -10701,15 +10701,15 @@
       "primaria"
     ],
     "web": "http://www.premia.lasalle.cat/",
+    "networkId": "xarxa_lasalle",
+    "networkSource": "https://lasalle.cat/",
     "kind": "Concertada",
     "lat": 41.4883,
     "lng": 2.350683,
     "email": "a8023256@xtec.cat",
     "phone": "937524220",
     "address": "c. Abat Oliba, 17/Enric Borràs, 48",
-    "postal": "08330",
-    "networkId": "xarxa_lasalle",
-    "networkSource": "https://lasalle.cat/"
+    "postal": "08330"
   },
   {
     "id": "8023281",
@@ -10855,15 +10855,15 @@
       "primaria"
     ],
     "web": "http://www.fedac.cat/ripollet.php",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.49772,
     "lng": 2.153936,
     "email": "a8023463@xtec.cat",
     "phone": "935809566",
     "address": "c. Isabel la Catòlica, 20",
-    "postal": "08291",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "08291"
   },
   {
     "id": "8023475",
@@ -11009,15 +11009,15 @@
       "primaria"
     ],
     "web": "http://www.mariste.cat/rubi",
+    "networkId": "xarxa_maristes",
+    "networkSource": "https://www.maristes.cat/ca/escoles",
     "kind": "Concertada",
     "lat": 41.48979,
     "lng": 2.036224,
     "email": "a8023724@xtec.cat",
     "phone": "936991291",
     "address": "c. Magallanes, 65",
-    "postal": "08191",
-    "networkId": "xarxa_maristes",
-    "networkSource": "https://www.maristes.cat/ca/escoles"
+    "postal": "08191"
   },
   {
     "id": "8023751",
@@ -11411,15 +11411,15 @@
       "primaria"
     ],
     "web": "http://immaculadasabadell.org",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.53062,
     "lng": 2.120005,
     "email": "a8024248@xtec.cat",
     "phone": "937123442",
     "address": "pg. del Dos de Maig, s/n",
-    "postal": "08204",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "08204"
   },
   {
     "id": "8024297",
@@ -11432,15 +11432,15 @@
       "primaria"
     ],
     "web": "http://sabadell.escolapia.cat",
+    "networkId": "xarxa_escolapia",
+    "networkSource": "https://escolapia.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.54884,
     "lng": 2.102773,
     "email": "a8024297@xtec.cat",
     "phone": "937484430",
     "address": "c. Escola Pia, 92",
-    "postal": "08201",
-    "networkId": "xarxa_escolapia",
-    "networkSource": "https://escolapia.cat/escoles/"
+    "postal": "08201"
   },
   {
     "id": "8024303",
@@ -11472,15 +11472,15 @@
       "primaria"
     ],
     "web": "https://vedrunacarmesabadell.cat/",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.55042,
     "lng": 2.105579,
     "email": "a8024339@xtec.cat",
     "phone": "937251364",
     "address": "c. Garcilaso, 36",
-    "postal": "08201",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "08201"
   },
   {
     "id": "8024340",
@@ -11493,15 +11493,15 @@
       "primaria"
     ],
     "web": "http://sabadell.salesians.cat",
+    "networkId": "xarxa_salesians",
+    "networkSource": "https://www.salesians.cat/",
     "kind": "Concertada",
     "lat": 41.53989,
     "lng": 2.118282,
     "email": "a8024340@xtec.cat",
     "phone": "937257799",
     "address": "pg. Gaudí, 2",
-    "postal": "08203",
-    "networkId": "xarxa_salesians",
-    "networkSource": "https://www.salesians.cat/"
+    "postal": "08203"
   },
   {
     "id": "8024406",
@@ -11629,15 +11629,15 @@
       "primaria"
     ],
     "web": "https://escolapiessabadell.org",
+    "networkId": "xarxa_escolapies",
+    "networkSource": "https://fundacioescolapies.org/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.54823,
     "lng": 2.111177,
     "email": "a8024613@xtec.cat",
     "phone": "937255348",
     "address": "c. Sant Josep, 21",
-    "postal": "08202",
-    "networkId": "xarxa_escolapies",
-    "networkSource": "https://fundacioescolapies.org/oferta-educativa/"
+    "postal": "08202"
   },
   {
     "id": "8024650",
@@ -11881,15 +11881,15 @@
       "primaria"
     ],
     "web": "http://www.vedrunasallent.cat",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.8236,
     "lng": 1.898758,
     "email": "a8024984@xtec.cat",
     "phone": "938370520",
     "address": "c. Santa Joaquima de Vedruna, 2",
-    "postal": "08650",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "08650"
   },
   {
     "id": "8025058",
@@ -12131,15 +12131,15 @@
       "primaria"
     ],
     "web": "http://www.vedrunasantboi.cat",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.34648,
     "lng": 2.037772,
     "email": "a8025459@xtec.cat",
     "phone": "936400318",
     "address": "c. Lluís Castells, 20",
-    "postal": "08830",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "08830"
   },
   {
     "id": "8025484",
@@ -12229,15 +12229,15 @@
       "primaria"
     ],
     "web": "http://santboi.salesians.cat",
+    "networkId": "xarxa_salesians",
+    "networkSource": "https://www.salesians.cat/",
     "kind": "Concertada",
     "lat": 41.34883,
     "lng": 2.035039,
     "email": "a8025541@xtec.cat",
     "phone": "936401106",
     "address": "c. Salvador Allende, 6",
-    "postal": "08830",
-    "networkId": "xarxa_salesians",
-    "networkSource": "https://www.salesians.cat/"
+    "postal": "08830"
   },
   {
     "id": "8025551",
@@ -12345,15 +12345,15 @@
       "primaria"
     ],
     "web": "http://www.lasallesantceloni.cat",
+    "networkId": "xarxa_lasalle",
+    "networkSource": "https://lasalle.cat/educacio/educacio-obligatoria/",
     "kind": "Concertada",
     "lat": 41.6886,
     "lng": 2.487667,
     "email": "a8025745@xtec.cat",
     "phone": "938670265",
     "address": "c. Campins, 59",
-    "postal": "08470",
-    "networkId": "xarxa_lasalle",
-    "networkSource": "https://lasalle.cat/educacio/educacio-obligatoria/"
+    "postal": "08470"
   },
   {
     "id": "8025757",
@@ -12671,15 +12671,15 @@
       "primaria"
     ],
     "web": "http://www.fedac.cat/santfeliu.php",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.69047,
     "lng": 2.16182,
     "email": "a8026181@xtec.cat",
     "phone": "938661127",
     "address": "c. Baixa Padró, 12",
-    "postal": "08182",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "08182"
   },
   {
     "id": "8026208",
@@ -13499,15 +13499,15 @@
       "primaria"
     ],
     "web": "http://vedrunasantsadurni.cat",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.42377,
     "lng": 1.791139,
     "email": "a8027353@xtec.cat",
     "phone": "938910418",
     "address": "c. Santa Joaquima de Vedruna, 1",
-    "postal": "08770",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "08770"
   },
   {
     "id": "8027432",
@@ -13653,15 +13653,15 @@
       "primaria"
     ],
     "web": "http://www.fedac.cat/santacoloma.php",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.45009,
     "lng": 2.210303,
     "email": "a8027729@xtec.cat",
     "phone": "933861031",
     "address": "pl. Sagarra, 10",
-    "postal": "08922",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "08922"
   },
   {
     "id": "8027730",
@@ -14093,15 +14093,15 @@
       "primaria"
     ],
     "web": "http://www.fedac.cat/santvicenc.php",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.66974,
     "lng": 1.860157,
     "email": "a8028552@xtec.cat",
     "phone": "938330305",
     "address": "c. Dr. Trias, 76",
-    "postal": "08295",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "08295"
   },
   {
     "id": "8028576",
@@ -14304,15 +14304,15 @@
       "primaria"
     ],
     "web": "http://www.fedac.cat/cerdanyola",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.49143,
     "lng": 2.142483,
     "email": "a8028795@xtec.cat",
     "phone": "936920884",
     "address": "c. Cervantes, 5-15",
-    "postal": "08290",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "08290"
   },
   {
     "id": "8028813",
@@ -14497,15 +14497,15 @@
       "primaria"
     ],
     "web": "http://sitges.escolapia.cat",
+    "networkId": "xarxa_escolapia",
+    "networkSource": "https://escolapia.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.23865,
     "lng": 1.810536,
     "email": "a8029076@xtec.cat",
     "phone": "938949534",
     "address": "c. Hort Gran, 8",
-    "postal": "08870",
-    "networkId": "xarxa_escolapia",
-    "networkSource": "https://escolapia.cat/escoles/"
+    "postal": "08870"
   },
   {
     "id": "8029088",
@@ -14633,15 +14633,15 @@
       "primaria"
     ],
     "web": "http://www.fedac.cat/suria",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.83056,
     "lng": 1.754672,
     "email": "a8029258@xtec.cat",
     "phone": "938694173",
     "address": "ctra. Balsareny, 10-12",
-    "postal": "08260",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "08260"
   },
   {
     "id": "8029283",
@@ -14846,15 +14846,15 @@
       "primaria"
     ],
     "web": "http://www.jvedrunaterrassa.cat/",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.57518,
     "lng": 2.032184,
     "email": "a8029611@xtec.cat",
     "phone": "937860146",
     "address": "ctra. de Castellar, 398",
-    "postal": "08227",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "08227"
   },
   {
     "id": "8029647",
@@ -14867,15 +14867,15 @@
       "primaria"
     ],
     "web": "http://terrassa.escolapia.cat",
+    "networkId": "xarxa_escolapia",
+    "networkSource": "https://escolapia.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.55965,
     "lng": 2.010787,
     "email": "a8029647@xtec.cat",
     "phone": "937885454",
     "address": "c. Col·legi, 14-16",
-    "postal": "08221",
-    "networkId": "xarxa_escolapia",
-    "networkSource": "https://escolapia.cat/escoles/"
+    "postal": "08221"
   },
   {
     "id": "8029660",
@@ -14985,15 +14985,15 @@
       "primaria"
     ],
     "web": "http://terrassa.salesians.cat/",
+    "networkId": "xarxa_salesians",
+    "networkSource": "https://www.salesians.cat/",
     "kind": "Concertada",
     "lat": 41.55681,
     "lng": 1.995235,
     "email": "a8029763@xtec.cat",
     "phone": "937336013",
     "address": "c. Maria Auxiliadora, 45",
-    "postal": "08224",
-    "networkId": "xarxa_salesians",
-    "networkSource": "https://www.salesians.cat/"
+    "postal": "08224"
   },
   {
     "id": "8029775",
@@ -15201,15 +15201,15 @@
       "primaria"
     ],
     "web": "https://vedrunavall.cat/",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.56098,
     "lng": 2.010874,
     "email": "a8030111@xtec.cat",
     "phone": "937802933",
     "address": "c. de la Vall, 21",
-    "postal": "08221",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "08221"
   },
   {
     "id": "8030200",
@@ -15393,15 +15393,15 @@
       "primaria"
     ],
     "web": "http://evt.cat/",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.8514,
     "lng": 2.225797,
     "email": "a8030431@xtec.cat",
     "phone": "938124762",
     "address": "c. Germana Victòria, 21",
-    "postal": "08551",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "08551"
   },
   {
     "id": "8030467",
@@ -15453,15 +15453,15 @@
       "primaria"
     ],
     "web": "http://www.vedrunatordera.org",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.70036,
     "lng": 2.719519,
     "email": "a8030509@xtec.cat",
     "phone": "937640197",
     "address": "c. Santa Llúcia, 5",
-    "postal": "08490",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "08490"
   },
   {
     "id": "8030510",
@@ -15532,15 +15532,15 @@
       "primaria"
     ],
     "web": "http://www.sagratscors.org",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 42.04807,
     "lng": 2.267944,
     "email": "a8030546@xtec.cat",
     "phone": "938590490",
     "address": "c. Puig d'Assalit, 32",
-    "postal": "08570",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "08570"
   },
   {
     "id": "8030583",
@@ -15804,15 +15804,15 @@
       "primaria"
     ],
     "web": "http://www.escorialvic.cat",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.93007,
     "lng": 2.259566,
     "email": "a8030947@xtec.cat",
     "phone": "938863612",
     "address": "c. Santa Joaquima de Vedruna, 6",
-    "postal": "08500",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "08500"
   },
   {
     "id": "8030959",
@@ -15844,15 +15844,15 @@
       "primaria"
     ],
     "web": "http://www.fedac.cat/vic",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.93328,
     "lng": 2.253669,
     "email": "a8030960@xtec.cat",
     "phone": "938893351",
     "address": "c. Pare Coll, 15",
-    "postal": "08500",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "08500"
   },
   {
     "id": "8031009",
@@ -16170,15 +16170,15 @@
       "primaria"
     ],
     "web": "http://www.vedrunasantelies.cat",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.34702,
     "lng": 1.700132,
     "email": "a8031381@xtec.cat",
     "phone": "938920242",
     "address": "pl. Carme, 12-14",
-    "postal": "08720",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "08720"
   },
   {
     "id": "8031401",
@@ -16192,15 +16192,15 @@
       "primaria"
     ],
     "web": "http://www.vilafranca.manyanet.org",
+    "networkId": "xarxa_manyanet",
+    "networkSource": "https://manyanet.org/",
     "kind": "Concertada",
     "lat": 41.34734,
     "lng": 1.695774,
     "email": "a8031401@xtec.cat",
     "phone": "938901828",
     "address": "c. Ferran, 1",
-    "postal": "08720",
-    "networkId": "xarxa_manyanet",
-    "networkSource": "https://manyanet.org/"
+    "postal": "08720"
   },
   {
     "id": "8031460",
@@ -16328,15 +16328,15 @@
       "primaria"
     ],
     "web": "http://vilanova.escolapia.cat/",
+    "networkId": "xarxa_escolapia",
+    "networkSource": "https://escolapia.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.21919,
     "lng": 1.724882,
     "email": "a8031538@xtec.cat",
     "phone": "938150875",
     "address": "rbla. Sama, 114-116",
-    "postal": "08800",
-    "networkId": "xarxa_escolapia",
-    "networkSource": "https://escolapia.cat/escoles/"
+    "postal": "08800"
   },
   {
     "id": "8031599",
@@ -26464,15 +26464,15 @@
       "infantil"
     ],
     "web": "http://www.elpetitsantamaria.org/",
+    "networkId": "xarxa_fep",
+    "networkSource": "https://fep.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.42243,
     "lng": 2.207925,
     "email": "a8051719@xtec.cat",
     "phone": "933136840",
     "address": "c. Concili de Trento, 293-297",
-    "postal": "08020",
-    "networkId": "xarxa_fep",
-    "networkSource": "https://fep.cat/escoles/"
+    "postal": "08020"
   },
   {
     "id": "8051720",
@@ -38631,15 +38631,15 @@
       "primaria"
     ],
     "web": "http://www.escolaxarxa.cat",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://analisi.transparenciacatalunya.cat/d/kvmv-ahh4",
     "kind": "Concertada",
     "lat": 42.09965,
     "lng": 1.851509,
     "email": "a8070520@xtec.cat",
     "phone": "938210305",
     "address": "c. Pare Coll, 1-3",
-    "postal": "08600",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://analisi.transparenciacatalunya.cat/d/kvmv-ahh4"
+    "postal": "08600"
   },
   {
     "id": "8070568",
@@ -45751,15 +45751,15 @@
       "primaria"
     ],
     "web": "http://www.fedac.cat/angles",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.95732,
     "lng": 2.637571,
     "email": "b7000147@xtec.cat",
     "phone": "972420259",
     "address": "c. Raval, 19",
-    "postal": "17160",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "17160"
   },
   {
     "id": "17000160",
@@ -45792,15 +45792,15 @@
       "primaria"
     ],
     "web": "http://www.vedrunaarbucies.org/",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.81739,
     "lng": 2.516136,
     "email": "b7000184@xtec.cat",
     "phone": "972860051",
     "address": "c. de Magnes, 3",
-    "postal": "17401",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "17401"
   },
   {
     "id": "17000241",
@@ -46082,15 +46082,15 @@
       "primaria"
     ],
     "web": "http://blanes.manyanet.org",
+    "networkId": "xarxa_manyanet",
+    "networkSource": "https://manyanet.org/",
     "kind": "Concertada",
     "lat": 41.67815,
     "lng": 2.79157,
     "email": "b7000512@xtec.cat",
     "phone": "972330091",
     "address": "c. Santa Bàrbara, 1",
-    "postal": "17300",
-    "networkId": "xarxa_manyanet",
-    "networkSource": "https://manyanet.org/"
+    "postal": "17300"
   },
   {
     "id": "17000561",
@@ -46293,15 +46293,15 @@
       "primaria"
     ],
     "web": "http://www.cassa.lasalle.cat",
+    "networkId": "xarxa_lasalle",
+    "networkSource": "https://lasalle.cat/",
     "kind": "Concertada",
     "lat": 41.88607,
     "lng": 2.873757,
     "email": "b7000858@xtec.cat",
     "phone": "972460261",
     "address": "c. Germà Agustí, 25",
-    "postal": "17244",
-    "networkId": "xarxa_lasalle",
-    "networkSource": "https://lasalle.cat/"
+    "postal": "17244"
   },
   {
     "id": "17000861",
@@ -46640,15 +46640,15 @@
       "primaria"
     ],
     "web": "http://figueres.lasalle.cat/",
+    "networkId": "xarxa_lasalle",
+    "networkSource": "https://lasalle.cat/",
     "kind": "Concertada",
     "lat": 42.2684,
     "lng": 2.968979,
     "email": "b7001191@xtec.cat",
     "phone": "972500812",
     "address": "c. Fossos del Dr. Burgàs, 17",
-    "postal": "17600",
-    "networkId": "xarxa_lasalle",
-    "networkSource": "https://lasalle.cat/"
+    "postal": "17600"
   },
   {
     "id": "17001206",
@@ -46661,15 +46661,15 @@
       "primaria"
     ],
     "web": "https://escolapiesfigueres.org/web/",
+    "networkId": "xarxa_escolapies",
+    "networkSource": "https://fundacioescolapies.org/oferta-educativa/",
     "kind": "Concertada",
     "lat": 42.26873,
     "lng": 2.962915,
     "email": "b7001206@xtec.cat",
     "phone": "972500731",
     "address": "c. Perelada, 55",
-    "postal": "17600",
-    "networkId": "xarxa_escolapies",
-    "networkSource": "https://fundacioescolapies.org/oferta-educativa/"
+    "postal": "17600"
   },
   {
     "id": "17001279",
@@ -46988,15 +46988,15 @@
       "primaria"
     ],
     "web": "http://www.vedrunagirona.org",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.9802,
     "lng": 2.818612,
     "email": "b7001553@xtec.cat",
     "phone": "972202084",
     "address": "ctra. Barcelona, 21",
-    "postal": "17002",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "17002"
   },
   {
     "id": "17001565",
@@ -47009,15 +47009,15 @@
       "primaria"
     ],
     "web": "http://www.fedac.cat/santnarcis.php",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.97716,
     "lng": 2.812975,
     "email": "b7001565@xtec.cat",
     "phone": "972233212",
     "address": "c. Pare Coll, 1-3",
-    "postal": "17005",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "17005"
   },
   {
     "id": "17001589",
@@ -47030,15 +47030,15 @@
       "primaria"
     ],
     "web": "http://wwwmaristes.girona.cat",
+    "networkId": "xarxa_maristes",
+    "networkSource": "https://www.maristes.cat/ca/escoles",
     "kind": "Concertada",
     "lat": 41.98076,
     "lng": 2.810784,
     "email": "b7001589@xtec.cat",
     "phone": "972232211",
     "address": "av. Josep Tarradellas, 5-7",
-    "postal": "17005",
-    "networkId": "xarxa_maristes",
-    "networkSource": "https://www.maristes.cat/ca/escoles"
+    "postal": "17005"
   },
   {
     "id": "17001590",
@@ -47129,15 +47129,15 @@
       "primaria"
     ],
     "web": "http://www.fedac.cat/pontmajor.php",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 42.01109,
     "lng": 2.825148,
     "email": "b7001905@xtec.cat",
     "phone": "972207279",
     "address": "c. Pont Major, 21",
-    "postal": "17007",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "17007"
   },
   {
     "id": "17001930",
@@ -47593,15 +47593,15 @@
       "primaria"
     ],
     "web": "http://olot.escolapia.cat",
+    "networkId": "xarxa_escolapia",
+    "networkSource": "https://escolapia.cat/escoles/",
     "kind": "Concertada",
     "lat": 42.18078,
     "lng": 2.484382,
     "email": "b7002341@xtec.cat",
     "phone": "972260212",
     "address": "pl. Clarà, 9",
-    "postal": "17800",
-    "networkId": "xarxa_escolapia",
-    "networkSource": "https://escolapia.cat/escoles/"
+    "postal": "17800"
   },
   {
     "id": "17002405",
@@ -47748,15 +47748,15 @@
       "primaria"
     ],
     "web": "http://WWW.vedrunapalafrugell.org",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.91679,
     "lng": 3.169588,
     "email": "b7002511@xtec.cat",
     "phone": "972300739",
     "address": "c. Sant Sebastià, 85",
-    "postal": "17200",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "17200"
   },
   {
     "id": "17002521",
@@ -47825,15 +47825,15 @@
       "primaria"
     ],
     "web": "http://www.palamos.lasalle.cat/",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.85079,
     "lng": 3.131612,
     "email": "b7002570@xtec.cat",
     "phone": "972314236",
     "address": "c. Sant Josep, 15",
-    "postal": "17230",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "17230"
   },
   {
     "id": "17002594",
@@ -47846,15 +47846,15 @@
       "primaria"
     ],
     "web": "http://www.vedrunapalamos.org",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.84959,
     "lng": 3.134432,
     "email": "b7002594@xtec.cat",
     "phone": "972314286",
     "address": "c. Xaloc, 22",
-    "postal": "17230",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "17230"
   },
   {
     "id": "17002624",
@@ -48118,15 +48118,15 @@
       "primaria"
     ],
     "web": "http://vedrunapuigcerda.cat",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 42.43157,
     "lng": 1.929423,
     "email": "b7002892@xtec.cat",
     "phone": "972880384",
     "address": "c. Carmelites, 4",
-    "postal": "17520",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "17520"
   },
   {
     "id": "17002922",
@@ -48197,15 +48197,15 @@
       "primaria"
     ],
     "web": "http://ripoll.salesians.cat",
+    "networkId": "xarxa_salesians",
+    "networkSource": "https://www.salesians.cat/",
     "kind": "Concertada",
     "lat": 42.19959,
     "lng": 2.188164,
     "email": "b7003011@xtec.cat",
     "phone": "972700152",
     "address": "c. Viñas, 1",
-    "postal": "17500",
-    "networkId": "xarxa_salesians",
-    "networkSource": "https://www.salesians.cat/"
+    "postal": "17500"
   },
   {
     "id": "17003021",
@@ -48219,15 +48219,15 @@
       "primaria"
     ],
     "web": "http://www.vedrunaripoll.org",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 42.20116,
     "lng": 2.188382,
     "email": "b7003021@xtec.cat",
     "phone": "972700061",
     "address": "c. Berenguer, 10",
-    "postal": "17500",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "17500"
   },
   {
     "id": "17003070",
@@ -48394,15 +48394,15 @@
       "primaria"
     ],
     "web": "http://www.fedac.cat/salt",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.97476,
     "lng": 2.785127,
     "email": "b7003197@xtec.cat",
     "phone": "972233681",
     "address": "c. Llarg, 60",
-    "postal": "17190",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "17190"
   },
   {
     "id": "17003215",
@@ -48741,15 +48741,15 @@
       "primaria"
     ],
     "web": "http://santacoloma.lasalle.cat",
+    "networkId": "xarxa_lasalle",
+    "networkSource": "https://lasalle.cat/",
     "kind": "Concertada",
     "lat": 41.8634,
     "lng": 2.665538,
     "email": "b7003653@xtec.cat",
     "phone": "972840294",
     "address": "c. Pujada la Salle, 10",
-    "postal": "17430",
-    "networkId": "xarxa_lasalle",
-    "networkSource": "https://lasalle.cat/"
+    "postal": "17430"
   },
   {
     "id": "17003689",
@@ -53727,15 +53727,15 @@
       "primaria"
     ],
     "web": "http://salt.escolapia.cat/",
+    "networkId": "xarxa_escolapia",
+    "networkSource": "https://escolapia.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.96763,
     "lng": 2.781518,
     "email": "b7010281@xtec.cat",
     "phone": "972249993",
     "address": "c. Pla de Salt, 10",
-    "postal": "17190",
-    "networkId": "xarxa_escolapia",
-    "networkSource": "https://escolapia.cat/escoles/"
+    "postal": "17190"
   },
   {
     "id": "17010293",
@@ -54918,15 +54918,15 @@
       "primaria"
     ],
     "web": "http://balaguer.escolapia.cat",
+    "networkId": "xarxa_escolapia",
+    "networkSource": "https://escolapia.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.78511,
     "lng": 0.81056,
     "email": "c5000811@xtec.cat",
     "phone": "973445727",
     "address": "c. Barcelona, s/n",
-    "postal": "25600",
-    "networkId": "xarxa_escolapia",
-    "networkSource": "https://escolapia.cat/escoles/"
+    "postal": "25600"
   },
   {
     "id": "25000821",
@@ -54940,15 +54940,15 @@
       "primaria"
     ],
     "web": "http://www. vedrunabalaguer.cat",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.79022,
     "lng": 0.81227,
     "email": "c5000821@xtec.cat",
     "phone": "973445164",
     "address": "c. Sanahuja, 39",
-    "postal": "25600",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "25600"
   },
   {
     "id": "25000857",
@@ -55098,15 +55098,15 @@
       "primaria"
     ],
     "web": "http://www.vedrunabellpuig.cat",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.63135,
     "lng": 1.005438,
     "email": "c5001023@xtec.cat",
     "phone": "973320027",
     "address": "Camí de Castellnou, 7",
-    "postal": "25250",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "25250"
   },
   {
     "id": "25001084",
@@ -55702,15 +55702,15 @@
       "primaria"
     ],
     "web": "http://www.fedac.cat/guissona.php",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.78416,
     "lng": 1.289047,
     "email": "c5001771@xtec.cat",
     "phone": "973550082",
     "address": "c. Raval Bisbal, 42",
-    "postal": "25210",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "25210"
   },
   {
     "id": "25001795",
@@ -56011,15 +56011,15 @@
       "primaria"
     ],
     "web": "http://www.fedac.cat/lleida",
+    "networkId": "xarxa_fedac",
+    "networkSource": "https://escoles.fedac.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.61823,
     "lng": 0.616413,
     "email": "c5002222@xtec.cat",
     "phone": "973282563",
     "address": "c. Vallcalent, 42",
-    "postal": "25006",
-    "networkId": "xarxa_fedac",
-    "networkSource": "https://escoles.fedac.cat/escoles/"
+    "postal": "25006"
   },
   {
     "id": "25002234",
@@ -56053,15 +56053,15 @@
       "primaria"
     ],
     "web": "http://maristeslleida.cat/",
+    "networkId": "xarxa_maristes",
+    "networkSource": "https://www.maristes.cat/ca/escoles",
     "kind": "Concertada",
     "lat": 41.6109,
     "lng": 0.621223,
     "email": "c5002313@xtec.cat",
     "phone": "973266799",
     "address": "av. Catalunya, 3",
-    "postal": "25002",
-    "networkId": "xarxa_maristes",
-    "networkSource": "https://www.maristes.cat/ca/escoles"
+    "postal": "25002"
   },
   {
     "id": "25002350",
@@ -56269,15 +56269,15 @@
       "primaria"
     ],
     "web": "http://www.claver.fje.edu",
+    "networkId": "xarxa_jesuites",
+    "networkSource": "https://www.fje.edu/ca/fje/treballa-la-fundacio-jesuites-educacio",
     "kind": "Concertada",
     "lat": 41.6845,
     "lng": 0.499208,
     "email": "c5002911@xtec.cat",
     "phone": "973724111",
     "address": "ctra. d'Osca, Km 17(finca Vallfonda)",
-    "postal": "25111",
-    "networkId": "xarxa_jesuites",
-    "networkSource": "https://www.fje.edu/ca/fje/treballa-la-fundacio-jesuites-educacio"
+    "postal": "25111"
   },
   {
     "id": "25002921",
@@ -56523,15 +56523,15 @@
       "primaria"
     ],
     "web": "http://www.elcarmemollerussa.org/",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.62771,
     "lng": 0.892941,
     "email": "c5003196@xtec.cat",
     "phone": "973600455",
     "address": "c. Crist Rei, 5",
-    "postal": "25230",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "25230"
   },
   {
     "id": "25003238",
@@ -57303,15 +57303,15 @@
       "primaria"
     ],
     "web": "http://www.laseu.lasalle.cat",
+    "networkId": "xarxa_lasalle",
+    "networkSource": "https://lasalle.cat/",
     "kind": "Concertada",
     "lat": 42.35522,
     "lng": 1.458592,
     "email": "c5004152@xtec.cat",
     "phone": "973350144",
     "address": "c. La Salle, 27-51",
-    "postal": "25700",
-    "networkId": "xarxa_lasalle",
-    "networkSource": "https://lasalle.cat/"
+    "postal": "25700"
   },
   {
     "id": "25004218",
@@ -57499,15 +57499,15 @@
       "primaria"
     ],
     "web": "http://tarrega.escolapia.cat",
+    "networkId": "xarxa_escolapia",
+    "networkSource": "https://escolapia.cat/escoles/",
     "kind": "Concertada",
     "lat": 41.64755,
     "lng": 1.13796,
     "email": "c5004474@xtec.cat",
     "phone": "973310155",
     "address": "pl. Pare Carles Perelló, 1",
-    "postal": "25300",
-    "networkId": "xarxa_escolapia",
-    "networkSource": "https://escolapia.cat/escoles/"
+    "postal": "25300"
   },
   {
     "id": "25004486",
@@ -57521,15 +57521,15 @@
       "primaria"
     ],
     "web": "http://www.vedrunatarrega.cat",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.65,
     "lng": 1.145873,
     "email": "c5004486@xtec.cat",
     "phone": "973310116",
     "address": "c. Mare Vedruna, s/n",
-    "postal": "25300",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "25300"
   },
   {
     "id": "25004531",
@@ -62070,15 +62070,15 @@
       "primaria"
     ],
     "web": "http://cvbcambrils.cat",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.0741,
     "lng": 1.051769,
     "email": "e3000755@xtec.cat",
     "phone": "977369809",
     "address": "c. Creus, 11",
-    "postal": "43850",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "43850"
   },
   {
     "id": "43000792",
@@ -62246,15 +62246,15 @@
       "primaria"
     ],
     "web": "http://carmevedrunaespluga.cat",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.3946,
     "lng": 1.096189,
     "email": "e3001048@xtec.cat",
     "phone": "977870062",
     "address": "c. Pompeu Fabra, 3",
-    "postal": "43440",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "43440"
   },
   {
     "id": "43001051",
@@ -63098,15 +63098,15 @@
       "primaria"
     ],
     "web": "http://www.reus.lasalle.cat/",
+    "networkId": "xarxa_lasalle",
+    "networkSource": "https://lasalle.cat/",
     "kind": "Concertada",
     "lat": 41.1499,
     "lng": 1.10604,
     "email": "e3002417@xtec.cat",
     "phone": "977754606",
     "address": "pl. la Pastoreta, 10",
-    "postal": "43205",
-    "networkId": "xarxa_lasalle",
-    "networkSource": "https://lasalle.cat/"
+    "postal": "43205"
   },
   {
     "id": "43002429",
@@ -63119,15 +63119,15 @@
       "primaria"
     ],
     "web": "http://www.reus.manyanet.org",
+    "networkId": "xarxa_manyanet",
+    "networkSource": "https://manyanet.org/",
     "kind": "Concertada",
     "lat": 41.1473,
     "lng": 1.100971,
     "email": "e3002429@xtec.cat",
     "phone": "977330832",
     "address": "c. Pare Manyanet, 25",
-    "postal": "43205",
-    "networkId": "xarxa_manyanet",
-    "networkSource": "https://manyanet.org/"
+    "postal": "43205"
   },
   {
     "id": "43002442",
@@ -63350,15 +63350,15 @@
       "primaria"
     ],
     "web": "http://www.vedrunascq.org",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.53061,
     "lng": 1.383058,
     "email": "e3003021@xtec.cat",
     "phone": "977880222",
     "address": "c. Mercè, 17",
-    "postal": "43420",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "43420"
   },
   {
     "id": "43003069",
@@ -63604,15 +63604,15 @@
       "infantil"
     ],
     "web": "http://www.tictac.lasalle.cat/",
+    "networkId": "xarxa_lasalle",
+    "networkSource": "https://lasalle.cat/",
     "kind": "Concertada",
     "lat": 41.12027,
     "lng": 1.242067,
     "email": "e3003461@xtec.cat",
     "phone": "977214288",
     "address": "av. Lluís Companys, 12",
-    "postal": "43005",
-    "networkId": "xarxa_lasalle",
-    "networkSource": "https://lasalle.cat/"
+    "postal": "43005"
   },
   {
     "id": "43003483",
@@ -63704,15 +63704,15 @@
       "primaria"
     ],
     "web": "https://tarragona.lasalle.cat/",
+    "networkId": "xarxa_lasalle",
+    "networkSource": "https://lasalle.cat/",
     "kind": "Concertada",
     "lat": 41.13355,
     "lng": 1.245081,
     "email": "e3003537@xtec.cat",
     "phone": "977218600",
     "address": "av. Països Catalans, s/n",
-    "postal": "43007",
-    "networkId": "xarxa_lasalle",
-    "networkSource": "https://lasalle.cat/"
+    "postal": "43007"
   },
   {
     "id": "43003549",
@@ -63726,15 +63726,15 @@
       "primaria"
     ],
     "web": "http://www.sagratcor.cat",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.12072,
     "lng": 1.248423,
     "email": "e3003549@xtec.cat",
     "phone": "977217979",
     "address": "c. Santa Joaquima de Vedruna, 10",
-    "postal": "43002",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "43002"
   },
   {
     "id": "43003550",
@@ -63881,15 +63881,15 @@
       "primaria"
     ],
     "web": "http://www.torreforta.lasalle.cat/",
+    "networkId": "xarxa_lasalle",
+    "networkSource": "https://lasalle.cat/",
     "kind": "Concertada",
     "lat": 41.11984,
     "lng": 1.213055,
     "email": "e3003793@xtec.cat",
     "phone": "977543209",
     "address": "c. Sant Benilde, 15",
-    "postal": "43006",
-    "networkId": "xarxa_lasalle",
-    "networkSource": "https://lasalle.cat/"
+    "postal": "43006"
   },
   {
     "id": "43003801",
@@ -64427,15 +64427,15 @@
       "primaria"
     ],
     "web": "http://vedrunavalls.cat",
+    "networkId": "xarxa_vedruna",
+    "networkSource": "https://vedruna.cat/oferta-educativa/",
     "kind": "Concertada",
     "lat": 41.2892,
     "lng": 1.251555,
     "email": "e3004591@xtec.cat",
     "phone": "977600452",
     "address": "c. Santa Joaquima de Vedruna, 2",
-    "postal": "43800",
-    "networkId": "xarxa_vedruna",
-    "networkSource": "https://vedruna.cat/oferta-educativa/"
+    "postal": "43800"
   },
   {
     "id": "43004633",
