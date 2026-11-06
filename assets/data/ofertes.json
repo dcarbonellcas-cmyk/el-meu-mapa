@@ -1,20 +1,32 @@
 {
-  "checkedAt": "2026-11-06T08:02:44.380Z",
+  "checkedAt": "2026-11-06T09:21:16.011Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-06T08:02:44.380Z",
+      "updatedAt": "2026-11-06T09:21:16.011Z",
       "count": 195,
-      "reviewed": 705,
+      "reviewed": 711,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-06T08:02:44.380Z",
+      "attemptedAt": "2026-11-06T09:21:16.011Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92328385",
+      "title": "MONITOR/MONITORA MENJADOR CASTELLBISBAL",
+      "school": "COOPERATIVA DOBLE VIA SCCL",
+      "city": "BARCELONA - VALLÈS OCCIDENTAL - 08755 CASTELLBISBAL",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328385",
+      "snippet": "A Doble Via t'estem buscant! Si ets una persona amb iniciativa, dinàmica, entusiasta, amant del treball en equip volem que formis part d’un gran equip! Amb 25 anys d'història, oferim serveis integrals de gestió d’equipaments i programes d’acció social i cultural, d’educació, d’animació sociocultural i dinamització comu",
+      "created": "1793954991822",
+      "expires": "2027-02-04T08:49:51.819Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92328362",
       "title": "MONITOR/MONITORA REFORÇ EDUCATIU -GAVÀ (BAIX LLOBREGAT)",
@@ -1081,18 +1093,6 @@
       "snippet": "Es precisa un/a monitor/monitora de menjador escolar pel curs 2026-27.",
       "created": "1791541638685",
       "expires": "2027-01-07T10:27:18.683Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92326590",
-      "title": "MONITOR/MONITORA MENJADOR CASTELLBISBAL",
-      "school": "COOPERATIVA DOBLE VIA SCCL",
-      "city": "BARCELONA - VALLÈS OCCIDENTAL - 08755 CASTELLBISBAL",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326590",
-      "snippet": "A Doble Via t'estem buscant! Si ets una persona amb iniciativa, dinàmica, entusiasta, amant del treball en equip volem que formis part d’un gran equip! Amb 25 anys d'història, oferim serveis integrals de gestió d’equipaments i programes d’acció social i cultural, d’educació, d’animació sociocultural i dinamització comu",
-      "created": "1791540212843",
-      "expires": "2027-01-07T10:03:32.841Z",
       "automatic": true
     },
     {
