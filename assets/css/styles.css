@@ -1543,29 +1543,93 @@ body {
   margin: 4px 0 12px;
 }
 
-.educationStages, .educationViews, .educationTools, .educationActions {
+.educationToolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0;
+  padding: 8px;
+  overflow-x: auto;
+  background: #f6eefb;
+  border: 1px solid #e8daf0;
+  border-radius: 15px;
+  scrollbar-width: thin;
+  scrollbar-color: #a981b5 #f6eefb;
+}
+
+.educationStages, .educationViews, .educationTools {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.educationStages, .educationViews {
+  padding: 3px;
+  border-radius: 11px;
+}
+
+.educationStages {
+  background: #ead9f3;
+}
+
+.educationViews {
+  background: #f1e3ed;
+}
+
+.educationTools {
+  gap: 8px;
+}
+
+.educationToolbar .smallBtn, .educationTools .search {
+  min-height: 40px;
+  margin: 0;
+  border: 1px solid transparent;
+  color: #53325f;
+  font: inherit;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.educationToolbar .smallBtn {
+  background: transparent;
+  padding: 7px 10px;
+  font-weight: 700;
+}
+
+.educationToolbar button:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.educationToolbar .selected, .educationToolbar .selected:hover {
+  background: #693778;
+  color: #fff;
+}
+
+.educationTools .search, .educationTools #educationKind {
+  background: #fff;
+  border-color: #dfcce9;
+}
+
+.educationTools .search {
+  flex: none;
+  width: 174px;
+  min-width: 0;
+  padding: 7px 10px;
+  border-radius: 10px;
+}
+
+.educationToolbar :focus-visible {
+  outline: 2px solid #693778;
+  outline-offset: 1px;
+}
+
+.educationActions {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
   margin: 16px 0;
   align-items: center;
-}
-
-.educationStages .selected, .educationViews .selected {
-  background: #173b72;
-  color: white;
-  border-color: #173b72;
-}
-
-.educationViews {
-  border-bottom: 1px solid #dce5f2;
-  padding-bottom: 14px;
-}
-
-.educationTools .search {
-  flex: 1;
-  min-width: 180px;
-  width: auto;
 }
 
 .educationSchool {
