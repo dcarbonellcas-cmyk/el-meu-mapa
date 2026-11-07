@@ -81,3 +81,39 @@
 #explorePage .educationMap:not([open]) > .maphead,#explorePage .educationMap:not([open]) > .mapbox {display:none;}
 
 .educationPortalRegistered {border-left:5px solid #248451;}
+
+/* Bootstrap-style callout using the app's lilac palette. */
+.schoolMapAlert {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px 20px;
+  margin:0 0 16px;
+  padding:14px 16px;
+  background:#f4eafa;
+  color:#4d2b5a;
+  border:1px solid #dcc4e8;
+  border-radius:12px;
+}
+.schoolMapAlert p {
+  margin:4px 0 0;
+  font-size:13px;
+}
+.schoolMapButton {
+  padding:10px 14px;
+  border:1px solid transparent;
+  border-radius:8px;
+  background:#693778;
+  color:#fff;
+  font:inherit;
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+}
+.schoolMapButton:hover {background:#52295e;}
+.schoolMapButton:focus-visible {
+  outline:2px solid #693778;
+  outline-offset:3px;
+}
+#educationSchoolMap {scroll-margin-top:calc(var(--top-height) + 12px);}

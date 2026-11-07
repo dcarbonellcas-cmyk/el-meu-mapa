@@ -11,7 +11,7 @@
  document.querySelector('.infantDrop').hidden=true;
  document.getElementById('cards').hidden=true;
  const oldPortals=document.getElementById('jobPortals');if(oldPortals)oldPortals.hidden=true;
- const mapDrop=document.createElement('details');mapDrop.className='educationMap';mapDrop.innerHTML='<summary>Veure els centres al mapa</summary>';
+ const mapDrop=document.createElement('details');mapDrop.className='educationMap';mapDrop.id='educationSchoolMap';mapDrop.innerHTML='<summary>Veure els centres al mapa</summary>';
  const head=main.querySelector('.maphead'),box=main.querySelector('.mapbox');if(head&&box){head.before(mapDrop);mapDrop.append(head,box)}
  mapDrop.addEventListener('toggle',()=>{if(mapDrop.open&&window.map){map.invalidateSize();draw()}});
  const origin=[41.499,2.322];
@@ -46,6 +46,26 @@
    '</div><div class="educationContent"></div>';
 
  const content=h.querySelector('.educationContent');
+ function addMapShortcut(before, fromOffers=false) {
+   const callout=document.createElement('div');
+   callout.className='alert alert-info schoolMapAlert';
+   callout.innerHTML='<div><strong>Mapa de centres educatius</strong><p>Troba les escoles dels filtres d’Educació al mapa.</p></div>'+
+     '<button type="button" class="btn btn-primary schoolMapButton" aria-controls="educationSchoolMap">Consultar el mapa <span aria-hidden="true">↓</span></button>';
+   callout.querySelector('button').addEventListener('click',()=>{
+     if(fromOffers) window.appShow('explore');
+     mapDrop.open=true;
+     mapDrop.querySelector('summary').focus({preventScroll:true});
+     const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+     mapDrop.scrollIntoView({block:'start',behavior:reduceMotion?'instant':'smooth'});
+   });
+   before.before(callout);
+ }
+ if(mapDrop.isConnected) {
+   addMapShortcut(content);
+   const offersHeading=document.querySelector('#jobsPage .jobsHero');
+   if(offersHeading) addMapShortcut(offersHeading,true);
+ }
+
  const toolbarButtons=h.querySelectorAll('[data-education-stage], [data-education-view]');
  h.querySelector('#educationKind').addEventListener('change',e=>{kind=e.target.value;limit=60;syncMap();paint()});
  h.querySelector('#educationQuery').addEventListener('input',e=>{query=e.target.value;limit=60;syncMap();paint()});
