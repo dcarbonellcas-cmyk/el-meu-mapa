@@ -11,11 +11,11 @@
   margin:18px 0;
   padding:8px;
   overflow-x:auto;
-  background:#f6eefb;
-  border:1px solid #e8daf0;
+  background:var(--lilac);
+  border:1px solid var(--lilac-line);
   border-radius:15px;
   scrollbar-width:thin;
-  scrollbar-color:#a981b5 #f6eefb;
+  scrollbar-color:#a981b5 var(--lilac);
 }
 .educationStages,.educationViews,.educationTools {
   display:flex;
@@ -27,7 +27,7 @@
   padding:3px;
   border-radius:11px;
 }
-.educationStages {background:#ead9f3;}
+.educationStages {background:var(--lilac-chip);}
 .educationViews {background:#f1e3ed;}
 .educationTools {gap:8px;}
 .educationToolbar .smallBtn,.educationTools .search {
@@ -46,7 +46,7 @@
 }
 .educationToolbar button:hover {background:#fff9;}
 .educationToolbar .selected,.educationToolbar .selected:hover {
-  background:#693778;
+  background:var(--plum);
   color:#fff;
 }
 .educationTools .search,.educationTools #educationKind {
@@ -61,7 +61,7 @@
   border-radius:10px;
 }
 .educationToolbar :focus-visible {
-  outline:2px solid #693778;
+  outline:2px solid var(--plum);
   outline-offset:1px;
 }
 .educationActions {display:flex;gap:10px;flex-wrap:wrap;margin:16px 0;align-items:center;}
@@ -104,7 +104,7 @@
   padding:10px 14px;
   border:1px solid transparent;
   border-radius:8px;
-  background:#693778;
+  background:var(--plum);
   color:#fff;
   font:inherit;
   font-size:14px;
@@ -113,7 +113,7 @@
 }
 .schoolMapButton:hover {background:#52295e;}
 .schoolMapButton:focus-visible {
-  outline:2px solid #693778;
+  outline:2px solid var(--plum);
   outline-offset:3px;
 }
 #educationSchoolMap {scroll-margin-top:calc(var(--top-height) + 12px);}

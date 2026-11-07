@@ -605,13 +605,13 @@ body {
 }
 
 .smallBtn {
-  border: 1px solid #cbd8eb;
+  border: 1px solid var(--lilac-line);
   background: #fff;
   border-radius: 10px;
   padding: 9px 12px;
   font-weight: 800;
   cursor: pointer;
-  color: #173b72;
+  color: var(--plum-ink);
 }
 
 .dashboardNavHint {
@@ -1550,11 +1550,11 @@ body {
   margin: 18px 0;
   padding: 8px;
   overflow-x: auto;
-  background: #f6eefb;
-  border: 1px solid #e8daf0;
+  background: var(--lilac);
+  border: 1px solid var(--lilac-line);
   border-radius: 15px;
   scrollbar-width: thin;
-  scrollbar-color: #a981b5 #f6eefb;
+  scrollbar-color: #a981b5 var(--lilac);
 }
 
 .educationStages, .educationViews, .educationTools {
@@ -1570,7 +1570,7 @@ body {
 }
 
 .educationStages {
-  background: #ead9f3;
+  background: var(--lilac-chip);
 }
 
 .educationViews {
@@ -1602,7 +1602,7 @@ body {
 }
 
 .educationToolbar .selected, .educationToolbar .selected:hover {
-  background: #693778;
+  background: var(--plum);
   color: #fff;
 }
 
@@ -1620,7 +1620,7 @@ body {
 }
 
 .educationToolbar :focus-visible {
-  outline: 2px solid #693778;
+  outline: 2px solid var(--plum);
   outline-offset: 1px;
 }
 
@@ -1749,7 +1749,7 @@ body {
   padding: 10px 14px;
   border: 1px solid transparent;
   border-radius: 8px;
-  background: #693778;
+  background: var(--plum);
   color: #fff;
   font: inherit;
   font-size: 14px;
@@ -1762,12 +1762,191 @@ body {
 }
 
 .schoolMapButton:focus-visible {
-  outline: 2px solid #693778;
+  outline: 2px solid var(--plum);
   outline-offset: 3px;
 }
 
 #educationSchoolMap {
   scroll-margin-top: calc(var(--top-height) + 12px);
+}
+
+:root {
+  --plum:#693778;
+  --plum-ink:#492454;
+  --plum-muted:#6b5674;
+  --lilac:#f6eefb;
+  --lilac-chip:#ead9f3;
+  --lilac-line:#e4d4ed;
+  --app-bg:#faf7fc;
+}
+
+body, .docsOverlay, .dashboardDirect {
+  background: var(--app-bg);
+  color: var(--plum-ink);
+}
+
+:where(.homeProfessional, .educationHub, .jobsPage, .leisurePage, .docsInner, .dashboardDirect) h1 {
+  color: var(--plum-ink);
+}
+
+.startEyebrow, .startHeading > p:last-child, .jobsHero p, .jobMeta, .docMeta span, .leisureMapHead {
+  color: var(--plum-muted);
+}
+
+.startCard, .jobCard, .leisureCard, .docCard, .educationSchool, .educationGroup, .educationMap, .educationCoverage, .leisureMapWrap {
+  border-color: var(--lilac-line);
+}
+
+.startCard:hover, .dashCard:hover {
+  border-color: var(--plum);
+}
+
+.startNumber, .docIcon, .jobSource, .leisurePriority {
+  background: var(--lilac-chip);
+  color: var(--plum-ink);
+}
+
+.startAction, .docMeta a, .educationCoverage a, .leisureMapHead b, .leisureCount {
+  color: var(--plum);
+}
+
+.jobsHero, .leisureHero, .sectionHeading {
+  padding: 20px;
+  border: 1px solid var(--lilac-line);
+  border-radius: 16px;
+  background: linear-gradient(120deg, var(--lilac), #fff);
+}
+
+.sectionHeading .startEyebrow {
+  margin: 0 0 7px;
+}
+
+.jobsInfo, .entityDrop summary, .educationGroup summary, .educationMap summary, .educationCoverage summary {
+  background: var(--lilac);
+  color: var(--plum-ink);
+  border-color: var(--lilac-line);
+}
+
+.entityDrop, .entityDrop[open] summary {
+  border-color: var(--lilac-line);
+}
+
+.filterPanel, .leisureSide {
+  background: var(--lilac);
+  border: 1px solid var(--lilac-line);
+  border-radius: 15px;
+}
+
+.filterPanel {
+  padding: 8px;
+}
+
+.filterRail {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #a981b5 var(--lilac);
+}
+
+.jobTypeFilters {
+  margin: 0 0 14px;
+}
+
+.filterRail > * {
+  flex-shrink: 0;
+}
+
+.filterRail button {
+  white-space: nowrap;
+}
+
+.filterPanel input, .filterPanel select, .leisureSide input, .leisureSide select, .docMeta :is(input:not([type=file]), textarea) {
+  color: var(--plum-ink);
+  background: #fff;
+  border: 1px solid var(--lilac-line);
+  border-radius: 10px;
+}
+
+.docMeta :is(input:not([type=file]), textarea) {
+  max-width: 100%;
+}
+
+.leisureSide h3, .sideFilterTitle {
+  color: var(--plum-ink);
+}
+
+.leisureSide .sideHint {
+  background: #fff;
+  color: var(--plum-muted);
+}
+
+.filterPanel :focus-visible, .leisureSide :focus-visible, .docsInner :focus-visible, .dashCard:focus-visible {
+  outline: 2px solid var(--plum);
+  outline-offset: 1px;
+}
+
+.jobBtn, .leisureFilter {
+  border-color: var(--lilac-line);
+  color: var(--plum-ink);
+}
+
+.jobBtn.primaryJob, .jobTypeFilter.active, .leisureFilter.active, .dashCard[aria-pressed=true] {
+  border-color: var(--plum);
+  background: var(--plum);
+  color: #fff;
+}
+
+.dashCard[aria-pressed=true] .dashCardLabel {
+  color: #fff;
+}
+
+.dashboardCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.dashCard {
+  text-align: left;
+  background: #fff;
+  color: var(--plum-ink);
+  border: 1px solid var(--lilac-line);
+  border-radius: 15px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.dashCardLabel {
+  color: var(--plum-muted);
+  font-size: 13px;
+}
+
+.dashboardFilters {
+  margin-bottom: 14px;
+}
+
+.dashboardFilters > * {
+  padding: 10px 12px;
+}
+
+#dashSearch {
+  flex: 1 0 215px;
+  min-width: 215px;
+}
+
+.dashboardResults {
+  padding: 16px;
+  background: #fff;
+  border: 1px solid var(--lilac-line);
+  border-radius: 16px;
+}
+
+.dashboardResults thead {
+  background: var(--lilac);
+  color: var(--plum-ink);
 }
 
 .homeProfessional {

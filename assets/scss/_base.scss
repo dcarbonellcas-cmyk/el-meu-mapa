@@ -521,13 +521,13 @@ body {
   flex-wrap:wrap;
 }
 .smallBtn {
-  border:1px solid #cbd8eb;
+  border:1px solid var(--lilac-line);
   background:#fff;
   border-radius:10px;
   padding:9px 12px;
   font-weight:800;
   cursor:pointer;
-  color:#173b72;
+  color:var(--plum-ink);
 }
 .dashboardNavHint {
   display:none;

@@ -27,13 +27,13 @@
     const data=allSchools();
     const counts=Object.fromEntries(statuses.map(x=>[x,0]));
     data.forEach(s=>counts[stateFor(s).status]=(counts[stateFor(s).status]||0)+1);
+    const sf=document.getElementById("dashStatus").value;
     const cards=document.getElementById("dashCards");
-    cards.innerHTML=statuses.map(st=>`<button class="dashCard" data-status="${st}" style="text-align:left;background:white;border:1px solid #dce5f2;border-radius:15px;padding:15px;cursor:pointer">
+    cards.innerHTML=statuses.map(st=>`<button class="dashCard" data-status="${st}" aria-pressed="${st===sf}">
       <div style="width:10px;height:10px;border-radius:50%;background:${statusColors[st]};margin-bottom:10px"></div>
-      <div style="font-size:26px;font-weight:800">${counts[st]||0}</div><div style="font-size:13px;color:#657897">${st}</div></button>`).join("");
+      <div style="font-size:26px;font-weight:800">${counts[st]||0}</div><div class="dashCardLabel">${st}</div></button>`).join("");
 
     const q=(document.getElementById("dashSearch").value||"").toLowerCase();
-    const sf=document.getElementById("dashStatus").value;
     const rows=data.filter(s=>{
       const st=stateFor(s).status;
       const hay=(val(s,["name","nom","Denominació_completa"])+" "+val(s,["city","municipality","municipi","Nom_municipi"])).toLowerCase();
@@ -50,7 +50,7 @@
         <td>${esc(type)}</td><td>${esc(stage)}</td>
         <td><span style="display:inline-block;padding:5px 9px;border-radius:999px;background:${statusColors[st.status]}22;color:#173b72;font-weight:700;font-size:12px">${esc(st.status)}</span>${st.source==='website'?'<small> · Confirmada per tu · web</small>':''}</td>
         <td style="color:#7183a4">${esc(st.date||"—")}</td>
-        <td><button class="openSchoolDash" data-id="${esc(sid(s))}" style="border:0;background:#edf4ff;color:#1769e8;border-radius:9px;padding:7px 10px;cursor:pointer;font-weight:700">Obrir</button></td>
+        <td><button class="openSchoolDash" data-id="${esc(sid(s))}" style="border:0;background:var(--lilac);color:var(--plum);border-radius:9px;padding:7px 10px;cursor:pointer;font-weight:700">Obrir</button></td>
       </tr>`;
     }).join("");
     document.getElementById("dashEmpty").style.display=rows.length?"none":"block";
