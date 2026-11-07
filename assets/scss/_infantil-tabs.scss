@@ -23,7 +23,7 @@
 .dashboardDirect {
   display:none;
   background:#f5f8fc;
-  min-height:calc(100vh - 78px);
+  min-height:calc(100vh - var(--top-height));
   font-family:inherit;
   color:#15386f;
 }

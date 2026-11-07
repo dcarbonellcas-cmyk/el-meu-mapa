@@ -2,13 +2,13 @@
 
 /* Infantil: mapa + empreses/entitats visibles sota el mapa, sense quedar retallades */ #explorePage {
   height:auto!important;
-  min-height:calc(100vh - 78px);
+  min-height:calc(100vh - var(--top-height));
   align-items:start;
 }
 #explorePage .filters {
   position:sticky;
-  top:78px;
-  max-height:calc(100vh - 78px);
+  top:var(--top-height);
+  max-height:calc(100vh - var(--top-height));
   overflow:auto;
 }
 #explorePage .mapwrap {
@@ -54,8 +54,8 @@
 }
 #explorePage .detail {
   position:sticky;
-  top:78px;
-  height:calc(100vh - 78px);
+  top:var(--top-height);
+  height:calc(100vh - var(--top-height));
   overflow:auto;
 }
 @media(max-width:950px) {
@@ -65,7 +65,7 @@
   }
   #explorePage .detail {
     position:fixed;
-    top:78px;
+    top:var(--top-height);
     height:auto;
   }
   #explorePage .mapbox {
