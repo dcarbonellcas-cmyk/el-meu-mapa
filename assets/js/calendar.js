@@ -4,9 +4,8 @@
   const connect=byId('calendarConnect'), status=byId('calendarStatus');
   const form=byId('calendarInterviewForm'), formStatus=byId('calendarFormStatus');
   const zone='Europe/Madrid';
-  const scope='https://www.googleapis.com/auth/calendar.events.owned';
-  const endpoint='https://www.googleapis.com/calendar/v3/calendars/primary/events';
-  const manualNote='Entrevista afegida manualment des d’El meu mapa.';
+  const scope='https://www.googleapis.com/auth/gmail.readonly';
+  const prefix='history_calendar_';
   const dayFormat=new Intl.DateTimeFormat('sv-SE',{timeZone:zone,year:'numeric',month:'2-digit',day:'2-digit'});
   const clockFormat=new Intl.DateTimeFormat('en-GB',{timeZone:zone,hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
   const offsetFormat=new Intl.DateTimeFormat('en-GB',{timeZone:zone,timeZoneName:'longOffset'});
@@ -17,7 +16,7 @@
   const dateKey=date=>date.toISOString().slice(0,10);
   const utcDay=day=>new Date(day+'T00:00:00Z');
   let selected=today(), month=utcDay(selected.slice(0,7)+'-01');
-  let token='', expires=0, request=0, remoteEvents=[], pendingInterview=null;
+  let token='', expires=0, busy=false, lastRefresh=0, editing=null;
 
   function madridInstant(day,time){
     const wall=new Date(day+'T'+time+':00Z');
@@ -42,9 +41,11 @@
         const sentAt=new Date(sent.date);
         if(Number.isFinite(sentAt.getTime())){
           // Use a local noon for the existing calendar-month renewal rule.
-          const due=nextRenewalDate(dayFormat.format(sentAt)+'T12:00:00');
+          const sentDate=dayFormat.format(sentAt);
+          const due=nextRenewalDate(sentDate+'T12:00:00');
           const date=dayFormat.format(due);
-          events.push({type:'renewal',date,title:'Reenviar CV · '+place.name});
+          const recipient=String(place.email||'').trim().toLowerCase();
+          events.push({type:'renewal',date,title:'Reenviar CV · '+place.name,sentDate,recipient});
         }
       }
       for(const item of history){
@@ -58,29 +59,93 @@
     return events;
   }
 
-  function fromGoogle(event){
-    const title=event.summary||'';
-    const description=event.description||'';
-    let type;
-    if(title.startsWith('Reenviar CV · ')&&description.includes('El meu mapa · renovació ·'))type='renewal';
-    if(title.startsWith('Resposta de candidatura · ')&&description.includes('El meu mapa · resposta · Gmail:'))type='reply';
-    if(/^Entrevista(?:\s*·|\s*$)/i.test(title))type='interview';
-    if(!type)return null;
-    const start=event.start||{};
-    const instant=new Date(start.dateTime||'');
-    const timed=Number.isFinite(instant.getTime());
-    const date=start.date||(timed?dayFormat.format(instant):'');
-    if(!date)return null;
-    return {type,title,date,time:timed?clockFormat.format(instant):''};
+  function savedRecords(){
+    const records=new Map();
+    for(const [key,value] of Object.entries(trackingValues())){
+      if(!key.startsWith(prefix))continue;
+      try{
+        const entries=JSON.parse(value);
+        if(entries[0]?.type==='calendarEntry')records.set(key,JSON.parse(entries[0].text));
+      }catch{}
+    }
+    return records;
+  }
+
+  function writeRecord(key,events){
+    const date=new Date().toISOString();
+    const type=events===null?'calendarRemoved':'calendarEntry';
+    localStorage.setItem(key,JSON.stringify([{date,type,text:JSON.stringify(events)}]));
+  }
+
+  function savedEvents(){
+    const events=[];
+    for(const [key,record] of savedRecords()){
+      if(!Array.isArray(record))continue;
+      for(const event of record){
+        if(!event||!labels[event.type]||typeof event.title!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(event.date))continue;
+        events.push({...event,manualKey:key.startsWith(prefix+'manual_')?key:''});
+      }
+    }
+    return events;
+  }
+
+  function openInterview(event){
+    editing=event?.manualKey||null;
+    form.reset();
+    form.hidden=false;
+    form.elements.date.value=event?.date||selected;
+    form.elements.centre.value=event?.centre||'';
+    form.elements.time.value=event?.time||'';
+    form.elements.duration.value=event?.duration||30;
+    form.elements.location.value=event?.location||'';
+    byId('calendarFormTitle').textContent=editing?'Editar una entrevista':'Afegir una entrevista';
+    formStatus.textContent='';
+    form.elements.centre.focus();
+  }
+
+  function removeInterview(key){
+    if(!confirm('Vols suprimir aquesta entrevista del calendari?'))return;
+    try{
+      writeRecord(key,null);
+      document.dispatchEvent(new Event('private-data-changed'));
+      if(editing===key)form.hidden=true;
+      render();
+    }catch{status.textContent='No s’ha pogut suprimir l’entrevista.'}
+  }
+
+  function showAlerts(events){
+    const alert=byId('calendarAlerts');
+    const current=today();
+    const due=events.filter(event=>event.date===current&&(event.type==='renewal'||event.type==='interview'));
+    const renewals=due.filter(event=>event.type==='renewal').length;
+    const interviews=due.filter(event=>event.type==='interview').length;
+    const reminders=[];
+    if(renewals)reminders.push(renewals===1?'Avui toca renovar una candidatura.':'Avui toca renovar '+renewals+' candidatures.');
+    if(interviews)reminders.push(interviews===1?'Avui tens una entrevista.':'Avui tens '+interviews+' entrevistes.');
+    alert.hidden=!reminders.length;
+    alert.textContent=reminders.join(' ');
   }
 
   function render(focusDay=false){
     const key=dateKey(month).slice(0,7);
     const events=new Map();
-    for(const event of [...localEvents(),...remoteEvents]){
+    const unique=new Map(), renewals=new Map();
+    for(const event of [...localEvents(),...savedEvents()]){
+      if(event.type==='renewal'&&event.recipient){
+        const previous=renewals.get(event.recipient);
+        if(!previous||previous.sentDate<=event.sentDate)renewals.set(event.recipient,event);
+        continue;
+      }
+      const identity=[event.type,event.date,norm(event.title).trim(),event.type==='interview'?event.time||'':''].join('|');
+      const previous=unique.get(identity);
+      if(!previous?.manualKey||event.manualKey)unique.set(identity,event);
+    }
+    const visible=[...unique.values(),...renewals.values()];
+    showAlerts(visible);
+    for(const event of visible){
       if(!event.date.startsWith(key))continue;
-      const list=events.get(event.date)||new Map();
-      list.set(event.type+'|'+norm(event.title).trim()+'|'+(event.type==='interview'?event.time||'':''),event);
+      const list=events.get(event.date)||[];
+      list.push(event);
       events.set(event.date,list);
     }
     byId('calendarMonth').textContent=monthFormat.format(month);
@@ -125,6 +190,26 @@
       const row=document.createElement('li');
       row.className='calendar-'+event.type;
       row.textContent=(event.time?event.time+' · ':'')+event.title;
+      if(event.location)row.append(' · '+event.location);
+      if(event.duration)row.append(' · '+event.duration+' min');
+      if(/^[a-f0-9]+$/i.test(event.threadId||'')){
+        const link=document.createElement('a');
+        link.textContent='Veure el correu';
+        link.href='https://mail.google.com/mail/#all/'+event.threadId;
+        link.target='_blank';
+        link.rel='noopener noreferrer';
+        row.append(' · ',link);
+      }
+      if(event.manualKey){
+        for(const [label,action] of [['Editar',()=>openInterview(event)],['Suprimir',()=>removeInterview(event.manualKey)]]){
+          const button=document.createElement('button');
+          button.type='button';
+          button.className='smallBtn';
+          button.textContent=label;
+          button.addEventListener('click',action);
+          row.append(' ',button);
+        }
+      }
       eventList.append(row);
     }
     if(!list.length){
@@ -135,58 +220,40 @@
     if(focusDay)focused?.focus();
   }
 
-  function setDisconnected(message){
-    request++;
-    token='';
-    expires=0;
-    remoteEvents=[];
-    connect.textContent='Connectar Google Calendar';
-    status.textContent=message;
-    if(!page.hidden)render();
-  }
-
-  async function api(url,options={}){
-    const response=await fetch(url,{...options,headers:{...options.headers,Authorization:'Bearer '+token}});
-    if(response.status===401){
-      setDisconnected('La connexió ha caducat. Torna a connectar Google Calendar.');
-      throw Error(status.textContent);
-    }
-    if(response.status===403){
-      throw Error('Google no permet l’accés al calendari. Comprova que hagis concedit el permís i que l’API de Calendar estigui habilitada.');
-    }
-    return response;
-  }
-
-  async function refresh(){
-    if(!token||page.hidden)return;
+  async function refresh(force=false){
+    if(!token||page.hidden||busy)return;
     if(Date.now()>=expires){
-      setDisconnected('Torna a connectar Google Calendar per actualitzar les cites.');
+      token='';
+      connect.textContent='Connectar Gmail';
+      status.textContent='La sessió de Gmail ha caducat. Els esdeveniments desats continuen visibles.';
       return;
     }
-    const sequence=++request;
-    const nextMonth=new Date(Date.UTC(month.getUTCFullYear(),month.getUTCMonth()+1,1));
-    const query=new URLSearchParams({
-      timeMin:madridInstant(dateKey(month),'00:00').toISOString(),
-      timeMax:madridInstant(dateKey(nextMonth),'00:00').toISOString(),
-      singleEvents:'true',maxResults:'250',
-      fields:'items(summary,description,start),nextPageToken'
-    });
+    if(!force&&Date.now()-lastRefresh<5*60000)return;
+    busy=true;
+    connect.disabled=true;
+    status.textContent='Llegint les candidatures de Gmail…';
     try{
-      const events=[];
-      do{
-        const response=await api(endpoint+'?'+query);
-        if(!response.ok)throw Error('No s’ha pogut actualitzar Google Calendar ('+response.status+').');
-        const result=await response.json();
-        if(sequence!==request)return;
-        events.push(...(result.items||[]).map(fromGoogle).filter(Boolean));
-        if(result.nextPageToken)query.set('pageToken',result.nextPageToken);
-        else query.delete('pageToken');
-      }while(query.has('pageToken'));
-      remoteEvents=events;
-      status.textContent='Google Calendar connectat. Les cites es revisen mentre tens aquesta vista oberta.';
+      const records=await readApplicationCalendarMail(token);
+      const existing=savedRecords();
+      let changed=false;
+      for(const [id,events] of records){
+        const key=prefix+'gmail_'+id;
+        if(!events.length&&!existing.has(key))continue;
+        if(JSON.stringify(existing.get(key))===JSON.stringify(events))continue;
+        writeRecord(key,events.length?events:null);
+        changed=true;
+      }
+      if(changed)document.dispatchEvent(new Event('private-data-changed'));
+      lastRefresh=Date.now();
+      status.textContent='Gmail actualitzat. Les novetats es revisen mentre tens el calendari obert.';
       render();
     }catch(error){
-      if(sequence===request)status.textContent=error.message;
+      token='';
+      connect.textContent='Connectar Gmail';
+      status.textContent=error.message+' Els esdeveniments desats es conserven.';
+    }finally{
+      busy=false;
+      connect.disabled=false;
     }
   }
 
@@ -198,7 +265,7 @@
   }
 
   connect.addEventListener('click',()=>{
-    if(token&&Date.now()<expires){refresh();return}
+    if(token&&Date.now()<expires){refresh(true);return}
     if(!window.google?.accounts?.oauth2){
       status.textContent='Google encara no s’ha carregat. Torna-ho a provar en uns segons.';
       return;
@@ -219,74 +286,41 @@
       google.accounts.oauth2.initTokenClient({
         client_id:GMAIL_CLIENT_ID,scope,include_granted_scopes:false,
         callback:result=>{
-          if(!result.access_token){finish('No s’ha pogut autoritzar Google Calendar.');return}
+          if(!result.access_token){finish('No s’ha pogut autoritzar Gmail.');return}
           if(!finish())return;
           token=result.access_token;
           expires=Date.now()+Number(result.expires_in||3600)*1000-30000;
-          connect.textContent='Actualitzar Google Calendar';
-          refresh();
+          connect.textContent='Actualitzar Gmail';
+          refresh(true);
         },
         error_callback:()=>finish('No s’ha pogut obrir la finestra de Google. Torna-ho a provar a Safari o Chrome.')
       }).requestAccessToken({prompt:'select_account'});
-    }catch{finish('No s’ha pogut iniciar la connexió amb Google Calendar.')}
+    }catch{finish('No s’ha pogut iniciar la connexió amb Gmail.')}
   });
 
-  function offerCalendarDraft(title,location,start,end,message=''){
-    const compact=date=>date.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z');
-    const query=new URLSearchParams({action:'TEMPLATE',text:title,details:manualNote,location,dates:compact(start)+'/'+compact(end),ctz:zone});
-    const link=document.createElement('a');
-    link.href='https://calendar.google.com/calendar/render?'+query;
-    link.target='_blank';
-    link.rel='noopener noreferrer';
-    link.textContent='Obrir l’esborrany i desar-lo a Google Calendar';
-    formStatus.replaceChildren(message?message+' ':'',link);
-  }
-
-  form.addEventListener('submit',async event=>{
+  form.addEventListener('submit',event=>{
     event.preventDefault();
     if(!form.reportValidity())return;
-    const submit=form.querySelector('[type="submit"]');
-    if(submit.disabled)return;
     const fields=new FormData(form);
-    const centre=fields.get('centre').trim(), day=fields.get('date'), time=fields.get('time');
+    const centre=fields.get('centre').trim(), date=fields.get('date'), time=fields.get('time');
     if(!centre){formStatus.textContent='Escriu el nom del centre o de l’empresa.';return}
-    let start;
-    try{start=madridInstant(day,time)}
-    catch(error){formStatus.textContent=error.message;return}
-    const end=new Date(start.getTime()+Number(fields.get('duration'))*60000);
-    const title='Entrevista · '+centre;
-    const location=fields.get('location').trim();
-    const details={summary:title,description:manualNote,location,start:{dateTime:start.toISOString(),timeZone:zone},end:{dateTime:end.toISOString(),timeZone:zone},colorId:'3',visibility:'private',reminders:{useDefault:false,overrides:[{method:'popup',minutes:1440},{method:'popup',minutes:30}]}};
-    if(!token||Date.now()>=expires){
-      offerCalendarDraft(title,location,start,end);
-      return;
-    }
-    const fingerprint=JSON.stringify(details);
-    if(pendingInterview?.fingerprint!==fingerprint)pendingInterview={fingerprint,id:crypto.randomUUID().replaceAll('-','')};
-    submit.disabled=true;
-    formStatus.textContent='Desant l’entrevista…';
     try{
-      const response=await api(endpoint+'?sendUpdates=none',{
-        method:'POST',headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({...details,id:pendingInterview.id})
-      });
-      if(!response.ok&&response.status!==409)throw Error('No s’ha pogut desar l’entrevista ('+response.status+').');
-      pendingInterview=null;
+      madridInstant(date,time);
+      const location=fields.get('location').trim();
+      const duration=Number(fields.get('duration'));
+      const key=editing||prefix+'manual_'+crypto.randomUUID().replaceAll('-','');
+      writeRecord(key,[{type:'interview',title:'Entrevista · '+centre,centre,date,time,location,duration}]);
+      document.dispatchEvent(new Event('private-data-changed'));
+      editing=null;
       form.reset();
       form.hidden=true;
-      formStatus.textContent='';
-      showMonth(day);
+      showMonth(date);
     }catch(error){
-      if(!token||error.message.startsWith('Google no permet'))offerCalendarDraft(title,location,start,end,error.message);
-      else formStatus.textContent=error.message;
-    }finally{submit.disabled=false}
+      formStatus.textContent=error.message;
+    }
   });
 
-  byId('calendarInterview').addEventListener('click',()=>{
-    form.hidden=false;
-    form.elements.date.value=selected;
-    form.elements.centre.focus();
-  });
+  byId('calendarInterview').addEventListener('click',()=>openInterview());
   byId('calendarCancel').addEventListener('click',()=>{form.hidden=true;byId('calendarInterview').focus()});
   byId('calendarPrevious').addEventListener('click',()=>showMonth(dateKey(new Date(Date.UTC(month.getUTCFullYear(),month.getUTCMonth()-1,1)))));
   byId('calendarNext').addEventListener('click',()=>showMonth(dateKey(new Date(Date.UTC(month.getUTCFullYear(),month.getUTCMonth()+1,1)))));
