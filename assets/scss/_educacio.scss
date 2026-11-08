@@ -149,4 +149,14 @@
 .educationSchoolDialog::backdrop {background:rgb(56 36 81 / 35%);}
 .educationSchoolDialog form {display:flex;justify-content:flex-end;}
 .educationSchoolDialog h2 {margin:0 0 12px;}
-.educationSchoolMapPreview {height:min(42vh,330px);border-radius:10px;}
+.educationPagination {display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:18px 0;}
+.educationPagination [aria-current="page"] {background:#653574;color:white;}
+#educationPagePosition {scroll-margin-top:calc(var(--top-height) + 12px);}
+.educationMapStatus {margin:0 14px 12px;font-weight:600;}
+.educationMapPin {
+  box-sizing:border-box;
+  background:#ffcd32;
+  border:3px solid #34243b;
+  border-radius:50%;
+  box-shadow:0 0 0 2px white;
+}

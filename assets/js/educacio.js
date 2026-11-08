@@ -1,6 +1,7 @@
 (() => {
  const main=document.querySelector('#explorePage .mapwrap');if(!main)return;
- let stage='bressol',view='schools',query='',kind='nonpublic',limit=60;
+ let stage='bressol',view='schools',query='',kind='nonpublic',page=1;
+ const pageSize=20;
  const labels={bressol:'Bressol · 0–3',infantil:'Infantil · 3–6',primaria:'Primària'};
  const roles={bressol:'infantil03',infantil:'infantil36',primaria:'primaria'};
  const entities=window.MAPA_DATA.entitats.infantil;
@@ -23,8 +24,32 @@
  function portalKey(id){return ({xarxa_fep:'xarxa_fecc',xarxa_manyanet:'xarxa_borsadocent'})[id]||id}
  function portalStatus(id){id=portalKey(id);try{return JSON.parse(localStorage.getItem('jobPortal_'+id)||'null')?.status||'pending'}catch{return 'pending'}}
  function statusSelect(id,name){const value=portalStatus(id);return '<label>Registre a la borsa (no és un enviament) <select class="smallBtn" data-education-status="'+esc(id)+'" aria-label="Inscripció a '+esc(name)+'">'+[['pending','Pendent'],['prepared','En preparació'],['registered','Compte o inscripció confirmats']].map(([v,t])=>'<option value="'+v+'"'+(v===value?' selected':'')+'>'+t+'</option>').join('')+'</select></label>'}
- const directorySource='https://analisi.transparenciacatalunya.cat/d/kvmv-ahh4';
  const profiles={
+   '8060034':{
+     description:'A Bambi, els infants aprenen jugant i experimentant amb objectes de cada dia. Els racons serveixen per representar situacions familiars, i els contes i titelles donen peu a practicar el llenguatge oral. El centre també proposa activitats de ritme i moviment.',
+     source:'https://llardinfantsbambi.com/que-fem/',
+     web:'https://llardinfantsbambi.com/el-masnou/'
+   },
+   '8056900':{
+     description:'Chiaravalle School Maresme és una escola infantil Montessori d’Alella. Organitza els espais i els materials segons l’etapa perquè els infants puguin explorar i guanyar autonomia al seu ritme.',
+     source:'https://www.chiaravalleschool.es/la-escuela/',
+     web:'https://www.chiaravalleschool.es/la-escuela/'
+   },
+   '8058179':{
+     description:'El Petit Vailet planteja una educació activa des de l’etapa bressol. Incorpora l’anglès amb sessions setmanals de Kids&Us i apropa els infants als sons d’altres llengües amb cançons i jocs.',
+     source:'https://petitvailet.com/',
+     web:'https://petitvailet.com/'
+   },
+   '8022719':{
+     description:'Aquesta escola de Parets combina projectes, racons i tallers amb activitats en equip. El projecte educatiu preveu adaptar les propostes al ritme de cada alumne i fer un seguiment continu per detectar dificultats mentre aprèn.',
+     source:'https://nsmontserrat.com/wp-content/uploads/2025/11/PEC-r.-25-26-1-1.pdf',
+     web:'https://nsmontserrat.com/'
+   },
+   '8062547':{
+     description:'Peques és una escola bressol privada de Mataró per a infants de 0 a 3 anys. Hi ha constància d’un projecte d’art iniciat el 2013 amb el grup de dos anys. La metodologia actual del centre està pendent de contrastar.',
+     source:'https://premisrecerca.uvic.cat/sites/default/files/webform/22d6431784edb59b7aef5c3f67ce191d8101beb8_UVIC%20TREBALL%20RECERCA.pdf',
+     web:''
+   },
    '8040001':{
      description:'Escola concertada del Masnou que ofereix Infantil, Primària i ESO. El centre explica que combina l’aprenentatge per ambients i per projectes amb un seguiment personalitzat de l’alumnat.',
      source:'https://www.escolaberganti.org/',
@@ -36,10 +61,9 @@
      web:'https://escolapieselmasnou.org/'
    },
    '8050193':{
-     description:'Escola bressol privada del Masnou per a infants de 0 a 3 anys. En un reportatge del 2017, l’Ajuntament descriu un aprenentatge a partir de l’experiència dels infants i amb participació de les famílies.',
+     description:'Ca la Rita és una escola bressol familiar del Masnou. El projecte que l’equip explicava el 2017 partia de situacions que els infants poden viure i explorar de primera mà. Les educadores preparaven activitats i materials perquè els infants descobrissin coses fent-les, i buscaven la complicitat de les famílies en el dia a dia.',
      source:'https://www.elmasnou.cat/media/repository/import/documents/documents/elmasnouviu/VIU96.pdf',
-     web:'',
-     directory:'https://serveiseducatius.xtec.cat/baixmaresme/comunitat/centres-educatius/escoles-bressol/'
+     web:''
    },
    '8063655':{
      description:'Seu d’Escoles Betlem a Premià de Dalt que ofereix educació maternal i infantil. A Maternal fan servir el joc per treballar la comunicació i l’aprenentatge, i incorporen la psicomotricitat.',
@@ -56,8 +80,9 @@
    const names={bressol:'educació infantil de 0 a 3 anys',infantil:'educació infantil de 3 a 6 anys',primaria:'educació primària'};
    const levels=stages(x).map(level=>names[level]).filter(Boolean);
    const location=[x.city,x.county].filter(Boolean).join(' · ');
-   return [x.kind?'Centre de titularitat '+x.kind.toLowerCase()+'.':'Centre educatiu.', location?location+'.':'',
-     levels.length?'Etapes del directori: '+new Intl.ListFormat('ca').format(levels)+'.':''].filter(Boolean).join(' ');
+   const stageText=levels.length?'Ofereix '+new Intl.ListFormat('ca').format(levels)+'.':'';
+   return [x.kind?'Escola '+x.kind.toLowerCase()+'.':'Centre educatiu.',location?location+'.':'',
+     stageText,'La metodologia del centre està pendent de contrastar.'].filter(Boolean).join(' ');
  }
  function schoolCard(x){
    const group=entities.find(e=>e.id===x.networkId);
@@ -80,50 +105,46 @@
  schoolDialog.className='educationSchoolDialog';
  schoolDialog.setAttribute('aria-labelledby','educationSchoolTitle');
  schoolDialog.innerHTML='<form method="dialog"><button class="smallBtn">Tancar</button></form>'+
-   '<h2 id="educationSchoolTitle"></h2><div class="educationSchoolInfo"></div><div class="educationSchoolMapPreview" hidden></div>';
+   '<h2 id="educationSchoolTitle"></h2><div class="educationSchoolInfo"></div>';
  document.body.append(schoolDialog);
  const info=schoolDialog.querySelector('.educationSchoolInfo');
- const mapPreview=schoolDialog.querySelector('.educationSchoolMapPreview');
- let previewMap;
- schoolDialog.addEventListener('close',()=>{
-   previewMap?.remove();
-   previewMap=undefined;
- });
 
- function showSchool(x,showLocation){
+ function showSchool(x){
    const profile=profiles[x.id]||{};
    const group=entities.find(e=>e.id===x.networkId);
-   const point=Number.isFinite(x.lat)&&Number.isFinite(x.lng)?[x.lat,x.lng]:null;
    const address=[x.address,[x.postal,x.city].filter(Boolean).join(' ')].filter(Boolean).join(' · ');
+   const links=[link(profile.web??x.web,'Web del centre'),link(x.careers,'Candidatura al centre'),
+     group?.careers!==x.careers?link(group?.careers,'Borsa de la xarxa'):''].join('');
    schoolDialog.querySelector('h2').textContent=x.name;
-   mapPreview.hidden=!showLocation||!point;
-   if(showLocation){
-     const mapUrl=point?`https://www.openstreetmap.org/?mlat=${x.lat}&mlon=${x.lng}#map=17/${x.lat}/${x.lng}`:
-       'https://www.openstreetmap.org/search?query='+encodeURIComponent([x.name,x.address,x.city].filter(Boolean).join(', '));
-     info.innerHTML=`<p>${esc(address||x.city||'Adreça sense confirmar')}</p>
-       ${point?'':'<p>El directori no dona coordenades. Pots cercar el centre per nom o adreça.</p>'}
-       <div class="educationActions">${link(mapUrl,point?'Obrir a OpenStreetMap':'Cercar a OpenStreetMap')}</div>`;
-   }else{
-     const web=profile.web??x.web;
-     info.innerHTML=`<p>${esc(profile.description||schoolDescription(x))}</p>
-       ${address?`<p>${esc(address)}</p>`:''}
-       <div class="educationActions">
-         ${link(web,'Web del centre')||'<small>Web pròpia no verificada</small>'}
-         ${link(profile.directory,'Fitxa pública del centre')}
-         ${link(x.careers,'Candidatura al centre')}
-         ${group&&group.careers!==x.careers?link(group.careers,'Borsa de la xarxa'):''}
-         ${link(profile.source||directorySource,profile.source?'Font de la descripció':'Directori oficial')}
-       </div>`;
-   }
+   info.innerHTML=`<p>${esc(profile.description||schoolDescription(x))}</p>
+     ${address?`<p class="muted">${esc(address)}</p>`:''}
+     ${links?`<div class="educationActions">${links}</div>`:''}`;
    schoolDialog.showModal();
-   if(!mapPreview.hidden){
-     previewMap=L.map(mapPreview,{scrollWheelZoom:false}).setView(point,17);
-     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
-       maxZoom:19,attribution:'&copy; OpenStreetMap contributors'
-     }).addTo(previewMap);
-     L.circleMarker(point,{radius:9,color:'#fff',weight:2,fillColor:'#6d28a0',fillOpacity:1}).addTo(previewMap);
-     previewMap.invalidateSize();
+ }
+
+ let highlightedSchool;
+ const mapStatus=document.createElement('p');
+ mapStatus.className='educationMapStatus';
+ mapStatus.setAttribute('role','status');
+ mapStatus.hidden=true;
+ mapDrop.querySelector('summary').after(mapStatus);
+
+ function showSchoolOnMap(school){
+   highlightedSchool?.remove();
+   highlightedSchool=undefined;
+   showEducationMap();
+   mapStatus.hidden=false;
+   if(!Number.isFinite(school.lat)||!Number.isFinite(school.lng)){
+     mapStatus.textContent=school.name+' · '+[school.address,school.city].filter(Boolean).join(', ')+'. Sense coordenades al directori.';
+     return;
    }
+   const point=[school.lat,school.lng];
+   highlightedSchool=L.marker(point,{
+     icon:L.divIcon({className:'educationMapPin',iconSize:[20,20],iconAnchor:[10,10]}),
+     interactive:false,keyboard:false
+   }).addTo(window.map);
+   highlightedSchool.bindTooltip(esc(school.name),{permanent:true,direction:'top',offset:[0,-10]});
+   mapStatus.textContent=school.name+' · '+[school.address,school.city].filter(Boolean).join(', ');
  }
  function groupCard(g){const members=rows().filter(x=>x.networkId===g.id);const umbrella=g.id==='xarxa_fecc'||g.relationshipType==='job-board';return '<details class="educationGroup"><summary><strong>'+esc(g.name)+'</strong><span>'+(umbrella?'Borsa compartida d’escoles de titularitats diferents':members.length+' centres vinculats i comprovats per a aquesta etapa')+'</span></summary><div class="educationGroupBody"><p>'+esc(g.verified||g.services)+'</p><div class="educationActions">'+link(g.careers,g.id==='xarxa_fep'?'Candidatura general · Borsa FECC':verifiedPortals.has(g.id)?'Candidatura general · entrar a la borsa':'Web i contacte · borsa pendent de verificar')+bankLinks(g)+link(g.web,'Web de l’entitat')+'</div>'+statusSelect(g.id,g.name)+manualApplicationButton(g)+'<p class="muted">La inscripció general i les candidatures a cada oferta són tràmits diferents. Revisa les instruccions de la borsa abans de duplicar enviaments.</p>'+members.map(schoolCard).join('')+(!members.length?(umbrella?'<p>Aquesta és una borsa compartida, no la titular de totes les escoles. Consulta les ofertes del portal i la titularitat de cada centre.</p>':'<p>Encara no hi ha centres vinculats amb una font contrastada per a aquest filtre. Consulta el directori de la xarxa; això no vol dir que no tingui escoles.</p>'):'')+'</div></details>'}
  function syncMap(){window.educationStage=stage;document.querySelectorAll('[data-kind]').forEach(x=>x.checked=kind==='all'||kind==='nonpublic'&&x.dataset.kind!=='Pública'||kind===x.dataset.kind);document.getElementById('search').value=query;document.getElementById('county').value='';draw()}
@@ -146,6 +167,12 @@
    '</div><div class="educationContent"></div>';
 
  const content=h.querySelector('.educationContent');
+ function showEducationMap(){
+   mapDrop.open=true;
+   mapDrop.querySelector('summary').focus({preventScroll:true});
+   mapDrop.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+ }
+
  function addMapShortcut(before, fromOffers=false) {
    const callout=document.createElement('div');
    callout.className='alert alert-info schoolMapAlert';
@@ -153,10 +180,7 @@
      '<button type="button" class="btn btn-primary schoolMapButton" aria-controls="educationSchoolMap">Consultar el mapa <span aria-hidden="true">↓</span></button>';
    callout.querySelector('button').addEventListener('click',()=>{
      if(fromOffers) window.appShow('explore');
-     mapDrop.open=true;
-     mapDrop.querySelector('summary').focus({preventScroll:true});
-     const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-     mapDrop.scrollIntoView({block:'start',behavior:reduceMotion?'instant':'smooth'});
+     showEducationMap();
    });
    before.before(callout);
  }
@@ -167,8 +191,22 @@
  }
 
  const toolbarButtons=h.querySelectorAll('[data-education-stage], [data-education-view]');
- h.querySelector('#educationKind').addEventListener('change',e=>{kind=e.target.value;limit=60;syncMap();paint()});
- h.querySelector('#educationQuery').addEventListener('input',e=>{query=e.target.value;limit=60;syncMap();paint()});
+ h.querySelector('#educationKind').addEventListener('change',e=>{kind=e.target.value;page=1;syncMap();paint()});
+ h.querySelector('#educationQuery').addEventListener('input',e=>{query=e.target.value;page=1;syncMap();paint()});
+
+ function schoolResults(list){
+   const pages=Math.ceil(list.length/pageSize);
+   const start=(page-1)*pageSize;
+   const cards=list.slice(start,start+pageSize).map(schoolCard).join('');
+   if(pages<=1)return cards;
+   const nearby=Array.from({length:5},(_,index)=>page+index-2).filter(n=>n>1&&n<pages);
+   const numbers=[1,...nearby,pages];
+   const controls=numbers.map((n,index)=>
+     (index&&n-numbers[index-1]>1?'<span aria-hidden="true">…</span>':'')+
+     `<button type="button" class="smallBtn" data-education-page="${n}" aria-label="Pàgina ${n}"${n===page?' aria-current="page"':''}>${n}</button>`
+   ).join('');
+   return cards+`<nav class="educationPagination" aria-label="Pàgines d’escoles">${controls}</nav>`;
+ }
 
  function paint(){
  const list=rows(),linked=schools.filter(x=>x.networkId).length;
@@ -177,16 +215,23 @@
    button.classList.toggle('selected',selected);
    button.setAttribute('aria-pressed',String(selected));
  }
- content.innerHTML=(stage==='primaria'?'<p class="educationNotice">Per treballar de mestra de Primària cal complir els requisits del lloc. El teu grau continua en curs: les candidatures no el presenten com a acabat.</p>':'')+'<p class="muted">'+(view==='portals'?'Borses amb accés verificat. L’alta no equival a una candidatura enviada.':list.length+' centres d’aquesta etapa · distància aproximada en línia recta des de Teià.')+'</p><div id="educationResults">'+(view==='schools'?list.slice(0,limit).map(schoolCard).join('')+(list.length>limit?'<button class="smallBtn" data-education-more>Mostrar-ne més</button>':''):view==='networks'?entities.filter(g=>networkIDs.has(g.id)||g.id.startsWith('gestora_')).filter(g=>!query||norm(g.name).includes(norm(query))||list.some(x=>x.networkId===g.id)).map(groupCard).join(''):entities.filter(g=>verifiedPortals.has(g.id)&&g.careers&&(!query||norm(g.name).includes(norm(query)))).map(g=>'<article class="educationSchool '+(portalStatus(g.id)==='registered'?'educationPortalRegistered':'')+'"><div><h3>'+esc(g.name)+'</h3>'+statusSelect(g.id,g.name)+manualApplicationButton(g)+'</div><div class="educationActions">'+link(g.careers,'Entrar a la borsa')+bankLinks(g)+'</div></article>').join(''))+'</div><details class="educationCoverage"><summary>Cobertura i verificació del directori</summary><p>Centres d’Infantil i Primària del directori oficial del curs actual. No garanteix exhaustivitat en temps real. '+linked+' centres tenen una xarxa vinculada mitjançant una llista contrastada o el seu domini institucional. Els altres continuen pendents de revisió; no es consideren automàticament independents.</p><p>Els correus provenen del directori oficial. «Web del centre» no significa que s’hi hagi verificat una borsa pròpia. Les inscripcions, el perfil i els enviaments són privats i no es publiquen a GitHub. L’estat de les borses es desa en aquest navegador i se sincronitza quan connectes el mateix compte de Google a Documents.</p><a href="https://analisi.transparenciacatalunya.cat/d/kvmv-ahh4" target="_blank" rel="noopener">Consultar el directori oficial</a></details>';
+ content.innerHTML=(stage==='primaria'?'<p class="educationNotice">Per treballar de mestra de Primària cal complir els requisits del lloc. El teu grau continua en curs: les candidatures no el presenten com a acabat.</p>':'')+'<p class="muted">'+(view==='portals'?'Borses amb accés verificat. L’alta no equival a una candidatura enviada.':list.length+' centres d’aquesta etapa · distància aproximada en línia recta des de Teià.')+'</p>'+(view==='schools'&&list.length?'<p id="educationPagePosition" class="muted" tabindex="-1">Pàgina '+page+' de '+Math.ceil(list.length/pageSize)+' · Centres '+((page-1)*pageSize+1)+'–'+Math.min(page*pageSize,list.length)+' de '+list.length+'</p>':'')+'<div id="educationResults">'+(view==='schools'?schoolResults(list):view==='networks'?entities.filter(g=>networkIDs.has(g.id)||g.id.startsWith('gestora_')).filter(g=>!query||norm(g.name).includes(norm(query))||list.some(x=>x.networkId===g.id)).map(groupCard).join(''):entities.filter(g=>verifiedPortals.has(g.id)&&g.careers&&(!query||norm(g.name).includes(norm(query)))).map(g=>'<article class="educationSchool '+(portalStatus(g.id)==='registered'?'educationPortalRegistered':'')+'"><div><h3>'+esc(g.name)+'</h3>'+statusSelect(g.id,g.name)+manualApplicationButton(g)+'</div><div class="educationActions">'+link(g.careers,'Entrar a la borsa')+bankLinks(g)+'</div></article>').join(''))+'</div><details class="educationCoverage"><summary>Cobertura i verificació del directori</summary><p>Centres d’Infantil i Primària del directori oficial del curs actual. No garanteix exhaustivitat en temps real. '+linked+' centres tenen una xarxa vinculada mitjançant una llista contrastada o el seu domini institucional. Els altres continuen pendents de revisió; no es consideren automàticament independents.</p><p>Els correus provenen del directori oficial. «Web del centre» no significa que s’hi hagi verificat una borsa pròpia. Les inscripcions, el perfil i els enviaments són privats i no es publiquen a GitHub. L’estat de les borses es desa en aquest navegador i se sincronitza quan connectes el mateix compte de Google a Documents.</p><a href="https://analisi.transparenciacatalunya.cat/d/kvmv-ahh4" target="_blank" rel="noopener">Consultar el directori oficial</a></details>';
  }
  h.addEventListener('change',e=>{const s=e.target.closest('[data-education-status]');if(!s)return;const key=portalKey(s.dataset.educationStatus);localStorage.setItem('jobPortal_'+key,JSON.stringify({status:s.value,updated:new Date().toISOString()}));document.dispatchEvent(new Event('private-data-changed'))});
  h.addEventListener('click',e=>{const stageButton=e.target.closest('[data-education-stage]'),tab=e.target.closest('[data-education-view]'),mail=e.target.closest('[data-education-mail]'),profile=e.target.closest('[data-education-profile]'),location=e.target.closest('[data-education-location]');
- if(stageButton){stage=stageButton.dataset.educationStage;window.educationStage=stage;limit=60;syncMap();paint()}
- if(tab){view=tab.dataset.educationView;limit=60;paint()}
- if(e.target.closest('[data-education-more]')){limit+=60;paint()}
+ if(stageButton){stage=stageButton.dataset.educationStage;window.educationStage=stage;page=1;syncMap();paint()}
+ if(tab){view=tab.dataset.educationView;page=1;paint()}
+ const pageButton=e.target.closest('[data-education-page]');
+ if(pageButton&&Number(pageButton.dataset.educationPage)!==page){
+   page=Number(pageButton.dataset.educationPage);
+   paint();
+   const position=document.getElementById('educationPagePosition');
+   position.focus({preventScroll:true});
+   position.scrollIntoView({block:'start'});
+ }
  if(mail){const x=schools.find(x=>String(x.id)===mail.dataset.educationMail);if(x)prepare({...x,applicationRole:roles[stage]})}
  const id=profile?.dataset.educationProfile||location?.dataset.educationLocation;
- if(id){const x=schools.find(s=>String(s.id)===id);if(x)showSchool(x,Boolean(location))}
+ if(id){const x=schools.find(s=>String(s.id)===id);if(x)(location?showSchoolOnMap:showSchool)(x)}
  });
  document.addEventListener('candidature-history-changed',paint);document.addEventListener('private-data-restored',paint);window.addEventListener('storage',paint);
  window.educationStage=stage;paint();draw();
