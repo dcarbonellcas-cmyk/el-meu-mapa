@@ -1884,28 +1884,6 @@ body {
   height: clamp(200px, 53dvh, 420px);
 }
 
-.educationSchoolMiniMap .leaflet-tile-pane {
-  filter: saturate(0.62);
-}
-
-.educationMapPin svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  filter: drop-shadow(0 2px 3px rgba(52, 36, 59, 0.45));
-}
-
-.educationMapPin path {
-  fill: #653574;
-  stroke: white;
-  stroke-width: 2.5;
-}
-
-.educationMapPin circle {
-  fill: white;
-}
-
 :root {
   --plum:#693778;
   --plum-ink:#492454;

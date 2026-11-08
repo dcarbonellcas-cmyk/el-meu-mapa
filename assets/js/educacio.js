@@ -147,18 +147,8 @@
    miniMapHost.hidden=!hasPoint;
    schoolDialog.showModal();
    if(!hasPoint)return;
-   const point=[school.lat,school.lng];
-   miniMap=L.map(miniMapHost,{scrollWheelZoom:false}).setView(point,17);
-   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
-     maxZoom:19,attribution:'&copy; OpenStreetMap contributors'
-   }).addTo(miniMap);
-   L.marker(point,{
-     icon:L.divIcon({
-       className:'educationMapPin',iconSize:[36,44],iconAnchor:[18,42],
-       html:'<svg viewBox="0 0 36 44" aria-hidden="true"><path d="M18 42S3 28 3 18a15 15 0 0 1 30 0c0 10-15 24-15 24Z"/><circle cx="18" cy="18" r="5"/></svg>'
-     }),
-     interactive:false,keyboard:false
-   }).addTo(miniMap);
+   miniMap=createSchoolMap(miniMapHost,[school.lat,school.lng],17);
+   createSchoolMarker(school).addTo(miniMap);
  }
  function groupCard(g){const members=rows().filter(x=>x.networkId===g.id);const umbrella=g.id==='xarxa_fecc'||g.relationshipType==='job-board';return '<details class="educationGroup"><summary><strong>'+esc(g.name)+'</strong><span>'+(umbrella?'Borsa compartida d’escoles de titularitats diferents':members.length+' centres vinculats i comprovats per a aquesta etapa')+'</span></summary><div class="educationGroupBody"><p>'+esc(g.verified||g.services)+'</p><div class="educationActions">'+link(g.careers,g.id==='xarxa_fep'?'Candidatura general · Borsa FECC':verifiedPortals.has(g.id)?'Candidatura general · entrar a la borsa':'Web i contacte · borsa pendent de verificar')+bankLinks(g)+link(g.web,'Web de l’entitat')+'</div>'+statusSelect(g.id,g.name)+manualApplicationButton(g)+'<p class="muted">La inscripció general i les candidatures a cada oferta són tràmits diferents. Revisa les instruccions de la borsa abans de duplicar enviaments.</p>'+members.map(schoolCard).join('')+(!members.length?(umbrella?'<p>Aquesta és una borsa compartida, no la titular de totes les escoles. Consulta les ofertes del portal i la titularitat de cada centre.</p>':'<p>Encara no hi ha centres vinculats amb una font contrastada per a aquest filtre. Consulta el directori de la xarxa; això no vol dir que no tingui escoles.</p>'):'')+'</div></details>'}
  function syncMap(){window.educationStage=stage;document.querySelectorAll('[data-kind]').forEach(x=>x.checked=kind==='all'||kind==='nonpublic'&&x.dataset.kind!=='Pública'||kind===x.dataset.kind);document.getElementById('search').value=query;document.getElementById('county').value='';draw()}
