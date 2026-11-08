@@ -17,12 +17,9 @@
   document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.go)));
   document.getElementById('dashboardBtn').addEventListener('click',e=>{e.stopImmediatePropagation();show('candidates')},true);
   document.getElementById('closeDashboard')?.addEventListener('click',e=>{e.stopImmediatePropagation();show('home')},true);
-  document.getElementById('docsCvInput').addEventListener('change',async e=>{const f=e.target.files[0];if(f){await saveDoc('cv',f);await updateDocsPage();await refreshDocs()}e.target.value=''});
-  document.getElementById('docsLetterInput').addEventListener('change',async e=>{const f=e.target.files[0];if(f){await saveDoc('letter',f);await updateDocsPage();await refreshDocs()}e.target.value=''});
-  for(const [key,input,open] of [['cvAlternative','docsCvAlternativeInput','docsCvAlternativeOpen'],['recommendation','docsRecommendationInput','docsRecommendationOpen']]){
-    document.getElementById(input).addEventListener('change',async e=>{try{const f=e.target.files[0];if(f){await saveDoc(key,f);await updateDocsPage();await refreshDocs()}}catch{alert('No s’ha pogut guardar el document. Torna-ho a provar.')}finally{e.target.value=''}});
+  for(const [key,input,open] of [['cv','docsCvInput','docsCvOpen'],['letter','docsLetterInput','docsLetterOpen'],['cvAlternative','docsCvAlternativeInput','docsCvAlternativeOpen'],['recommendation','docsRecommendationInput','docsRecommendationOpen']]){
+    bindDocumentPicker(input,key,async ()=>{await updateDocsPage();await refreshDocs()});
     document.getElementById(open).addEventListener('click',()=>openDoc(key));
   }
-  document.getElementById('docsCvOpen').addEventListener('click',()=>openDoc('cv'));document.getElementById('docsLetterOpen').addEventListener('click',()=>openDoc('letter'));
   document.getElementById('dashRows').addEventListener('click',e=>{if(e.target.closest('.openSchoolDash'))show('explore')},true);
 })();

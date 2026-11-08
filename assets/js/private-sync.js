@@ -3,8 +3,10 @@
   const CLIENT='326278371839-alsvhik4agj0jqp6ps16ve3j722q6p2k.apps.googleusercontent.com';
   const names={profile:'mapa-profile-v1.json',cv:'mapa-cv-v1.json',letter:'mapa-letter-v1.json',cvAlternative:'mapa-cvAlternative-v1.json',recommendation:'mapa-recommendation-v1.json',tracking:'mapa-tracking-v1.json'};
   const button=document.getElementById('connectPrivateDrive'),status=document.getElementById('privateSyncStatus');
+  const draftButton=document.getElementById('connectDraftDrive'),draftStatus=document.getElementById('draftDriveStatus');
   let token='',expiry=0,busy=false,again=false,timer=null,connected=false,revision=0;
-  const say=text=>{status.textContent=text};
+  const say=text=>{status.textContent=text;draftStatus.textContent=text};
+  const disableButtons=disabled=>{button.disabled=disabled;draftButton.disabled=disabled};
   const stamp=x=>Number.isFinite(Date.parse(x))?Date.parse(x):0;
   async function api(url,options={}){
     if(Date.now()>=expiry){token='';connected=false;throw Error('Torna a connectar Google. La còpia local es conserva.')}
@@ -46,7 +48,7 @@
     if(key==='tracking')restorePrivateTracking(r);
     else if(key==='profile')localStorage.setItem('mapaEscolesProfile_v1',JSON.stringify({name:r.name,bio:r.bio,roleBio:r.roleBio||{},updated:r.updated}));
     else await saveDoc(key,new File([Uint8Array.from(atob(r.data),c=>c.charCodeAt(0))],r.name,{type:r.type}),{updated:r.updated,restoring:true,deleted:!!r.deleted});
-    document.dispatchEvent(new Event('private-data-restored'));
+    document.dispatchEvent(new CustomEvent('private-data-restored',{detail:{key}}));
   }
   async function upload(file,r,etag){
     const content=JSON.stringify(r);
@@ -60,7 +62,7 @@
   }
   async function sync(){
     if(!connected)return;if(busy){again=true;return}
-    busy=true;button.disabled=true;say('Sincronitzant perfil, documents, borses i seguiment amb la còpia privada…');
+    busy=true;disableButtons(true);say('Sincronitzant perfil, documents, borses i seguiment amb la còpia privada…');
     try{
       const files=await listFiles();
       for(const key of Object.keys(names)){
@@ -78,20 +80,48 @@
       }
       say('✓ Còpia privada sincronitzada. Guardat automàtic mentre la sessió de Google estigui connectada.');button.textContent='Sincronitzar ara';
     }catch(e){say(e.message||'No s’ha pogut sincronitzar. La còpia local es conserva.');if(!connected)button.textContent='Tornar a connectar Google';}
-    finally{busy=false;button.disabled=false;if(again){again=false;clearTimeout(timer);timer=setTimeout(sync,1500)}}
+    finally{busy=false;disableButtons(false);if(again){again=false;clearTimeout(timer);timer=setTimeout(sync,1500)}}
   }
   function connect(){
     if(connected&&Date.now()<expiry)return sync();
     if(!window.google?.accounts?.oauth2){say('Google encara no s’ha carregat. Revisa la connexió i torna-ho a provar.');return}
-    const client=google.accounts.oauth2.initTokenClient({client_id:CLIENT,scope:'https://www.googleapis.com/auth/drive.appdata',include_granted_scopes:false,
-      callback:async r=>{if(r.error||!r.access_token){say('No s’ha autoritzat la connexió privada. Es conserva la còpia local.');button.disabled=false;return}token=r.access_token;expiry=Date.now()+Math.max(0,Number(r.expires_in||3600)-60)*1000;connected=true;await sync();},
-      error_callback:()=>{button.disabled=false;say('Connexió cancel·lada o finestra bloquejada. Torna-ho a provar.');}});
-    button.disabled=true;say('Tria el mateix compte de Google a l’ordinador i a l’iPhone.');
-    try{client.requestAccessToken({prompt:'select_account'})}catch{button.disabled=false;say('No s’ha pogut obrir Google. Torna-ho a provar des de Safari o Chrome.')}
-    setTimeout(()=>{if(button.disabled&&!busy&&!connected){button.disabled=false;say('Google no ha completat la connexió. Permet la finestra emergent i torna-ho a provar; les dades locals es conserven.')}},60000);
+    connected=false;
+    disableButtons(true);
+    say('Tria el compte de Google amb què vas desar els documents.');
+    let pending=true;
+    const timeout=setTimeout(()=>fail('Google no ha completat la connexió. Permet la finestra emergent i torna-ho a provar.'),60000);
+    function finish(){
+      if(!pending)return false;
+      pending=false;
+      clearTimeout(timeout);
+      return true;
+    }
+    function fail(message){
+      if(!finish())return;
+      disableButtons(false);
+      say(message+' La còpia local es conserva.');
+    }
+    try{
+      const client=google.accounts.oauth2.initTokenClient({
+        client_id:CLIENT,scope:'https://www.googleapis.com/auth/drive.appdata',include_granted_scopes:false,
+        callback:r=>{
+          if(r.error||!r.access_token){fail('Google no ha autoritzat l’accés a la còpia privada.');return}
+          if(!finish())return;
+          token=r.access_token;
+          expiry=Date.now()+Math.max(0,Number(r.expires_in||3600)-60)*1000;
+          connected=true;
+          sync();
+        },
+        error_callback:error=>fail(error?.type==='popup_closed'
+          ?'S’ha tancat la finestra de Google.'
+          :'Obre el web directament a Safari o Chrome i permet les finestres emergents.')
+      });
+      client.requestAccessToken({prompt:'select_account'});
+    }catch{fail('No s’ha pogut obrir Google. Torna-ho a provar des de Safari o Chrome.')}
   }
   document.addEventListener('private-data-changed',()=>{revision++;if(!connected)return;clearTimeout(timer);timer=setTimeout(sync,1500)});
   document.addEventListener('visibilitychange',()=>{if(!document.hidden&&connected)sync()});
   setInterval(()=>{if(!document.hidden&&connected)sync()},60000);
   button.addEventListener('click',connect);
+  draftButton.addEventListener('click',connect);
 })();
