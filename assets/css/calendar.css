@@ -96,4 +96,9 @@
   color: #724006;
 }
 .calendar-alerts summary { cursor: pointer; font-weight: 700; }
+.calendar-alerts ul {
+  max-height: 12rem;
+  overflow-y: auto;
+}
 .calendar-alerts li { margin: 6px 0; }
+.calendar-alerts li button { text-align: left; max-width: 100%; white-space: normal; }

@@ -1,5 +1,5 @@
 <!doctype html><html lang="ca"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>El meu mapa d'escoles</title><link rel="apple-touch-icon" href="assets/icons/logo-dc.png"><link rel="icon" type="image/png" href="assets/icons/logo-dc.png"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
-<link rel="stylesheet" href="assets/css/styles.css?v=20261108-menu-calendari"><link rel="stylesheet" href="assets/css/calendar.css?v=20261108-calendari-local"><script src="https://accounts.google.com/gsi/client" async defer></script>
+<link rel="stylesheet" href="assets/css/styles.css?v=20261108-menu-calendari"><link rel="stylesheet" href="assets/css/calendar.css?v=20261108-renovacions"><script src="https://accounts.google.com/gsi/client" async defer></script>
 
 
 
@@ -52,10 +52,22 @@
   </div>
   <p id="calendarStatus" role="status">El calendari es desa en aquesta app i es nodreix del seguiment de candidatures.</p>
   <p id="calendarGmailStatus" class="muted" role="status">Les respostes dels fils vinculats s’actualitzen mentre la sessió de Gmail d’Ofertes està activa.</p>
+  <div class="calendar-controls">
+    <label for="calendarRenewalMonths">Recorda’m revisar cada candidatura al cap de</label>
+    <select id="calendarRenewalMonths" class="smallBtn">
+      <option value="1">1 mes</option>
+      <option value="3">3 mesos</option>
+    </select>
+  </div>
   <details id="calendarAlerts" class="calendar-alerts" hidden>
     <summary id="calendarDueCount"></summary>
     <ul id="calendarDueList"></ul>
   </details>
+  <details id="calendarUpcoming" class="calendar-alerts" open hidden>
+    <summary id="calendarUpcomingCount"></summary>
+    <ul id="calendarUpcomingList"></ul>
+  </details>
+  <p id="calendarUpcomingEmpty" class="muted" hidden>Les properes renovacions apareixeran quan hi hagi enviaments registrats pendents de revisió.</p>
   <form id="calendarSentForm" class="calendar-form" hidden>
     <h2>Registrar una candidatura enviada</h2>
     <div class="calendar-form-fields">
@@ -85,7 +97,7 @@
   </form>
   <ul class="calendar-legend" aria-label="Colors del calendari">
     <li class="calendar-sent">Enviament</li>
-    <li class="calendar-renewal">Revisió al cap d’un mes</li>
+    <li class="calendar-renewal">Renovació prevista</li>
     <li class="calendar-reply">Resposta</li>
     <li class="calendar-interview">Entrevista</li>
   </ul>
@@ -192,5 +204,5 @@
 
 
 
-<script src="assets/js/app.js?v=20261108-calendari-local"></script>
+<script src="assets/js/app.js?v=20261108-renovacions"></script>
 </body></html>
