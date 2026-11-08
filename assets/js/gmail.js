@@ -12,7 +12,14 @@ function blobBase64(blob){return new Promise((resolve,reject)=>{const r=new File
 async function buildGmailRaw(to,subject,body,docs){
   const boundary='----MapaEscoles_'+Date.now();
   let mime='MIME-Version: 1.0\r\nTo: '+to+'\r\nSubject: '+encodedHeader(subject)+'\r\nContent-Type: multipart/mixed; boundary="'+boundary+'"\r\n\r\n';
-  mime+='--'+boundary+'\r\nContent-Type: text/plain; charset="UTF-8"\r\nContent-Transfer-Encoding: base64\r\n\r\n'+bytesToBase64(new TextEncoder().encode(body)).replace(/(.{76})/g,'$1\r\n')+'\r\n';
+  const alternative=boundary+'_alternative';
+  const html='<div style="font-family:Arial,sans-serif;font-size:12pt">'+esc(body).replace(/\r\n|\r|\n/g,'<br>')+'</div>';
+  const encodePart=text=>bytesToBase64(new TextEncoder().encode(text)).replace(/.{1,76}/g,'$&\r\n');
+  mime+='--'+boundary+'\r\nContent-Type: multipart/alternative; boundary="'+alternative+'"\r\n\r\n';
+  for(const [type,text] of [['plain',body],['html',html]]){
+    mime+='--'+alternative+'\r\nContent-Type: text/'+type+'; charset="UTF-8"\r\nContent-Transfer-Encoding: base64\r\n\r\n'+encodePart(text);
+  }
+  mime+='--'+alternative+'--\r\n';
   for(const d of docs){
     const b64=await blobBase64(d.blob); const safe=(d.name||'document').replace(/["\r\n]/g,'_');
     mime+='--'+boundary+'\r\nContent-Type: '+(d.type||'application/octet-stream')+'; name="'+safe+'"\r\nContent-Disposition: attachment; filename="'+safe+'"\r\nContent-Transfer-Encoding: base64\r\n\r\n'+b64.replace(/(.{76})/g,'$1\r\n')+'\r\n';

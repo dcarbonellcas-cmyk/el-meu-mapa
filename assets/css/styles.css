@@ -1843,9 +1843,9 @@ body {
   scroll-margin-top: calc(var(--top-height) + 12px);
 }
 
-.educationMapStatus {
-  margin: 0 14px 12px;
-  font-weight: 600;
+.educationSchoolMiniMap {
+  height: min(42vh, 330px);
+  border-radius: 10px;
 }
 
 .educationMapPin {

@@ -36,3 +36,17 @@ test('late OAuth callback after timeout cannot send a stale reviewed application
  x.ctx.authorizeReviewedGmail(snapshot);timeout();config.callback({access_token:'late-token'});
  assert.equal(x.elements.sendGmail.disabled,false);assert.equal(x.requests.length,0);assert.match(x.elements.gmailNotice.textContent,/No s’ha enviat/);
 });
+
+test('Gmail message includes an Arial 12 HTML version and keeps the plain text',async()=>{
+ const ctx=vm.createContext({Date,TextEncoder,btoa:s=>Buffer.from(s,'binary').toString('base64'),
+   esc:s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')});
+ vm.runInContext(source,ctx);
+ const body='Bon dia,\n\nText <literal> & accent: à';
+ const raw=await ctx.buildGmailRaw('prova@example.org','Candidatura',body,[]);
+ const mime=Buffer.from(raw,'base64url').toString('utf8');
+ assert.match(mime,/Content-Type: multipart\/alternative/);
+ const parts=[...mime.matchAll(/Content-Type: text\/(plain|html);[^\r]*\r\nContent-Transfer-Encoding: base64\r\n\r\n([A-Za-z0-9+/=\r\n]+)/g)];
+ const decoded=Object.fromEntries(parts.map(([,type,encoded])=>[type,Buffer.from(encoded,'base64').toString('utf8')]));
+ assert.equal(decoded.plain,body);
+ assert.equal(decoded.html,'<div style="font-family:Arial,sans-serif;font-size:12pt">Bon dia,<br><br>Text &lt;literal&gt; &amp; accent: à</div>');
+});

@@ -1,6 +1,7 @@
 import {readFile,writeFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {schoolRows,reconcile,validateSchools,faJobs,rssJobs,mergeSource} from './sync-lib.mjs';
+import {schoolContacts} from './school-contacts.mjs';
 const root=fileURLToPath(new URL('../assets/data/',import.meta.url));
 const read=async(name,fallback)=>{try{return JSON.parse(await readFile(root+name,'utf8'))}catch{return fallback}};
 const write=(name,value)=>writeFile(root+name,JSON.stringify(value,null,2)+'\n');
@@ -31,7 +32,12 @@ async function schools(){
     const old=await read('canvis-centres.json',{});
     if(changes.added.length||changes.absent.length)await write('canvis-centres.json',{updatedAt:now,added:changes.added,absent:changes.absent});else if(!old.updatedAt)await write('canvis-centres.json',{updatedAt:now,added:[],absent:[]});
     status.sources.centres={state:'ok',updatedAt:now,course:directory.course,count:current.length,concertCourse:concerts.course,archiveCount:changes.archived.length,url:'https://analisi.transparenciacatalunya.cat/d/kvmv-ahh4'};
-  }catch(e){failure('centres',e)}
+  }catch(e){
+    failure('centres',e);
+    if(previous.some(centre=>Object.entries(schoolContacts[centre.id]||{}).some(([key,value])=>centre[key]!==value))){
+      await write('centres.json',previous.map(centre=>({...centre,...schoolContacts[centre.id]})));
+    }
+  }
 }
 async function jobs(){
   const previous=await read('ofertes.json',{jobs:[]});let all=previous.jobs||[];

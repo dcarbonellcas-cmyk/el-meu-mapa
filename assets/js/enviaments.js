@@ -24,7 +24,7 @@ async function renderSentArchive(){
 function reviewApplication(snapshot,onConfirm){return new Promise(resolve=>{
   const dialog=document.createElement('dialog');dialog.style.cssText='max-width:640px;width:calc(100% - 48px);border:1px solid #ccd9eb;border-radius:16px;padding:24px';
   const title=document.createElement('h2');title.textContent='Revisió abans d’enviar';
-  const text=document.createElement('pre');text.style.cssText='white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;max-height:55vh;overflow:auto';
+  const text=document.createElement('pre');text.style.cssText='white-space:pre-wrap;overflow-wrap:anywhere;font:12pt/1.45 Arial,sans-serif;max-height:55vh;overflow:auto';
   text.textContent='Centre: '+snapshot.centre+'\nTipus: '+snapshot.role+'\nPer a: '+snapshot.to+'\nAssumpte: '+snapshot.subject+'\n\nAdjunts:\n'+snapshot.docs.map(d=>'• '+d.name).join('\n')+'\n\n'+snapshot.body;
   const cancel=document.createElement('button');cancel.className='smallBtn';cancel.textContent='Tornar a editar';
   const send=document.createElement('button');send.className='smallBtn';send.textContent='Confirmar i connectar Gmail';

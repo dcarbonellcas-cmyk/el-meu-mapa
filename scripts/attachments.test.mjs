@@ -6,7 +6,7 @@ const docsSource=await readFile(new URL('../assets/js/documents.js',import.meta.
 const gmailSource=await readFile(new URL('../assets/js/gmail.js',import.meta.url),'utf8');
 function setup(){
   const nodes=new Map();const node=id=>{if(!nodes.has(id))nodes.set(id,{checked:false,value:'',style:{},addEventListener(){},replaceChildren(){}});return nodes.get(id)};
-  const context=vm.createContext({document:{getElementById:node,addEventListener(){}},window:{},TextEncoder,Uint8Array,btoa,Date,URL,setTimeout(){}});
+  const context=vm.createContext({document:{getElementById:node,addEventListener(){}},window:{},TextEncoder,Uint8Array,btoa,Date,URL,esc:text=>text,setTimeout(){}});
   vm.runInContext(docsSource,context);vm.runInContext(gmailSource,context);
   const files={cv:{name:'complete.pdf',type:'application/pdf',blob:new Blob(['complete'])},letter:{name:'presentation.pdf',type:'application/pdf',blob:new Blob(['letter'])},cvAlternative:{name:'second.pdf',type:'application/pdf',blob:new Blob(['second'])},recommendation:{name:'recommendation.pdf',type:'application/pdf',blob:new Blob(['recommendation'])}};
   context.getDoc=async key=>files[key]||null;context.blobBase64=async blob=>Buffer.from(await blob.arrayBuffer()).toString('base64');
