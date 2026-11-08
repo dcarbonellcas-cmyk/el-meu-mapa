@@ -4,14 +4,13 @@ const applicationCalendarDay = new Intl.DateTimeFormat('sv-SE', {
   timeZone: applicationCalendarZone, year:'numeric', month:'2-digit', day:'2-digit'
 });
 
-function calendarRenewalDay(day, months) {
+function calendarRenewalDay(day) {
   const [year, month, number] = day.split('-').map(Number);
-  const targetMonth = month - 1 + months;
-  const lastDay = new Date(Date.UTC(year, targetMonth + 1, 0)).getUTCDate();
-  return new Date(Date.UTC(year, targetMonth, Math.min(number, lastDay))).toISOString().slice(0, 10);
+  const lastDay = new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
+  return new Date(Date.UTC(year, month, Math.min(number, lastDay))).toISOString().slice(0, 10);
 }
 
-function applicationCalendarEvents(place, history, status, months = applicationRenewalMonths()) {
+function applicationCalendarEvents(place, history, status) {
   const items = (Array.isArray(history) ? history : [])
     .filter(item => Number.isFinite(Date.parse(item?.date)))
     .sort((a, b) => Date.parse(a.date) - Date.parse(b.date));
@@ -37,7 +36,7 @@ function applicationCalendarEvents(place, history, status, months = applicationR
   const legacyOutcome = !outcomes.length && ['replied','interview','rejected'].includes(status);
   if (!resolved && !legacyOutcome) {
     events.push({
-      type:'renewal', date:calendarRenewalDay(applicationCalendarDay.format(new Date(last.date)), months),
+      type:'renewal', date:calendarRenewalDay(applicationCalendarDay.format(new Date(last.date))),
       title:'Revisar candidatura · ' + place.name
     });
   }
@@ -47,7 +46,7 @@ function applicationCalendarEvents(place, history, status, months = applicationR
 (() => {
   const byId=id=>document.getElementById(id);
   const page=byId('calendarPage'), grid=byId('calendarGrid'), eventList=byId('calendarEvents');
-  const status=byId('calendarStatus');
+  const status=byId('calendarStatus'), dayDialog=byId('calendarDayDialog');
   const form=byId('calendarInterviewForm'), formStatus=byId('calendarFormStatus');
   const zone=applicationCalendarZone;
   const dayFormat=applicationCalendarDay;
@@ -61,12 +60,6 @@ function applicationCalendarEvents(place, history, status, months = applicationR
   const utcDay=day=>new Date(day+'T00:00:00Z');
   let selected=today(), month=utcDay(selected.slice(0,7)+'-01');
   const interviewHistory='calendar_interviews';
-  const renewalMonths=byId('calendarRenewalMonths');
-  renewalMonths.addEventListener('change',()=>{
-    localStorage.setItem(renewalMonthsKey,renewalMonths.value);
-    render();
-  });
-
   function madridInstant(day,time){
     const wall=new Date(day+'T'+time+':00Z');
     const offset=value=>offsetFormat.formatToParts(value).find(part=>part.type==='timeZoneName').value.slice(3);
@@ -88,8 +81,7 @@ function applicationCalendarEvents(place, history, status, months = applicationR
       const name=hist(id).find(item=>item.placeName)?.placeName;
       if(name)places.set(id,{id,name});
     }
-    const months=applicationRenewalMonths();
-    const events=[...places.values()].flatMap(place=>applicationCalendarEvents(place,hist(place.id),state(place.id),months));
+    const events=[...places.values()].flatMap(place=>applicationCalendarEvents(place,hist(place.id),state(place.id)));
     for(const item of hist(interviewHistory)){
       if(item.type!=='interview'||!Number.isFinite(Date.parse(item.date)))continue;
       const start=new Date(item.date);
@@ -103,16 +95,7 @@ function applicationCalendarEvents(place, history, status, months = applicationR
     const key=dateKey(month).slice(0,7);
     const events=new Map();
     const all=localEvents();
-    const reminders=all.filter(event=>event.type==='renewal').sort((a,b)=>a.date.localeCompare(b.date));
     const currentDay=today();
-    const due=reminders.filter(event=>event.date<=currentDay);
-    const upcoming=reminders.filter(event=>event.date>currentDay);
-    renewalMonths.value=String(applicationRenewalMonths());
-    byId('calendarUpcomingEmpty').hidden=upcoming.length>0;
-    renderReminders('calendarUpcoming','calendarUpcomingCount','calendarUpcomingList',upcoming,
-      upcoming.length===1?'1 renovació programada':upcoming.length+' renovacions programades');
-    renderReminders('calendarAlerts','calendarDueCount','calendarDueList',due,
-      due.length===1?'1 candidatura pendent de revisar':due.length+' candidatures pendents de revisar');
     for(const event of all){
       if(!event.date.startsWith(key))continue;
       const list=events.get(event.date)||new Map();
@@ -150,7 +133,11 @@ function applicationCalendarEvents(place, history, status, months = applicationR
         dots.append(dot);
       }
       button.append(dots);
-      button.addEventListener('click',()=>{selected=day;render(true)});
+      button.addEventListener('click',()=>{
+        selected=day;
+        render(true);
+        if(types.length)dayDialog.showModal();
+      });
       grid.append(button);
     }
     byId('calendarDay').textContent=fullDateFormat.format(utcDay(selected));
@@ -169,33 +156,13 @@ function applicationCalendarEvents(place, history, status, months = applicationR
       }
       eventList.append(row);
     }
-    if(!list.length){
-      const row=document.createElement('li');
-      row.textContent='Cap esdeveniment aquest dia.';
-      eventList.append(row);
-    }
     if(focusDay)focused?.focus();
   }
 
-  function showMonth(day, focusDay=false){
+  function showMonth(day){
     selected=day;
     month=utcDay(day.slice(0,7)+'-01');
-    render(focusDay);
-  }
-
-  function renderReminders(panelId, summaryId, listId, reminders, summary){
-    byId(panelId).hidden=!reminders.length;
-    byId(summaryId).textContent=summary;
-    byId(listId).replaceChildren(...reminders.map(event=>{
-      const row=document.createElement('li');
-      const button=document.createElement('button');
-      button.type='button';
-      button.className='smallBtn';
-      button.textContent=fullDateFormat.format(utcDay(event.date))+' · '+event.title;
-      button.addEventListener('click',()=>showMonth(event.date,true));
-      row.append(button);
-      return row;
-    }));
+    render();
   }
 
   function saveHistory(id,entry){
@@ -271,10 +238,11 @@ function applicationCalendarEvents(place, history, status, months = applicationR
   byId('calendarPrevious').addEventListener('click',()=>showMonth(dateKey(new Date(Date.UTC(month.getUTCFullYear(),month.getUTCMonth()-1,1)))));
   byId('calendarNext').addEventListener('click',()=>showMonth(dateKey(new Date(Date.UTC(month.getUTCFullYear(),month.getUTCMonth()+1,1)))));
   byId('calendarToday').addEventListener('click',()=>showMonth(today()));
+  dayDialog.addEventListener('close',()=>grid.querySelector('[aria-pressed="true"]')?.focus());
   document.addEventListener('private-data-restored',()=>{if(!page.hidden)render()});
   document.addEventListener('candidature-history-changed',()=>{if(!page.hidden)render()});
   document.addEventListener('visibilitychange',()=>{if(!document.hidden&&!page.hidden)render()});
-  window.addEventListener('storage',event=>{if(!page.hidden&&(event.key===renewalMonthsKey||/^(history_|status_)/.test(event.key||'')))render()});
+  window.addEventListener('storage',event=>{if(!page.hidden&&/^(history_|status_)/.test(event.key||''))render()});
   setInterval(()=>{if(!document.hidden&&!page.hidden)render()},60000);
   window.renderApplicationCalendar=render;
 })();

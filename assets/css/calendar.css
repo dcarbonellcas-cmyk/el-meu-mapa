@@ -50,7 +50,7 @@
 
 .calendar-dots { display: flex; gap: 3px; }
 .calendar-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--event-color); }
-.calendar-renewal { --event-color: #bc540d; }
+.calendar-renewal { --event-color: #b42332; }
 .calendar-reply { --event-color: #205db3; }
 .calendar-interview { --event-color: #742eaa; }
 
@@ -87,18 +87,23 @@
 .calendar-form input { width: 100%; min-width: 0; box-sizing: border-box; }
 
 .calendar-sent { --event-color: #227346; }
-.calendar-alerts {
-  margin: 12px 0;
-  padding: 12px 16px;
-  border: 1px solid #ead0aa;
+
+.calendar-announcement {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.calendar-day-dialog {
+  width: min(520px, calc(100% - 32px));
+  box-sizing: border-box;
+  border: 1px solid #ded3ed;
   border-radius: 12px;
-  background: #fff5e4;
-  color: #724006;
+  color: inherit;
 }
-.calendar-alerts summary { cursor: pointer; font-weight: 700; }
-.calendar-alerts ul {
-  max-height: 12rem;
-  overflow-y: auto;
-}
-.calendar-alerts li { margin: 6px 0; }
-.calendar-alerts li button { text-align: left; max-width: 100%; white-space: normal; }
+
+.calendar-day-dialog::backdrop { background: rgb(56 36 81 / 35%); }
