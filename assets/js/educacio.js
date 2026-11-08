@@ -104,10 +104,13 @@
  const schoolDialog=document.createElement('dialog');
  schoolDialog.className='educationSchoolDialog';
  schoolDialog.setAttribute('aria-labelledby','educationSchoolTitle');
- schoolDialog.innerHTML='<form method="dialog"><button class="smallBtn">Tancar</button></form>'+
-   '<h2 id="educationSchoolTitle"></h2><div class="educationSchoolInfo"></div><div class="educationSchoolMiniMap" hidden></div>';
+ schoolDialog.innerHTML='<header class="educationSchoolDialogHeader">'+
+   '<form method="dialog"><button class="smallBtn">Tancar</button></form>'+
+   '<h2 id="educationSchoolTitle"></h2><p class="educationSchoolAddress" hidden></p></header>'+
+   '<div class="educationSchoolInfo"></div><div class="educationSchoolMiniMap" hidden></div>';
  document.body.append(schoolDialog);
  const info=schoolDialog.querySelector('.educationSchoolInfo');
+ const locationAddress=schoolDialog.querySelector('.educationSchoolAddress');
  const miniMapHost=schoolDialog.querySelector('.educationSchoolMiniMap');
  let miniMap;
  schoolDialog.addEventListener('close',()=>{
@@ -117,6 +120,9 @@
  });
 
  function showSchool(x){
+   schoolDialog.classList.remove('educationMiniMapDialog');
+   locationAddress.hidden=true;
+   info.hidden=false;
    const profile=profiles[x.id]||{};
    const group=entities.find(e=>e.id===x.networkId);
    const address=[x.address,[x.postal,x.city].filter(Boolean).join(' ')].filter(Boolean).join(' · ');
@@ -133,7 +139,11 @@
    const address=[school.address,school.city].filter(Boolean).join(' · ');
    schoolDialog.querySelector('h2').textContent=school.name;
    const hasPoint=Number.isFinite(school.lat)&&Number.isFinite(school.lng);
-   info.innerHTML=`<p>${esc(address)}</p>${hasPoint?'':'<p>El directori no indica les coordenades del centre.</p>'}`;
+   schoolDialog.classList.add('educationMiniMapDialog');
+   locationAddress.textContent=address;
+   locationAddress.hidden=!address;
+   info.textContent=hasPoint?'':'El directori no indica les coordenades del centre.';
+   info.hidden=hasPoint;
    miniMapHost.hidden=!hasPoint;
    schoolDialog.showModal();
    if(!hasPoint)return;
@@ -143,7 +153,10 @@
      maxZoom:19,attribution:'&copy; OpenStreetMap contributors'
    }).addTo(miniMap);
    L.marker(point,{
-     icon:L.divIcon({className:'educationMapPin',iconSize:[20,20],iconAnchor:[10,10]}),
+     icon:L.divIcon({
+       className:'educationMapPin',iconSize:[36,44],iconAnchor:[18,42],
+       html:'<svg viewBox="0 0 36 44" aria-hidden="true"><path d="M18 42S3 28 3 18a15 15 0 0 1 30 0c0 10-15 24-15 24Z"/><circle cx="18" cy="18" r="5"/></svg>'
+     }),
      interactive:false,keyboard:false
    }).addTo(miniMap);
  }
