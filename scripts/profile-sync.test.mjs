@@ -12,7 +12,7 @@ function setup({profile={},docs={},remote={},failure=0}={}){
   const node=id=>{if(!elements.has(id))elements.set(id,{textContent:'',value:'',addEventListener(type,fn){this[type]=fn}});return elements.get(id)};
   const files=new Map(Object.entries(remote).map(([key,value])=>[key,{id:key,name:'mapa-'+key+'-v1.json',value}]));
   let pending;
-  const context={URLSearchParams,Blob,File,Uint8Array,Event,crypto:webcrypto,atob,Date,JSON,Math,Number,Error,
+  const context={URLSearchParams,Blob,File,Uint8Array,Event,CustomEvent,crypto:webcrypto,atob,Date,JSON,Math,Number,Error,
     setTimeout:()=>0,clearTimeout:()=>{},setInterval:()=>0,
     localStorage:{get length(){return storage.size},key:i=>[...storage.keys()][i],getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},
     document:{hidden:false,getElementById:node,querySelectorAll:()=>[],addEventListener:(type,fn)=>events.set(type,[...(events.get(type)||[]),fn]),dispatchEvent:e=>(events.get(e.type)||[]).forEach(fn=>fn(e))},
@@ -42,7 +42,7 @@ function setup({profile={},docs={},remote={},failure=0}={}){
   context.window.google=context.google;
   vm.runInNewContext(trackingSource,context);
   vm.runInNewContext(source,context);
-  return {calls,files,docs,node,storage,context,connect:async()=>{node('connectPrivateDrive').click();await pending}};
+  return {calls,files,docs,node,storage,context,connect:async(id='connectPrivateDrive')=>{node(id).click();await pending}};
 }
 test('profile autosaves without clicking Save and restores saved fields',()=>{
   const s=setup();vm.runInNewContext(profileSource,s.context);
@@ -55,7 +55,9 @@ test('profile autosaves without clicking Save and restores saved fields',()=>{
 });
 test('empty second device restores private profile and both PDF files',async()=>{
   const updated='2026-11-01T12:00:00Z';const s=setup({remote:{profile:record('profile',updated),cv:record('cv',updated),letter:record('letter',updated)}});
-  await s.connect();assert.equal(JSON.parse(s.storage.get('mapaEscolesProfile_v1')).bio,'Training');
+  await s.connect('connectDraftDrive');assert.equal(JSON.parse(s.storage.get('mapaEscolesProfile_v1')).bio,'Training');
+  assert.equal(s.node('draftDriveStatus').textContent,s.node('privateSyncStatus').textContent);
+  assert.match(s.node('draftDriveStatus').textContent,/sincronitzada/);
   assert.equal(await s.docs.cv.blob.text(),'pdf');assert.equal(await s.docs.letter.blob.text(),'pdf');
   assert(!s.calls.some(x=>['POST','PATCH'].includes(x.options.method)));
 });

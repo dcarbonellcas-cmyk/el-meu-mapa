@@ -110,7 +110,7 @@
           token=r.access_token;
           expiry=Date.now()+Math.max(0,Number(r.expires_in||3600)-60)*1000;
           connected=true;
-          sync();
+          return sync();
         },
         error_callback:error=>fail(error?.type==='popup_closed'
           ?'S’ha tancat la finestra de Google.'
