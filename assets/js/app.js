@@ -1,7 +1,7 @@
 // Classic scripts retain the shared functions used by existing controls.
 (async function(){
   function loadScript(path){return new Promise((resolve,reject)=>{
-    const script=document.createElement('script');script.src=path+'?v=20261108-calendari';script.async=false;
+    const script=document.createElement('script');script.src=path+'?v=20261108-calendari-local';script.async=false;
     script.onload=resolve;script.onerror=()=>reject(new Error('No s’ha pogut carregar '+path));document.body.appendChild(script);
   })}
   try{
@@ -14,7 +14,7 @@
       window.MAPA_DATA={centres,entitats,archived};
     }
     if(typeof L==='undefined')throw new Error('No s’ha pogut carregar el mapa. Comprova la connexió a Internet i recarrega la pàgina.');
-    for(const file of ['perfil','renovacions','mapes','candidatura-manual','infantil','candidatures','documents','candidatura-personalitzada','ofertes','lleure','enviaments','gmail','gmail-feed','private-tracking','private-sync','calendar','navegacio','historial','candidatures-entitats','directoris','fonts','educacio']){
+    for(const file of ['perfil','renovacions','mapes','candidatura-manual','infantil','candidatures','documents','candidatura-personalitzada','ofertes','lleure','enviaments','gmail','gmail-feed','private-tracking','private-sync','calendar','calendar-gmail','navegacio','historial','candidatures-entitats','directoris','fonts','educacio']){
       await loadScript('assets/js/'+file+'.js');
     }
     window.MAPA_READY=true;

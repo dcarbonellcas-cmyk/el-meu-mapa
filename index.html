@@ -1,5 +1,5 @@
 <!doctype html><html lang="ca"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>El meu mapa d'escoles</title><link rel="apple-touch-icon" href="assets/icons/logo-dc.png"><link rel="icon" type="image/png" href="assets/icons/logo-dc.png"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
-<link rel="stylesheet" href="assets/css/styles.css?v=20261108-menu-calendari"><link rel="stylesheet" href="assets/css/calendar.css"><script src="https://accounts.google.com/gsi/client" async defer></script>
+<link rel="stylesheet" href="assets/css/styles.css?v=20261108-menu-calendari"><link rel="stylesheet" href="assets/css/calendar.css?v=20261108-calendari-local"><script src="https://accounts.google.com/gsi/client" async defer></script>
 
 
 
@@ -44,14 +44,30 @@
   <header>
     <button type="button" class="smallBtn" data-go="candidates">Tornar a candidatures</button>
     <h1 id="calendarTitle">Calendari de candidatures</h1>
-    <p>Consulta les renovacions, les respostes i les entrevistes al mateix lloc.</p>
+    <p>Consulta els enviaments, les revisions, les respostes i les entrevistes al mateix lloc.</p>
   </header>
   <div class="calendar-controls">
-    <button type="button" id="calendarConnect" class="smallBtn">Connectar Google Calendar</button>
+    <button type="button" id="calendarRegisterSent" class="smallBtn">＋ Registrar enviament</button>
     <button type="button" id="calendarInterview" class="smallBtn calendar-interview-button">＋ Entrevista</button>
-    <a href="https://calendar.google.com/" target="_blank" rel="noopener noreferrer">Obrir Google Calendar</a>
   </div>
-  <p id="calendarStatus" role="status">Connecta Google Calendar amb el compte que fas servir per al seguiment de Gmail.</p>
+  <p id="calendarStatus" role="status">El calendari es desa en aquesta app i es nodreix del seguiment de candidatures.</p>
+  <p id="calendarGmailStatus" class="muted" role="status">Les respostes dels fils vinculats s’actualitzen mentre la sessió de Gmail d’Ofertes està activa.</p>
+  <details id="calendarAlerts" class="calendar-alerts" hidden>
+    <summary id="calendarDueCount"></summary>
+    <ul id="calendarDueList"></ul>
+  </details>
+  <form id="calendarSentForm" class="calendar-form" hidden>
+    <h2>Registrar una candidatura enviada</h2>
+    <div class="calendar-form-fields">
+      <label>Centre o empresa <input name="centre" required maxlength="150"></label>
+      <label>Dia de l’enviament <input name="date" type="date" required></label>
+    </div>
+    <div class="calendar-controls">
+      <button type="submit" class="smallBtn calendar-interview-button">Desar l’enviament</button>
+      <button type="button" id="calendarCancelSent" class="smallBtn">Tancar</button>
+    </div>
+    <p id="calendarSentStatus" role="status"></p>
+  </form>
   <form id="calendarInterviewForm" class="calendar-form" hidden>
     <h2>Afegir una entrevista</h2>
     <div class="calendar-form-fields">
@@ -68,7 +84,8 @@
     <p id="calendarFormStatus" role="status"></p>
   </form>
   <ul class="calendar-legend" aria-label="Colors del calendari">
-    <li class="calendar-renewal">Reenviar el CV</li>
+    <li class="calendar-sent">Enviament</li>
+    <li class="calendar-renewal">Revisió al cap d’un mes</li>
     <li class="calendar-reply">Resposta</li>
     <li class="calendar-interview">Entrevista</li>
   </ul>
@@ -175,5 +192,5 @@
 
 
 
-<script src="assets/js/app.js?v=20261108-calendari"></script>
+<script src="assets/js/app.js?v=20261108-calendari-local"></script>
 </body></html>
