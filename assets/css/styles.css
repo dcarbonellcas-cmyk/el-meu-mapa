@@ -1839,7 +1839,7 @@ body {
   color: white;
 }
 
-#educationPagePosition {
+#educationResults {
   scroll-margin-top: calc(var(--top-height) + 12px);
 }
 
