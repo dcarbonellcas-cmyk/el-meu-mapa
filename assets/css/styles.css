@@ -667,16 +667,14 @@ body {
   }
   .mainnav {
     display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     width: 100%;
     max-width: 440px;
   }
   .navbtn {
-    grid-column: span 3;
     padding-inline: 2px;
-  }
-  .navbtn:nth-child(n+5) {
-    grid-column: span 4;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 }
 .jobsPage {
