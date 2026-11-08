@@ -14,7 +14,7 @@ function showMailDraft(s,subject,body){
   currentDraftSchoolId=String(s.id);
   clearManualMail();
   document.getElementById('includeCvAlternative').checked=true;
-  document.getElementById('includeRecommendation').checked=false;
+  document.getElementById('includeRecommendation').checked=true;
   document.getElementById('draftTo').value=s.email||'';
   document.getElementById('draftSubject').value=subject||'';
   const cvDigitalUrl='https://diana-carbonell-curriculum.dcarbonellcas.chatgpt.site/';
@@ -66,7 +66,7 @@ document.getElementById('letterOpen').addEventListener('click',()=>openDoc('lett
 async function refreshOptionalDocs(){
   for(const [key,id] of [['cvAlternative','draftCvAlternativeName'],['recommendation','draftRecommendationName']]){
     const file=await getDoc(key);
-    document.getElementById(id).textContent=file?'— '+file.name:key==='cvAlternative'?'— s’adjunta quan està disponible':'— falta seleccionar el fitxer a Documents';
+    document.getElementById(id).textContent=file?'— '+file.name:'— cap fitxer disponible en aquest dispositiu';
   }
   const cv=await getDoc('cv'),letter=await getDoc('letter');
   document.getElementById('draftAttachmentsNotice').textContent=(!cv||!letter)?'Falta el currículum complet o la carta de presentació. Selecciona’ls abans d’enviar.':'';
@@ -75,12 +75,10 @@ async function candidatureDocuments(){
   const cv=await getDoc('cv'),letter=await getDoc('letter');
   if(!cv||!letter)throw new Error('Falta el currículum complet o la carta de presentació. Recupera els adjunts de Google Drive o selecciona els fitxers abans d’enviar.');
   const docs=[cv,letter];
-  for(const [key,id,label] of [['cvAlternative','includeCvAlternative','segon currículum'],['recommendation','includeRecommendation','carta de recomanació']]){
+  for(const [key,id] of [['cvAlternative','includeCvAlternative'],['recommendation','includeRecommendation']]){
     if(!document.getElementById(id).checked)continue;
     const file=await getDoc(key);
-    if(!file&&key==='cvAlternative')continue;
-    if(!file)throw new Error('Has seleccionat adjuntar '+label+', però falta el fitxer. Carrega’l a Documents o desmarca aquesta opció.');
-    docs.push(file);
+    if(file)docs.push(file);
   }
   return docs;
 }
