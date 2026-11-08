@@ -1,0 +1,87 @@
+.application-calendar {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+  color: var(--plum-ink);
+}
+
+.calendar-entry { margin-top: 12px; }
+
+.calendar-controls, .calendar-legend {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.calendar-month-controls h2 {
+  margin: 0;
+  min-width: 10ch;
+  text-transform: capitalize;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+  margin-top: 12px;
+}
+
+.calendar-weekday { text-align: center; padding-block: 4px; }
+
+.calendar-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  min-height: 44px;
+  padding: 6px 0;
+  border: 1px solid #ded3ed;
+  border-radius: 8px;
+  background: white;
+  color: #382451;
+  cursor: pointer;
+}
+
+.calendar-date[aria-pressed="true"] { border: 2px solid #6d28a0; background: #f1e4ff; }
+.calendar-date[aria-current="date"] { font-weight: 800; }
+.calendar-date:focus-visible { outline: 2px solid #6d28a0; outline-offset: 1px; }
+
+.calendar-dots { display: flex; gap: 3px; }
+.calendar-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--event-color); }
+.calendar-renewal { --event-color: #bc540d; }
+.calendar-reply { --event-color: #205db3; }
+.calendar-interview { --event-color: #742eaa; }
+
+.calendar-legend, .calendar-events { padding: 0; list-style: none; }
+.calendar-legend li { border-bottom: 3px solid var(--event-color); }
+.calendar-events li {
+  background: white;
+  padding: 8px 12px;
+  border-left: 4px solid var(--event-color, #ded3ed);
+  margin: 6px 0;
+}
+
+.application-calendar .calendar-interview-button {
+  background: #6d28a0;
+  border-color: #6d28a0;
+  color: white;
+}
+
+.calendar-form {
+  padding: 16px;
+  background: white;
+  border: 1px solid #ded3ed;
+  border-radius: 12px;
+}
+
+.calendar-form-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.calendar-form label { display: grid; gap: 4px; }
+.calendar-form input { width: 100%; min-width: 0; box-sizing: border-box; }
