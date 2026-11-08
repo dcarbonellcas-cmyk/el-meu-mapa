@@ -39,7 +39,7 @@ function mergePrivateTracking(local,remote){
     const a=local?.entries[key],b=remote?.entries[key];
     if(!a||!b){entries[key]=a||b;continue}
     const latest=Date.parse(a.updated)>Date.parse(b.updated)?a:Date.parse(a.updated)<Date.parse(b.updated)?b:a.value>=b.value?a:b;
-    if(key.startsWith('history_')){
+    if(key.startsWith('history_')&&!key.startsWith('history_calendar_')){
       const rows=[...JSON.parse(a.value),...JSON.parse(b.value)];
       const unique=new Map(rows.map(x=>[JSON.stringify([x.date,x.type,x.text]),x]));
       entries[key]={updated:latest.updated,value:JSON.stringify([...unique.values()].sort((x,y)=>y.date.localeCompare(x.date)||JSON.stringify(x).localeCompare(JSON.stringify(y))))};

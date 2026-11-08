@@ -47,13 +47,13 @@
     <p>Consulta les renovacions, les respostes i les entrevistes al mateix lloc.</p>
   </header>
   <div class="calendar-controls">
-    <button type="button" id="calendarConnect" class="smallBtn">Connectar Google Calendar</button>
+    <button type="button" id="calendarConnect" class="smallBtn">Connectar Gmail</button>
     <button type="button" id="calendarInterview" class="smallBtn calendar-interview-button">＋ Entrevista</button>
-    <a href="https://calendar.google.com/" target="_blank" rel="noopener noreferrer">Obrir Google Calendar</a>
   </div>
-  <p id="calendarStatus" role="status">Connecta Google Calendar amb el compte que fas servir per al seguiment de Gmail.</p>
+  <p id="calendarAlerts" role="status" hidden></p>
+  <p id="calendarStatus" role="status">Connecta Gmail per importar els correus de candidatures. Per sincronitzar les cites desades entre dispositius, connecta la còpia privada a Documents.</p>
   <form id="calendarInterviewForm" class="calendar-form" hidden>
-    <h2>Afegir una entrevista</h2>
+    <h2 id="calendarFormTitle">Afegir una entrevista</h2>
     <div class="calendar-form-fields">
       <label>Centre o empresa <input name="centre" required maxlength="150"></label>
       <label>Dia <input name="date" type="date" required></label>
@@ -175,5 +175,5 @@
 
 
 
-<script src="assets/js/app.js?v=20261108-calendari"></script>
+<script src="assets/js/app.js?v=20261108-calendari-propi"></script>
 </body></html>
