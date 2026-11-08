@@ -1768,6 +1768,69 @@ body {
   scroll-margin-top: calc(var(--top-height) + 12px);
 }
 
+.educationSchoolName {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.educationSchoolName:hover {
+  text-decoration: underline;
+}
+
+.educationSchoolName:focus-visible {
+  outline: 2px solid var(--plum);
+  outline-offset: 4px;
+}
+
+.educationSchoolActions {
+  margin-bottom: 0;
+}
+
+.educationSchoolActions [data-education-mail] {
+  background: #653574;
+  color: white;
+}
+
+.educationSchoolActions .smallBtn.educationSent {
+  background: #e2f4e7;
+  border-color: #9bd1ab;
+  color: #176332;
+  margin-top: 0;
+}
+
+.educationSchoolDialog {
+  box-sizing: border-box;
+  width: min(580px, 100% - 32px);
+  max-height: 85dvh;
+  padding: 20px;
+  border: 1px solid #ded3ed;
+  border-radius: 16px;
+  color: var(--plum-ink);
+}
+
+.educationSchoolDialog::backdrop {
+  background: rgba(56, 36, 81, 0.35);
+}
+
+.educationSchoolDialog form {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.educationSchoolDialog h2 {
+  margin: 0 0 12px;
+}
+
+.educationSchoolMapPreview {
+  height: min(42vh, 330px);
+  border-radius: 10px;
+}
+
 :root {
   --plum:#693778;
   --plum-ink:#492454;
