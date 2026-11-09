@@ -1,20 +1,68 @@
 {
-  "checkedAt": "2026-11-09T10:01:42.584Z",
+  "checkedAt": "2026-11-09T19:00:40.904Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-09T10:01:42.584Z",
-      "count": 196,
-      "reviewed": 719,
+      "updatedAt": "2026-11-09T19:00:40.904Z",
+      "count": 199,
+      "reviewed": 723,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-09T10:01:42.584Z",
+      "attemptedAt": "2026-11-09T19:00:40.904Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92328542",
+      "title": "TEI(TÈCNICS/ES EN EDUC. INFANTIL) SUPORT EDUCATIU DE MENJAR A ESCOLA BRESSOL (HOSPITALET DE LLOBREGAT)",
+      "school": "CAVALL DE CARTRÓ S.L",
+      "city": "BARCELONA - BARCELONÈS - 08901 HOSPITALET DE LLOBREGAT, L'",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328542",
+      "snippet": "Cerquem Educadors/es Infantils, per cobrir les hores del menjador i descans de 3 escoles bressol municipals, a l'Hospitalet de Llobregat.",
+      "created": "1794233710693",
+      "expires": "2027-02-07T14:15:10.689Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92328533",
+      "title": "PERSONAL MONITORATGE DEL LLEURE",
+      "school": "Empresa d'educació",
+      "city": "TARRAGONA - RIBERA D'EBRE - 43791 ASCÓ",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328533",
+      "snippet": "T’agrada treballar amb infants? Tens energia, creativitat i ganes de viure la màgia del Nadal des de dins?. A Diversport busquem MONITORS/MONITORES DE LLEURE per formar part de l’equip del Parc de Nadal d'Asco! Busquem persones dinàmiques, responsables i amb moltes ganes de fer que els més petits gaudeixin d’unes jorna",
+      "created": "1794230356228",
+      "expires": "2027-02-07T13:19:16.224Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92328531",
+      "title": "EDUCADOR/A SOCIAL",
+      "school": "Associació l'Esquitx",
+      "city": "BARCELONA - BARCELONÈS - 08003 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328531",
+      "snippet": "L’Associació l’Esquitx és una entitat sense ànim de lucre, ubicada al Casc Antic de Barcelona i declarada d’utilitat pública l’any 2014. L’entitat des del 1985 porta a terme una tasca d’educació i acompanyament dels infants del barri i les seves famílies, promovent el seu desenvolupament harmònic. L’entitat necessita i",
+      "created": "1794230231648",
+      "expires": "2027-02-07T13:17:11.644Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92328529",
+      "title": "COORDINADOR/A SERVEI D'INTERVENCIÓ SOCIOEDUCATIVA (SIS)",
+      "school": "FUNDACIÓ EDUCATIVA CAN PALET - CA N'ANGLADA",
+      "city": "BARCELONA - VALLÈS OCCIDENTAL - 08222 TERRASSA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328529",
+      "snippet": "La Fundació Educativa Terrassa (Funeduca) cerca un/a coordinador/a per al Servei d’Intervenció Socioeducativa (SIS) a la ciutat de Terrassa. La persona seleccionada liderarà l’equip del servei. També serà el referent tècnic davant l’Ajuntament i els Serveis Socials Bàsics. El servei s’adreça a infants, adolescents i fa",
+      "created": "1794230123040",
+      "expires": "2027-02-07T13:15:23.037Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92328483",
       "title": "MONITOR/MONITORA REFORÇ ESCOLAR TARDES-GAVÀ (BAIX LLOBREGAT)",
@@ -1105,18 +1153,6 @@
       "snippet": "Es precisa un/a monitor/monitora de menjador escolar pel curs 2026-27.",
       "created": "1791541638685",
       "expires": "2027-01-07T10:27:18.683Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92326550",
-      "title": "TÈCNIC/A MIG EDUCATIU/IVA PEL CENTRE OBERT INFANTIL DE SALT (GIRONA)",
-      "school": "Casal dels Infants",
-      "city": "GIRONA - GIRONÈS - 17190 SALT",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326550",
-      "snippet": "Es necessita un/a tècnic/a mig educatiu/iva pel Centre Obert Infantil de Salt",
-      "created": "1791529100265",
-      "expires": "2027-01-07T06:58:20.263Z",
       "automatic": true
     },
     {
