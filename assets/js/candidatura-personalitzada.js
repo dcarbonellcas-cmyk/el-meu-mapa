@@ -31,11 +31,12 @@ function composeCandidature(place,role,profile){
   const body='Bon dia,\n\n'+
     'Em dic '+name+' i em poso en contacte amb vosaltres per fer-vos arribar la meva candidatura com a '+config.title+' a '+centre+(city?' ('+city+')':'')+(vacancy?', en relació amb l’oferta «'+vacancy+'»':'')+'.\n\n'+
     'Us faig arribar el meu currículum i la documentació seleccionada per a aquesta candidatura, per si el meu perfil pot encaixar '+(vacancy?'en aquesta vacant':'en algun procés de selecció actual o futur del vostre centre')+'.\n\n'+
+    (role==='primaria'?'Tinc el grau d’Educació Infantil amb menció en Pedagogia Terapèutica i actualment curso el grau d’Educació Primària a la UNIR. Em queda aproximadament un any per acabar-lo. La meva experiència en reforç escolar i coordinació d’aula m’ha permès acompanyar infants de Primària en els aprenentatges i els hàbits d’estudi.\n\n':'')+
     (experience?experience+'\n\n':'Podeu consultar al currículum la meva formació i experiència per valorar-ne l’adequació a les necessitats del vostre equip.\n\n')+
     'M’agradaria tenir l’oportunitat de formar part de l’equip de '+centre+' i aportar-hi la meva experiència, compromís i motivació per '+config.focus+'.\n\n'+
     'Podeu consultar també el meu currículum professional complet aquí:\nhttps://diana-carbonell-curriculum.dcarbonellcas.chatgpt.site/\n\n'+
     'Resto a la vostra disposició per ampliar qualsevol informació o per mantenir una entrevista personal.\n\nMoltes gràcies pel vostre temps i per valorar la meva candidatura.\n\nAtentament,\nDiana';
-  return {subject,body,ready:true,personalized:!!experience};
+  return {subject,body,ready:true,personalized:!!experience||role==='primaria'};
 }
 (() => {
   const select=document.getElementById('draftRole'),hint=document.getElementById('draftRoleHint');
