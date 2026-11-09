@@ -7,15 +7,17 @@ const source=await readFile(new URL('../assets/js/private-sync.js',import.meta.u
 const trackingSource=await readFile(new URL('../assets/js/private-tracking.js',import.meta.url),'utf8');
 const profileSource=await readFile(new URL('../assets/js/perfil.js',import.meta.url),'utf8');
 const record=(key,updated,extra={})=>({version:1,key,updated,name:'Example',...(key==='profile'?{bio:'Training'}:{type:'application/pdf',data:'cGRm'}),...extra});
-function setup({profile={},docs={},remote={},failure=0}={}){
+function setup({profile={},docs={},remote={},failure=0,session=null,sessionExpired=false}={}){
   const events=new Map(),elements=new Map(),storage=new Map([['mapaEscolesProfile_v1',JSON.stringify(profile)]]),calls=[];
-  const node=id=>{if(!elements.has(id))elements.set(id,{textContent:'',value:'',addEventListener(type,fn){this[type]=fn}});return elements.get(id)};
+  if(session)storage.set('mapaPrivateDriveSession_v1',session);
+  const node=id=>{if(!elements.has(id))elements.set(id,{textContent:'',value:'',after(){},addEventListener(type,fn){this[type]=fn}});return elements.get(id)};
   const files=new Map(Object.entries(remote).map(([key,value])=>[key,{id:key,name:'mapa-'+key+'-v1.json',value}]));
   let pending;
   const context={URLSearchParams,Blob,File,Uint8Array,Event,CustomEvent,crypto:webcrypto,atob,Date,JSON,Math,Number,Error,
     setTimeout:()=>0,clearTimeout:()=>{},setInterval:()=>0,
-    localStorage:{get length(){return storage.size},key:i=>[...storage.keys()][i],getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},
-    document:{hidden:false,getElementById:node,querySelectorAll:()=>[],addEventListener:(type,fn)=>events.set(type,[...(events.get(type)||[]),fn]),dispatchEvent:e=>(events.get(e.type)||[]).forEach(fn=>fn(e))},
+    localStorage:{get length(){return storage.size},key:i=>[...storage.keys()][i],getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v),removeItem:k=>storage.delete(k)},
+    AbortSignal,location:session?new URL('https://dcarbonellcas-cmyk.github.io/el-meu-mapa/'):undefined,
+    document:{hidden:false,createElement:()=>node('disconnect'),getElementById:node,querySelectorAll:()=>[],addEventListener:(type,fn)=>events.set(type,[...(events.get(type)||[]),fn]),dispatchEvent:e=>(events.get(e.type)||[]).forEach(fn=>fn(e))},
     window:{addEventListener:()=>{}},
     candidateProfile:()=>JSON.parse(storage.get('mapaEscolesProfile_v1')||'{}'),
     getDoc:async(key,options={})=>docs[key]&&(!docs[key].deleted||options.includeDeleted)?docs[key]:null,
@@ -24,6 +26,10 @@ function setup({profile={},docs={},remote={},failure=0}={}){
     fetch:async(url,options)=>{
       calls.push({url,options});
       const ok=(data,status=200)=>new Response(JSON.stringify(data),{status,headers:{ETag:'"one"'}});
+      if(url.endsWith('.workers.dev/refresh')){
+        assert.equal(JSON.parse(options.body).session,session);
+        return sessionExpired?ok({error:'authorization_required'},401):ok({accessToken:'test-token',expiresIn:3600});
+      }
       if(failure)return ok({},failure);
       const u=new URL(url);
       if(!u.hostname.endsWith('googleapis.com'))throw Error('Unexpected destination');
@@ -42,7 +48,7 @@ function setup({profile={},docs={},remote={},failure=0}={}){
   context.window.google=context.google;
   vm.runInNewContext(trackingSource,context);
   vm.runInNewContext(source,context);
-  return {calls,files,docs,node,storage,context,connect:async(id='connectPrivateDrive')=>{node(id).click();await pending}};
+  return {calls,files,docs,node,storage,context,ready:async()=>{await Promise.all((events.get('mapa-ready')||[]).map(fn=>fn()))},connect:async(id='connectPrivateDrive')=>{node(id).click();await pending}};
 }
 test('profile autosaves without clicking Save and restores saved fields',()=>{
   const s=setup();vm.runInNewContext(profileSource,s.context);
@@ -116,4 +122,21 @@ test('a newer registration status wins without changing another bank',async()=>{
  const s=setup({remote:{tracking:{version:1,key:'tracking',updated:'2026-11-02T12:00:00Z',entries:{jobPortal_a:{value:JSON.stringify({status:'pending'}),updated:'2026-11-01T12:00:00Z'},jobPortal_b:{value:JSON.stringify({status:'registered'}),updated:'2026-11-02T12:00:00Z'}}}}});
  s.storage.set('jobPortal_a',JSON.stringify({status:'registered'}));s.context.document.dispatchEvent(new Event('private-data-changed'));
  await s.connect();assert.equal(JSON.parse(s.storage.get('jobPortal_a')).status,'registered');assert.equal(JSON.parse(s.storage.get('jobPortal_b')).status,'registered');
+});
+
+test('opening the published site renews a saved session and restores documents without a click',async()=>{
+  const s=setup({session:'sealed-session',remote:{cv:record('cv','2026-11-02T12:00:00Z')}});
+  await s.ready();
+  assert.match(s.calls[0].url,/workers\.dev\/refresh$/);
+  assert.equal(await s.docs.cv.blob.text(),'pdf');
+  assert(![...s.storage.values()].some(x=>x.includes('test-token')));
+});
+test('an expired persistent session leaves existing documents in place',async()=>{
+  const docs={cv:{name:'Local.pdf',blob:new Blob(['local'])}};
+  const s=setup({session:'sealed-session',sessionExpired:true,docs});
+  await s.ready();
+  assert.equal(s.calls.length,1);
+  assert.equal(await docs.cv.blob.text(),'local');
+  assert.equal(s.storage.has('mapaPrivateDriveSession_v1'),false);
+  assert.match(s.node('privateSyncStatus').textContent,/caducat/);
 });
