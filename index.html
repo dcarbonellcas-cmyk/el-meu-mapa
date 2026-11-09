@@ -1,5 +1,5 @@
 <!doctype html><html lang="ca"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>El meu mapa d'escoles</title><link rel="apple-touch-icon" href="assets/icons/logo-dc.png"><link rel="icon" type="image/png" href="assets/icons/logo-dc.png"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
-<link rel="stylesheet" href="assets/css/styles.css?v=20261108-llistat-net"><link rel="stylesheet" href="assets/css/calendar.css?v=20261108-calendari-net"><script src="https://accounts.google.com/gsi/client" async defer></script>
+<link rel="stylesheet" href="assets/css/styles.css?v=20261108-lleure-net"><link rel="stylesheet" href="assets/css/calendar.css?v=20261109-entrevistes"><script src="https://accounts.google.com/gsi/client" async defer></script>
 
 
 
@@ -20,9 +20,31 @@
 
 
 <section id="leisurePage" class="leisurePage" style="display:none">
- <div class="leisureHero"><span class="leisurePriority">⭐ PRIORITAT: DIRECCIÓ I COORDINACIÓ</span><h1>☀️ Lleure educatiu</h1><p style="color:#7183a4;margin:0">Empreses, cooperatives, fundacions i altres llocs on pots treballar en direcció/coordinació, monitoratge, menjador, extraescolars, casals i acollida. Sense colònies ni pernoctacions.</p></div>
- <div class="leisureLayout"><aside class="leisureSide"><h3>🔎 Buscar i filtrar</h3><input id="leisureSearch" placeholder="Empresa, municipi o servei…"><select id="leisureStatus"><option value="">Tots els estats</option><option value="none">No contactada</option><option value="sent">CV enviat</option></select><div class="sideFilterTitle">Tipus de feina</div><div class="leisureFilters sideFilters"><button class="leisureFilter active" data-lf="all">Tots</button><button class="leisureFilter" data-lf="coord">⭐ Direcció / coordinació</button><button class="leisureFilter" data-lf="monitor">👩‍🏫 Monitoratge</button><button class="leisureFilter" data-lf="migdia">🍽️ Menjador</button><button class="leisureFilter" data-lf="extra">🎨 Extraescolars</button><button class="leisureFilter" data-lf="casal">☀️ Casals</button><button class="leisureFilter" data-lf="acollida">🌅 Acollida</button></div><div class="sideHint">💡 Pots combinar la cerca amb aquests filtres per anar directament al tipus de feina que t'interessa.</div></aside>
- <main class="leisureMain"><div class="leisureMapWrap"><div class="leisureMapHead"><b>🗺️ Mapa de llocs on pots enviar candidatura</b><span><span id="leisureCount" class="leisureCount">0</span> llocs visibles</span></div><div id="leisureMap" class="leisureMap"></div></div><details class="entityDrop" id="leisureDirectory"><summary>📋 Veure llocs de lleure per proximitat a Teià <span>▾</span></summary><p>Noms dels llocs, ordenats per distància aproximada a Teià segons la localitat. Els llocs sense ubicació concreta apareixen al final.</p><input id="leisureDirectorySearch" class="search" placeholder="Busca entitat o localitat…" aria-label="Cerca al directori de lleure"><div id="leisureDirectoryCount" class="muted"></div><div id="leisureDirectoryList"></div></details><div style="display:flex;gap:8px;flex-wrap:wrap;margin:14px 0"><button class="smallBtn" id="openAcellecJobs">🔎 Ofertes ACELLEC</button><button class="smallBtn" data-go="jobs">📨 Ofertes importades del Gmail</button></div><details class="entityDrop" open><summary>☀️ Veure empreses i entitats de lleure <span>▾</span></summary><div id="leisureGrid" class="leisureGrid"></div></details></main></div>
+ <header class="leisureHero">
+  <p class="startEyebrow">LLEURE EDUCATIU</p>
+  <h1>Lleure</h1>
+  <p>Direcció i coordinació, monitoratge, menjador, extraescolars, casals i acollida.</p>
+ </header>
+ <div class="leisureTools filterPanel" role="group" aria-label="Cerca i filtres de lleure">
+  <div class="leisureSearchControls">
+   <input id="leisureSearch" type="search" aria-label="Cercar empreses de lleure" placeholder="Empresa, municipi o servei…">
+   <select id="leisureStatus" aria-label="Estat de la candidatura">
+    <option value="">Tots els estats</option><option value="none">No contactada</option><option value="sent">CV enviat</option>
+   </select>
+  </div>
+  <div class="leisureFilters" role="group" aria-label="Tipus de feina"><button type="button" class="leisureFilter active" data-lf="all" aria-pressed="true">Tots</button><button type="button" class="leisureFilter" data-lf="coord" aria-pressed="false">⭐ Direcció / coordinació</button><button type="button" class="leisureFilter" data-lf="monitor" aria-pressed="false">👩‍🏫 Monitoratge</button><button type="button" class="leisureFilter" data-lf="migdia" aria-pressed="false">🍽️ Menjador</button><button type="button" class="leisureFilter" data-lf="extra" aria-pressed="false">🎨 Extraescolars</button><button type="button" class="leisureFilter" data-lf="casal" aria-pressed="false">☀️ Casals</button><button type="button" class="leisureFilter" data-lf="acollida" aria-pressed="false">🌅 Acollida</button></div>
+ </div>
+ <details class="educationMap leisureMapDrop" id="leisureMapDisclosure">
+  <summary>Veure els llocs de lleure al mapa</summary>
+  <div class="leisureMapWrap">
+   <div class="leisureMapHead"><span>Ubicacions aproximades per municipi</span><span><span id="leisureCount" class="leisureCount">0</span> punts al mapa</span></div>
+   <div id="leisureMap" class="leisureMap"></div>
+  </div>
+ </details>
+ <details class="entityDrop" open>
+  <summary>Veure empreses i entitats de lleure</summary>
+  <div id="leisureGrid" class="leisureGrid"></div>
+ </details>
 </section>
 <section id="jobsPage" class="jobsPage" style="display:none">
   <div class="jobsHero"><div><h1>🔎 Ofertes de feina</h1><p>Ofertes d’infantil i lleure actualitzades cada 6 hores des de fonts públiques. Les alertes de LinkedIn, Indeed, InfoJobs i B4work s’importen des de Gmail amb la teva autorització.</p></div><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="smallBtn" id="syncJobsBtn">🔄 Actualitzar ofertes</button><button class="smallBtn" id="addJobBtn">＋ Afegir oferta</button></div></div><div id="jobsSyncNotice" style="display:none;margin:14px 0;padding:12px 14px;border-radius:12px;background:#eef6ff;border:1px solid #d5e7ff;color:#365d91;font-size:13px"></div>
@@ -69,7 +91,7 @@
       <label>Centre o empresa <input name="centre" required maxlength="150"></label>
       <label>Dia <input name="date" type="date" required></label>
       <label>Hora <input name="time" type="time" required></label>
-      <label>Durada en minuts <input name="duration" type="number" value="30" min="5" max="480" required></label>
+      <label>Durada en minuts <input name="duration" type="number" min="5" max="480"></label>
       <label>Lloc o enllaç <input name="location" maxlength="300"></label>
     </div>
     <div class="calendar-controls">
@@ -190,5 +212,5 @@
 
 
 
-<script src="assets/js/app.js?v=20261108-llistat-net"></script>
+<script src="assets/js/app.js?v=20261108-lleure-net"></script>
 </body></html>

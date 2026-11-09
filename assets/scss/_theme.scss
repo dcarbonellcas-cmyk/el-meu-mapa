@@ -50,7 +50,7 @@ body,.docsOverlay,.dashboardDirect {
   border-color:var(--lilac-line);
 }
 
-.filterPanel,.leisureSide {
+.filterPanel {
   background:var(--lilac);
   border:1px solid var(--lilac-line);
   border-radius:15px;
@@ -67,19 +67,14 @@ body,.docsOverlay,.dashboardDirect {
 .jobTypeFilters {margin:0 0 14px;}
 .filterRail > * {flex-shrink:0;}
 .filterRail button {white-space:nowrap;}
-.filterPanel input,.filterPanel select,.leisureSide input,.leisureSide select,.docMeta :is(input:not([type=file]),textarea) {
+.filterPanel input,.filterPanel select,.docMeta :is(input:not([type=file]),textarea) {
   color:var(--plum-ink);
   background:#fff;
   border:1px solid var(--lilac-line);
   border-radius:10px;
 }
 .docMeta :is(input:not([type=file]),textarea) {max-width:100%;}
-.leisureSide h3,.sideFilterTitle {color:var(--plum-ink);}
-.leisureSide .sideHint {
-  background:#fff;
-  color:var(--plum-muted);
-}
-.filterPanel :focus-visible,.leisureSide :focus-visible,.docsInner :focus-visible,.dashCard:focus-visible {
+.filterPanel :focus-visible,.docsInner :focus-visible,.dashCard:focus-visible {
   outline:2px solid var(--plum);
   outline-offset:1px;
 }

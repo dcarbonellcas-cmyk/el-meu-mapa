@@ -107,3 +107,8 @@
 }
 
 .calendar-day-dialog::backdrop { background: rgb(56 36 81 / 35%); }
+
+.interview-outcomes {margin-top:8px;}
+.interview-outcomes [aria-pressed="true"] {background:#653574;border-color:#653574;color:white;}
+.interview-outcomes [aria-pressed="true"][data-outcome="favorable"] {background:#227346;border-color:#227346;}
+.interview-outcomes [aria-pressed="true"][data-outcome="unfavorable"] {background:#b42332;border-color:#b42332;}

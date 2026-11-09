@@ -171,73 +171,9 @@
 .entityDrop #managerCount {
   padding:0 14px;
 }
-.leisureLayout {
-  display:grid;
-  grid-template-columns:245px minmax(0,1fr);
-  gap:18px;
-  align-items:start;
-}
-.leisureSide {
-  background:#fff;
-  border:1px solid #dce5f2;
-  border-radius:16px;
-  padding:15px;
-  position:sticky;
-  top:90px;
-}
-.leisureSide h3 {
-  margin:0 0 12px;
-  color:#173b72;
-}
-.leisureSide input,.leisureSide select {
-  width:100%;
-  box-sizing:border-box;
-  padding:11px;
-  border:1px solid #ccd8e8;
-  border-radius:10px;
-  margin-bottom:9px;
-}
-.sideFilterTitle {
-  font-size:12px;
-  font-weight:900;
-  color:#7183a4;
-  margin:9px 0;
-}
-.sideFilters {
-  display:grid!important;
-  gap:7px!important;
-}
-.sideFilters .leisureFilter {
-  width:100%;
-  text-align:left;
-  margin:0;
-}
-.sideHint {
-  margin-top:12px;
-  background:#fff8df;
-  border-radius:11px;
-  padding:10px;
-  font-size:12px;
-  color:#6b5a22;
-}
-.leisureMain {
-  min-width:0;
-}
-.leisureTools {
-  display:none!important;
-}
 @media(max-width:900px) {
   .pathGrid {
     grid-template-columns:repeat(2,1fr);
-  }
-  .leisureLayout {
-    grid-template-columns:1fr;
-  }
-  .leisureSide {
-    position:static;
-  }
-  .sideFilters {
-    grid-template-columns:repeat(2,1fr)!important;
   }
 }
 @media(max-width:560px) {

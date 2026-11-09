@@ -830,18 +830,31 @@ body {
   margin: 0 0 7px;
 }
 
-.leisureTools {
-  display: grid;
-  grid-template-columns: 1.5fr 0.8fr;
-  gap: 10px;
-  margin: 18px 0;
+.leisureHero p:last-child {
+  margin: 0;
+  color: var(--plum-muted);
 }
 
-.leisureTools input, .leisureTools select {
-  padding: 12px;
-  border: 1px solid #ccd8e8;
-  border-radius: 11px;
-  background: white;
+.leisureTools {
+  margin: 14px 0;
+  padding: 10px 12px;
+}
+
+.leisureSearchControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.leisureSearchControls input, .leisureSearchControls select {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+  padding: 7px 10px;
+}
+
+.leisureSearchControls input {
+  width: min(260px, 100%);
 }
 
 .leisureGrid {
@@ -892,19 +905,14 @@ body {
   .leisureGrid {
     grid-template-columns: 1fr;
   }
-  .leisureTools {
-    grid-template-columns: 1fr;
-  }
   .leisurePage {
     padding: 22px 14px;
   }
 }
-.leisureMapWrap {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 12px;
-  margin: 16px 0;
+.leisureMapDrop .leisureMapWrap {
+  padding: 0 12px 12px;
+  border: 0;
+  box-shadow: none;
 }
 
 .leisureMapHead {
@@ -931,7 +939,7 @@ body {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
-  margin: 12px 0 2px;
+  margin: 8px 0 0;
 }
 
 .leisureFilter {
@@ -1308,83 +1316,9 @@ body {
   padding: 0 14px;
 }
 
-.leisureLayout {
-  display: grid;
-  grid-template-columns: 245px minmax(0, 1fr);
-  gap: 18px;
-  align-items: start;
-}
-
-.leisureSide {
-  background: #fff;
-  border: 1px solid #dce5f2;
-  border-radius: 16px;
-  padding: 15px;
-  position: sticky;
-  top: 90px;
-}
-
-.leisureSide h3 {
-  margin: 0 0 12px;
-  color: #173b72;
-}
-
-.leisureSide input, .leisureSide select {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 11px;
-  border: 1px solid #ccd8e8;
-  border-radius: 10px;
-  margin-bottom: 9px;
-}
-
-.sideFilterTitle {
-  font-size: 12px;
-  font-weight: 900;
-  color: #7183a4;
-  margin: 9px 0;
-}
-
-.sideFilters {
-  display: grid !important;
-  gap: 7px !important;
-}
-
-.sideFilters .leisureFilter {
-  width: 100%;
-  text-align: left;
-  margin: 0;
-}
-
-.sideHint {
-  margin-top: 12px;
-  background: #fff8df;
-  border-radius: 11px;
-  padding: 10px;
-  font-size: 12px;
-  color: #6b5a22;
-}
-
-.leisureMain {
-  min-width: 0;
-}
-
-.leisureTools {
-  display: none !important;
-}
-
 @media (max-width: 900px) {
   .pathGrid {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .leisureLayout {
-    grid-template-columns: 1fr;
-  }
-  .leisureSide {
-    position: static;
-  }
-  .sideFilters {
-    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
 @media (max-width: 560px) {
@@ -1945,7 +1879,7 @@ body, .docsOverlay, .dashboardDirect {
   border-color: var(--lilac-line);
 }
 
-.filterPanel, .leisureSide {
+.filterPanel {
   background: var(--lilac);
   border: 1px solid var(--lilac-line);
   border-radius: 15px;
@@ -1976,7 +1910,7 @@ body, .docsOverlay, .dashboardDirect {
   white-space: nowrap;
 }
 
-.filterPanel input, .filterPanel select, .leisureSide input, .leisureSide select, .docMeta :is(input:not([type=file]), textarea) {
+.filterPanel input, .filterPanel select, .docMeta :is(input:not([type=file]), textarea) {
   color: var(--plum-ink);
   background: #fff;
   border: 1px solid var(--lilac-line);
@@ -1987,16 +1921,7 @@ body, .docsOverlay, .dashboardDirect {
   max-width: 100%;
 }
 
-.leisureSide h3, .sideFilterTitle {
-  color: var(--plum-ink);
-}
-
-.leisureSide .sideHint {
-  background: #fff;
-  color: var(--plum-muted);
-}
-
-.filterPanel :focus-visible, .leisureSide :focus-visible, .docsInner :focus-visible, .dashCard:focus-visible {
+.filterPanel :focus-visible, .docsInner :focus-visible, .dashCard:focus-visible {
   outline: 2px solid var(--plum);
   outline-offset: 1px;
 }

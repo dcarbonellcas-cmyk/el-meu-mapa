@@ -60,6 +60,11 @@ function applicationCalendarEvents(place, history, status) {
   const utcDay=day=>new Date(day+'T00:00:00Z');
   let selected=today(), month=utcDay(selected.slice(0,7)+'-01');
   const interviewHistory='calendar_interviews';
+  const interviewOutcomes={
+    pending:'Pendent de resposta',
+    favorable:'Resposta favorable',
+    unfavorable:'Resposta desfavorable'
+  };
   function madridInstant(day,time){
     const wall=new Date(day+'T'+time+':00Z');
     const offset=value=>offsetFormat.formatToParts(value).find(part=>part.type==='timeZoneName').value.slice(3);
@@ -82,11 +87,19 @@ function applicationCalendarEvents(place, history, status) {
       if(name)places.set(id,{id,name});
     }
     const events=[...places.values()].flatMap(place=>applicationCalendarEvents(place,hist(place.id),state(place.id)));
-    for(const item of hist(interviewHistory)){
+    const interviews=hist(interviewHistory);
+    const outcomes=new Map();
+    for(const item of interviews){
+      if(item.type!=='interview_outcome'||!Object.hasOwn(interviewOutcomes,item.outcome))continue;
+      const key=JSON.stringify([item.interviewDate,item.text]);
+      if(!outcomes.has(key))outcomes.set(key,item.outcome);
+    }
+    for(const item of interviews){
       if(item.type!=='interview'||!Number.isFinite(Date.parse(item.date)))continue;
       const start=new Date(item.date);
       events.push({type:'interview',date:dayFormat.format(start),time:clockFormat.format(start),
-        title:'Entrevista · '+item.text,location:item.location,duration:item.duration});
+        title:'Entrevista · '+item.text,location:item.location,duration:item.duration,
+        interview:item,outcome:outcomes.get(JSON.stringify([item.date,item.text]))});
     }
     return events;
   }
@@ -153,6 +166,30 @@ function applicationCalendarEvents(place, history, status) {
         link.href='https://mail.google.com/mail/u/0/#all/'+event.threadId;
         link.target='_blank';link.rel='noopener noreferrer';link.textContent='Veure el fil a Gmail';
         row.append(' · ',link);
+      }
+      if(event.interview&&Date.parse(event.interview.date)<=Date.now()){
+        const buttons=document.createElement('div');
+        buttons.className='calendar-controls interview-outcomes';
+        buttons.setAttribute('role','group');
+        buttons.setAttribute('aria-label','Resultat de l’entrevista · '+event.interview.text);
+        for(const [outcome,label] of Object.entries(interviewOutcomes)){
+          const button=document.createElement('button');
+          button.type='button';
+          button.className='smallBtn';
+          button.dataset.outcome=outcome;
+          button.setAttribute('aria-pressed',String(event.outcome===outcome));
+          button.textContent=label;
+          button.addEventListener('click',()=>{
+            if(event.outcome===outcome)return;
+            const rowIndex=[...eventList.children].indexOf(row);
+            saveHistory(interviewHistory,{type:'interview_outcome',date:new Date().toISOString(),
+              text:event.interview.text,interviewDate:event.interview.date,outcome});
+            eventList.children[rowIndex]?.querySelector('[data-outcome="'+outcome+'"]')?.focus();
+            status.textContent='Resultat desat: '+label;
+          });
+          buttons.append(button);
+        }
+        row.append(buttons);
       }
       eventList.append(row);
     }

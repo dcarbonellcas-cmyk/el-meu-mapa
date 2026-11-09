@@ -14,18 +14,23 @@
 .leisureHero h1 {
   margin:0 0 7px;
 }
+.leisureHero p:last-child {margin:0;color:var(--plum-muted);}
 .leisureTools {
-  display:grid;
-  grid-template-columns:1.5fr .8fr;
-  gap:10px;
-  margin:18px 0;
+  margin:14px 0;
+  padding:10px 12px;
 }
-.leisureTools input,.leisureTools select {
-  padding:12px;
-  border:1px solid #ccd8e8;
-  border-radius:11px;
-  background:white;
+.leisureSearchControls {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
 }
+.leisureSearchControls input,.leisureSearchControls select {
+  box-sizing:border-box;
+  min-width:0;
+  max-width:100%;
+  padding:7px 10px;
+}
+.leisureSearchControls input {width:min(260px,100%);}
 .leisureGrid {
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
@@ -68,20 +73,11 @@
   .leisureGrid {
     grid-template-columns:1fr;
   }
-  .leisureTools {
-    grid-template-columns:1fr;
-  }
   .leisurePage {
     padding:22px 14px;
   }
 }
-.leisureMapWrap {
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:12px;
-  margin:16px 0;
-}
+.leisureMapDrop .leisureMapWrap {padding:0 12px 12px;border:0;box-shadow:none;}
 .leisureMapHead {
   display:flex;
   justify-content:space-between;
@@ -103,7 +99,7 @@
   display:flex;
   gap:8px;
   flex-wrap:wrap;
-  margin:12px 0 2px;
+  margin:8px 0 0;
 }
 .leisureFilter {
   border:1px solid #d8e1ed;
