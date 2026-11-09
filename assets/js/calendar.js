@@ -43,6 +43,11 @@ function applicationCalendarEvents(place, history, status) {
   return events;
 }
 
+function calendarInterviewAppointments(){
+  const interviews=hist('calendar_interviews').filter(item=>item.type==='interview'&&Number.isFinite(Date.parse(item.date)));
+  return [...new Map(interviews.map(item=>[JSON.stringify([new Date(item.date).toISOString(),norm(item.text).trim()]),item])).values()];
+}
+
 (() => {
   const byId=id=>document.getElementById(id);
   const page=byId('calendarPage'), grid=byId('calendarGrid'), eventList=byId('calendarEvents');
@@ -94,8 +99,7 @@ function applicationCalendarEvents(place, history, status) {
       const key=JSON.stringify([item.interviewDate,item.text]);
       if(!outcomes.has(key))outcomes.set(key,item.outcome);
     }
-    for(const item of interviews){
-      if(item.type!=='interview'||!Number.isFinite(Date.parse(item.date)))continue;
+    for(const item of calendarInterviewAppointments()){
       const start=new Date(item.date);
       events.push({type:'interview',date:dayFormat.format(start),time:clockFormat.format(start),
         title:'Entrevista · '+item.text,location:item.location,duration:item.duration,

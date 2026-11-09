@@ -102,7 +102,7 @@ aside, .detail {
   background: linear-gradient(145deg, #edf4ea, #e5eef7);
 }
 
-#map {
+.schoolMapCanvas {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -1778,7 +1778,7 @@ body {
 }
 
 .educationMiniMapDialog {
-  width: min(660px, 100% - 24px);
+  width: min(850px, 100% - 24px);
   padding: 0;
   border-radius: 18px;
 }
@@ -1815,7 +1815,10 @@ body {
 }
 
 .educationSchoolMiniMap {
-  height: clamp(200px, 53dvh, 420px);
+  position: relative;
+  inset: auto;
+  height: clamp(240px, 58dvh, 520px);
+  background: #eaf1e8;
 }
 
 :root {

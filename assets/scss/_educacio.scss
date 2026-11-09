@@ -153,7 +153,7 @@
 .educationPagination [aria-current="page"] {background:#653574;color:white;}
 #educationResults {scroll-margin-top:calc(var(--top-height) + 12px);}
 .educationMiniMapDialog {
-  width:min(660px,calc(100% - 24px));
+  width:min(850px,calc(100% - 24px));
   padding:0;
   border-radius:18px;
 }
@@ -179,4 +179,9 @@
   font-size:14px;
 }
 .educationMiniMapDialog .educationSchoolInfo {padding:14px 18px;}
-.educationSchoolMiniMap {height:clamp(200px,53dvh,420px);}
+.educationSchoolMiniMap {
+  position:relative;
+  inset:auto;
+  height:clamp(240px,58dvh,520px);
+  background:#eaf1e8;
+}

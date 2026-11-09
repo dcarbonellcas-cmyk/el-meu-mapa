@@ -1,18 +1,29 @@
-// Google Drive appDataFolder only. Access tokens stay in memory.
+// Google Drive appDataFolder only. Google access tokens stay in memory.
 (() => {
   const CLIENT='326278371839-alsvhik4agj0jqp6ps16ve3j722q6p2k.apps.googleusercontent.com';
+  const worker='https://el-meu-mapa-sync.dcarbonellcas.workers.dev';
+  const persistent=typeof location!=='undefined'&&location.origin==='https://dcarbonellcas-cmyk.github.io'&&location.pathname==='/el-meu-mapa/';
+  const sessionKey='mapaPrivateDriveSession_v1', flowKey='mapaPrivateDriveFlow_v1';
   const names={profile:'mapa-profile-v1.json',cv:'mapa-cv-v1.json',letter:'mapa-letter-v1.json',cvAlternative:'mapa-cvAlternative-v1.json',recommendation:'mapa-recommendation-v1.json',tracking:'mapa-tracking-v1.json'};
   const button=document.getElementById('connectPrivateDrive'),status=document.getElementById('privateSyncStatus');
   const draftButton=document.getElementById('connectDraftDrive'),draftStatus=document.getElementById('draftDriveStatus');
   let token='',expiry=0,busy=false,again=false,timer=null,connected=false,revision=0;
+  let renewing=null;
   const say=text=>{status.textContent=text;draftStatus.textContent=text};
   const disableButtons=disabled=>{button.disabled=disabled;draftButton.disabled=disabled};
   const stamp=x=>Number.isFinite(Date.parse(x))?Date.parse(x):0;
   async function api(url,options={}){
-    if(Date.now()>=expiry){token='';connected=false;throw Error('Torna a connectar Google. La còpia local es conserva.')}
+    if(persistent){
+      await ensureSession();
+      if(!connected)throw Error('Inicia sessió per recuperar la còpia privada.');
+    }else if(Date.now()>=expiry){token='';connected=false;throw Error('Torna a connectar Google. La còpia local es conserva.')}
     const r=await fetch(url,{...options,headers:{...options.headers,Authorization:'Bearer '+token}});
     if(!r.ok){
-      if(r.status===401){token='';connected=false;throw Error('La sessió de Google ha caducat. Torna a connectar; la còpia local es conserva.')}
+      if(r.status===401){
+        token='';expiry=0;
+        if(persistent)throw Error('Google ha interromput la sincronització. Es tornarà a provar automàticament.');
+        connected=false;throw Error('La sessió de Google ha caducat. Torna a connectar; la còpia local es conserva.');
+      }
       if(r.status===403)throw Error('Google no permet accedir a Drive. Cal habilitar Google Drive API i el permís de dades de l’aplicació al projecte de Google.');
       if(r.status===412)throw Error('Hi ha una actualització des d’un altre dispositiu. Torna a sincronitzar.');
       throw Error('No s’ha pogut sincronitzar amb Google Drive ('+r.status+'). La còpia local es conserva.');
@@ -78,11 +89,84 @@
         if(remote&&(!own||stamp(remote.updated)>stamp(own.updated)))await restore(key,remote);
         else if(own&&(!remote||stamp(own.updated)>stamp(remote.updated)))await upload(file,own,etag);
       }
-      say('✓ Còpia privada sincronitzada. Guardat automàtic mentre la sessió de Google estigui connectada.');button.textContent='Sincronitzar ara';
-    }catch(e){say(e.message||'No s’ha pogut sincronitzar. La còpia local es conserva.');if(!connected)button.textContent='Tornar a connectar Google';}
+      say(persistent?'✓ Còpia privada sincronitzada.':'✓ Còpia privada sincronitzada. Guardat automàtic mentre la sessió de Google estigui connectada.');
+      button.textContent='Sincronitzar ara';
+    }catch(e){say(e.message||'No s’ha pogut sincronitzar. La còpia local es conserva.');if(!connected)button.textContent=persistent?'Iniciar sessió amb Google':'Tornar a connectar Google';}
     finally{busy=false;disableButtons(false);if(again){again=false;clearTimeout(timer);timer=setTimeout(sync,1500)}}
   }
+  function clearSession(){
+    token='';expiry=0;connected=false;
+    button.textContent='Iniciar sessió amb Google';
+  }
+  async function workerRequest(path,body){
+    const response=await fetch(worker+path,{
+      method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),cache:'no-store',
+      signal:AbortSignal.timeout(12000)
+    });
+    const result=await response.json();
+    if(result.error==='wrong_account')throw Error('Tria el compte de Google amb què vas desar els documents.');
+    if(response.status===401)return null;
+    if(!response.ok)throw Error('La sincronització privada no està disponible ara. La còpia local es conserva.');
+    return result;
+  }
+  function acceptSession(result){
+    if(!result?.accessToken||!(Number(result.expiresIn)>60))throw Error('Google no ha completat la connexió.');
+    if(result.session)localStorage.setItem(sessionKey,result.session);
+    token=result.accessToken;
+    expiry=Date.now()+(Number(result.expiresIn)-60)*1000;
+    connected=true;
+  }
+  async function ensureSession(){
+    const session=localStorage.getItem(sessionKey);
+    if(!session){clearSession();return}
+    if(token&&Date.now()<expiry)return;
+    if(!renewing)renewing=(async()=>{
+      const result=await workerRequest('/refresh',{session});
+      if(session!==localStorage.getItem(sessionKey))return;
+      if(result)acceptSession(result);
+      else{localStorage.removeItem(sessionKey);clearSession()}
+    })().finally(()=>{renewing=null});
+    await renewing;
+  }
+  async function resume(){
+    if(busy||!localStorage.getItem(sessionKey))return;
+    try{
+      await ensureSession();
+      if(connected)await sync();
+      else say('La sessió ha caducat. Inicia sessió per recuperar la còpia privada.');
+    }catch(error){say(error.message||'La còpia local es conserva. Es tornarà a provar automàticament.')}
+  }
+  const base64url=bytes=>btoa(String.fromCharCode(...bytes)).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+  async function startSession(){
+    disableButtons(true);
+    try{
+      const state=base64url(crypto.getRandomValues(new Uint8Array(32)));
+      const verifier=base64url(crypto.getRandomValues(new Uint8Array(32)));
+      const challenge=base64url(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(verifier))));
+      const result=await workerRequest('/start',{state,challenge});
+      sessionStorage.setItem(flowKey,JSON.stringify({state,verifier,created:Date.now()}));
+      location.assign(result.authorization);
+    }catch(error){say(error.message);disableButtons(false)}
+  }
+  async function finishSession(){
+    const params=new URLSearchParams(location.hash.slice(1));
+    if(!params.has('drive_state')&&!params.has('drive_code')&&!params.has('drive_error')){
+      if(new URLSearchParams(location.search).get('connect')==='drive')window.appShow('docs');
+      return resume();
+    }
+    history.replaceState(null,'',location.pathname+location.search);
+    disableButtons(true);
+    try{
+      const flow=JSON.parse(sessionStorage.getItem(flowKey)||'null');
+      sessionStorage.removeItem(flowKey);
+      const code=params.get('drive_code');
+      if(!flow||flow.state!==params.get('drive_state')||Date.now()-flow.created>600000||!code)throw Error('La connexió s’ha interromput. Torna a iniciar sessió.');
+      acceptSession(await workerRequest('/exchange',{code,verifier:flow.verifier}));
+      await sync();
+    }catch(error){say(error.message);disableButtons(false)}
+  }
   function connect(){
+    if(persistent)return localStorage.getItem(sessionKey)?resume():startSession();
     if(connected&&Date.now()<expiry)return sync();
     if(!window.google?.accounts?.oauth2){say('Google encara no s’ha carregat. Revisa la connexió i torna-ho a provar.');return}
     connected=false;
@@ -120,8 +204,32 @@
     }catch{fail('No s’ha pogut obrir Google. Torna-ho a provar des de Safari o Chrome.')}
   }
   document.addEventListener('private-data-changed',()=>{revision++;if(!connected)return;clearTimeout(timer);timer=setTimeout(sync,1500)});
-  document.addEventListener('visibilitychange',()=>{if(!document.hidden&&connected)sync()});
-  setInterval(()=>{if(!document.hidden&&connected)sync()},60000);
+  function syncVisible(){
+    if(document.hidden)return;
+    if(persistent)resume();
+    else if(connected)sync();
+  }
+  document.addEventListener('visibilitychange',syncVisible);
+  setInterval(syncVisible,60000);
+  if(persistent){
+    button.textContent='Iniciar sessió amb Google';
+    const disconnect=document.createElement('button');
+    disconnect.className='smallBtn';
+    disconnect.type='button';
+    disconnect.textContent='Desconnectar aquest navegador';
+    disconnect.addEventListener('click',()=>{
+      localStorage.removeItem(sessionKey);
+      clearSession();
+      say('Sessió tancada. La còpia local es conserva.');
+    });
+    button.after(disconnect);
+    document.addEventListener('mapa-ready',finishSession,{once:true});
+  }
   button.addEventListener('click',connect);
-  draftButton.addEventListener('click',connect);
+  draftButton.addEventListener('click',()=>{
+    if(!persistent||localStorage.getItem(sessionKey))return connect();
+    // Leave the message and attachments in the original tab during first sign-in.
+    window.open(new URL('?connect=drive',location.href),'_blank','noopener');
+    draftStatus.textContent='Inicia sessió a la pestanya de Documents i torna aquí per recuperar els adjunts.';
+  });
 })();
