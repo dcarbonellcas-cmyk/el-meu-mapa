@@ -4,7 +4,9 @@ function filtered(){let ages=new Set($$('[data-age]:checked').map(x=>x.dataset.a
 function fillCounties(){let vals=[...new Set(schools.map(s=>s.county).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'ca'));$('#county').innerHTML='<option value="">Totes les comarques</option>'+vals.map(v=>'<option>'+esc(v)+'</option>').join('')}function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
 function draw(){visible=filtered();$('#total').textContent=visible.length;drawMap();$('#cards').innerHTML=visible.slice(0,12).map(s=>`<div class="mini" data-id="${esc(s.id)}"><strong>${esc(s.name)}</strong><small>${esc(s.city)} · ${esc(s.age)} · ${esc(s.kind)}</small></div>`).join('')}
 function createSchoolMap(container,center,zoom){
-  const schoolMap=L.map(container,{zoomControl:true,preferCanvas:true}).setView(center,zoom);
+  const canvas=typeof container==='string'?document.getElementById(container):container;
+  canvas.classList.add('schoolMapCanvas');
+  const schoolMap=L.map(canvas,{zoomControl:true,preferCanvas:true}).setView(center,zoom);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
     maxZoom:19,attribution:'&copy; OpenStreetMap contributors'
   }).addTo(schoolMap);
