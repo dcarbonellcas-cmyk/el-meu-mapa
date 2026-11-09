@@ -34,9 +34,9 @@ for(const path of (await walk('scripts')).filter(x=>x.endsWith('.mjs'))){const r
 const jobs=JSON.parse(await read('assets/data/ofertes.json')).jobs;
 assert.equal(new Set(jobs.map(x=>x.id)).size,jobs.length);
 for(const job of jobs){assert(/^https:\/\//.test(job.url));assert(!Object.keys(job).some(x=>/gmailId|recipient|body|token/i.test(x)));}
-const files=['index.html','README.md','netlify.toml','package.json','pnpm-lock.yaml','.gitignore',...scripts,...await walk('assets/css'),...await walk('assets/scss'),...await walk('assets/data'),...await walk('netlify/functions'),...await walk('scripts')];
+const files=['index.html','privacitat.html','README.md','netlify.toml','package.json','pnpm-lock.yaml','.gitignore',...scripts,...await walk('assets/css'),...await walk('assets/scss'),...await walk('assets/data'),...await walk('netlify/functions'),...await walk('scripts')];
 const secrets=[/gh[pousr]_[A-Za-z0-9]{20,}/,/github_pat_[A-Za-z0-9_]{20,}/,/AIza[0-9A-Za-z_-]{30,}/,/-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----/,/ya29\.[A-Za-z0-9_-]{20,}/,/["']client_secret["']\s*:\s*["'][^"']+/,/(?:Diana)\s+(?:Carbonell)/,/2026-07-1[4567]T12:00:00/];
 for(const path of files){const text=await read(path);for(const pattern of secrets)assert(!pattern.test(text),'Potential secret or private application data in '+path)}
 const published=await walk('public');
-assert(published.every(p=>p==='public/index.html'||['css','js','data','icons'].some(folder=>p.startsWith('public/assets/'+folder+'/'))),'Private file in public directory');
+assert(published.every(p=>['public/index.html','public/privacitat.html'].includes(p)||['css','js','data','icons'].some(folder=>p.startsWith('public/assets/'+folder+'/'))),'Private file in public directory');
 console.log('PASS: syntax, local routes, '+centres.length+' centres, '+entities.length+' entities, JSON/file preview parity, privacy scan and publication allowlist.');
