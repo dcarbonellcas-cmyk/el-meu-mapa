@@ -1,20 +1,32 @@
 {
-  "checkedAt": "2026-11-09T07:04:05.840Z",
+  "checkedAt": "2026-11-09T09:29:15.121Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-09T07:04:05.840Z",
+      "updatedAt": "2026-11-09T09:29:15.121Z",
       "count": 196,
-      "reviewed": 718,
+      "reviewed": 719,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-09T07:04:05.840Z",
+      "attemptedAt": "2026-11-09T09:29:15.121Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92328483",
+      "title": "MONITOR/MONITORA REFORÇ ESCOLAR TARDES-GAVÀ (BAIX LLOBREGAT)",
+      "school": "FABRA FORMACIÓ S.L.",
+      "city": "BARCELONA - BAIX LLOBREGAT - 08850 GAVÀ",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328483",
+      "snippet": "Busquem un/a monitor/monitora per a realitzar reforç escolar a alumnat d'Educació Primària a un centre educatiu de la població de Gavà (Baix Llobregat). Horari: 16:30-19:00h de dilluns a dijous",
+      "created": "1794210406849",
+      "expires": "2027-02-07T07:46:46.845Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92328469",
       "title": "MESTRE/A D'EDUCACIÓ INFANTIL I PRIMÀRIA",
@@ -49,18 +61,6 @@
       "snippet": "A Doble Via t'estem buscant! Si ets una persona amb iniciativa, dinàmica, entusiasta, amant del treball en equip volem que formis part d’un gran equip! Amb 25 anys d'història, oferim serveis integrals de gestió d’equipaments i programes d’acció social i cultural, d’educació, d’animació sociocultural i dinamització comu",
       "created": "1793954991822",
       "expires": "2027-02-04T08:49:51.819Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92328362",
-      "title": "MONITOR/MONITORA REFORÇ EDUCATIU -GAVÀ (BAIX LLOBREGAT)",
-      "school": "FABRA FORMACIÓ S.L.",
-      "city": "BARCELONA - BAIX LLOBREGAT - 08850 GAVÀ",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328362",
-      "snippet": "Busquem un/a monitor/a per a realitzar reforç escolar a alumnat d'Educació Primària a un centre educatiu de la població de Gavà (Baix Llobregat). Horaris de grups: 16:30-18:45h de dilluns a dijous",
-      "created": "1793951156960",
-      "expires": "2027-02-04T07:45:56.957Z",
       "automatic": true
     },
     {
@@ -724,18 +724,6 @@
       "automatic": true
     },
     {
-      "id": "fa_09202630605",
-      "title": "MONITORS/ES I/O ANIMADORS/ES ESPORTIUS/VES",
-      "school": "Oficina de Treball del SOC",
-      "city": "BARCELONA - BAIX LLOBREGAT - 08840 VILADECANS",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/09202630605",
-      "snippet": "Associació de Viladecans cerca cobrir dos llocs de treball de Monitor/a Esportiu/va per a la dinamització d'activitats extraescolars esportives. S'ofereix contracte temporal de novembre a maig, de 4 h/setmana en horari de16:30-17:30h de dilluns a dijous. Salari brut 177€/mes. Es requereix formació de Tècnic Esportiu Gr",
-      "created": "1792495102277",
-      "expires": "2027-01-18T11:18:22.277Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92327153",
       "title": "COORDINADOR/A DE MENJADOR (PER COBRIR BAIXA IT)",
       "school": "Empresa del sector del Catering",
@@ -889,6 +877,18 @@
       "snippet": "Busquem monitors/monitores i professors/professores per impartir tallers d’estudi i reforç escolar a alumnes d’educació primària i secundària en centres educatius de la zona de Sant Feliu de Guixols. GIRONA - BAIX EMPORDÀ - 17220 Sant Feliu de Guíxols",
       "created": "1792052126440",
       "expires": "2027-01-13T08:15:26.436Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92326853",
+      "title": "EDUCADOR/A ESCUELA INFANTIL - GUISSONA -",
+      "school": "",
+      "city": "LLEIDA - SEGARRA - 25210 GUISSONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326853",
+      "snippet": "¡Hola! ¿Tienes formación en Grado Superior en Educación Infantil? ¿Buscas un puesto relacionado que te permita seguir adquiriendo experiencia? Si es así, debes saber que EULEN Servicios Sociosanitarios selecciona un/a Educador/a para una escuela infantil ubicada en GUISSONA. Si crees que encajas con esta descripción, n",
+      "created": "1792051367668",
+      "expires": "2027-01-13T08:02:47.664Z",
       "automatic": true
     },
     {

@@ -2,7 +2,7 @@
   "sources": {
     "centres": {
       "state": "ok",
-      "updatedAt": "2026-11-09T07:04:05.840Z",
+      "updatedAt": "2026-11-09T09:29:15.121Z",
       "course": "2026/2027",
       "count": 3760,
       "concertCourse": "2024-2025",
@@ -11,14 +11,14 @@
     },
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-09T07:04:05.840Z",
+      "updatedAt": "2026-11-09T09:29:15.121Z",
       "count": 196,
-      "reviewed": 718,
+      "reviewed": 719,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-09T07:04:05.840Z",
+      "attemptedAt": "2026-11-09T09:29:15.121Z",
       "message": "fetch failed"
     },
     "gmail": {
@@ -26,6 +26,6 @@
       "message": "Pendent d’autorització de Google i configuració de credencials privades."
     }
   },
-  "checkedAt": "2026-11-09T07:04:05.840Z",
+  "checkedAt": "2026-11-09T09:29:15.121Z",
   "schedule": "Cada 6 hores"
 }
