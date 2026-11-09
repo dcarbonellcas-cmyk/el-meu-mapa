@@ -1,20 +1,32 @@
 {
-  "checkedAt": "2026-11-08T21:20:21.187Z",
+  "checkedAt": "2026-11-09T07:04:05.840Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-08T21:20:21.187Z",
-      "count": 195,
-      "reviewed": 717,
+      "updatedAt": "2026-11-09T07:04:05.840Z",
+      "count": 196,
+      "reviewed": 718,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-08T21:20:21.187Z",
+      "attemptedAt": "2026-11-09T07:04:05.840Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92328469",
+      "title": "MESTRE/A D'EDUCACIÓ INFANTIL I PRIMÀRIA",
+      "school": "Col·legi Sant Ferran",
+      "city": "BARCELONA - BARCELONÈS - 08042 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328469",
+      "snippet": "Busquem un mestre/a amb la doble titulació de mestre/a d'Infantil i Primària per una jornada completa de 30 i indefinida lligada a un contracte de jubliació parcial. IMPORTANT!! HA DE SER MESTRE I/O GRADUAT EN EDUCACIÓ PRIMÀRIA I INFANTIL. No poden ser d'altres titulacions relacionades amb educació.",
+      "created": "1794206232630",
+      "expires": "2027-02-07T06:37:12.626Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92328438",
       "title": "EDUCADOR/A SOCIAL O INTEGRADOR/A SOCIAL",
