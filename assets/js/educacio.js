@@ -107,7 +107,7 @@
  schoolDialog.innerHTML='<header class="educationSchoolDialogHeader">'+
    '<form method="dialog"><button class="smallBtn">Tancar</button></form>'+
    '<h2 id="educationSchoolTitle"></h2><p class="educationSchoolAddress" hidden></p></header>'+
-   '<div class="educationSchoolInfo"></div><div class="educationSchoolMiniMap" hidden></div>';
+   '<div class="educationSchoolInfo"></div><div class="mapbox educationSchoolMiniMap" hidden><div class="schoolMapCanvas"></div></div>';
  document.body.append(schoolDialog);
  const info=schoolDialog.querySelector('.educationSchoolInfo');
  const locationAddress=schoolDialog.querySelector('.educationSchoolAddress');
