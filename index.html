@@ -1,5 +1,5 @@
 <!doctype html><html lang="ca"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>El meu mapa d'escoles</title><link rel="apple-touch-icon" href="assets/icons/logo-dc.png"><link rel="icon" type="image/png" href="assets/icons/logo-dc.png"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
-<link rel="stylesheet" href="assets/css/styles.css?v=20261108-lleure-net"><link rel="stylesheet" href="assets/css/calendar.css?v=20261109-entrevistes"><script src="https://accounts.google.com/gsi/client" async defer></script>
+<link rel="stylesheet" href="assets/css/styles.css?v=20261109-seguiment"><link rel="stylesheet" href="assets/css/calendar.css?v=20261109-entrevistes"><script src="https://accounts.google.com/gsi/client" async defer></script>
 
 
 
@@ -128,7 +128,7 @@
       <button type="button" class="smallBtn calendar-entry" data-go="calendar">Calendari</button>
     </header>
 
-    <details style="background:white;padding:16px;border-radius:12px;margin:20px 0"><summary>Historial exacte dels correus enviats</summary><button type="button" class="smallBtn" id="refreshSentArchive">Actualitzar historial</button><div id="sentArchive" role="status"></div></details><div id="dashCards" class="dashboardCards"></div>
+    <details style="background:white;padding:16px;border-radius:12px;margin:20px 0"><summary>Historial exacte dels correus enviats</summary><button type="button" class="smallBtn" id="refreshSentArchive">Actualitzar historial</button><div id="sentArchive" role="status"></div></details><p id="dashMailTotal" class="muted"></p><label class="smallBtn">Importar historial privat de Gmail<input id="dashImportSent" type="file" accept=".json,application/json" hidden></label><p id="dashImportStatus" role="status"></p><div id="dashCards" class="dashboardCards"></div>
 
     <div class="dashboardResults">
       <div class="dashboardFilters filterPanel filterRail" role="group" aria-label="Filtres de candidatures">
@@ -212,5 +212,5 @@
 
 
 
-<script src="assets/js/app.js?v=20261109-primaria"></script>
+<script src="assets/js/app.js?v=20261109-seguiment"></script>
 </body></html>
