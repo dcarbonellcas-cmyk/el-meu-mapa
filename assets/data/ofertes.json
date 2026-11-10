@@ -1,16 +1,16 @@
 {
-  "checkedAt": "2026-11-09T22:38:46.486Z",
+  "checkedAt": "2026-11-10T07:40:01.774Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-09T22:38:46.486Z",
-      "count": 199,
-      "reviewed": 723,
+      "updatedAt": "2026-11-10T07:40:01.774Z",
+      "count": 198,
+      "reviewed": 720,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-09T22:38:46.486Z",
+      "attemptedAt": "2026-11-10T07:40:01.774Z",
       "message": "fetch failed"
     }
   },
@@ -313,18 +313,6 @@
       "snippet": "T’agrada treballar amb infants? Tens energia, creativitat i ganes de viure la màgia del Nadal des de dins?. A Diversport busquem MONITORS/MONITORES DE LLEURE per formar part de l’equip del Parc de Nadal de Montgat! Busquem persones dinàmiques, responsables i amb moltes ganes de fer que els més petits gaudeixin d’unes j",
       "created": "1793613911270",
       "expires": "2027-01-31T10:05:11.266Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92328011",
-      "title": "MONITOR/MONITORA DE MENJADOR ESCOLAR",
-      "school": "Escola",
-      "city": "BARCELONA - BAIX LLOBREGAT - 08640 OLESA DE MONTSERRAT",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328011",
-      "snippet": "Precisem incorporar un/a monitor/monitora de menjador per a una nova vacant al nostre Servei Migdia escolar de dilluns a divendres de 12:30 hores a 15:00 hores.",
-      "created": "1793608676436",
-      "expires": "2027-01-31T08:37:56.433Z",
       "automatic": true
     },
     {
