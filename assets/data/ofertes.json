@@ -1,16 +1,16 @@
 {
-  "checkedAt": "2026-11-10T15:30:47.252Z",
+  "checkedAt": "2026-11-10T19:57:00.542Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-10T15:30:47.252Z",
-      "count": 191,
-      "reviewed": 713,
+      "updatedAt": "2026-11-10T19:57:00.542Z",
+      "count": 189,
+      "reviewed": 710,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-10T15:30:47.252Z",
+      "attemptedAt": "2026-11-10T19:57:00.542Z",
       "message": "fetch failed"
     }
   },
@@ -109,18 +109,6 @@
       "snippet": "A Doble Via t'estem buscant! Si ets una persona amb iniciativa, dinàmica, entusiasta, amant del treball en equip volem que formis part d’un gran equip! Amb 25 anys d'història, oferim serveis integrals de gestió d’equipaments i programes d’acció social i cultural, d’educació, d’animació sociocultural i dinamització comu",
       "created": "1793954991822",
       "expires": "2027-02-04T08:49:51.819Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92328351",
-      "title": "MONITOR/MONITORA DE REFORÇ ESCOLAR-MANLLEU-(OSONA)",
-      "school": "EMPRESA DE FORMACIÓ",
-      "city": "BARCELONA - OSONA - 08560 MANLLEU",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328351",
-      "snippet": "Busquem un/a monitor/monitora amb experiència en reforç i suport educatiu escolar a nens/es de Primària a una escola de la població de Manlleu (Osona).",
-      "created": "1793949001991",
-      "expires": "2027-02-04T07:10:01.988Z",
       "automatic": true
     },
     {
@@ -541,18 +529,6 @@
       "snippet": "Nascor Formación és una consultoria especialitzada en projecte formatius i socioculturals i creiem en el poder de l'aprenentatge per a connectar persones i inquietuds i generar experiències enriquidores per la comunitat. Acualment estem buscant un/a docent per tal de dinamitzar i donar suport escolar a Instituts de Tor",
       "created": "1793099834508",
       "expires": "2027-01-25T11:17:14.504Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92327698",
-      "title": "MONITOR/MONITORA DE MENJADOR ESCOLAR A FIGUERES O RODALIES",
-      "school": "Empresa d'educació",
-      "city": "GIRONA - ALT EMPORDÀ - 17600 FIGUERES",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327698",
-      "snippet": "Cerquem un/a monitor/monitora de menjador escolar per una escola de Figueres ciutat.",
-      "created": "1793093694049",
-      "expires": "2027-01-25T09:34:54.045Z",
       "automatic": true
     },
     {
