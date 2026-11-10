@@ -1,16 +1,16 @@
 {
-  "checkedAt": "2026-11-10T07:40:01.774Z",
+  "checkedAt": "2026-11-10T15:30:47.252Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-10T07:40:01.774Z",
-      "count": 198,
-      "reviewed": 720,
+      "updatedAt": "2026-11-10T15:30:47.252Z",
+      "count": 191,
+      "reviewed": 713,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-10T07:40:01.774Z",
+      "attemptedAt": "2026-11-10T15:30:47.252Z",
       "message": "fetch failed"
     }
   },
@@ -832,18 +832,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92327082",
-      "title": "EDUCADOR/A SOCIAL - SIS - LLIÇÀ DE VALL",
-      "school": "Entitat del tercer sector",
-      "city": "BARCELONA - VALLÈS ORIENTAL - 08185 LLIÇÀ DE VALL",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327082",
-      "snippet": "Entitat del tercer sector busca un/a Educador/a Social per incorporar-se a un projecte SIS de Lliçà de Vall, en un projecte d’atenció a infants i adolescents en situació de risc i les seves famílies. Requereix dinamitzar un grup d’infants i adolescents des dels 0 als 18 anys, treballant conjuntament amb una parella edu",
-      "created": "1792405344278",
-      "expires": "2027-01-17T10:22:24.274Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92327055",
       "title": "COORDINADOR/A EDUCATIU/IVA -TARRAGONA-",
       "school": "FABRA FORMACIÓ S.L.",
@@ -1492,30 +1480,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92325378",
-      "title": "EDUCADOR/A SOCIAL - ESPAI DE CRIANÇA COMPARTIDA - VILANOVA DEL VALLÈS",
-      "school": "RECURSOS EDUCATIUS PER LA INFÀNCIA EN RISC",
-      "city": "BARCELONA - VALLÈS ORIENTAL - 08410 VILANOVA DEL VALLÈS",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92325378",
-      "snippet": "A REIR cerquem un/a educador/a social o integrador/a social per incorporar-se a l’Espai de Criança Compartida de Vilanova del Vallès. Es tracta d’un recurs gratuït, no formal ni reglat, adreçat a infants de 0 a 3 anys i les seves famílies. El projecte ofereix un espai d’acompanyament a la criança, joc i socialització, ",
-      "created": "1790147277581",
-      "expires": "2026-12-22T07:07:57.580Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92325374",
-      "title": "EDUCADOR/A SOCIAL - CRAE (TORN DE TARDA)",
-      "school": "RECURSOS EDUCATIUS PER LA INFÀNCIA EN RISC",
-      "city": "BARCELONA - VALLÈS ORIENTAL - 08430 ROCA DEL VALLÈS, LA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92325374",
-      "snippet": "A REIR cerquem un/a educador/a social per incorporar-se al CRAE Santa Agnès, situat a la Roca del Vallès. La persona seleccionada formarà part de l’equip educatiu del centre i serà responsable d’acompanyar els infants en el seu desenvolupament personal, social i emocional, garantint una atenció integral i un entorn seg",
-      "created": "1790146801581",
-      "expires": "2026-12-22T07:00:01.580Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92325357",
       "title": "MONITORS/ES DE GIMNASTICA RÍTMICA",
       "school": "ASSOCIACIO DIVERJOC FONT D'EN FARGAS",
@@ -2032,18 +1996,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92324462",
-      "title": "MONITORS/MONITORES ESPAI MIGDIA ZONA MARESME BAIX. CORRETORNS",
-      "school": "SANED",
-      "city": "BARCELONA - MARESME - 08304 MATARÓ",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92324462",
-      "snippet": "Es precisen monitors/monitores de menjador escolar pel curs 2026-27.",
-      "created": "1788955444644",
-      "expires": "2026-12-08T12:04:04.644Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92324433",
       "title": "MONITORS/MONITORES DE LLEURE - LLAR D'INFANTS - CERVERA",
       "school": "Associació Educativa Tropezando con Suerte",
@@ -2188,18 +2140,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92324092",
-      "title": "EDUCADOR/A SOCIAL - SERVEI D’INTERVENCIÓ SOCIOEDUCATIVA PETJADES (SIS)",
-      "school": "RECURSOS EDUCATIUS PER LA INFÀNCIA EN RISC",
-      "city": "BARCELONA - VALLÈS ORIENTAL - 08530 GARRIGA, LA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92324092",
-      "snippet": "A Recursos Educatius per la Infància en Risc treballem per afavorir el benestar i el desenvolupament integral dels infants i les famílies en situació de vulnerabilitat. Actualment, busquem incorporar un/a educador/a social al SIS Petjades de La Garriga.",
-      "created": "1788523732027",
-      "expires": "2026-12-03T12:08:52.026Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92324046",
       "title": "MONITORS/MONITORES DE MENJADOR 2026-2027",
       "school": "ASSOCIACIO DIVERJOC FONT D'EN FARGAS",
@@ -2209,30 +2149,6 @@
       "snippet": "T'agrada treballar amb infants i vols formar part del seu creixement i educació en el temps de lleure? T'estem buscant! Horari concentrat i compatible: Treballaràs en una franja aproximada de 12.50 h a 15.00 h, de dilluns a divendres. Per la Zona de Sant Martí. És un horari ideal i molt compacte, perfecte per combinar ",
       "created": "1788516728205",
       "expires": "2026-12-03T10:12:08.204Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92324040",
-      "title": "EDUCADOR/A SOCIAL - SUPORT A SERVEIS SOCIALS",
-      "school": "RECURSOS EDUCATIUS PER LA INFÀNCIA EN RISC",
-      "city": "BARCELONA - VALLÈS ORIENTAL - 08170 MONTORNÈS DEL VALLÈS",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92324040",
-      "snippet": "A Recursos Educatius per la Infància en Risc treballem per afavorir el benestar dels infants, adolescents i les seves famílies mitjançant l’acompanyament i la intervenció socioeducativa. Actualment, busquem un/a educador/a social per oferir suport professional dins dels Serveis Socials de Montornès del Vallès.",
-      "created": "1788515769864",
-      "expires": "2026-12-03T09:56:09.863Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92323864",
-      "title": "EDUCADOR/A SOCIAL - PROJECTES PAIPI I SIS AULA DE COLORS",
-      "school": "RECURSOS EDUCATIUS PER LA INFÀNCIA EN RISC",
-      "city": "BARCELONA - OSONA - 08591 AIGUAFREDA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92323864",
-      "snippet": "A Recursos Educatius per la Infància en Risc (REIR) treballem per millorar el benestar dels infants, adolescents i famílies en situació de vulnerabilitat social. Actualment, cerquem un/a educador/a social per incorporar-se a dos projectes socioeducatius que desenvolupem al municipi d’Aiguafreda: el Programa d’Atenció I",
-      "created": "1788350188582",
-      "expires": "2026-12-01T11:56:28.581Z",
       "automatic": true
     },
     {
