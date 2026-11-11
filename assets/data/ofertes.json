@@ -1,16 +1,16 @@
 {
-  "checkedAt": "2026-11-10T19:57:00.542Z",
+  "checkedAt": "2026-11-11T06:58:47.997Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-10T19:57:00.542Z",
-      "count": 189,
-      "reviewed": 710,
+      "updatedAt": "2026-11-11T06:58:47.997Z",
+      "count": 186,
+      "reviewed": 702,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-10T19:57:00.542Z",
+      "attemptedAt": "2026-11-11T06:58:47.997Z",
       "message": "fetch failed"
     }
   },
@@ -568,18 +568,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92327651",
-      "title": "MONITORS/MONITORES DE LLEURE- TARADELL (OSONA)",
-      "school": "Empresa de formació",
-      "city": "BARCELONA - OSONA - 08552 TARADELL",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327651",
-      "snippet": "Es precisa personal com a monitors/monitores de lleure per a realització d´activitats de cura d'infants en espais de joc a les poblacions de Taradell en horari de tarda, els dimecres de 14:50-17:10h",
-      "created": "1793019423526",
-      "expires": "2027-01-24T12:57:03.522Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92327626",
       "title": "EDUCADOR/A PEL CENTRE OBERT - EL RACÓ AL BARRI DE LA MINA (SANT ADRIÀ DE BESÒS)",
       "school": "Casal dels Infants",
@@ -661,18 +649,6 @@
       "snippet": "Es busca un/a monitor/monitora de menjador per treballar a l'Escola Pompeu Fabra de L'Hospitalet de Llobregat per diferents grups d'edats de infantil fins a primària. Per cobrir una baixa laboral. Horari: Dilluns a Divendres de 12:30 a 15h",
       "created": "1792740096131",
       "expires": "2027-01-21T07:21:36.128Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92327386",
-      "title": "MONITOR/A DE SUPORT EDUCATIU-MANLLEU-(OSONA)",
-      "school": "FABRA FORMACIÓ S.L.",
-      "city": "BARCELONA - OSONA - 08560 MANLLEU",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327386",
-      "snippet": "Busquem una persona amb experiència en reforç i suport educatiu escolar a nens/es de Primària per a dur a terme a diferents escoles de la població de Manlleu (Osona).",
-      "created": "1792656100600",
-      "expires": "2027-01-20T08:01:40.596Z",
       "automatic": true
     },
     {
@@ -1777,18 +1753,6 @@
       "snippet": "Cerquem un/a monitor/monitora. Candidat/a per impartir activitats extraescolars de mecanografia educativa per a nens i nenes de primària. De tracte afable amb dots per la docència i amb responsabilitat pel treball amb nens i nenes.",
       "created": "1789539987658",
       "expires": "2026-12-15T06:26:27.657Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92324799",
-      "title": "MONITOR/A EN REFORÇ ESCOLAR MATÈRIES CIENTÍFIQUES, 3R-4T ESO -LLEIDA-",
-      "school": "FABRA FORMACIÓ S.L.",
-      "city": "LLEIDA - SEGRIÀ - 25002 LLEIDA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92324799",
-      "snippet": "Busquem un/a docent amb experiència en reforç escolar per a alumnes de 3r i 4t d’ESO, especialment en les matèries científiques que s’imparteixen en aquests cursos: matemàtiques, física i química.",
-      "created": "1789539960548",
-      "expires": "2026-12-15T06:26:00.547Z",
       "automatic": true
     },
     {
