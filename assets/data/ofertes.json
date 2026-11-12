@@ -1,20 +1,32 @@
 {
-  "checkedAt": "2026-11-11T19:48:56.353Z",
+  "checkedAt": "2026-11-12T07:36:22.429Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-11T19:48:56.353Z",
+      "updatedAt": "2026-11-12T07:36:22.429Z",
       "count": 191,
-      "reviewed": 710,
+      "reviewed": 709,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-11T19:48:56.353Z",
+      "attemptedAt": "2026-11-12T07:36:22.429Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92328745",
+      "title": "MONITORS/ES D'EDUCACIÓ I TEMPS LLIURE",
+      "school": "Oficina de Treball del SOC",
+      "city": "BARCELONA - GARRAF - 08870 SITGES",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328745",
+      "snippet": "Es busquen monitors/es de lleure per donar suport en activitats esportives inclusives amb infants i joves de 5 a 15 anys. Es requereix experiència mínima de 6 mesos, títol de Monitor/a d'Activitats de Lleure Infantil i Juvenil i capacitat per treballar amb infants amb diversitat funcional. Es valorarà formació en l’àmb",
+      "created": "1794467530918",
+      "expires": "2027-02-10T07:12:10.915Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92328727",
       "title": "MONITORS/ES TRANSPORT ESCOLAR",
@@ -685,18 +697,6 @@
       "snippet": "Busquem monitors/monitores de lleure per dinamitzar els Casals de Nadal de l'Ajuntament de Lleida, que es desenvoluparan en tres escoles de la ciutat amb un màxim de 64 infants per centre",
       "created": "1792760009663",
       "expires": "2027-01-21T12:53:29.660Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92327534",
-      "title": "MONITOR/MONITORA DE MENJADOR PER REFOÇ A INFANTIL",
-      "school": "CATERING",
-      "city": "BARCELONA - BARCELONÈS - 08017 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327534",
-      "snippet": "Precisem incorporar a un/a monitor/monitora de menjador per fer un reforç amb els grups d'infantil de forma estable, fins a final de curs. Cerquem un perfil amb formació i experiència amb infants de grups d'infantil.",
-      "created": "1792755216625",
-      "expires": "2027-01-21T11:33:36.622Z",
       "automatic": true
     },
     {
