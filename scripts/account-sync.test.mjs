@@ -27,3 +27,14 @@ test('browser fetch retains the Window receiver for account requests and private
  assert.equal((await store.me()).id,'synthetic-user');
  assert.equal((await store.reset('test@example.invalid')).id,'synthetic-user');
 });
+
+test('a validated account opens the map even when cloud synchronisation is still pending',async()=>{
+ const ui=await readFile(new URL('../assets/js/account-sync.js',import.meta.url),'utf8');
+ const attach=ui.slice(ui.indexOf('  async function attach(){'),ui.indexOf('  form.onsubmit='));
+ const values=new Map([['owner','synthetic-user'],['device','synthetic-device']]),locks=[],messages=[];
+ const context={store:{token:'synthetic-token',me:async()=>({id:'synthetic-user',email:'test@example.invalid'})},ownerKey:'owner',tokenKey:'token',deviceKey:'device',localStorage:{getItem:key=>values.get(key),setItem:(key,value)=>values.set(key,value)},window:{},user:null,crypto:webcrypto,lock:value=>locks.push(value),say:text=>messages.push(text),sync:()=>new Promise(()=>{})};
+ vm.createContext(context);vm.runInContext(attach+';globalThis.attachTest=attach;',context);
+ const result=await Promise.race([context.attachTest().then(()=>true),new Promise(resolve=>setTimeout(()=>resolve(false),50))]);
+ assert.equal(result,true,'opening must not wait for the cloud');assert.deepEqual(locks,[false]);
+ assert.equal(values.get('token'),'synthetic-token');assert(!messages.some(text=>text.includes('Canvis sincronitzats')),'pending work must not be presented as saved');
+});

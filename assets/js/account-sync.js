@@ -38,14 +38,16 @@
     }
     user=identity;localStorage.setItem(tokenKey,store.token);window.MAPA_ACCOUNT_ACTIVE=true;
     if(!localStorage.getItem(deviceKey))localStorage.setItem(deviceKey,crypto.randomUUID());
-    await sync();lock(false);
+    // A validated account may open the app while cloud work continues.
+    lock(false);say('Compte connectat · preparant la sincronització…');
+    sync().catch(()=>{});
   }
   form.onsubmit=async event=>{event.preventDefault();submit.disabled=true;
     try{say('Connectant…');
       if(mode==='register'){if(password.value.length<12)throw Error('Fes servir una contrasenya de 12 caràcters com a mínim.');await store.register(email.value.trim(),password.value);password.value='';setMode('verify');say('T’hem enviat un codi al correu. Escriu-lo aquí.');return}
       if(mode==='reset'){await store.reset(email.value.trim());setMode('login');say('Si el compte existeix, rebràs un correu per recuperar la contrasenya.');return}
       if(mode==='verify'){const result=await store.verify(email.value.trim(),otp.value.trim());if(!result.access_token)throw Error('La verificació no s’ha completat.');store.token=result.access_token;otp.value=''}else await store.login(email.value.trim(),password.value);
-      password.value='';await attach();setMode('login');say('Compte connectat · canvis sincronitzats');
+      password.value='';setMode('login');await attach();
     }catch(error){password.value='';say(error.message)}finally{submit.disabled=false}
   };
   async function readManifest(row){
@@ -67,16 +69,18 @@
       // Fetch and validate every remote snapshot before changing local data.
       const payloads=[];for(const row of rows)payloads.push(await readManifest(row));
       applying=true;try{for(let i=0;i<payloads.length;i++){const row=rows[i];if(applied.get(row.id)!==row.payload_ref){await restorePortableBackup(payloads[i]);applied.set(row.id,row.payload_ref)}}}finally{applying=false}
+      say('Comprovant els documents i les dades d’aquest dispositiu…');
       const local=await collectPrivateBackup();const stable={...local};delete stable.createdAt;
       const hash=await digest(new TextEncoder().encode(JSON.stringify(stable)));
       if(hash!==lastHash){
         const documents=[];
-        for(const doc of local.documents){const {data,...meta}=doc;{const raw=bytes(data),key=await digest(raw);let ref=refs.get(key)?.ref;if(!ref){ref=await store.upload(raw);refs.set(key,{ref,data})}documents.push({...meta,ref})}}
+        for(const doc of local.documents){say('Desant document '+(documents.length+1)+' de '+local.documents.length+'…');const {data,...meta}=doc;{const raw=bytes(data),key=await digest(raw);let ref=refs.get(key)?.ref;if(!ref){ref=await store.upload(raw);refs.set(key,{ref,data})}documents.push({...meta,ref})}}
+        say('Desant el seguiment i confirmant la còpia privada…');
         const manifest={...local,documents};const manifestRef=await store.upload(new TextEncoder().encode(JSON.stringify(manifest)));
         const saved=await store.save(recordId,{device_id:device,payload_ref:JSON.stringify(manifestRef),format_version:1});if(!saved?.id)throw Error('El servei no ha confirmat el desament.');recordId=saved.id;lastHash=hash;
       }
       say('Canvis sincronitzats · '+new Date().toLocaleTimeString('ca-ES',{hour:'2-digit',minute:'2-digit'}));
-    }catch(error){say(error.message);if(error.status===401){user=null;window.MAPA_ACCOUNT_ACTIVE=false;localStorage.removeItem(tokenKey);lock(true)}throw error}
+    }catch(error){say('Sincronització pendent: '+error.message);if(error.status===401){user=null;window.MAPA_ACCOUNT_ACTIVE=false;localStorage.removeItem(tokenKey);lock(true)}throw error}
     finally{busy=false;if(user&&revision!==ownRevision)schedule()}
   }
   async function sync(){if(navigator.locks)return navigator.locks.request('mapa-account-sync',()=>doSync());return doSync()}
