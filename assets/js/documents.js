@@ -92,7 +92,7 @@ function clearManualMail(){
   manualMailOptions.replaceChildren();
   manualMailOptions.hidden=true;
 }
-document.getElementById('manualMail').addEventListener('click',async ()=>{
+document.getElementById('manualMail')?.addEventListener('click',async ()=>{
   clearManualMail();
   const request=manualMailRequest;
   const to=document.getElementById('draftTo').value.trim();
