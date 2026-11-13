@@ -4,7 +4,7 @@
  let loadedAt='';
  async function refresh(){try{
   const r=await fetch('assets/data/sincronitzacio.json',{cache:'no-store'});if(!r.ok)throw Error();const data=await r.json(),s=data.sources;
-  const lines=['Actualització programada cada 6 hores, també amb la web tancada.'];
+  const lines=['Actualització programada una vegada al dia a les 17:31 (Europe/Madrid), també amb la web tancada.'];
   const c=s.centres;if(c)lines.push('Centres: '+(c.count||'—')+' · curs '+(c.course||'—')+' · '+date(c.updatedAt)+(c.state==='error'?' · consulta fallida; còpia anterior':''));
   if(c?.state==='ok'&&loadedAt&&loadedAt!==c.updatedAt){
    const responses=await Promise.all(['centres.json','centres-arxivats.json'].map(p=>fetch('assets/data/'+p,{cache:'no-store'})));

@@ -12,7 +12,7 @@ Comprovada la pàgina publicada al navegador: navegació entre Inici, Infantil, 
 
 ## Actualització automàtica
 
-El workflow comprova i publica dades cada 6 hores (00:31, 06:31, 12:31 i 18:31 UTC, amb possibles retards de GitHub). L’execució es fa a GitHub Actions i funciona amb la pàgina tancada. Conserva la darrera còpia verificada al repositori; això també manté activitat i evita la desactivació del cron per 60 dies d’inactivitat. No s’han modificat les funcions ni la configuració del projecte actual de Netlify.
+El workflow comprova i publica dades una vegada al dia a les 17:31 Europe/Madrid (amb possibles retards de GitHub). L’execució es fa a GitHub Actions i funciona amb la pàgina tancada. Conserva la darrera còpia verificada al repositori; això també manté activitat i evita la desactivació del cron per 60 dies d’inactivitat. No s’han modificat les funcions ni la configuració del projecte actual de Netlify.
 
 Fonts: directori anual oficial kvmv-ahh4, darrer curs disponible; concerts oficials 8spq-9nx7, darrer curs disponible (actualment 2024-2025, que no acredita la situació actual de cada concert); Feina Activa categoria educativa, totes les pàgines de 20 resultats. Les absències del directori d’infantil s’arxiven i es conserva el seguiment local: no s’interpreten com un tancament confirmat. Les 82 entitats sectorials no tenen sincronització automàtica.
 

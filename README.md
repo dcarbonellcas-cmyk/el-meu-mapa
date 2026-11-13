@@ -68,7 +68,7 @@ La configuració queda preparada amb `npm run build`, directori de publicació `
 
 ## Dades
 
-La versió automatitzada consulta el directori oficial i Feina Activa cada 6 hores. El nombre de centres i ofertes varia segons les fonts. Les entitats i els canals de candidatura es revisen per separat; no es considera que totes les webs continguin una borsa pròpia. Consulta GITHUB_PAGES.md per veure la cobertura, l’estat de SEPE i la connexió privada de Gmail.
+La versió automatitzada consulta el directori oficial i Feina Activa una vegada al dia a les 17:31 (Europe/Madrid). El nombre de centres i ofertes varia segons les fonts. Les entitats i els canals de candidatura es revisen per separat; no es considera que totes les webs continguin una borsa pròpia. Consulta GITHUB_PAGES.md per veure la cobertura, l’estat de SEPE i la connexió privada de Gmail.
 
 ## Cerca docent i xarxes
 

@@ -6,7 +6,7 @@ const root=fileURLToPath(new URL('../assets/data/',import.meta.url));
 const read=async(name,fallback)=>{try{return JSON.parse(await readFile(root+name,'utf8'))}catch{return fallback}};
 const write=(name,value)=>writeFile(root+name,JSON.stringify(value,null,2)+'\n');
 const now=new Date().toISOString();
-const status=await read('sincronitzacio.json',{sources:{}});status.checkedAt=now;status.schedule='Cada 6 hores';
+const status=await read('sincronitzacio.json',{sources:{}});status.checkedAt=now;status.schedule='Diària a les 17:31 (Europe/Madrid)';
 async function request(url,type='json'){
   const r=await fetch(url,{signal:AbortSignal.timeout(20000),headers:{'user-agent':'ElMeuMapa/2.0 (+https://dcarbonellcas-cmyk.github.io/el-meu-mapa/)'}});
   if(!r.ok)throw Error('HTTP '+r.status);return type==='json'?r.json():r.text();

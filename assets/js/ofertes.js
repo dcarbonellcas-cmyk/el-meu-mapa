@@ -28,7 +28,7 @@
       for(const j of by.values())if(j.automatic&&!present.has(j.id))j.inactive=true;
       localStorage.setItem('mapaEscolesJobs_v1',JSON.stringify([...by.values()]));
       window.__renderJobs?.();
-      if(!silent&&notice){notice.style.display='block';notice.textContent='Ofertes públiques carregades: '+(data.jobs||[]).length+'. Comprovació: '+new Date(data.checkedAt).toLocaleString('ca-ES')+'. S’actualitzen cada 6 hores. '+(data.sources?.sepe?.state==='error'?'SEPE no ha respost a la darrera consulta. ':'')+'Gmail requereix completar la connexió privada.';}
+      if(!silent&&notice){notice.style.display='block';notice.textContent='Ofertes públiques carregades: '+(data.jobs||[]).length+'. Comprovació: '+new Date(data.checkedAt).toLocaleString('ca-ES')+'. S’actualitzen una vegada al dia a les 17:31 (Europe/Madrid). '+(data.sources?.sepe?.state==='error'?'SEPE no ha respost a la darrera consulta. ':'')+'Gmail requereix completar la connexió privada.';}
       return added;
     }catch(e){if(!silent&&notice){notice.style.display='block';notice.textContent='No s’ha pogut carregar la darrera còpia d’ofertes. Es conserven les que tenies: '+e.message;}return 0;}
   }
