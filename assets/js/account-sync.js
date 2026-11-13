@@ -6,7 +6,7 @@
   let user=null,busy=false,applying=false,revision=0,timer,recordId='',lastHash='',mode='login';
   const cache=new Map(),refs=new Map(),applied=new Map();
   const gate=document.createElement('section');gate.id='accountGate';gate.setAttribute('aria-label','Accés al teu mapa');
-  gate.innerHTML='<div class="accountCard"><img src="assets/icons/logo-dc.png" width="58" height="58" alt=""><h1>El teu mapa, a tot arreu</h1><p>Entra amb el mateix compte al mòbil i a l’ordinador per compartir les dades.</p><form id="accountForm"><label for="accountEmail">Correu electrònic</label><input id="accountEmail" type="email" autocomplete="username" required><label for="accountPassword">Contrasenya</label><input id="accountPassword" type="password" autocomplete="current-password" required><label for="accountOtp" hidden>Codi rebut per correu</label><input id="accountOtp" inputmode="numeric" autocomplete="one-time-code" hidden><button class="smallBtn" id="accountSubmit" type="submit">Entrar</button></form><p id="accountStatus" role="status">Comprovant l’accés…</p><div class="accountLinks"><button type="button" id="accountRegister">Crear el meu compte</button><button type="button" id="accountReset">He oblidat la contrasenya</button><button type="button" id="accountLocal">Continuar amb les dades d’aquest dispositiu</button></div><p class="muted">El compte i les còpies privades es guarden a Base44. La primera vegada, revisa les dades a l’ordinador on les tens i activa’n la sincronització. No s’envien correus de candidatura automàticament.</p></div>';
+  gate.innerHTML='<div class="accountCard"><img src="assets/icons/logo-dc.png" width="58" height="58" alt=""><h1>El teu mapa, a tot arreu</h1><p>Entra amb el mateix compte al mòbil i a l’ordinador per compartir les dades.</p><form id="accountForm"><label for="accountEmail">Correu electrònic</label><input id="accountEmail" type="email" autocomplete="username" required><label for="accountPassword">Contrasenya</label><input id="accountPassword" type="password" autocomplete="current-password" required><label for="accountOtp" hidden>Codi rebut per correu</label><input id="accountOtp" inputmode="numeric" autocomplete="one-time-code" hidden><button class="smallBtn" id="accountSubmit" type="submit">Entrar</button></form><p id="accountStatus" role="status">Comprovant l’accés…</p><div class="accountLinks"><button type="button" id="accountRegister">Crear el meu compte</button><button type="button" id="accountResend">Reenviar el codi de verificació</button><button type="button" id="accountReset">He oblidat la contrasenya</button><button type="button" id="accountLocal">Continuar amb les dades d’aquest dispositiu</button></div><p class="muted">El compte i les còpies privades es guarden a Base44. La primera vegada, revisa les dades a l’ordinador on les tens i activa’n la sincronització. No s’envien correus de candidatura automàticament.</p></div>';
   document.body.append(gate);document.getElementById('accountLoading')?.remove();
   const form=gate.querySelector('form'),email=gate.querySelector('#accountEmail'),password=gate.querySelector('#accountPassword'),otp=gate.querySelector('#accountOtp'),submit=gate.querySelector('#accountSubmit'),status=gate.querySelector('#accountStatus');
   const bar=document.createElement('div');bar.id='accountBar';bar.innerHTML='<span role="status"></span><button type="button">Compte</button>';document.body.append(bar);
@@ -18,6 +18,16 @@
   function setMode(next){mode=next;otp.hidden=next!=='verify';otp.previousElementSibling.hidden=otp.hidden;otp.required=!otp.hidden;password.required=!['verify','reset'].includes(next);password.hidden=!password.required;password.previousElementSibling.hidden=password.hidden;submit.textContent=next==='register'?'Crear compte':next==='verify'?'Confirmar codi':next==='reset'?'Recuperar contrasenya':'Entrar';say(next==='register'?'Crea el compte una sola vegada. Rebràs un codi de verificació.':'Escriu les dades del teu compte.');}
   gate.querySelector('#accountRegister').onclick=()=>setMode(mode==='register'?'login':'register');
   gate.querySelector('#accountReset').onclick=()=>setMode('reset');
+  let resendUntil=0;
+  gate.querySelector('#accountResend').onclick=async()=>{
+    if(!email.reportValidity())return;
+    const button=gate.querySelector('#accountResend');
+    if(Date.now()<resendUntil){say('Espera un minut abans de tornar a demanar el codi.');return}
+    button.disabled=true;
+    try{say('Demanant un altre codi…');await store.resend(email.value.trim());setMode('verify');resendUntil=Date.now()+60000;say('S’ha sol·licitat un altre codi. Revisa també Correu brossa. Si el compte ja estava verificat, torna a Entrar.');}
+    catch(error){say(error.message)}finally{button.disabled=false}
+  };
+
   async function attach(){
     const identity=await store.me();if(!identity?.id)throw Error('No s’ha pogut comprovar el compte.');
     const bound=localStorage.getItem(ownerKey);
