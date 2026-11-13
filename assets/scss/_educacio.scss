@@ -185,3 +185,12 @@
   height:clamp(240px,58dvh,520px);
   background:#eaf1e8;
 }
+
+.educationPrivatePortals,.educationTrackingGroup {margin:18px 0;border:1px solid #decfe4;border-radius:12px;background:#fff;overflow:hidden}
+.educationPrivatePortals>summary,.educationTrackingGroup>summary {cursor:pointer;padding:18px;font-weight:700;color:#53325f;background:#f5eef8;font-size:16px}
+.educationTrackingGroup[data-tracking-group=renew]>summary {color:#8b4422;background:#fff1e5}
+.educationTrackingBody {padding:16px;display:grid;gap:12px}
+.educationFollowUp {display:block;color:#704b28;margin:8px 0}
+.educationPrivatePortals .portalPage {padding:20px;max-width:none}
+.schoolLocationIcon {display:inline-grid!important;place-items:center;min-width:46px;min-height:46px;padding:6px!important;color:#694474!important}
+.schoolLocationIcon svg {display:block}

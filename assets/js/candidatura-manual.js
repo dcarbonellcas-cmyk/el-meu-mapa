@@ -25,7 +25,7 @@ function recordManualApplication(place,{date,title='',url=''}){
   dialog.querySelector('#manualCancel').addEventListener('click',()=>dialog.close());
   dialog.querySelector('form').addEventListener('submit',e=>{e.preventDefault();try{recordManualApplication(place,{date:dialog.querySelector('#manualDate').value,title:dialog.querySelector('#manualTitle').value.trim(),url:dialog.querySelector('#manualUrl').value.trim()});dialog.close();window.__renderDash?.();window.__renderLeisure?.()}catch(error){dialog.querySelector('#manualError').textContent=error.message}});
   document.addEventListener('click',e=>{const b=e.target.closest('[data-manual-application]');if(!b)return;
-    const all=[...window.MAPA_DATA.centres,...window.MAPA_DATA.entitats.infantil,...window.MAPA_DATA.entitats.lleure];
+    const all=[...window.MAPA_DATA.centres,...window.MAPA_DATA.entitats.infantil,...window.MAPA_DATA.entitats.lleure,...(typeof privatePortalRows==='function'?privatePortalRows(localStorage):[])];
     place=all.find(x=>String(x.id)===b.dataset.manualApplication);if(!place)return;
     dialog.querySelector('#manualPlace').textContent=place.name;
     const d=new Date();d.setMinutes(d.getMinutes()-d.getTimezoneOffset());

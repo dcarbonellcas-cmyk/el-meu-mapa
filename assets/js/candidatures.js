@@ -45,7 +45,8 @@ function mergeDashboardSentIndex(snapshot,existing,knownPlaces){
     const last=local&&(!gmail||Date.parse(local.date)>=Date.parse(gmail.date))?local:gmail;
     let label=labels[key]||'No contactada';
     if(last&&['none','prepared'].includes(key))label='CV enviat';
-    if(key==='sent'&&local&&last===local){const due=nextRenewalDate(local.date);if(due&&Date.now()>=due.getTime())label='Toca renovar candidatura';}
+    const tracking=trackingForPlace(s);
+    if(tracking.bucket==='renew')label='Toca renovar candidatura';
     return {status:label,hasSent:!!last||key==='sent',source:last?.source,date:last?.date||h[0]?.date||''};
   }
   function val(s, keys, fallback=""){

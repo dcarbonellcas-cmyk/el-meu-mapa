@@ -3,7 +3,7 @@
   async function updateDocsPage(){for(const [key,name,btn] of [['cv','docsCvName','docsCvOpen'],['letter','docsLetterName','docsLetterOpen'],['cvAlternative','docsCvAlternativeName','docsCvAlternativeOpen'],['recommendation','docsRecommendationName','docsRecommendationOpen']]){let d=null;try{d=await getDoc(key)}catch(e){}document.getElementById(name).textContent=d?'✓ '+d.name:'Cap fitxer guardat';document.getElementById(btn).style.display=d?'inline-block':'none'}}
   document.addEventListener('private-data-restored',()=>{updateDocsPage();refreshDocs()});
   function active(page) {
-    const navPage = page === 'managers' ? 'explore' : page;
+    const navPage = ['managers','portals'].includes(page) ? 'explore' : page;
     document.querySelectorAll('.navbtn').forEach(button => {
       const isCurrent = button.dataset.page === navPage;
       button.classList.toggle('active', isCurrent);
@@ -12,9 +12,10 @@
     });
   }
   function show(page){
+    if(page==='portals'){page='explore';const entry=document.getElementById('educationPrivatePortals');if(entry)entry.open=true}
+    document.getElementById('portalsPage').hidden=page!=='explore';
     document.getElementById('calendarPage').hidden=page!=='calendar';
-    document.getElementById('portalsPage').hidden=page!=='portals';
-    if(page==='portals')window.renderPrivatePortals?.();
+    if(page==='explore'){window.renderPrivatePortals?.();window.renderEducationTracking?.();}
     home.style.display='none';explore.style.display='none';leisure.style.display='none';jobs.style.display='none';docs.style.display='none';dash.style.display='none';document.getElementById('search').style.display='none';if(page==='home'){home.style.display='block'}else if(page==='explore'){explore.style.display='';document.getElementById('search').style.display='none';window.__renderManagers&&window.__renderManagers();setTimeout(()=>{if(window.map)map.invalidateSize()},80)}else if(page==='leisure'){leisure.style.display='block';if(typeof window.__renderLeisure==='function')window.__renderLeisure();}else if(page==='jobs'){jobs.style.display='block';if(typeof window.__renderJobs==='function')window.__renderJobs()}else if(page==='candidates'||page==='renew'){dash.style.display='block';const title=document.getElementById('dashboardTitle');if(title)title.textContent=page==='renew'?'🔔 Candidatures per renovar':'💌 Les meves candidatures';const sel=document.getElementById('dashStatus');if(sel)sel.value=page==='renew'?'Toca renovar candidatura':'';if(typeof window.__renderDash==='function')window.__renderDash()}else if(page==='docs'){docs.style.display='block';updateDocsPage()}else if(page==='calendar'){window.renderApplicationCalendar()}active(page)}
   window.appShow=show;
   document.querySelectorAll('[data-page]').forEach(b=>{if(b.id==='dashboardBtn')return;b.addEventListener('click',()=>show(b.dataset.page))});

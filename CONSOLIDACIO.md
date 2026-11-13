@@ -40,8 +40,12 @@ Els recordatoris mensuals es mostren a l’app; no constitueixen avisos push ni 
 
 ## Validació
 
-66 proves automatitzades superades, compilació i comprovacions de sintaxi, rutes, coherència de dades i privacitat. Inclou regressions de fusió d’entrevistes editades en les dues direccions i de recordatoris sense dia conegut. La publicació conté únicament els recursos públics permesos; els informes personals es mantenen fora del repositori.
+73 proves automatitzades superades, compilació i comprovacions de sintaxi, rutes, coherència de dades i privacitat. Inclou regressions de fusió d’entrevistes editades en les dues direccions i de recordatoris sense dia conegut. La publicació conté únicament els recursos públics permesos; els informes personals es mantenen fora del repositori.
 
 ## Borses de treball
 
 Nou apartat amb vistes «Borses inscrites» i «Borses pendents», cerca i casella amb tic verd. Els registres personals s’importen en privat i comparteixen les claus de les borses ja existents a Educació. Les escoles d’una mateixa xarxa s’agrupen en una sola inscripció. Cada nota distingeix compte creat, CV rebut i passos pendents; quan no hi ha accés directe verificat es mostra el web o el comprovant, sense inventar l’enllaç.
+
+## Reorganització d’Educació
+
+Borses de treball es troba dins d’Educació, sobre el mapa. Sota el mapa, Escoles, Fundacions i xarxes i Les meves borses ofereixen desplegables per a candidatures encara no enviades, enviades i per tornar a enviar. La classificació es deriva del darrer enviament confirmat, es recalcula en obrir la secció, tornar a la pestanya i periòdicament mentre és visible. Les respostes, entrevistes, rebutjos i incidències de lliurament aturen la renovació mensual; els seguiments mensuals expressos es respecten. Una data desconeguda no es dedueix de l’alta a una borsa. El botó del mini mapa es representa amb una icona d’ubicació amb escola i conserva una etiqueta accessible.
