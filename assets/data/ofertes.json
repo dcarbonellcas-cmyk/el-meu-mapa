@@ -1,20 +1,32 @@
 {
-  "checkedAt": "2026-11-13T10:22:56.197Z",
+  "checkedAt": "2026-11-13T17:07:12.187Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-13T10:22:56.197Z",
+      "updatedAt": "2026-11-13T17:07:12.187Z",
       "count": 187,
-      "reviewed": 713,
+      "reviewed": 716,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-13T10:22:56.197Z",
+      "attemptedAt": "2026-11-13T17:07:12.187Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92328883",
+      "title": "EDUCADOR/A SOCIAL",
+      "school": "Associació l'Esquitx",
+      "city": "BARCELONA - BARCELONÈS - 08003 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328883",
+      "snippet": "Qui som? L'Associació l'Esquitx som una entitat sense ànim de lucre, declarada d'utilitat pública l'any 2014, que des del 1985 treballem al barri del Casc Antic de Barcelona acompanyant infants i famílies. El nostre objectiu és promoure el desenvolupament integral dels infants, oferint un espai educatiu, de confiança i",
+      "created": "1794571620894",
+      "expires": "2027-02-11T12:07:00.891Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92328832",
       "title": "MONITORES/AS DE LLEURE – TALLERS DE NADAL A LA RIBERA D’EBRE",
@@ -481,18 +493,6 @@
       "snippet": "Es necessiten Monitors/monitores de menjador i dinamització de projecte",
       "created": "1793272522414",
       "expires": "2027-01-27T11:15:22.410Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92327853",
-      "title": "EDUCADOR/A-DOCENT REFORÇ EDUCATIU ASSISTIT PROGRAMA CAIXA PROINFÀNCIA",
-      "school": "FUNDACIÓ",
-      "city": "BARCELONA - BARCELONÈS - 08033 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327853",
-      "snippet": "A través de CaixaProinfància, a la Fundació ”la Caixa” treballem per oferir una vida millor a infants i adolescents que viuen en entorns desafavorits, a través d’un model d’acció social i educativa que ajuda a impulsar-ne la integració social, i la de les seves famílies. Dins del programa prestem diferents serveis com ",
-      "created": "1793258255419",
-      "expires": "2027-01-27T07:17:35.415Z",
       "automatic": true
     },
     {
