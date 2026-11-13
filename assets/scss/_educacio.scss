@@ -215,3 +215,7 @@
 .educationSchoolActions {margin-bottom:0}
 .educationToolbar {flex-wrap:wrap;overflow:visible}
 @media(max-width:760px){#educationResults{grid-template-columns:minmax(0,1fr)}.educationTrackingTabs .smallBtn{font-size:12px;padding:8px}.educationToolbar{gap:8px}.educationTools{flex-wrap:wrap}}
+
+.educationCvTabs {display:flex;gap:4px;padding:3px;border-radius:11px;background:var(--lilac-chip)}
+.educationCvTabs .smallBtn[aria-pressed=true] {background:#694474!important;color:white!important;border-color:#694474!important}
+.educationPrivatePortals .portalTabs {padding:5px;background:var(--lilac);border-radius:11px;width:fit-content}

@@ -2011,6 +2011,27 @@ body {
     flex-wrap: wrap;
   }
 }
+.educationCvTabs {
+  display: flex;
+  gap: 4px;
+  padding: 3px;
+  border-radius: 11px;
+  background: var(--lilac-chip);
+}
+
+.educationCvTabs .smallBtn[aria-pressed=true] {
+  background: #694474 !important;
+  color: white !important;
+  border-color: #694474 !important;
+}
+
+.educationPrivatePortals .portalTabs {
+  padding: 5px;
+  background: var(--lilac);
+  border-radius: 11px;
+  width: fit-content;
+}
+
 :root {
   --plum:#693778;
   --plum-ink:#492454;
