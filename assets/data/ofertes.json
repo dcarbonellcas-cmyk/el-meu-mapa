@@ -1,16 +1,16 @@
 {
-  "checkedAt": "2026-11-13T10:08:45.265Z",
+  "checkedAt": "2026-11-13T10:22:56.197Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-13T10:08:45.265Z",
-      "count": 188,
+      "updatedAt": "2026-11-13T10:22:56.197Z",
+      "count": 187,
       "reviewed": 713,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-13T10:08:45.265Z",
+      "attemptedAt": "2026-11-13T10:22:56.197Z",
       "message": "fetch failed"
     }
   },
@@ -541,18 +541,6 @@
       "snippet": "Es necessiten Monitors/monitores de menjador i dinamització de projecte",
       "created": "1793177933420",
       "expires": "2027-01-26T08:58:53.417Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92327773",
-      "title": "TÈCNIC/A D'EDUCACIÓ INFANTIL",
-      "school": "Col.legi Sant Marc de Sarrià",
-      "city": "BARCELONA - BARCELONÈS - 08017 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327773",
-      "snippet": "Busquem un/a professional apassionat/ada per l’educació infantil per incorporar-se al nostre equip de la Llar 0 anys.",
-      "created": "1793174440407",
-      "expires": "2027-01-26T08:00:40.404Z",
       "automatic": true
     },
     {
