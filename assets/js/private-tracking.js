@@ -42,7 +42,14 @@ function mergePrivateTracking(local,remote){
     if(key.startsWith('history_')){
       // Prefer the edited version of the same event; retain distinct events from both devices.
       const rows=latest===a?[...JSON.parse(b.value),...JSON.parse(a.value)]:[...JSON.parse(a.value),...JSON.parse(b.value)];
-      const unique=new Map(rows.map(x=>[JSON.stringify([x.date,x.type,x.text]),x]));
+      const identity=x=>x.type==='interview'&&x.interviewId ? x.interviewId : JSON.stringify([x.date,x.type,x.text]);
+      const unique=new Map();
+      for(const row of rows){
+        const id=identity(row),previous=unique.get(id);
+        // An unrelated edit on an old device must not undo an edited appointment.
+        const modified=value=>Number.isFinite(Date.parse(value?.modifiedAt))?Date.parse(value.modifiedAt):0;
+        if(!previous||modified(row)>=modified(previous))unique.set(id,row);
+      }
       entries[key]={updated:latest.updated,value:JSON.stringify([...unique.values()].sort((x,y)=>y.date.localeCompare(x.date)||JSON.stringify(x).localeCompare(JSON.stringify(y))))};
     }else entries[key]=latest;
   }

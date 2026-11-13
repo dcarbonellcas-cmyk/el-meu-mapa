@@ -128,3 +128,21 @@ test('sync preserves edited interview notes and month reminders in either merge 
   assert.deepEqual(JSON.parse(merged.entries.history_calendar_interviews.value),[edited]);
  }
 });
+
+
+test('renaming or correcting a legacy interview date does not resurrect it from another device',()=>{
+ const old={date:'2026-11-09T14:30:00Z',type:'interview',text:'School A'};
+ const edited={...old,interviewId:JSON.stringify([old.date,old.type,old.text]),date:'2026-11-10T14:30:00Z',text:'School A corrected',modifiedAt:'2026-11-13T11:00:00Z',note:'Preserved note',reminderMonth:'2027-09'};
+ const other={...old,text:'School B'};
+ const record=(rows,updated)=>({version:1,key:'tracking',updated,entries:{history_calendar_interviews:{value:JSON.stringify(rows),updated}}});
+ const s=setup();
+ const a=record([edited,other],'2026-11-13T12:00:00Z'), b=record([old],'2026-11-09T12:00:00Z');
+ const laterOldDevice=record([old],'2026-11-14T12:00:00Z');
+ for(const [local,remote] of [[a,b],[b,a],[a,laterOldDevice],[laterOldDevice,a]]){
+  const rows=JSON.parse(s.context.mergePrivateTracking(local,remote).entries.history_calendar_interviews.value);
+  assert.equal(rows.length,2);
+  assert(rows.some(row=>row.text===edited.text&&row.reminderMonth==='2027-09'));
+  assert(rows.some(row=>row.text===other.text));
+  assert(!rows.some(row=>row.text===old.text));
+ }
+});

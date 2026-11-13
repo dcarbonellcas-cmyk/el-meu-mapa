@@ -34,3 +34,13 @@ test('Gmail filters out automatic acknowledgements and unlinked senders',()=>{
   assert.equal(context.calendarGmailReply(message([from,{name:'Auto-Submitted',value:'auto-replied'}]),['school@example.com']),false);
   assert.equal(context.calendarGmailReply(message([from]),['other@example.com']),false);
 });
+
+
+test('month-only follow-ups remain in their month without inventing a day',()=>{
+  const interviews=[{text:'School A',reminderMonth:'2027-09'},{text:'School B',reminderMonth:'2027-09'},{text:'School C',outcome:'pending'}];
+  const result=context.calendarMonthFollowUps(interviews,'2027-09');
+  assert.equal(result.length,2);
+  assert(result.every(item=>!Object.hasOwn(item,'date')));
+  assert.equal(context.calendarMonthFollowUps(interviews,'2027-08').length,0);
+  assert.equal(context.calendarMonthFollowUps(interviews,'2027-13').length,0);
+});

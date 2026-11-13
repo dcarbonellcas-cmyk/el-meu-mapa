@@ -43,9 +43,15 @@ function applicationCalendarEvents(place, history, status) {
   return events;
 }
 
+function calendarMonthFollowUps(interviews,month){
+  // A month is not an appointment date: never assign an invented day or time.
+  if(!/^\d{4}-(0[1-9]|1[0-2])$/.test(month))return [];
+  return interviews.filter(item=>item.reminderMonth===month);
+}
+
 function calendarInterviewAppointments(){
   const interviews=hist('calendar_interviews').filter(item=>item.type==='interview'&&Number.isFinite(Date.parse(item.date)));
-  return [...new Map(interviews.map(item=>[JSON.stringify([new Date(item.date).toISOString(),norm(item.text).trim()]),item])).values()];
+  return [...new Map(interviews.map(item=>[item.interviewId||JSON.stringify([new Date(item.date).toISOString(),norm(item.text).trim()]),item])).values()];
 }
 
 (() => {
@@ -131,6 +137,14 @@ function calendarInterviewAppointments(){
       row.append(' ',edit);summary.append(row);
     }
     const key=dateKey(month).slice(0,7);
+    const followUps=byId('calendarMonthFollowUps');
+    followUps.replaceChildren();
+    for(const item of calendarMonthFollowUps(calendarInterviewAppointments(),key)){
+      const row=document.createElement('li');
+      row.textContent='Tornar a contactar · '+item.text+(item.note?' · '+item.note:'')+' · Dia pendent de concretar';
+      followUps.append(row);
+    }
+    byId('calendarMonthFollowUpSection').hidden=!followUps.children.length;
     const events=new Map();
     const all=localEvents();
     const currentDay=today();
@@ -246,7 +260,7 @@ function calendarInterviewAppointments(){
       const start=day?madridInstant(day,time||'12:00'):new Date();
       const dateUnknown=!day;
       if(calendarInterviewAppointments().some(x=>!(editingInterview&&x.date===editingInterview.date&&x.text===editingInterview.text)&&norm(x.text).trim()===norm(centre).trim()&&Boolean(x.dateUnknown)===dateUnknown&&(dateUnknown||x.date===start.toISOString())))throw Error('Aquesta entrevista ja consta al seguiment.');
-      const entry={type:'interview',date:start.toISOString(),dateUnknown,timeUnknown:!time,text:centre,
+      const entry={type:'interview',modifiedAt:new Date().toISOString(),interviewId:editingInterview?.interviewId||(editingInterview?JSON.stringify([editingInterview.date,editingInterview.type,editingInterview.text]):crypto.randomUUID()),date:start.toISOString(),dateUnknown,timeUnknown:!time,text:centre,
         outcome:fields.get('outcome'),note:fields.get('note').trim(),reminderMonth:fields.get('reminderMonth'),
         location:fields.get('location').trim(),duration:Number(fields.get('duration'))};
       if(editingInterview){

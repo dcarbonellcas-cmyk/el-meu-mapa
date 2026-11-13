@@ -1,5 +1,7 @@
 # Publicació a GitHub Pages
 
+Estat consolidat i límits de novembre de 2026: [CONSOLIDACIO.md](CONSOLIDACIO.md). Les comprovacions d’octubre que segueixen són històriques.
+
 Publicat: https://dcarbonellcas-cmyk.github.io/el-meu-mapa/
 
 El repositori és públic. Settings → Pages → Source: GitHub Actions. El workflow .github/workflows/pages.yml compila i comprova main, publica només public/ i respecta la regla existent que autoritza main a l’entorn github-pages.

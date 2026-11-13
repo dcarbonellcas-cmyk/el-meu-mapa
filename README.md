@@ -1,5 +1,7 @@
 # El meu mapa d’escoles
 
+Aplicació unificada de Buscar feina: [obrir la web](https://dcarbonellcas-cmyk.github.io/el-meu-mapa/). Consulta [la consolidació i els límits comprovats](CONSOLIDACIO.md). La branca de referència és `main`.
+
 Mapa de centres d’educació infantil i primària i entitats de lleure de Catalunya, amb seguiment local de candidatures, documents, ofertes i connexió opcional a Gmail.
 
 ## Estructura
@@ -54,7 +56,7 @@ El navegador continua carregant CSS. El CSS generat es conserva al repositori pe
 
 Els estats, notes, ofertes importades de Gmail i dades del perfil es guarden en `localStorage`; els CV i les cartes, en IndexedDB. Es conserven les claus i els identificadors originals. Aquest emmagatzematge pertany al navegador i a l’origen de la web: canviar de domini no transfereix les dades automàticament.
 
-La còpia local conté `private/candidatures-legacy.json` i `private/perfil.json`, exclosos de GitHub i de `public/`. Per recuperar-los, importa el perfil a **Els meus documents** i l’historial a **El meu Excel antic**. El repositori nou no inclou cap historial, nom de candidata, qualificació personal, CV ni carta.
+Les còpies antigues poden contenir `private/candidatures-legacy.json` i `private/perfil.json`, exclosos de GitHub i de `public/`. Si disposes d’aquests fitxers, importa el perfil a **Els meus documents** i l’historial a **El meu Excel antic**. El repositori nou no inclou cap historial, nom de candidata, qualificació personal, CV ni carta.
 
 `work/` conserva la versió original només com a còpia local i està exclosa del repositori. No pugis la carpeta completa manualment a cap allotjament: conté còpies i dades privades. La compilació prepara únicament els fitxers permesos a `public/`.
 
@@ -78,6 +80,6 @@ Les relacions de xarxa són parcials: només s’assignen quan coincideixen amb 
 
 Els esborranys no queden buits si falta l’experiència privada del dispositiu: es prepara un text complet que no inventa trajectòria ni titulacions. El perfil i els documents continuen sent privats; recuperar-los entre dispositius requereix autoritzar la sincronització. Una inscripció a una borsa no equival a una candidatura enviada ni a un compte confirmat.
 
-Revisió de xarxes de novembre de 2026: 153 centres vinculats amb fonts explícites, inclosos els centres de Vedruna, Maristes, Escola Pia i Escolàpies contrastats. SalleJob i Salesians SMX tenen accessos directes al seu portal de feina. Els estats personals d’inscripció es desen únicament al navegador; no hi ha inscripcions predefinides al codi públic.
+Revisió de xarxes de novembre de 2026: 153 centres vinculats amb fonts explícites, inclosos els centres de Vedruna, Maristes, Escola Pia i Escolàpies contrastats. SalleJob i Salesians SMX tenen accessos directes al seu portal de feina. Els estats personals d’inscripció es desen al navegador i opcionalment a la còpia privada de Drive; no hi ha inscripcions predefinides al codi públic.
 
 La còpia privada de Drive inclou el perfil, els quatre documents, els estats de les borses, l’historial, els estats i les notes de seguiment. Les dates dels canvis es comparen per registre i els historials es fusionen sense eliminar enviaments de l’altre dispositiu. Requereix connectar el mateix compte en cada navegador. Les còpies exactes dels correus arxivats continuen locals.
