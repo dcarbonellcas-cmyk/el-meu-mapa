@@ -1,7 +1,7 @@
 // Classic scripts retain the shared functions used by existing controls.
 (async function(){
   function loadScript(path){return new Promise((resolve,reject)=>{
-    const script=document.createElement('script');script.src=path+'?v=20261113-diari';script.async=false;
+    const script=document.createElement('script');script.src=path+'?v='+encodeURIComponent(document.querySelector('meta[name="mapa-release"]')?.content||'20261113-mobil');script.async=false;
     script.onload=resolve;script.onerror=()=>reject(new Error('No s’ha pogut carregar '+path));document.body.appendChild(script);
   })}
   try{

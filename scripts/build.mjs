@@ -1,4 +1,5 @@
-import {readFile,writeFile,mkdir,cp} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {readFile,writeFile,mkdir,cp,readdir} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {resolve} from 'node:path';
 import './styles.mjs';
@@ -14,3 +15,19 @@ for(const folder of ['css','js','data','icons']){
   await cp(resolve(root,'assets',folder),resolve(root,'public/assets',folder),{recursive:true});
 }
 console.log('Prepared public site: '+centres.length+' centres; private files excluded.');
+
+// Include public data as well, so a resumed mobile app can detect the daily publication.
+async function releaseFiles(dir){
+ const result=[];
+ for(const entry of (await readdir(resolve(root,dir),{withFileTypes:true})).sort((a,b)=>a.name.localeCompare(b.name))){
+  const path=dir+'/'+entry.name;
+  if(entry.isDirectory())result.push(...await releaseFiles(path));else result.push(path);
+ }
+ return result;
+}
+const digest=createHash('sha256');
+for(const file of ['index.html',...await releaseFiles('assets')]){digest.update(file);digest.update(await readFile(resolve(root,file)));}
+const version=digest.digest('hex').slice(0,16);
+const html=(await readFile(resolve(root,'index.html'),'utf8')).replace('__MAPA_RELEASE__',version).replace(/\?v=[A-Za-z0-9_-]+/g,'?v='+version);
+await writeFile(resolve(root,'public/index.html'),html);
+await writeFile(resolve(root,'public/app-version.json'),JSON.stringify({version}));
