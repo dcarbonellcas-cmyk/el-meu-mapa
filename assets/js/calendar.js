@@ -65,6 +65,7 @@ function calendarInterviewAppointments(){
   const utcDay=day=>new Date(day+'T00:00:00Z');
   let selected=today(), month=utcDay(selected.slice(0,7)+'-01');
   const interviewHistory='calendar_interviews';
+  let editingInterview=null;
   const interviewOutcomes={
     pending:'Pendent de resposta',
     favorable:'Resposta favorable',
@@ -116,7 +117,18 @@ function calendarInterviewAppointments(){
       const row=document.createElement('li');
       const outcome=hist(interviewHistory).find(x=>x.type==='interview_outcome'&&x.interviewDate===item.date&&x.text===item.text)?.outcome||item.outcome||'pending';
       row.textContent=item.text+' · '+(item.dateUnknown?'Data de l’entrevista pendent de confirmar':dayFormat.format(new Date(item.date)))+' · '+interviewOutcomes[outcome]+(item.note?' · '+item.note:'')+(item.reminderMonth?' · Tornar a contactar: '+item.reminderMonth:'');
-      summary.append(row);
+      const edit=document.createElement('button');edit.type='button';edit.className='smallBtn';edit.textContent='Editar entrevista';
+      edit.setAttribute('aria-label','Editar entrevista · '+item.text);
+      edit.addEventListener('click',()=>{
+        editingInterview=item;form.hidden=false;
+        form.elements.centre.value=item.text;
+        form.elements.date.value=item.dateUnknown?'':dayFormat.format(new Date(item.date));
+        form.elements.time.value=item.dateUnknown||item.timeUnknown?'':clockFormat.format(new Date(item.date));
+        form.elements.location.value=item.location||'';form.elements.duration.value=item.duration||'';
+        form.elements.outcome.value=outcome;form.elements.note.value=item.note||'';form.elements.reminderMonth.value=item.reminderMonth||'';
+        form.elements.centre.focus();
+      });
+      row.append(' ',edit);summary.append(row);
     }
     const key=dateKey(month).slice(0,7);
     const events=new Map();
@@ -233,10 +245,16 @@ function calendarInterviewAppointments(){
       if(time&&!day)throw Error('Indica el dia o deixa també l’hora en blanc.');
       const start=day?madridInstant(day,time||'12:00'):new Date();
       const dateUnknown=!day;
-      if(calendarInterviewAppointments().some(x=>norm(x.text).trim()===norm(centre).trim()&&Boolean(x.dateUnknown)===dateUnknown&&(dateUnknown||x.date===start.toISOString())))throw Error('Aquesta entrevista ja consta al seguiment.');
-      saveHistory(interviewHistory,{type:'interview',date:start.toISOString(),dateUnknown,timeUnknown:!time,text:centre,
+      if(calendarInterviewAppointments().some(x=>!(editingInterview&&x.date===editingInterview.date&&x.text===editingInterview.text)&&norm(x.text).trim()===norm(centre).trim()&&Boolean(x.dateUnknown)===dateUnknown&&(dateUnknown||x.date===start.toISOString())))throw Error('Aquesta entrevista ja consta al seguiment.');
+      const entry={type:'interview',date:start.toISOString(),dateUnknown,timeUnknown:!time,text:centre,
         outcome:fields.get('outcome'),note:fields.get('note').trim(),reminderMonth:fields.get('reminderMonth'),
-        location:fields.get('location').trim(),duration:Number(fields.get('duration'))});
+        location:fields.get('location').trim(),duration:Number(fields.get('duration'))};
+      if(editingInterview){
+        const rows=hist(interviewHistory).filter(x=>!(x.type==='interview'&&x.date===editingInterview.date&&x.text===editingInterview.text));
+        localStorage.setItem('history_'+interviewHistory,JSON.stringify([entry,...rows]));
+        saveHistory(interviewHistory,{type:'interview_outcome',date:new Date().toISOString(),text:entry.text,interviewDate:entry.date,outcome:entry.outcome});
+        editingInterview=null;
+      }else saveHistory(interviewHistory,entry);
       form.reset();
       form.hidden=true;
       showMonth(day||today());
@@ -284,6 +302,7 @@ function calendarInterviewAppointments(){
   });
 
   byId('calendarInterview').addEventListener('click',()=>{
+    editingInterview=null;form.reset();
     form.hidden=false;
     form.elements.date.value='';
     form.elements.centre.focus();
