@@ -17,3 +17,13 @@ test('private upload encrypts bytes and a second device decrypts them without se
 test('tampered ciphertext fails without yielding private bytes',async()=>{let ciphertext;const s=setup(async(url,options={})=>{if(url.endsWith('/UploadPrivateFile')){ciphertext=new Uint8Array(await options.body.get('file').arrayBuffer());return reply({file_uri:'private/test/file.bin'})}if(url.endsWith('/CreateFileSignedUrl'))return reply({signed_url:'https://private.example/file'});return new Response(ciphertext)});const ref=await s.upload(new TextEncoder().encode('CV'));ciphertext[0]^=1;await assert.rejects(s.download(ref));});
 test('authentication failure is explicit and never substitutes an empty successful result',async()=>{const s=setup(async()=>reply({},401));await assert.rejects(s.list('owner'),e=>e.status===401);});
 test('private record rules cover read, create, update and delete',async()=>{const schema=JSON.parse(await readFile(new URL('../backend/base44/entities/SyncDevice.jsonc',import.meta.url),'utf8'));for(const op of ['read','create','update','delete'])assert.deepEqual(schema.rls[op],{created_by_id:'{{user.id}}'});});
+
+test('browser fetch retains the Window receiver for account requests and private downloads',async()=>{
+ const context={crypto:webcrypto,btoa,atob,Uint8Array,TextEncoder,TextDecoder,FormData,File,URL,URLSearchParams,AbortSignal};
+ vm.createContext(context);
+ vm.runInContext(`fetch=function(){if(this!==globalThis)throw TypeError('Illegal invocation');return Promise.resolve({ok:true,status:200,json:async()=>({id:'synthetic-user'})})}`,context);
+ vm.runInContext(code,context);
+ const store=new context.MapaAccountCore.AccountStore();
+ assert.equal((await store.me()).id,'synthetic-user');
+ assert.equal((await store.reset('test@example.invalid')).id,'synthetic-user');
+});

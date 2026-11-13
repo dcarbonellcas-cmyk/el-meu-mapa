@@ -9,7 +9,7 @@
     return ref;
   }
   class AccountStore{
-    constructor({token='',fetcher=fetch}={}){this.token=token;this.fetcher=fetcher}
+    constructor({token='',fetcher=(...args)=>root.fetch(...args)}={}){this.token=token;this.fetcher=fetcher}
     async request(path,{method='GET',body}={}){
       const headers={'X-App-Id':APP};if(this.token)headers.Authorization='Bearer '+this.token;
       if(body&&!(body instanceof FormData)){headers['Content-Type']='application/json';body=JSON.stringify(body)}
