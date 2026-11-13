@@ -100,15 +100,24 @@ function calendarInterviewAppointments(){
       if(!outcomes.has(key))outcomes.set(key,item.outcome);
     }
     for(const item of calendarInterviewAppointments()){
+      if(item.dateUnknown)continue;
       const start=new Date(item.date);
-      events.push({type:'interview',date:dayFormat.format(start),time:clockFormat.format(start),
+      events.push({type:'interview',date:dayFormat.format(start),time:item.timeUnknown?'':clockFormat.format(start),
         title:'Entrevista · '+item.text,location:item.location,duration:item.duration,
-        interview:item,outcome:outcomes.get(JSON.stringify([item.date,item.text]))});
+        interview:item,outcome:outcomes.get(JSON.stringify([item.date,item.text]))||item.outcome});
     }
     return events;
   }
 
   function render(focusDay=false){
+    const summary=byId('calendarInterviewSummary');
+    summary.replaceChildren();
+    for(const item of calendarInterviewAppointments()){
+      const row=document.createElement('li');
+      const outcome=hist(interviewHistory).find(x=>x.type==='interview_outcome'&&x.interviewDate===item.date&&x.text===item.text)?.outcome||item.outcome||'pending';
+      row.textContent=item.text+' · '+(item.dateUnknown?'Data de l’entrevista pendent de confirmar':dayFormat.format(new Date(item.date)))+' · '+interviewOutcomes[outcome]+(item.note?' · '+item.note:'')+(item.reminderMonth?' · Tornar a contactar: '+item.reminderMonth:'');
+      summary.append(row);
+    }
     const key=dateKey(month).slice(0,7);
     const events=new Map();
     const all=localEvents();
@@ -221,12 +230,16 @@ function calendarInterviewAppointments(){
     const centre=fields.get('centre').trim(), day=fields.get('date'), time=fields.get('time');
     if(!centre){formStatus.textContent='Escriu el nom del centre o de l’empresa.';return;}
     try{
-      const start=madridInstant(day,time);
-      saveHistory(interviewHistory,{type:'interview',date:start.toISOString(),text:centre,
+      if(time&&!day)throw Error('Indica el dia o deixa també l’hora en blanc.');
+      const start=day?madridInstant(day,time||'12:00'):new Date();
+      const dateUnknown=!day;
+      if(calendarInterviewAppointments().some(x=>norm(x.text).trim()===norm(centre).trim()&&Boolean(x.dateUnknown)===dateUnknown&&(dateUnknown||x.date===start.toISOString())))throw Error('Aquesta entrevista ja consta al seguiment.');
+      saveHistory(interviewHistory,{type:'interview',date:start.toISOString(),dateUnknown,timeUnknown:!time,text:centre,
+        outcome:fields.get('outcome'),note:fields.get('note').trim(),reminderMonth:fields.get('reminderMonth'),
         location:fields.get('location').trim(),duration:Number(fields.get('duration'))});
       form.reset();
       form.hidden=true;
-      showMonth(day);
+      showMonth(day||today());
       status.textContent='Entrevista desada al calendari de l’app.';
       byId('calendarInterview').focus();
     }catch(error){formStatus.textContent=error.message;}
@@ -272,7 +285,7 @@ function calendarInterviewAppointments(){
 
   byId('calendarInterview').addEventListener('click',()=>{
     form.hidden=false;
-    form.elements.date.value=selected;
+    form.elements.date.value='';
     form.elements.centre.focus();
   });
   byId('calendarCancel').addEventListener('click',()=>{form.hidden=true;byId('calendarInterview').focus()});

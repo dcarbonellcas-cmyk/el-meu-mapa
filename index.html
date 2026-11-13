@@ -1,5 +1,5 @@
 <!doctype html><html lang="ca"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>El meu mapa d'escoles</title><link rel="apple-touch-icon" href="assets/icons/logo-dc.png"><link rel="icon" type="image/png" href="assets/icons/logo-dc.png"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
-<link rel="stylesheet" href="assets/css/styles.css?v=20261109-seguiment"><link rel="stylesheet" href="assets/css/calendar.css?v=20261109-entrevistes"><script src="https://accounts.google.com/gsi/client" async defer></script>
+<link rel="stylesheet" href="assets/css/styles.css?v=20261113-reparacions"><link rel="stylesheet" href="assets/css/calendar.css?v=20261113-reparacions"><script src="https://accounts.google.com/gsi/client" async defer></script>
 
 
 
@@ -89,10 +89,13 @@
     <h2>Afegir una entrevista</h2>
     <div class="calendar-form-fields">
       <label>Centre o empresa <input name="centre" required maxlength="150"></label>
-      <label>Dia <input name="date" type="date" required></label>
-      <label>Hora <input name="time" type="time" required></label>
+      <label>Dia (si el coneixes) <input name="date" type="date"></label>
+      <label>Hora (si la coneixes) <input name="time" type="time"></label>
       <label>Durada en minuts <input name="duration" type="number" min="5" max="480"></label>
       <label>Lloc o enllaç <input name="location" maxlength="300"></label>
+      <label>Resultat <select name="outcome"><option value="pending">Pendent de resposta</option><option value="unfavorable">Resposta desfavorable</option><option value="favorable">Resposta favorable</option></select></label>
+      <label>Nota <input name="note" maxlength="1000"></label>
+      <label>Mes per tornar a contactar <input name="reminderMonth" type="month"></label>
     </div>
     <div class="calendar-controls">
       <button type="submit" class="smallBtn calendar-interview-button">Desar l’entrevista</button>
@@ -100,6 +103,7 @@
     </div>
     <p id="calendarFormStatus" role="status"></p>
   </form>
+  <section aria-label="Seguiment d’entrevistes"><h2>Entrevistes i recordatoris</h2><ul id="calendarInterviewSummary"></ul></section>
   <ul class="calendar-legend" aria-label="Colors del calendari">
     <li class="calendar-sent">Enviament</li>
     <li class="calendar-renewal">Renovació prevista</li>
@@ -212,5 +216,5 @@
 
 
 
-<script src="assets/js/app.js?v=20261109-seguiment"></script>
+<script src="assets/js/app.js?v=20261113-reparacions"></script>
 </body></html>

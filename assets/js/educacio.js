@@ -112,6 +112,7 @@
  const info=schoolDialog.querySelector('.educationSchoolInfo');
  const locationAddress=schoolDialog.querySelector('.educationSchoolAddress');
  const miniMapHost=schoolDialog.querySelector('.educationSchoolMiniMap');
+ const miniMapCanvas=miniMapHost.querySelector('.schoolMapCanvas');
  let miniMap;
  schoolDialog.addEventListener('close',()=>{
    miniMap?.remove();
@@ -147,7 +148,9 @@
    miniMapHost.hidden=!hasPoint;
    schoolDialog.showModal();
    if(!hasPoint)return;
-   miniMap=createSchoolMap(miniMapHost,[school.lat,school.lng],17);
+   miniMap?.remove();
+   miniMap=createSchoolMap(miniMapCanvas,[school.lat,school.lng],17);
+   requestAnimationFrame(()=>miniMap?.invalidateSize());
    createSchoolMarker(school).addTo(miniMap);
  }
  function groupCard(g){const members=rows().filter(x=>x.networkId===g.id);const umbrella=g.id==='xarxa_fecc'||g.relationshipType==='job-board';return '<details class="educationGroup"><summary><strong>'+esc(g.name)+'</strong><span>'+(umbrella?'Borsa compartida d’escoles de titularitats diferents':members.length+' centres vinculats i comprovats per a aquesta etapa')+'</span></summary><div class="educationGroupBody"><p>'+esc(g.verified||g.services)+'</p><div class="educationActions">'+link(g.careers,g.id==='xarxa_fep'?'Candidatura general · Borsa FECC':verifiedPortals.has(g.id)?'Candidatura general · entrar a la borsa':'Web i contacte · borsa pendent de verificar')+bankLinks(g)+link(g.web,'Web de l’entitat')+'</div>'+statusSelect(g.id,g.name)+manualApplicationButton(g)+'<p class="muted">La inscripció general i les candidatures a cada oferta són tràmits diferents. Revisa les instruccions de la borsa abans de duplicar enviaments.</p>'+members.map(schoolCard).join('')+(!members.length?(umbrella?'<p>Aquesta és una borsa compartida, no la titular de totes les escoles. Consulta les ofertes del portal i la titularitat de cada centre.</p>':'<p>Encara no hi ha centres vinculats amb una font contrastada per a aquest filtre. Consulta el directori de la xarxa; això no vol dir que no tingui escoles.</p>'):'')+'</div></details>'}
