@@ -1,9 +1,9 @@
 (() => {
  const main=document.querySelector('#explorePage .mapwrap');if(!main)return;
- let stage='bressol',view='schools',query='',kind='nonpublic';
+ let stage='bressol',view='schools',query='',kind='all',trackingFilter='all';
  const pageSize=20;
  function resetTrackingPages(){for(const key of Object.keys(trackingPages))trackingPages[key]=1}
- const trackingPages={unsent:1,sent:1,renew:1},openTracking=new Set();
+ const trackingPages={all:1,unsent:1,sent:1,renew:1};
  const labels={bressol:'Bressol · 0–3',infantil:'Infantil · 3–6',primaria:'Primària'};
  const roles={bressol:'infantil03',infantil:'infantil36',primaria:'primaria'};
  const entities=window.MAPA_DATA.entitats.infantil;
@@ -14,7 +14,7 @@
  document.querySelector('.infantDrop').hidden=true;
  document.getElementById('cards').hidden=true;
  const oldPortals=document.getElementById('jobPortals');if(oldPortals)oldPortals.hidden=true;
- const mapDrop=document.createElement('details');mapDrop.className='educationMap';mapDrop.id='educationSchoolMap';mapDrop.innerHTML='<summary>Veure els centres al mapa</summary>';
+ const mapDrop=document.createElement('details');mapDrop.className='educationMap';mapDrop.id='educationSchoolMap';mapDrop.hidden=true;mapDrop.innerHTML='<summary hidden>Mapa de centres educatius</summary>';
  const head=main.querySelector('.maphead'),box=main.querySelector('.mapbox');if(head&&box){head.before(mapDrop);mapDrop.append(head,box)}
  mapDrop.addEventListener('toggle',()=>{if(mapDrop.open&&window.map){map.invalidateSize();draw()}});
  const origin=[41.499,2.322];
@@ -178,8 +178,9 @@
 
  const content=h.querySelector('.educationContent');
  function showEducationMap(){
-   mapDrop.open=true;
-   mapDrop.querySelector('summary').focus({preventScroll:true});
+   window.closeEducationRegistrations?.();
+   mapDrop.hidden=false;mapDrop.open=true;
+   document.getElementById('educationMapToggle')?.setAttribute('aria-expanded','true');
    mapDrop.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
  }
 
@@ -203,11 +204,15 @@
    const registrationTabs=portalPage.querySelector('.portalTabs');registrationTabs.classList.add('educationStages');
    registrationBar.append(registrationTabs);privatePortals.append(registrationBar,portalPage);
    content.before(privatePortals,mapDrop);
-   addMapShortcut(mapDrop);
+   const mapToggle=document.createElement('button');mapToggle.id='educationMapToggle';mapToggle.type='button';mapToggle.className='smallBtn';mapToggle.textContent='⌖ Mapa de centres';mapToggle.setAttribute('aria-expanded','false');mapToggle.setAttribute('aria-controls','educationSchoolMap');
+   registrationBar.append(mapToggle);
+   mapToggle.addEventListener('click',()=>{if(mapDrop.hidden)showEducationMap();else{mapDrop.hidden=true;mapDrop.open=false;mapToggle.setAttribute('aria-expanded','false')}});
    const offersHeading=document.querySelector('#jobsPage .jobsHero');
    if(offersHeading) addMapShortcut(offersHeading,true);
  }
 
+ h.querySelector('#educationKind').value=kind;
+ document.addEventListener('education-registration-view',event=>{content.hidden=event.detail.open;if(event.detail.open){mapDrop.hidden=true;mapDrop.open=false;document.getElementById('educationMapToggle')?.setAttribute('aria-expanded','false')}});
  const toolbarButtons=h.querySelectorAll('[data-education-stage], [data-education-view]');
  h.querySelector('#educationKind').addEventListener('change',e=>{kind=e.target.value;resetTrackingPages();syncMap();paint()});
  h.querySelector('#educationQuery').addEventListener('input',e=>{query=e.target.value;resetTrackingPages();syncMap();paint()});
@@ -239,13 +244,18 @@
  const candidates=view==='schools'?list:(view==='networks'?entities.filter(g=>networkIDs.has(g.id)||g.id.startsWith('gestora_')):[...uniquePortals.values()]).filter(g=>!query||norm(g.name).includes(norm(query))||list.some(x=>x.networkId===g.id));
  const buckets={unsent:[],sent:[],renew:[]};
  for(const place of candidates)buckets[trackingForPlace(place).bucket].push(place);
- const bucketNames={unsent:'Encara no he enviat candidatura',sent:'Candidatures enviades',renew:'Per tornar a enviar la candidatura'};
  const portalCard=g=>'<article class="educationSchool '+(portalStatus(g.id)==='registered'?'educationPortalRegistered':'')+'"><div><h3>'+esc(g.name)+'</h3>'+statusSelect(g.id,g.name)+manualApplicationButton(g)+'<p>'+esc(trackingForPlace(g).reason||'No consta un enviament amb data confirmada.')+'</p>'+(g.note?'<p>'+esc(g.note)+'</p>':'')+'</div><div class="educationActions">'+link(g.careers,'Entrar a la borsa')+bankLinks(g)+'</div></article>';
- const grouped=Object.entries(buckets).map(([bucket,places])=>'<details class="educationTrackingGroup" data-tracking-group="'+bucket+'"'+(openTracking.has(bucket)?' open':'')+'><summary>'+bucketNames[bucket]+' <span>('+places.length+')</span></summary><div class="educationTrackingBody">'+(places.length?(view==='schools'?schoolResults(places,bucket):places.map(view==='networks'?groupCard:portalCard).join('')):'<p>No hi ha registres en aquest grup amb els filtres actuals.</p>')+'</div></details>').join('');
- content.innerHTML=(stage==='primaria'?'<p class="educationNotice">Per treballar de mestra de Primària cal complir els requisits del lloc. El teu grau continua en curs.</p>':'')+'<p class="muted">Els grups es recalculen automàticament un mes després del darrer enviament confirmat. Una resposta o entrevista atura la renovació mensual; es respecten els recordatoris acordats. No s’envien correus automàticament. Tenir compte en una borsa no equival a haver enviat una candidatura.</p><div id="educationResults" tabindex="-1">'+grouped+'</div><details class="educationCoverage"><summary>Cobertura i verificació del directori</summary><p>Centres d’Infantil i Primària del directori oficial del curs actual. No garanteix exhaustivitat en temps real. '+linked+' centres tenen una xarxa vinculada mitjançant una llista contrastada o el seu domini institucional. Els altres continuen pendents de revisió; no es consideren automàticament independents.</p><p>Els correus provenen del directori oficial. «Web del centre» no significa que s’hi hagi verificat una borsa pròpia. Les inscripcions, el perfil i els enviaments són privats i no es publiquen a GitHub. L’estat de les borses es desa en aquest navegador i se sincronitza quan connectes el mateix compte de Google a Documents.</p><a href="https://analisi.transparenciacatalunya.cat/d/kvmv-ahh4" target="_blank" rel="noopener">Consultar el directori oficial</a></details>';
+ const selected=trackingFilter==='all'?candidates:buckets[trackingFilter];
+ const trackingNames={all:'Totes',unsent:'Encara no enviada',sent:'Enviades',renew:'Per tornar a enviar'};
+ const filters='<div class="educationTrackingTabs" role="group" aria-label="Seguiment de candidatures">'+Object.entries(trackingNames).map(([key,label])=>'<button type="button" class="smallBtn" data-education-tracking="'+key+'" aria-pressed="'+(key===trackingFilter)+'">'+label+' <span>('+(key==='all'?candidates.length:buckets[key].length)+')</span></button>').join('')+'</div>';
+ const results=selected.length?(view==='schools'?schoolResults(selected,trackingFilter):selected.map(view==='networks'?groupCard:portalCard).join('')):'<p>No hi ha coincidències amb aquests filtres.</p>';
+ content.innerHTML=filters+'<div id="educationResults" tabindex="-1">'+results+'</div>' +'<details class="educationCoverage"><summary>Cobertura i verificació del directori</summary><p>Centres d’Infantil i Primària del directori oficial del curs actual. No garanteix exhaustivitat en temps real. '+linked+' centres tenen una xarxa vinculada mitjançant una llista contrastada o el seu domini institucional. Els altres continuen pendents de revisió; no es consideren automàticament independents.</p><p>Els correus provenen del directori oficial. «Web del centre» no significa que s’hi hagi verificat una borsa pròpia. Les inscripcions, el perfil i els enviaments són privats i no es publiquen a GitHub. L’estat de les borses es desa en aquest navegador i se sincronitza quan connectes el mateix compte de Google a Documents.</p><a href="https://analisi.transparenciacatalunya.cat/d/kvmv-ahh4" target="_blank" rel="noopener">Consultar el directori oficial</a></details>';
  }
  h.addEventListener('change',e=>{const s=e.target.closest('[data-education-status]');if(!s)return;const key=portalKey(s.dataset.educationStatus);localStorage.setItem('jobPortal_'+key,JSON.stringify({...JSON.parse(localStorage.getItem('jobPortal_'+key)||'{}'),status:s.value,updated:new Date().toISOString()}));document.dispatchEvent(new Event('private-data-changed'))});
  h.addEventListener('click',e=>{const stageButton=e.target.closest('[data-education-stage]'),tab=e.target.closest('[data-education-view]'),mail=e.target.closest('[data-education-mail]'),profile=e.target.closest('[data-education-profile]'),location=e.target.closest('[data-education-location]');
+ const trackingButton=e.target.closest('[data-education-tracking]');
+ if(trackingButton){trackingFilter=trackingButton.dataset.educationTracking;resetTrackingPages();paint()}
+ if(stageButton||tab){window.closeEducationRegistrations?.();trackingFilter='all'}
  if(stageButton){stage=stageButton.dataset.educationStage;window.educationStage=stage;resetTrackingPages();syncMap();paint()}
  if(tab){view=tab.dataset.educationView;resetTrackingPages();paint()}
  const pageButton=e.target.closest('[data-education-page]');
@@ -260,7 +270,7 @@
  const id=profile?.dataset.educationProfile||location?.dataset.educationLocation;
  if(id){const x=schools.find(s=>String(s.id)===id);if(x)(location?showSchoolOnMap:showSchool)(x)}
  });
- h.addEventListener('toggle',event=>{const bucket=event.target.dataset.trackingGroup;if(bucket){if(event.target.open)openTracking.add(bucket);else openTracking.delete(bucket)}},true);
+
  document.addEventListener('visibilitychange',()=>{if(!document.hidden)paint()});
  setInterval(()=>{if(!document.hidden)paint()},60000);
  window.renderEducationTracking=paint;

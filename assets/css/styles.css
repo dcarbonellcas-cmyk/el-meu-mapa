@@ -1923,6 +1923,94 @@ body {
   border-radius: 12px;
 }
 
+/* Education opens on the directory; status filters never hide it in accordions. */
+#explorePage:has(#detail.emptyPanel) {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 1200px;
+}
+
+#explorePage #detail.emptyPanel {
+  display: none;
+}
+
+.educationRegistrationBar {
+  gap: 14px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.educationTrackingTabs {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  padding: 5px;
+  border: 1px solid var(--lilac-line);
+  border-radius: 12px;
+  background: var(--lilac);
+  margin: 14px 0;
+}
+
+.educationTrackingTabs .smallBtn {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 13px;
+  background: transparent;
+  color: #633c71;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  min-height: 40px;
+}
+
+.educationTrackingTabs .smallBtn[aria-pressed=true] {
+  background: #fff;
+  border-color: #decfe4;
+  box-shadow: 0 1px 3px rgba(83, 50, 95, 0.062745098);
+}
+
+#educationResults {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  align-items: start;
+}
+
+#educationResults > .educationSchool {
+  margin: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#educationResults > .educationGroup, #educationResults > .educationPagination, #educationResults > p {
+  grid-column: 1/-1;
+  margin: 0;
+}
+
+.educationSchoolActions {
+  margin-bottom: 0;
+}
+
+.educationToolbar {
+  flex-wrap: wrap;
+  overflow: visible;
+}
+
+@media (max-width: 760px) {
+  #educationResults {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .educationTrackingTabs .smallBtn {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .educationToolbar {
+    gap: 8px;
+  }
+  .educationTools {
+    flex-wrap: wrap;
+  }
+}
 :root {
   --plum:#693778;
   --plum-ink:#492454;
