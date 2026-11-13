@@ -88,7 +88,7 @@
  }
  function schoolCard(x){
    const group=entities.find(e=>e.id===x.networkId);
-   const sent=hist(x.id).some(h=>h.type==='sent')||state(x.id)==='sent';
+   const sent=trackingForPlace(x).hasSent;
    const km=distance(x), id=esc(x.id), name=esc(x.name);
    return `<article class="educationSchool">
      <h3><button type="button" class="educationSchoolName" data-education-profile="${id}">${name}</button></h3>
@@ -204,7 +204,7 @@
    const registrationTabs=portalPage.querySelector('.portalTabs');registrationTabs.classList.add('educationStages');
    portalPage.prepend(registrationTabs);
    const cvTabs=document.createElement('div');cvTabs.className='educationStages educationCvTabs';cvTabs.setAttribute('role','group');cvTabs.setAttribute('aria-label','Enviament del currículum');
-   cvTabs.innerHTML='<button type="button" class="smallBtn" data-education-tracking="sent" aria-pressed="false">CV enviats</button><button type="button" class="smallBtn" data-education-tracking="pending" aria-pressed="false">CV per enviar</button>';
+   cvTabs.innerHTML='<button type="button" class="smallBtn" data-education-tracking="all" aria-pressed="true">Tots els centres</button><button type="button" class="smallBtn" data-education-tracking="sent" aria-pressed="false">CV enviats</button><button type="button" class="smallBtn" data-education-tracking="pending" aria-pressed="false">CV per enviar</button>';
    const registrationsButton=document.createElement('button');registrationsButton.id='educationRegistrationsButton';registrationsButton.type='button';registrationsButton.className='smallBtn';registrationsButton.textContent='Inscripcions web';registrationsButton.hidden=true;
    registrationsButton.addEventListener('click',()=>{portalPage.querySelector('[data-portal-view="registered"]').click()});
    registrationBar.append(cvTabs,registrationsButton);privatePortals.append(registrationBar,portalPage);
@@ -247,10 +247,8 @@
  const uniquePortals=new Map(entities.filter(g=>verifiedPortals.has(g.id)&&g.careers).map(g=>[portalKey(g.id),{...g,id:portalKey(g.id)}]));
  if(typeof privatePortalRows==='function')for(const row of privatePortalRows(localStorage))uniquePortals.set(row.id,{...uniquePortals.get(row.id),...row,careers:row.url,web:row.url});
  const candidates=view==='schools'?list:(view==='networks'?entities.filter(g=>networkIDs.has(g.id)||g.id.startsWith('gestora_')):[...uniquePortals.values()]).filter(g=>!query||norm(g.name).includes(norm(query))||list.some(x=>x.networkId===g.id));
- const buckets={unsent:[],sent:[],renew:[]};
- for(const place of candidates)buckets[trackingForPlace(place).bucket].push(place);
  const portalCard=g=>'<article class="educationSchool '+(portalStatus(g.id)==='registered'?'educationPortalRegistered':'')+'"><div><h3>'+esc(g.name)+'</h3>'+statusSelect(g.id,g.name)+manualApplicationButton(g)+'<p>'+esc(trackingForPlace(g).reason||'No consta un enviament amb data confirmada.')+'</p>'+(g.note?'<p>'+esc(g.note)+'</p>':'')+'</div><div class="educationActions">'+link(g.careers,'Entrar a la borsa')+bankLinks(g)+'</div></article>';
- const selected=trackingFilter==='all'?candidates:trackingFilter==='pending'?[...buckets.unsent,...buckets.renew]:buckets.sent;
+ const selected=candidates.filter(place=>candidatureDeliveryMatches(trackingForPlace(place),trackingFilter));
  h.querySelectorAll('[data-education-tracking]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.educationTracking===trackingFilter)));
  document.getElementById('educationRegistrationsButton').hidden=view!=='portals';
  const results=selected.length?(view==='schools'?schoolResults(selected,trackingFilter):selected.map(view==='networks'?groupCard:portalCard).join('')):'<p>No hi ha coincidències amb aquests filtres.</p>';
@@ -259,7 +257,7 @@
  h.addEventListener('change',e=>{const s=e.target.closest('[data-education-status]');if(!s)return;const key=portalKey(s.dataset.educationStatus);localStorage.setItem('jobPortal_'+key,JSON.stringify({...JSON.parse(localStorage.getItem('jobPortal_'+key)||'{}'),status:s.value,updated:new Date().toISOString()}));document.dispatchEvent(new Event('private-data-changed'))});
  h.addEventListener('click',e=>{const stageButton=e.target.closest('[data-education-stage]'),tab=e.target.closest('[data-education-view]'),mail=e.target.closest('[data-education-mail]'),profile=e.target.closest('[data-education-profile]'),location=e.target.closest('[data-education-location]');
  const trackingButton=e.target.closest('[data-education-tracking]');
- if(trackingButton){window.closeEducationRegistrations?.();trackingFilter=trackingFilter===trackingButton.dataset.educationTracking?'all':trackingButton.dataset.educationTracking;resetTrackingPages();paint()}
+ if(trackingButton){window.closeEducationRegistrations?.();trackingFilter=trackingButton.dataset.educationTracking;resetTrackingPages();paint()}
  if(stageButton||tab){window.closeEducationRegistrations?.();trackingFilter='all'}
  if(stageButton){stage=stageButton.dataset.educationStage;window.educationStage=stage;resetTrackingPages();syncMap();paint()}
  if(tab){view=tab.dataset.educationView;resetTrackingPages();paint()}

@@ -41,3 +41,8 @@ function trackingForPlace(place,now=new Date()){
   const current=ids.map(key=>state(key)).find(value=>value!=='none')||'none';
   return candidatureTracking(history,current,{now,interviews});
 }
+
+// Delivery and renewal are separate: an overdue CV has still been sent.
+function candidatureDeliveryMatches(tracking,filter){
+  return filter==='all'||(filter==='sent'?tracking.hasSent:!tracking.hasSent);
+}

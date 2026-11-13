@@ -47,3 +47,14 @@ test('shared FEP/FECC portal retains history stored with the older network ident
  vm.runInContext(awaitedSource,c);
  assert.equal(c.trackingForPlace({id:'xarxa_fecc',name:'Shared board'},new Date('2026-11-13T12:00:00Z')).bucket,'renew');
 });
+
+test('three directory filters separate actual sends from unsent places, independently of renewal',()=>{
+ const overdue=tracking([sent('2026-10-01T10:00:00Z')],'sent','2026-11-13T12:00:00Z');
+ assert.equal(overdue.bucket,'renew');
+ assert.equal(context.candidatureDeliveryMatches(overdue,'sent'),true);
+ assert.equal(context.candidatureDeliveryMatches(overdue,'pending'),false);
+ const draft=tracking([{type:'prepared',date:'2026-11-01T10:00:00Z'}],'prepared','2026-11-13T12:00:00Z');
+ assert.equal(context.candidatureDeliveryMatches(draft,'sent'),false);
+ assert.equal(context.candidatureDeliveryMatches(draft,'pending'),true);
+ for(const row of [overdue,draft])assert.equal(context.candidatureDeliveryMatches(row,'all'),true);
+});
