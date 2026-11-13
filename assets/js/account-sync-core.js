@@ -5,7 +5,7 @@
   const bytes=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
   async function digest(data){return b64(new Uint8Array(await crypto.subtle.digest('SHA-256',data)))}
   function validateRef(ref){
-    if(!ref||typeof ref.file_uri!=='string'||!ref.file_uri.startsWith('private/')||ref.file_uri.length>2000||typeof ref.key!=='string'||typeof ref.iv!=='string'||bytes(ref.key).length!==32||bytes(ref.iv).length!==12||typeof ref.hash!=='string')throw Error('La còpia del compte no és vàlida.');
+    if(!ref||typeof ref.file_uri!=='string'||!/^private(?:\/|:\/\/)/.test(ref.file_uri)||ref.file_uri.length>2000||typeof ref.key!=='string'||typeof ref.iv!=='string'||bytes(ref.key).length!==32||bytes(ref.iv).length!==12||typeof ref.hash!=='string')throw Error('La còpia del compte no és vàlida.');
     return ref;
   }
   class AccountStore{

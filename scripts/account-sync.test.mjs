@@ -38,3 +38,10 @@ test('a validated account opens the map even when cloud synchronisation is still
  assert.equal(result,true,'opening must not wait for the cloud');assert.deepEqual(locks,[false]);
  assert.equal(values.get('token'),'synthetic-token');assert(!messages.some(text=>text.includes('Canvis sincronitzats')),'pending work must not be presented as saved');
 });
+
+test('private file references accept both private path and private URI formats, never public URLs',()=>{
+ const context={crypto:webcrypto,btoa,atob,Uint8Array,TextEncoder,TextDecoder,FormData,File,URL,URLSearchParams,AbortSignal,fetch};vm.createContext(context);vm.runInContext(code,context);
+ const ref={key:btoa('k'.repeat(32)),iv:btoa('i'.repeat(12)),hash:'synthetic-hash'};
+ for(const file_uri of ['private/test/file.bin','private://test/file.bin'])assert.equal(context.MapaAccountCore.validateRef({...ref,file_uri}).file_uri,file_uri);
+ assert.throws(()=>context.MapaAccountCore.validateRef({...ref,file_uri:'https://public.example/file.bin'}));
+});

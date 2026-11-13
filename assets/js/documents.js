@@ -103,7 +103,7 @@ document.getElementById('manualMail').addEventListener('click',async ()=>{
     const docs=await candidatureDocuments();
     if(request!==manualMailRequest)return;
     const instructions=document.createElement('p');
-    instructions.textContent='Descarrega els adjunts i afegeix-los al correu abans d’enviar-lo des de la teva app.';
+    instructions.textContent='Descarrega els documents d’aquesta llista. Obre Gmail, adjunta’ls i revisa la candidatura abans de prémer Enviar. Obrir el correu no el marca com a enviat.';
     const files=document.createElement('ul');
     for(const doc of docs){
       const item=document.createElement('li'),link=document.createElement('a');
@@ -117,8 +117,11 @@ document.getElementById('manualMail').addEventListener('click',async ()=>{
     const compose=document.createElement('a');
     compose.className='smallBtn';
     compose.href='mailto:'+encodeURIComponent(to).replace(/%40/g,'@').replace(/%2C/g,',')+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
-    compose.textContent='Obrir l’esborrany a l’app de correu';
-    manualMailOptions.append(instructions,files,compose);
+    compose.textContent='Obrir a la meva app de correu';
+    const gmail=document.createElement('a');gmail.className='smallBtn';gmail.target='_blank';gmail.rel='noopener noreferrer';
+    gmail.href='https://mail.google.com/mail/?'+new URLSearchParams({view:'cm',fs:'1',to,su:subject,body});
+    gmail.textContent='Obrir la candidatura a Gmail';
+    manualMailOptions.append(instructions,files,gmail,compose);
     manualMailOptions.hidden=false;
   }catch(error){
     if(request===manualMailRequest)gmailNotice(error.message);
