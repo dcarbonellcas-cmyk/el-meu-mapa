@@ -1,0 +1,39 @@
+{
+  "name": "SyncDevice",
+  "type": "object",
+  "properties": {
+    "device_id": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "payload_ref": {
+      "type": "string",
+      "maxLength": 5000
+    },
+    "format_version": {
+      "type": "number",
+      "enum": [
+        1
+      ]
+    }
+  },
+  "required": [
+    "device_id",
+    "payload_ref",
+    "format_version"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

@@ -14,13 +14,13 @@
       window.MAPA_DATA={centres,entitats,archived};
     }
     if(typeof L==='undefined')throw new Error('No s’ha pogut carregar el mapa. Comprova la connexió a Internet i recarrega la pàgina.');
-    for(const file of ['perfil','renovacions','mapes','candidatura-manual','infantil','candidatures','documents','candidatura-personalitzada','ofertes','lleure','enviaments','gmail','gmail-feed','private-tracking','private-sync','calendar','calendar-gmail','navegacio','historial','candidatures-entitats','directoris','fonts','educacio','borses','private-backup']){
+    for(const file of ['perfil','renovacions','mapes','candidatura-manual','infantil','candidatures','documents','candidatura-personalitzada','ofertes','lleure','enviaments','gmail','gmail-feed','private-tracking','private-sync','calendar','calendar-gmail','navegacio','historial','candidatures-entitats','directoris','fonts','educacio','borses','private-backup','account-sync-core','account-sync']){
       await loadScript('assets/js/'+file+'.js');
     }
     window.MAPA_READY=true;
     document.dispatchEvent(new Event('mapa-ready'));
   }catch(error){
-    console.error(error);
+    console.error(error);document.getElementById('accountLoading')?.remove();
     const notice=document.createElement('div');notice.setAttribute('role','alert');
     notice.style.cssText='position:fixed;inset:80px 20px auto;z-index:30000;background:#fff4e5;padding:20px;border:1px solid #f5b942;border-radius:12px';
     notice.textContent=error.message;document.body.appendChild(notice);

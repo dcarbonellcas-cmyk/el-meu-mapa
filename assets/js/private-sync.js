@@ -1,5 +1,7 @@
 // Google Drive appDataFolder only. Google access tokens stay in memory.
 (() => {
+  // The password account is the single automatic sync provider. Google remains manual.
+  const accountMode=true;
   const CLIENT='326278371839-alsvhik4agj0jqp6ps16ve3j722q6p2k.apps.googleusercontent.com';
   const worker='https://el-meu-mapa-sync.dcarbonellcas.workers.dev';
   const persistent=typeof location!=='undefined'&&location.origin==='https://dcarbonellcas-cmyk.github.io'&&location.pathname==='/el-meu-mapa/';
@@ -205,7 +207,7 @@
   }
   document.addEventListener('private-data-changed',()=>{revision++;if(!connected)return;clearTimeout(timer);timer=setTimeout(sync,1500)});
   function syncVisible(){
-    if(document.hidden)return;
+    if(document.hidden||accountMode)return;
     if(persistent&&!temporary)resume();
     else if(connected)sync();
   }
@@ -228,7 +230,7 @@
     fallback.textContent='Connectar Google durant aquesta sessió';
     fallback.addEventListener('click',()=>{temporary=true;connect()});
     disconnect.after(fallback);
-    document.addEventListener('mapa-ready',finishSession,{once:true});
+    if(!accountMode)document.addEventListener('mapa-ready',finishSession,{once:true});
   }
   button.addEventListener('click',connect);
   draftButton.addEventListener('click',()=>{

@@ -11,6 +11,7 @@
 @use "theme";
 @use "borses";
 @use "mobile";
+@use "account";
 
 .homeProfessional { max-width:1060px; margin:0 auto; padding:56px 28px 32px; background:transparent; color:#292533; }
 .startHeading { margin-bottom:32px; }
@@ -42,3 +43,4 @@
  .startCard h2 { font-size:18px; }
  .startCard p { margin-bottom:14px; }
 }
+

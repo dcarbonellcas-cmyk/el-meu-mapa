@@ -1,0 +1,15 @@
+# Private account synchronisation
+
+The public application remains in this repository and GitHub Pages. Base44 supplies managed email/password authentication, email verification/reset and private file storage. App ID is a public identifier, never a credential.
+
+App: `6af755059e0add3fad1a1601`. Editor: https://app.base44.com/apps/6af755059e0add3fad1a1601/editor/preview
+
+The remote source uses the TanStack starter. Routes login, register, forgot-password, reset-password and mfa wire the shipped authentication components; the root links back to GitHub Pages. The SyncDevice schema is mirrored here. Managed authentication implementation is not duplicated.
+
+Every SyncDevice operation is restricted to created_by_id == authenticated user.id. End-user uploads use UploadPrivateFile, plus random AES-GCM file encryption. Decryption keys and file references are held only in owner-restricted records, never in public code. This is server-access-controlled encryption, not end-to-end encryption against the hosting operator. Passwords go directly to the managed authentication endpoint and are not saved by the app. Session tokens stay in browser storage, as with the provider SDK.
+
+Each browser maintains its own snapshot, so two devices do not replace the same record. Histories merge by event identity, other fields by existing update timestamps, documents retain tombstones and newer versions. The app polls while visible each minute and on resume; local changes schedule a sync. Uploads deduplicate unchanged file bytes. Downloaded payloads are validated before restoration. An unsuccessful sync never reports success or clears local data. The first connection of a populated browser requires explicit migration confirmation; a browser bound to another user refuses to mix accounts.
+
+Scope: profile, four documents, candidature/status/notes/history records, web registrations and legacy rows. Full Gmail archives, Google authorisations and unsent draft UI are not synchronised. Existing local backup remains available. No real personal data has been uploaded during development.
+
+Validation: existing application checks/tests; additional tests exercise encrypted cross-device file recovery, tampering, errors and schema restrictions. Live anonymous record listing returns no records and anonymous creation returns 403. A real two-device account session still requires the user to create/verify their account; until that check, do not claim their personal data has reached the mobile. Hosting quotas, email verification, internet access and token expiry can affect sync. Old installed icons may require opening the latest Pages URL once.
