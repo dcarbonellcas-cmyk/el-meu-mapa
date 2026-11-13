@@ -13,6 +13,8 @@
   }
   function show(page){
     document.getElementById('calendarPage').hidden=page!=='calendar';
+    document.getElementById('portalsPage').hidden=page!=='portals';
+    if(page==='portals')window.renderPrivatePortals?.();
     home.style.display='none';explore.style.display='none';leisure.style.display='none';jobs.style.display='none';docs.style.display='none';dash.style.display='none';document.getElementById('search').style.display='none';if(page==='home'){home.style.display='block'}else if(page==='explore'){explore.style.display='';document.getElementById('search').style.display='none';window.__renderManagers&&window.__renderManagers();setTimeout(()=>{if(window.map)map.invalidateSize()},80)}else if(page==='leisure'){leisure.style.display='block';if(typeof window.__renderLeisure==='function')window.__renderLeisure();}else if(page==='jobs'){jobs.style.display='block';if(typeof window.__renderJobs==='function')window.__renderJobs()}else if(page==='candidates'||page==='renew'){dash.style.display='block';const title=document.getElementById('dashboardTitle');if(title)title.textContent=page==='renew'?'🔔 Candidatures per renovar':'💌 Les meves candidatures';const sel=document.getElementById('dashStatus');if(sel)sel.value=page==='renew'?'Toca renovar candidatura':'';if(typeof window.__renderDash==='function')window.__renderDash()}else if(page==='docs'){docs.style.display='block';updateDocsPage()}else if(page==='calendar'){window.renderApplicationCalendar()}active(page)}
   window.appShow=show;
   document.querySelectorAll('[data-page]').forEach(b=>{if(b.id==='dashboardBtn')return;b.addEventListener('click',()=>show(b.dataset.page))});

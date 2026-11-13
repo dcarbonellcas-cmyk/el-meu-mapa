@@ -5,7 +5,7 @@
 
 
 </head><body>
-<div class="top"><div class="brand"><img src="assets/icons/logo-dc.png" alt="" width="32" height="32">El meu mapa d’escoles</div><nav class="mainnav" aria-label="Navegació principal"><button class="navbtn active" data-page="home" aria-current="page">Inici</button><button class="navbtn" data-page="explore">Educació</button><button class="navbtn" data-page="leisure">Lleure</button><button class="navbtn" data-page="jobs">Ofertes</button><button class="navbtn" id="dashboardBtn" data-page="candidates">Candidatures</button><button class="navbtn" data-page="renew">Renovacions</button><button class="navbtn" data-page="docs">Documents</button><button class="navbtn" data-page="calendar">Calendari</button></nav><input id="search" class="search" placeholder="Busca una escola, municipi o comarca..."></div>
+<div class="top"><div class="brand"><img src="assets/icons/logo-dc.png" alt="" width="32" height="32">El meu mapa d’escoles</div><nav class="mainnav" aria-label="Navegació principal"><button class="navbtn active" data-page="home" aria-current="page">Inici</button><button class="navbtn" data-page="explore">Educació</button><button class="navbtn" data-page="leisure">Lleure</button><button class="navbtn" data-page="jobs">Ofertes</button><button class="navbtn" id="dashboardBtn" data-page="candidates">Candidatures</button><button class="navbtn" data-page="renew">Renovacions</button><button class="navbtn" data-page="portals">Borses de treball</button><button class="navbtn" data-page="docs">Documents</button><button class="navbtn" data-page="calendar">Calendari</button></nav><input id="search" class="search" placeholder="Busca una escola, municipi o comarca..."></div>
 <section id="homePage" class="homePage homeProfessional">
   <header class="startHeading"><p class="startEyebrow">EL MEU MAPA D’ESCOLES</p><h1>La teva cerca de feina</h1><p>Prioritza la cerca docent i gestiona les teves candidatures.</p></header>
   <div class="startGrid">
@@ -14,10 +14,22 @@
     <button class="startCard" data-go="jobs"><span class="startNumber" aria-hidden="true">03</span><div><h2>Ofertes de feina</h2><p>Consulta les ofertes disponibles i guarda les que t’interessen.</p><span class="startAction">Veure ofertes <span aria-hidden="true">→</span></span></div></button>
     <button class="startCard" data-go="candidates"><span class="startNumber" aria-hidden="true">04</span><div><h2>Les meves candidatures</h2><p>Consulta els enviaments, les respostes i l’estat de cada candidatura.</p><span class="startAction">Fer seguiment <span aria-hidden="true">→</span></span></div></button>
   </div>
+  <button type="button" class="smallBtn calendar-entry" data-go="portals">Borses de treball · inscrites i pendents</button>
   <button type="button" class="smallBtn calendar-entry" data-go="calendar">Calendari de candidatures</button>
   <details class="sourceDetails" id="dataUpdatePanel"><summary>Sobre les dades i les actualitzacions</summary><div class="sourceDetailsBody"><p>Aquí pots consultar quan s’han actualitzat les dades i quines connexions estan disponibles.</p><div id="dataUpdateDate" role="status"></div><button id="checkDataSources" class="smallBtn">Comprovar l’estat de les fonts</button></div></details>
 </section>
 
+
+
+<section id="portalsPage" class="portalPage" hidden>
+ <header><p class="startEyebrow">ESCOLES CONCERTADES, PRIVADES I ENTITATS</p><h1>Borses de treball</h1><p>Les inscripcions a webs i formularis, agrupades per borsa per evitar repetir altes.</p></header>
+ <div class="portalTabs" role="group" aria-label="Estat de les borses"><button class="smallBtn" data-portal-view="registered" aria-pressed="true">Borses inscrites</button><button class="smallBtn" data-portal-view="pending" aria-pressed="false">Borses pendents</button></div>
+ <label for="portalSearch">Cerca una escola o entitat</label><input id="portalSearch" type="search" placeholder="Nom de l’escola o de la borsa">
+ <p>Marca el quadradet quan hagis completat la inscripció: apareixerà un tic verd i passarà a «Borses inscrites». Pots desmarcar-lo per tornar-la a pendents. La marca no envia el CV.</p>
+ <p class="muted">«Inscrita» pot indicar compte creat o formulari rebut. Revisa la nota de cada borsa: pot faltar completar el CV, activar el compte o presentar-te a una vacant concreta.</p>
+ <p id="portalNotice" role="status" aria-live="polite"></p><ul id="portalList" class="portalList"></ul><p id="portalEmpty"></p>
+ <details><summary>Recuperar la llista privada</summary><p>La llista i les marques es guarden en aquest navegador i a la còpia privada quan connectes Google a Documents. No es publiquen a GitHub.</p><label class="smallBtn">Importar llista de borses<input id="portalImport" type="file" accept="application/json,.json"></label></details>
+</section>
 
 <section id="leisurePage" class="leisurePage" style="display:none">
  <header class="leisureHero">

@@ -1991,6 +1991,100 @@ body, .docsOverlay, .dashboardDirect {
   color: var(--plum-ink);
 }
 
+.portalPage {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 36px 24px;
+  line-height: 1.6;
+}
+
+.portalPage[hidden] {
+  display: none !important;
+}
+
+.portalTabs, .portalActions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+
+.portalTabs [aria-pressed=true] {
+  background: #694474;
+  color: white;
+  border-color: #694474;
+}
+
+.portalPage input[type=search] {
+  display: block;
+  width: min(100%, 480px);
+  padding: 12px;
+  margin: 6px 0 16px;
+  border: 1px solid #cec5d4;
+  border-radius: 8px;
+}
+
+.portalList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.portalCard {
+  display: flex;
+  gap: 18px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e3dfe7;
+  border-radius: 12px;
+  min-width: 0;
+}
+
+.portalCard h2 {
+  font-size: 18px;
+  margin: 0 0 8px;
+}
+
+.portalCard p {
+  margin: 0 0 10px;
+}
+
+.portalCard > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.portalCheck {
+  flex-shrink: 0;
+  padding-top: 3px;
+}
+
+.portalCheck input {
+  width: 24px;
+  height: 24px;
+  accent-color: #16803a;
+  cursor: pointer;
+}
+
+.portalCard:has(input:checked) {
+  border-left: 4px solid #16803a;
+}
+
+.portalActions a {
+  color: #694474;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .portalPage {
+    padding: 26px 16px;
+  }
+  .portalCard {
+    padding: 16px;
+    gap: 12px;
+  }
+}
 .homeProfessional {
   max-width: 1060px;
   margin: 0 auto;
