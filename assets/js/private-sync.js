@@ -8,12 +8,12 @@
   const button=document.getElementById('connectPrivateDrive'),status=document.getElementById('privateSyncStatus');
   const draftButton=document.getElementById('connectDraftDrive'),draftStatus=document.getElementById('draftDriveStatus');
   let token='',expiry=0,busy=false,again=false,timer=null,connected=false,revision=0;
-  let renewing=null;
+  let renewing=null,temporary=false;
   const say=text=>{status.textContent=text;draftStatus.textContent=text};
   const disableButtons=disabled=>{button.disabled=disabled;draftButton.disabled=disabled};
   const stamp=x=>Number.isFinite(Date.parse(x))?Date.parse(x):0;
   async function api(url,options={}){
-    if(persistent){
+    if(persistent&&!temporary){
       await ensureSession();
       if(!connected)throw Error('Inicia sessió per recuperar la còpia privada.');
     }else if(Date.now()>=expiry){token='';connected=false;throw Error('Torna a connectar Google. La còpia local es conserva.')}
@@ -89,7 +89,7 @@
         if(remote&&(!own||stamp(remote.updated)>stamp(own.updated)))await restore(key,remote);
         else if(own&&(!remote||stamp(own.updated)>stamp(remote.updated)))await upload(file,own,etag);
       }
-      say(persistent?'✓ Còpia privada sincronitzada.':'✓ Còpia privada sincronitzada. Guardat automàtic mentre la sessió de Google estigui connectada.');
+      say(persistent&&!temporary?'✓ Còpia privada sincronitzada.':'✓ Còpia privada sincronitzada. Guardat automàtic mentre la sessió de Google estigui connectada.');
       button.textContent='Sincronitzar ara';
     }catch(e){say(e.message||'No s’ha pogut sincronitzar. La còpia local es conserva.');if(!connected)button.textContent=persistent?'Iniciar sessió amb Google':'Tornar a connectar Google';}
     finally{busy=false;disableButtons(false);if(again){again=false;clearTimeout(timer);timer=setTimeout(sync,1500)}}
@@ -106,7 +106,7 @@
     const result=await response.json();
     if(result.error==='wrong_account')throw Error('Tria el compte de Google amb què vas desar els documents.');
     if(response.status===401)return null;
-    if(!response.ok)throw Error('La sincronització privada no està disponible ara. La còpia local es conserva.');
+    if(!response.ok)throw Error('La connexió persistent no està disponible. Pots connectar Google durant aquesta sessió; la còpia local es conserva.');
     return result;
   }
   function acceptSession(result){
@@ -166,7 +166,7 @@
     }catch(error){say(error.message);disableButtons(false)}
   }
   function connect(){
-    if(persistent)return localStorage.getItem(sessionKey)?resume():startSession();
+    if(persistent&&!temporary)return localStorage.getItem(sessionKey)?resume():startSession();
     if(connected&&Date.now()<expiry)return sync();
     if(!window.google?.accounts?.oauth2){say('Google encara no s’ha carregat. Revisa la connexió i torna-ho a provar.');return}
     connected=false;
@@ -206,7 +206,7 @@
   document.addEventListener('private-data-changed',()=>{revision++;if(!connected)return;clearTimeout(timer);timer=setTimeout(sync,1500)});
   function syncVisible(){
     if(document.hidden)return;
-    if(persistent)resume();
+    if(persistent&&!temporary)resume();
     else if(connected)sync();
   }
   document.addEventListener('visibilitychange',syncVisible);
@@ -223,6 +223,11 @@
       say('Sessió tancada. La còpia local es conserva.');
     });
     button.after(disconnect);
+    const fallback=document.createElement('button');
+    fallback.type='button';fallback.className='smallBtn';
+    fallback.textContent='Connectar Google durant aquesta sessió';
+    fallback.addEventListener('click',()=>{temporary=true;connect()});
+    disconnect.after(fallback);
     document.addEventListener('mapa-ready',finishSession,{once:true});
   }
   button.addEventListener('click',connect);
