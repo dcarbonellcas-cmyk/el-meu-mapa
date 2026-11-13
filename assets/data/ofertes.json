@@ -1,20 +1,32 @@
 {
-  "checkedAt": "2026-11-13T07:07:26.166Z",
+  "checkedAt": "2026-11-13T09:48:46.069Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-13T07:07:26.166Z",
-      "count": 187,
-      "reviewed": 709,
+      "updatedAt": "2026-11-13T09:48:46.069Z",
+      "count": 188,
+      "reviewed": 713,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-13T07:07:26.166Z",
+      "attemptedAt": "2026-11-13T09:48:46.069Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92328832",
+      "title": "MONITORES/AS DE LLEURE – TALLERS DE NADAL A LA RIBERA D’EBRE",
+      "school": "Mentes Dinamicas S.L.",
+      "city": "TARRAGONA - RIBERA D'EBRE - 43740 MÓRA D'EBRE",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328832",
+      "snippet": "Des d'eSTEAM Education cerquem monitors i monitores de lleure per participar en el desenvolupament de tallers educatius i lúdics adreçats a infants de 3 a 12 anys, en el marc d'un projecte de Nadal que es durà a terme en diferents municipis de la comarca de la Ribera d'Ebre. Busquem persones dinàmiques, creatives, resp",
+      "created": "1794554876063",
+      "expires": "2027-02-11T07:27:56.060Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92328798",
       "title": "MONITORS/MONITORES DE MENJADOR - BADALONA",
