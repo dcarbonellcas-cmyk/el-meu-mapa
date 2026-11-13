@@ -40,7 +40,8 @@ function mergePrivateTracking(local,remote){
     if(!a||!b){entries[key]=a||b;continue}
     const latest=Date.parse(a.updated)>Date.parse(b.updated)?a:Date.parse(a.updated)<Date.parse(b.updated)?b:a.value>=b.value?a:b;
     if(key.startsWith('history_')){
-      const rows=[...JSON.parse(a.value),...JSON.parse(b.value)];
+      // Prefer the edited version of the same event; retain distinct events from both devices.
+      const rows=latest===a?[...JSON.parse(b.value),...JSON.parse(a.value)]:[...JSON.parse(a.value),...JSON.parse(b.value)];
       const unique=new Map(rows.map(x=>[JSON.stringify([x.date,x.type,x.text]),x]));
       entries[key]={updated:latest.updated,value:JSON.stringify([...unique.values()].sort((x,y)=>y.date.localeCompare(x.date)||JSON.stringify(x).localeCompare(JSON.stringify(y))))};
     }else entries[key]=latest;

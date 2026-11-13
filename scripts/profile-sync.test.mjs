@@ -117,3 +117,14 @@ test('a newer registration status wins without changing another bank',async()=>{
  s.storage.set('jobPortal_a',JSON.stringify({status:'registered'}));s.context.document.dispatchEvent(new Event('private-data-changed'));
  await s.connect();assert.equal(JSON.parse(s.storage.get('jobPortal_a')).status,'registered');assert.equal(JSON.parse(s.storage.get('jobPortal_b')).status,'registered');
 });
+
+test('sync preserves edited interview notes and month reminders in either merge direction',async()=>{
+ const old={date:'2026-11-09T14:30:00Z',type:'interview',text:'Test school'};
+ const edited={...old,note:'Follow up after qualification',reminderMonth:'2027-09',outcome:'unfavorable'};
+ const record=(row,updated)=>({version:1,key:'tracking',updated,entries:{history_calendar_interviews:{value:JSON.stringify([row]),updated}}});
+ const s=setup();
+ for(const [local,remote] of [[record(edited,'2026-11-13T12:00:00Z'),record(old,'2026-11-09T12:00:00Z')],[record(old,'2026-11-09T12:00:00Z'),record(edited,'2026-11-13T12:00:00Z')]]){
+  const merged=s.context.mergePrivateTracking(local,remote);
+  assert.deepEqual(JSON.parse(merged.entries.history_calendar_interviews.value),[edited]);
+ }
+});
