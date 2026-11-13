@@ -195,9 +195,13 @@
    before.before(callout);
  }
  if(mapDrop.isConnected) {
-   const privatePortals=document.createElement('details');privatePortals.id='educationPrivatePortals';privatePortals.className='educationPrivatePortals';
-   privatePortals.innerHTML='<summary>Borses de treball · inscrites i pendents</summary>';
-   const portalPage=document.getElementById('portalsPage');portalPage.hidden=false;privatePortals.append(portalPage);
+   const privatePortals=document.createElement('section');privatePortals.id='educationPrivatePortals';privatePortals.className='educationPrivatePortals';
+   privatePortals.setAttribute('aria-label','Inscripcions a webs');
+   const portalPage=document.getElementById('portalsPage');portalPage.hidden=true;
+   portalPage.querySelector('header').hidden=true;
+   const registrationBar=document.createElement('div');registrationBar.className='educationRegistrationBar';
+   const registrationTabs=portalPage.querySelector('.portalTabs');registrationTabs.classList.add('educationStages');
+   registrationBar.append(registrationTabs);privatePortals.append(registrationBar,portalPage);
    content.before(privatePortals,mapDrop);
    addMapShortcut(mapDrop);
    const offersHeading=document.querySelector('#jobsPage .jobsHero');

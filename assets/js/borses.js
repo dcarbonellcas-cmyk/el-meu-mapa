@@ -35,12 +35,14 @@ function privatePortalRows(storage){
 
 (() => {
   const page=document.getElementById('portalsPage'),list=document.getElementById('portalList'),notice=document.getElementById('portalNotice');
-  const tabs=[...page.querySelectorAll('[data-portal-view]')];
+  const tabs=[...document.querySelectorAll('[data-portal-view]')];
+  const close=document.createElement('button');close.type='button';close.className='smallBtn';close.textContent='Tancar llista';page.prepend(close);
+  close.addEventListener('click',()=>{page.hidden=true;render();tabs.find(tab=>tab.dataset.portalView===view)?.focus()});
   let view='registered';
   const link=(url,text)=>{const a=document.createElement('a');a.href=url;a.textContent=text;a.target='_blank';a.rel='noopener noreferrer';return a};
   function render(){
     const rows=privatePortalRows(localStorage),query=document.getElementById('portalSearch').value.trim().toLocaleLowerCase('ca');
-    for(const tab of tabs){const registered=tab.dataset.portalView==='registered';tab.setAttribute('aria-pressed',String(tab.dataset.portalView===view));tab.textContent=(registered?'Borses inscrites':'Borses pendents')+' ('+rows.filter(r=>(r.status==='registered')===registered).length+')';}
+    for(const tab of tabs){const registered=tab.dataset.portalView==='registered';tab.setAttribute('aria-pressed',String(!page.hidden&&tab.dataset.portalView===view));tab.textContent=(registered?'Inscrites':'Pendents')+' ('+rows.filter(r=>(r.status==='registered')===registered).length+')';}
     const visible=rows.filter(row=>(row.status==='registered')===(view==='registered')&&(!query||(row.name+' '+row.note).toLocaleLowerCase('ca').includes(query)));
     list.replaceChildren();
     for(const row of visible){
@@ -57,14 +59,14 @@ function privatePortalRows(storage){
         const current=JSON.parse(localStorage.getItem('jobPortal_'+row.id)||'{}');
         localStorage.setItem('jobPortal_'+row.id,JSON.stringify({...current,status:box.checked?'registered':'pending',updated:new Date().toISOString()}));
         document.dispatchEvent(new Event('private-data-changed'));render();
-        notice.textContent=row.name+(box.checked?' desada a Borses inscrites.':' desada a Borses pendents.');
+        notice.textContent=row.name+(box.checked?' desada a Inscrites.':' desada a Pendents.');
         tabs.find(tab=>tab.dataset.portalView===view)?.focus();
       });
     }
     document.getElementById('portalEmpty').hidden=visible.length>0;
     document.getElementById('portalEmpty').textContent=rows.length?'No hi ha borses en aquesta vista amb aquests filtres.':'Encara no s’ha recuperat la llista privada. Connecta Google a Documents o importa la teva llista.';
   }
-  tabs.forEach(tab=>tab.addEventListener('click',()=>{view=tab.dataset.portalView;render()}));
+  tabs.forEach(tab=>tab.addEventListener('click',()=>{view=tab.dataset.portalView;page.hidden=false;render()}));
   document.getElementById('portalSearch').addEventListener('input',render);
   document.getElementById('portalImport').addEventListener('change',async event=>{
     try{const file=event.target.files[0];if(!file)return;if(file.size>2000000)throw Error('El fitxer és massa gran.');

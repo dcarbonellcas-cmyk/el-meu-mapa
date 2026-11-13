@@ -194,3 +194,10 @@
 .educationPrivatePortals .portalPage {padding:20px;max-width:none}
 .schoolLocationIcon {display:inline-grid!important;place-items:center;min-width:46px;min-height:46px;padding:6px!important;color:#694474!important}
 .schoolLocationIcon svg {display:block}
+
+.educationPrivatePortals {border:0;background:transparent;overflow:visible}
+.educationRegistrationBar {display:flex;align-items:center;padding:8px;background:var(--lilac);border:1px solid var(--lilac-line);border-radius:15px;margin:18px 0}
+.educationRegistrationBar .portalTabs {display:flex;gap:4px;margin:0;padding:3px;background:var(--lilac-chip);border-radius:11px}
+.educationRegistrationBar .smallBtn {font:inherit;font-size:13px;font-weight:700;min-height:40px;padding:7px 16px;border:1px solid transparent;border-radius:8px;background:transparent;color:#53325f}
+.educationRegistrationBar .smallBtn[aria-pressed=true] {background:white;border-color:#dfcce7;box-shadow:0 1px 4px #53325f12}
+.educationPrivatePortals .portalPage {margin:0 0 20px;background:white;border:1px solid #decfe4;border-radius:12px}
