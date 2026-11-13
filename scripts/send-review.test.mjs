@@ -50,3 +50,12 @@ test('Gmail message includes an Arial 12 HTML version and keeps the plain text',
  assert.equal(decoded.plain,body);
  assert.equal(decoded.html,'<div style="font-family:Arial,sans-serif;font-size:12pt">Bon dia,<br><br>Text &lt;literal&gt; &amp; accent: à</div>');
 });
+
+test('connecting Gmail requests only send permission and never sends or records a candidature',async()=>{
+ const x=setup();x.elements.connectGmailOnly={};let config;
+ x.ctx.google={accounts:{oauth2:{initTokenClient:c=>{config=c;return {requestAccessToken(){c.callback({access_token:'synthetic-grant',expires_in:3600})}}}}}};x.ctx.window.google=x.ctx.google;
+ x.ctx.connectGmailWithoutSending();
+ assert.equal(config.scope,'https://www.googleapis.com/auth/gmail.send');assert.equal(config.include_granted_scopes,false);
+ assert.equal(x.requests.length,0);assert.equal(x.statuses.length,0);assert.equal(x.saved.length,0);assert.match(x.elements.gmailNotice.textContent,/No s’ha enviat cap correu/);
+ await x.ctx.authorizeReviewedGmail(snapshot);assert.equal(x.requests.length,1);assert.equal(x.saved.length,1);
+});

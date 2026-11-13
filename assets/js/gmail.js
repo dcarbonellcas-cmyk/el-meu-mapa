@@ -1,6 +1,8 @@
 const GMAIL_CLIENT_ID='326278371839-alsvhik4agj0jqp6ps16ve3j722q6p2k.apps.googleusercontent.com';
 const GMAIL_SCOPE='https://www.googleapis.com/auth/gmail.send';
 let gmailTokenClient=null;
+let gmailGrantedToken='',gmailGrantedUntil=0;
+function rememberGmailAccess(response){gmailGrantedToken=response.access_token;gmailGrantedUntil=Date.now()+Math.max(0,Number(response.expires_in||3600)-60)*1000}
 function gmailNotice(msg,ok=false){
   const n=document.getElementById('gmailNotice'); n.textContent=msg; n.style.display='block';
   n.style.background=ok?'#edf8f1':'#fff4e5'; n.style.color=ok?'#27613a':'#8a5315';
@@ -60,15 +62,31 @@ async function sendWithGmail(){
   }catch(e){gmailNotice(e.message);return}finally{sendReviewBusy=false}
 }
 function authorizeReviewedGmail(snapshot){
+  if(gmailGrantedToken&&Date.now()<gmailGrantedUntil){const button=document.getElementById('sendGmail');button.disabled=true;return actuallySendGmail(gmailGrantedToken,snapshot)}
   const btn=document.getElementById('sendGmail'); btn.disabled=true; btn.textContent='Connectant amb Gmail…'; gmailNotice('Autoritza el teu compte de Gmail a la finestra de Google.');
   if(!(window.google&&google.accounts&&google.accounts.oauth2)){gmailNotice('Google encara no s’ha carregat. Espera uns segons i torna-ho a provar.');btn.disabled=false;btn.textContent='✉ Enviar amb Gmail';return}
   let authDone=false;const authTimer=setTimeout(()=>{if(authDone)return;authDone=true;gmailNotice('Google no ha completat la connexió. Permet les finestres emergents i torna-ho a provar. No s’ha enviat cap correu.');btn.disabled=false;btn.textContent='✉ Enviar amb Gmail'},60000);
   try{
-    gmailTokenClient=google.accounts.oauth2.initTokenClient({client_id:GMAIL_CLIENT_ID,scope:GMAIL_SCOPE,error_callback:(err)=>{if(authDone)return;authDone=true;clearTimeout(authTimer);gmailNotice(err?.type==='popup_closed'?'Has tancat la finestra de Google. No s’ha enviat cap correu.':'No s’ha pogut obrir Google. Obre aquesta web amb Safari o Chrome i permet les finestres emergents, o fes servir «Enviar des de l’app de correu». No s’ha enviat cap correu.');btn.disabled=false;btn.textContent='✉ Enviar amb Gmail'},callback:(resp)=>{if(authDone)return;authDone=true;clearTimeout(authTimer);if(resp.error||!resp.access_token){gmailNotice('No s’ha pogut autoritzar Gmail: '+resp.error);btn.disabled=false;btn.textContent='✉ Enviar amb Gmail';return}actuallySendGmail(resp.access_token,snapshot)}});
+    gmailTokenClient=google.accounts.oauth2.initTokenClient({client_id:GMAIL_CLIENT_ID,scope:GMAIL_SCOPE,include_granted_scopes:false,error_callback:(err)=>{if(authDone)return;authDone=true;clearTimeout(authTimer);gmailNotice(err?.type==='popup_closed'?'Has tancat la finestra de Google. No s’ha enviat cap correu.':'No s’ha pogut obrir Google. Obre aquesta web amb Safari o Chrome i permet les finestres emergents, o fes servir «Enviar des de l’app de correu». No s’ha enviat cap correu.');btn.disabled=false;btn.textContent='✉ Enviar amb Gmail'},callback:(resp)=>{if(authDone)return;authDone=true;clearTimeout(authTimer);if(resp.error||!resp.access_token){gmailNotice('No s’ha pogut autoritzar Gmail: '+resp.error);btn.disabled=false;btn.textContent='✉ Enviar amb Gmail';return}rememberGmailAccess(resp);actuallySendGmail(resp.access_token,snapshot)}});
     gmailTokenClient.requestAccessToken({prompt:''});
   }catch(err){authDone=true;clearTimeout(authTimer);gmailNotice('No s’ha pogut iniciar Google: '+err.message+'. No s’ha enviat cap correu.');btn.disabled=false;btn.textContent='✉ Enviar amb Gmail'}
 }
+function connectGmailWithoutSending(){
+  const button=document.getElementById('connectGmailOnly');
+  if(!(window.google&&google.accounts&&google.accounts.oauth2)){gmailNotice('Google encara s’està carregant. Espera uns segons.');return}
+  button.disabled=true;let finished=false;
+  const finish=()=>{if(finished)return false;finished=true;clearTimeout(timeout);button.disabled=false;return true};
+  const timeout=setTimeout(()=>{if(finish())gmailNotice('Google no ha completat l’autorització. No s’ha enviat cap correu.')},60000);
+  gmailNotice('Google et demanarà permís per enviar correus. Aquesta connexió no envia cap candidatura.');
+  try{
+    const client=google.accounts.oauth2.initTokenClient({client_id:GMAIL_CLIENT_ID,scope:GMAIL_SCOPE,include_granted_scopes:false,
+      error_callback:()=>{if(finish())gmailNotice('Connexió cancel·lada. No s’ha enviat cap correu.')},
+      callback:response=>{if(!finish())return;if(response.error||!response.access_token){gmailNotice('Google no ha autoritzat l’accés. No s’ha enviat cap correu.');return}rememberGmailAccess(response);button.textContent='✓ Gmail connectat';gmailNotice('Gmail autoritzat per a aquesta sessió. No s’ha enviat cap correu. Ara pots revisar la candidatura i prémer Enviar amb Gmail.',true)}
+    });client.requestAccessToken({prompt:''});
+  }catch(error){if(finish())gmailNotice('No s’ha pogut connectar amb Google. No s’ha enviat cap correu.')}
+}
 document.getElementById('sendGmail').addEventListener('click',sendWithGmail);
+document.getElementById('connectGmailOnly')?.addEventListener('click',connectGmailWithoutSending);
 
 (function(){
   const CLIENT_ID='326278371839-alsvhik4agj0jqp6ps16ve3j722q6p2k.apps.googleusercontent.com';
