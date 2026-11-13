@@ -9,6 +9,7 @@
   const status=document.createElement('span');status.setAttribute('role','status');
   status.textContent='Comprovació automàtica en tornar a obrir l’app.';
   panel.append(button,status);document.getElementById('homePage')?.append(panel);
+  const updateNotice=document.createElement('button');updateNotice.type='button';updateNotice.className='smallBtn appUpdateNotice';updateNotice.hidden=true;updateNotice.textContent='Hi ha una versió nova · Actualitzar l’app';document.body.append(updateNotice);
   let last=0,busy=false,next='';
   function editing(){
     return Boolean(document.querySelector('dialog[open]'))||
@@ -21,7 +22,7 @@
     location.replace(url.href);
   }
   async function check(manual=false){
-    if(busy||document.hidden||(!manual&&Date.now()-last<900000))return;
+    if(busy||document.hidden||(!manual&&Date.now()-last<120000))return;
     if(next&&manual){if(!editing()||confirm('Hi ha un formulari obert. Vols recarregar l’app? Revisa abans els canvis que encara no hagis desat.'))refresh(next);return}
     last=Date.now();busy=true;button.disabled=true;
     if(manual)status.textContent='Comprovant la versió publicada…';
@@ -30,7 +31,7 @@
       if(!response.ok)throw Error('version_unavailable');
       const data=await response.json();if(!/^[a-f0-9]{16}$/.test(data.version))throw Error('invalid_version');
       if(data.version!==current){
-        next=data.version;
+        next=data.version;updateNotice.hidden=false;
         if(!editing()&&(manual||document.getElementById('homePage')?.style.display!=='none'))return refresh(next);
         status.textContent='Hi ha una versió nova. Acaba el que estàs fent i prem Actualitzar app a Inici.';
       }else if(manual){
@@ -41,7 +42,8 @@
     finally{busy=false;button.disabled=false}
   }
   button.addEventListener('click',()=>check(true));
-  document.addEventListener('visibilitychange',()=>check());
+  updateNotice.addEventListener('click',()=>check(true));
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden){last=0;check()}});
   window.addEventListener('pageshow',()=>check());
   setInterval(()=>check(),900000);
 })();

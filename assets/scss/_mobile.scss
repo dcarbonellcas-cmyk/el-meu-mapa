@@ -1,0 +1,49 @@
+.top {height:auto;min-height:78px}
+.docMeta {min-width:0;overflow-wrap:anywhere}
+.portableBackupCard {display:block}
+.portableBackupCard input[type=password] {display:block;width:100%;max-width:460px;padding:12px;margin-top:8px;font:inherit}
+.portableBackupCard h2 {font-size:20px;margin:0 0 12px}
+.portableBackupCard li {margin-bottom:9px}
+.mobileDetailClose {display:none}
+.appUpdateNotice {position:fixed;bottom:max(16px,env(safe-area-inset-bottom));left:16px;right:16px;z-index:31000;box-shadow:0 3px 18px #49245433;background:#fff7df;color:#492454}
+.appUpdateNotice[hidden] {display:none}
+@media(max-width:1160px){.top{min-height:112px}}
+@media(max-width:760px){
+ .top {height:auto;min-height:0;padding:calc(10px + env(safe-area-inset-top)) 10px 10px;grid-template-rows:auto auto;row-gap:8px}
+ .brand {font-size:16px;max-width:100%;white-space:normal;text-align:center}
+ .mainnav {width:100%;max-width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:3px;min-width:0;justify-self:stretch}
+ .navbtn {min-width:0;min-height:42px;font-size:clamp(10px,2.9vw,12px);padding:8px 1px;white-space:nowrap;overflow-wrap:normal}
+ #explorePage,#explorePage:has(#detail.emptyPanel){display:block;max-width:100%;width:100%}
+ #explorePage .mapwrap {height:auto;min-width:0;padding:18px 12px 28px}
+ .educationToolbar {display:grid;grid-template-columns:minmax(0,1fr);padding:7px;gap:8px;overflow:visible}
+ .educationToolbar .educationStages,.educationToolbar .educationViews {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;min-width:0;max-width:100%;gap:2px}
+ .educationToolbar .smallBtn {font-size:12px;white-space:normal;padding:8px 4px;overflow-wrap:anywhere}
+ .educationTools {display:grid;grid-template-columns:minmax(0,1fr);width:100%;min-width:0}
+ .educationTools .search,.educationTools #educationKind {width:100%;max-width:100%;min-width:0;font-size:16px}
+ .educationRegistrationBar {gap:8px;padding:7px;align-items:stretch}
+ .educationCvTabs {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;min-width:0}
+ .educationRegistrationBar .smallBtn {min-width:0;white-space:normal;overflow-wrap:anywhere;padding:8px 4px;font-size:12px}
+ #educationResults {grid-template-columns:minmax(0,1fr)}
+ .educationSchool {padding:15px;min-width:0;overflow-wrap:anywhere}
+ .educationSchoolActions .smallBtn {max-width:100%;white-space:normal}
+ .educationPrivatePortals .portalPage {padding:14px}
+ .portalCard {padding:14px;gap:10px}
+ #explorePage .detail:not(.emptyPanel) {position:fixed;inset:var(--top-height) 0 0;width:auto;max-width:100%;height:auto;z-index:1500;padding:16px 16px calc(20px + env(safe-area-inset-bottom));overflow:auto;overscroll-behavior:contain}
+ .mobileDetailClose {display:block;margin:0 0 14px auto;min-height:44px}
+ .docsInner {padding:20px 12px calc(24px + env(safe-area-inset-bottom))}
+ .docCard {display:flex;flex-direction:column;align-items:stretch;gap:12px;padding:16px}
+ .docIcon {align-self:flex-start;flex-shrink:0}
+ .docMeta,.docActions {width:100%;min-width:0}
+ .docActions input,.docMeta input,.docMeta textarea {min-width:0!important;max-width:100%;font-size:16px}
+ .docActions .smallBtn {max-width:100%;white-space:normal}
+ .dashboardResults {overflow-x:auto;max-width:100%;padding:10px}
+ #dashSearch {min-width:0;width:100%;flex-basis:100%}
+ .dashboardFilters {flex-wrap:wrap}
+ dialog {max-width:calc(100vw - 24px)!important;max-height:calc(100dvh - 32px);overflow:auto}
+ .mapbox.educationSchoolMiniMap {height:min(50dvh,360px)!important;margin:12px 0!important}
+}
+
+.portableBackupCard li b {display:inline}
+.googleSyncAlternative {display:block!important}
+.googleSyncAlternative>summary {cursor:pointer;font-weight:700}
+.googleSyncAlternative[open]>summary {margin-bottom:16px}

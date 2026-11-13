@@ -40,7 +40,7 @@ Els recordatoris mensuals es mostren a l’app; no constitueixen avisos push ni 
 
 ## Validació
 
-74 proves automatitzades superades, compilació i comprovacions de sintaxi, rutes, coherència de dades i privacitat. Inclou regressions de fusió d’entrevistes editades en les dues direccions i de recordatoris sense dia conegut. La publicació conté únicament els recursos públics permesos; els informes personals es mantenen fora del repositori.
+82 proves automatitzades superades, compilació i comprovacions de sintaxi, rutes, coherència de dades i privacitat. Inclou regressions de fusió d’entrevistes editades en les dues direccions i de recordatoris sense dia conegut. La publicació conté únicament els recursos públics permesos; els informes personals es mantenen fora del repositori.
 
 ## Borses de treball
 
@@ -49,3 +49,11 @@ Nou apartat amb vistes «Borses inscrites» i «Borses pendents», cerca i casel
 ## Reorganització d’Educació
 
 Les llistes d’inscripcions es troben dins d’Educació, sobre el mapa, amb una barra de pestanyes «Inscrites» i «Pendents», sense títol ni fletxa de desplegable. El directori mostra directament totes les escoles de l’etapa triada, amb paginació i sense desplegables per estat. La barra mostra Tots els centres, CV enviats i CV per enviar. CV enviats inclou qualsevol centre amb un enviament registrat, encara que estigui pendent de renovar. CV per enviar inclou només els centres sense enviament registrat. Les renovacions es mantenen al seguiment i no es barregen amb els llocs encara no contactats. Les altes a webs es conserven separadament a Inscripcions web → Inscrites i pendents. Les llistes d’inscripcions s’obren com una vista separada dins d’Educació, amb retorn al directori. La classificació es deriva del darrer enviament confirmat, es recalcula en obrir la secció, tornar a la pestanya i periòdicament mentre és visible. Les respostes, entrevistes, rebutjos i incidències de lliurament aturen la renovació mensual; els seguiments mensuals expressos es respecten. Una data desconeguda no es dedueix de l’alta a una borsa. El botó del mini mapa es representa amb una icona d’ubicació amb escola i conserva una etiqueta accessible.
+
+## Via alternativa per al mòbil
+
+Afegida còpia privada portàtil sense Google a Documents. Xifrat AES-GCM amb clau derivada de contrasenya, validació anterior a les escriptures, fusió d’historial i conservació dels fitxers més recents. No s’ha fet una migració del dispositiu físic de la usuària: la prova de navegador utilitza dades fictícies locals i les proves automatitzades cobreixen errors de contrasenya, alteració del fitxer i manca d’espai. No es publiquen còpies personals al repositori.
+
+La capçalera deixa de dependre d’una alçada fixa. Revisats els controls, les targetes, els documents i el tancament de la fitxa per a mòbil. Les actualitzacions es tornen a comprovar en recuperar la visibilitat i s’ofereix un avís fora d’Inici sense interrompre formularis oberts. Una icona que apunta a un domini antic no canvia de destí per aquestes reparacions.
+
+Font del comportament d’emmagatzematge de la icona: https://webkit.org/blog/14787/webkit-features-in-safari-17-2/ (apartat Web Apps). La documentació explica que les dades locals diferents de les galetes no es copien en crear l’app i que les dades posteriors no es comparteixen amb el navegador.

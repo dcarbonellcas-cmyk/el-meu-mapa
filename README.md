@@ -83,3 +83,11 @@ Els esborranys no queden buits si falta l’experiència privada del dispositiu:
 Revisió de xarxes de novembre de 2026: 153 centres vinculats amb fonts explícites, inclosos els centres de Vedruna, Maristes, Escola Pia i Escolàpies contrastats. SalleJob i Salesians SMX tenen accessos directes al seu portal de feina. Els estats personals d’inscripció es desen al navegador i opcionalment a la còpia privada de Drive; no hi ha inscripcions predefinides al codi públic.
 
 La còpia privada de Drive inclou el perfil, els quatre documents, els estats de les borses, l’historial, els estats i les notes de seguiment. Les dates dels canvis es comparen per registre i els historials es fusionen sense eliminar enviaments de l’altre dispositiu. Requereix connectar el mateix compte en cada navegador. Les còpies exactes dels correus arxivats continuen locals.
+
+## Mòbil i còpia privada sense Google
+
+Documents ofereix una còpia portàtil xifrada amb contrasenya (mínim 12 caràcters). Inclou perfil, quatre documents, seguiment, entrevistes, inscripcions i historial antic. Exclou credencials i sessions OAuth. La importació valida el contingut abans d’escriure, combina els historials i conserva els documents més recents; un error de la base de dades retorna els valors previs del seguiment. La contrasenya no es desa ni es pot recuperar. No és sincronització automàtica: cal passar i importar una còpia nova quan es vulguin traslladar canvis.
+
+A l’iPhone, cal importar dins de l’espai que s’utilitzarà: si es farà servir la icona de la pantalla d’inici, crear-la primer amb l’adreça de GitHub i carregar la còpia des d’aquella icona. Les dades del navegador poden quedar separades de les de l’app instal·lada. La connexió antiga amb Google es conserva com a opció; aquesta via manual no la necessita.
+
+La capçalera es mesura automàticament; els controls i Documents s’adapten a pantalles petites. Revisades Inici, Educació, Documents, Candidatures i Calendari a 320 px sense desbordament horitzontal, i Educació i Documents a 375 px. Aquesta simulació no acredita una prova física d’iPhone ni de la icona instal·lada.
