@@ -44,3 +44,15 @@ test('export never copies OAuth sessions or arbitrary browser storage',async()=>
  const s=setup();s.storage.set('mapaPrivateDriveSession_v1','SECRET');s.storage.set('access_token','SECRET');s.storage.set('note_test','Keep note');
  const p=await s.context.collectPrivateBackup();assert(!JSON.stringify(p).includes('SECRET'));assert.equal(p.tracking.entries.note_test.value,'Keep note');
 });
+
+test('cloud merge preserves distinct Gmail messages sent in the same second and deduplicates repeat imports',()=>{
+ const s=setup(),date='2026-11-12T10:00:00.000Z';
+ const item=id=>({type:'gmail_sent_index',text:'Correu de candidatura a Gmail',date,gmailId:id,placeId:'school'});
+ const record=rows=>({version:1,key:'tracking',updated:date,entries:{history_gmail_sent_index:{updated:date,value:JSON.stringify(rows)}}});
+ const first=record([item('aaaaaaaaaaaaaaaa'),item('bbbbbbbbbbbbbbbb')]);
+ const second=record([item('aaaaaaaaaaaaaaaa'),item('cccccccccccccccc')]);
+ const merged=s.context.mergePrivateTracking(first,second);
+ assert.equal(JSON.parse(merged.entries.history_gmail_sent_index.value).length,3);
+ const again=s.context.mergePrivateTracking(merged,first);
+ assert.equal(JSON.parse(again.entries.history_gmail_sent_index.value).length,3);
+});

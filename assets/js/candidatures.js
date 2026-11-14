@@ -14,9 +14,11 @@ function mergeDashboardSentIndex(snapshot,existing,knownPlaces){
       !(item.placeId===null||knownPlaces.has(item.placeId))){
       throw Error('El fitxer conté un enviament no vàlid.');
     }
+    if(item.threadId!==undefined&&!(typeof item.threadId==='string'&&/^[a-z0-9]{1,100}$/i.test(item.threadId)))throw Error('El fil de Gmail no és vàlid.');
+    if(item.placeName!==undefined&&!(typeof item.placeName==='string'&&item.placeName.length<=500))throw Error('El nom del centre no és vàlid.');
     const previous=byId.get(item.gmailId);
     byId.set(item.gmailId,{type:'gmail_sent_index',text:'Correu de candidatura a Gmail',date:new Date(item.date).toISOString(),
-      gmailId:item.gmailId,placeId:item.placeId||previous?.placeId||null});
+      gmailId:item.gmailId,placeId:item.placeId||previous?.placeId||null,threadId:item.threadId||previous?.threadId||item.gmailId,placeName:item.placeName||previous?.placeName||''});
   }
   return [...byId.values()].sort((a,b)=>b.date.localeCompare(a.date));
 }
@@ -26,7 +28,7 @@ function mergeDashboardSentIndex(snapshot,existing,knownPlaces){
   const statusColors = {"No contactada":"#b9c6d8","CV preparat":"#f5a623","CV enviat":"#16a34a","Toca renovar candidatura":"#f59e0b","Han contestat":"#7b4de2","Entrevista":"#ec4b91"};
 
   function allSchools(){
-    if(window.MAPA_DATA) return [...window.MAPA_DATA.centres,...(window.MAPA_DATA.archived||[]).filter(s=>localStorage.getItem('status_'+s.id)||localStorage.getItem('history_'+s.id)).map(s=>({...s,name:s.name+' · no consta al directori actual d’infantil'})),
+    if(window.MAPA_DATA) return [...window.MAPA_DATA.centres,...(window.MAPA_DATA.archived||[]).filter(s=>localStorage.getItem('status_'+s.id)||localStorage.getItem('history_'+s.id)||dashboardSentIndex().some(item=>String(item.placeId)===String(s.id))).map(s=>({...s,name:s.name+' · no consta al directori actual d’infantil'})),
       ...window.MAPA_DATA.entitats.infantil.map(s=>({...s,dashScope:'gestora'})),
       ...window.MAPA_DATA.entitats.lleure.map(s=>({...s,dashScope:'lleure'}))];
     if (Array.isArray(window.SCHOOLS)) return window.SCHOOLS;
@@ -105,11 +107,12 @@ function mergeDashboardSentIndex(snapshot,existing,knownPlaces){
     const status=document.getElementById('dashImportStatus');
     try{
       if(file.size>1500000)throw Error('El fitxer és massa gran.');
-      const known=new Set(allSchools().map(sid));
+      const known=new Set([...allSchools().map(sid),...(window.MAPA_DATA.archived||[]).map(sid),...privatePortalRows(localStorage).map(row=>String(row.id))]);
       const items=mergeDashboardSentIndex(JSON.parse(await file.text()),dashboardSentIndex(),known);
       localStorage.setItem('history_'+dashboardGmailIndex,JSON.stringify(items));
       status.textContent='Historial privat importat: '+items.length+' correus a Gmail.';
       document.dispatchEvent(new Event('private-data-changed'));
+      document.dispatchEvent(new Event('candidature-history-changed'));
       render();
     }catch(error){status.textContent=error.message;}
     finally{input.value='';}

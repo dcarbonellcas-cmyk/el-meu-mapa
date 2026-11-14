@@ -14,17 +14,20 @@ function applicationCalendarEvents(place, history, status) {
   const items = (Array.isArray(history) ? history : [])
     .filter(item => Number.isFinite(Date.parse(item?.date)))
     .sort((a, b) => Date.parse(a.date) - Date.parse(b.date));
-  const sent = items.filter(item => item.type === 'sent');
+  const sent = [...new Map(items.filter(item => item.type === 'sent').map(item=>[item.gmailId?'gmail:'+item.gmailId:'date:'+new Date(item.date).toISOString(),item])).values()];
   const events = sent.map(item => ({
     type:'sent', date:applicationCalendarDay.format(new Date(item.date)),
-    title:'Candidatura enviada · ' + place.name
+    title:'Candidatura enviada · ' + place.name,
+    id:'sent|'+place.id+'|'+(item.gmailId||new Date(item.date).toISOString()),placeId:String(place.id),
+    placeName:place.name,city:place.city||'',sentAt:item.date,gmailId:item.gmailId,threadId:item.threadId
   }));
   const replies = items.filter(item => item.type === 'replied' ||
     (item.type === 'status' && /Estat canviat a Han contestat/.test(item.text)));
   for (const reply of replies) {
     events.push({
       type:'reply', date:applicationCalendarDay.format(new Date(reply.date)),
-      title:'Resposta de candidatura · ' + place.name, threadId:reply.threadId
+      title:'Resposta de candidatura · ' + place.name, threadId:reply.threadId,
+      id:'reply|'+place.id+'|'+(reply.gmailId||reply.date)
     });
   }
   const last = sent.at(-1);
@@ -37,10 +40,51 @@ function applicationCalendarEvents(place, history, status) {
   if (!resolved && !legacyOutcome) {
     events.push({
       type:'renewal', date:calendarRenewalDay(applicationCalendarDay.format(new Date(last.date))),
-      title:'Revisar candidatura · ' + place.name
+      title:'Revisar candidatura · ' + place.name,id:'renewal|'+place.id+'|'+last.date
     });
   }
   return events;
+}
+
+// Read all confirmed send sources without modifying their private records.
+function calendarApplicationSources(data,histories,sentIndex=[],portals=[],legacyRows=[],statuses={}){
+  const canonical=id=>({xarxa_fep:'xarxa_fecc',xarxa_manyanet:'xarxa_borsadocent'}[String(id)]||String(id));
+  const places=new Map(),rows=new Map();
+  const addPlace=place=>{const id=canonical(place.id);if(!places.has(id))places.set(id,{...place,id});return id};
+  for(const place of [...(data.centres||[]),...(data.archived||[]),...(data.entitats?.infantil||[]),...(data.entitats?.lleure||[]),...portals])addPlace(place);
+  const add=(id,item)=>{id=canonical(id);const list=rows.get(id)||[];list.push(item);rows.set(id,list)};
+  for(const [original,history] of Object.entries(histories)){
+    if(original==='calendar_interviews'||original==='gmail_sent_index'||!Array.isArray(history))continue;
+    const id=canonical(original);
+    if(!places.has(id)){
+      const name=history.find(item=>item.placeName)?.placeName;
+      addPlace({id,name:name||'Centre pendent d’identificar'});
+    }
+    for(const item of history)add(id,item);
+  }
+  for(const item of sentIndex){
+    if(!Number.isFinite(Date.parse(item.date)))continue;
+    const linked=[...rows].find(([,history])=>history.some(row=>row.type==='sent'&&row.gmailId&&row.gmailId===item.gmailId))?.[0];
+    const id=canonical(item.placeId||linked||'gmail_'+item.gmailId);
+    if(!places.has(id))addPlace({id,name:item.placeName||'Centre pendent d’identificar'});
+    add(id,{...item,type:'sent',source:'gmail'});
+  }
+  for(const item of legacyRows){
+    if(!item.sentDate||!Number.isFinite(Date.parse(item.sentDate)))continue;
+    const id=canonical(item.matchedId||'legacy_'+JSON.stringify([item.name,item.city||'']));
+    if(!places.has(id))addPlace({id,name:item.name,city:item.city});
+    const day=applicationCalendarDay.format(new Date(item.sentDate));
+    if((rows.get(id)||[]).some(row=>row.type==='sent'&&Number.isFinite(Date.parse(row.date))&&applicationCalendarDay.format(new Date(row.date))===day))continue;
+    add(id,{type:'sent',date:item.sentDate,text:'Enviament importat de l’historial antic'});
+  }
+  const events=[];let undated=0;
+  for(const [id,place] of places){
+    const history=rows.get(id)||[];
+    const status=statuses[id]||Object.entries(statuses).find(([key])=>canonical(key)===id)?.[1]||'none';
+    if(status==='sent'&&!history.some(item=>item.type==='sent'&&Number.isFinite(Date.parse(item.date))))undated++;
+    events.push(...applicationCalendarEvents(place,history,status).filter(event=>!(id.startsWith('gmail_')&&event.type==='renewal')));
+  }
+  return {events,undated};
 }
 
 function calendarMonthFollowUps(interviews,month){
@@ -71,7 +115,7 @@ function calendarInterviewAppointments(){
   const utcDay=day=>new Date(day+'T00:00:00Z');
   let selected=today(), month=utcDay(selected.slice(0,7)+'-01');
   const interviewHistory='calendar_interviews';
-  let editingInterview=null;
+  let editingInterview=null,undatedSends=0;
   const interviewOutcomes={
     pending:'Pendent de resposta',
     favorable:'Resposta favorable',
@@ -89,16 +133,14 @@ function calendarInterviewAppointments(){
   }
 
   function localEvents(){
-    const data=window.MAPA_DATA;
-    const places=new Map([...data.centres,...(data.archived||[]),...data.entitats.infantil,...data.entitats.lleure]
-      .map(place=>[String(place.id),place]));
+    const histories={},statuses={};
     for(const key of Object.keys(localStorage)){
-      if(!key.startsWith('history_calendar_place_'))continue;
-      const id=key.slice('history_'.length);
-      const name=hist(id).find(item=>item.placeName)?.placeName;
-      if(name)places.set(id,{id,name});
+      if(key.startsWith('history_'))histories[key.slice(8)]=hist(key.slice(8));
+      if(key.startsWith('status_'))statuses[key.slice(7)]=state(key.slice(7));
     }
-    const events=[...places.values()].flatMap(place=>applicationCalendarEvents(place,hist(place.id),state(place.id)));
+    const projected=calendarApplicationSources(window.MAPA_DATA,histories,dashboardSentIndex(),privatePortalRows(localStorage),loadLegacyRows(),statuses);
+    const events=projected.events;
+    undatedSends=projected.undated;
     const interviews=hist(interviewHistory);
     const outcomes=new Map();
     for(const item of interviews){
@@ -151,9 +193,22 @@ function calendarInterviewAppointments(){
     for(const event of all){
       if(!event.date.startsWith(key))continue;
       const list=events.get(event.date)||new Map();
-      list.set(event.type+'|'+norm(event.title).trim()+'|'+(event.type==='interview'?event.time||'':''),event);
+      list.set(event.id||event.type+'|'+norm(event.title).trim()+'|'+(event.type==='interview'?event.time||'':''),event);
       events.set(event.date,list);
     }
+    const sentThisMonth=all.filter(event=>event.type==='sent'&&event.date.startsWith(key)).sort((a,b)=>b.sentAt.localeCompare(a.sentAt)||a.placeName.localeCompare(b.placeName,'ca'));
+    byId('calendarSentCount').textContent=sentThisMonth.length+' enviaments registrats aquest mes · '+all.filter(event=>event.type==='sent').length+' en total'+(undatedSends?' · '+undatedSends+' centres marcats com a enviats sense data confirmada':'')+'.';
+    const agenda=byId('calendarSentAgenda');agenda.replaceChildren();
+    for(const event of sentThisMonth){
+      const row=document.createElement('li');
+      row.textContent=new Intl.DateTimeFormat('ca-ES',{timeZone:zone,dateStyle:'medium'}).format(new Date(event.sentAt))+' · '+event.placeName+(event.city?' · '+event.city:'');
+      const thread=event.threadId||event.gmailId;
+      if(thread&&/^[a-z0-9]+$/i.test(thread)){
+        const link=document.createElement('a');link.href='https://mail.google.com/mail/u/0/#all/'+thread;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Veure a Gmail';row.append(' · ',link);
+      }
+      agenda.append(row);
+    }
+    if(!sentThisMonth.length){const row=document.createElement('li');row.textContent='No hi ha enviaments amb data registrada aquest mes.';agenda.append(row)}
     byId('calendarMonth').textContent=monthFormat.format(month);
     grid.replaceChildren();
     for(const day of ['Dl','Dt','Dc','Dj','Dv','Ds','Dg']){
@@ -185,6 +240,8 @@ function calendarInterviewAppointments(){
         dots.append(dot);
       }
       button.append(dots);
+      const sentCount=[...(events.get(day)?.values()||[])].filter(event=>event.type==='sent').length;
+      if(sentCount){const count=document.createElement('small');count.className='calendar-send-count';count.textContent=sentCount;button.append(count);button.setAttribute('aria-label',button.getAttribute('aria-label')+', '+sentCount+' enviaments')} 
       button.addEventListener('click',()=>{
         selected=day;
         render(true);
@@ -198,11 +255,12 @@ function calendarInterviewAppointments(){
     for(const event of list){
       const row=document.createElement('li');
       row.className='calendar-'+event.type;
-      row.textContent=(event.time?event.time+' · ':'')+event.title+
+      row.textContent=(event.time?event.time+' · ':'')+event.title+(event.city?' · '+event.city:'')+
         (event.duration?' · '+event.duration+' min':'')+(event.location?' · '+event.location:'');
-      if(event.threadId&&/^[a-z0-9]+$/i.test(event.threadId)){
+      const gmailLink=event.threadId||event.gmailId;
+      if(gmailLink&&/^[a-z0-9]+$/i.test(gmailLink)){
         const link=document.createElement('a');
-        link.href='https://mail.google.com/mail/u/0/#all/'+event.threadId;
+        link.href='https://mail.google.com/mail/u/0/#all/'+gmailLink;
         link.target='_blank';link.rel='noopener noreferrer';link.textContent='Veure el fil a Gmail';
         row.append(' · ',link);
       }

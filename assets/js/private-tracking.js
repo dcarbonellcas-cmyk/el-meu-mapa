@@ -42,7 +42,9 @@ function mergePrivateTracking(local,remote){
     if(key.startsWith('history_')){
       // Prefer the edited version of the same event; retain distinct events from both devices.
       const rows=latest===a?[...JSON.parse(b.value),...JSON.parse(a.value)]:[...JSON.parse(a.value),...JSON.parse(b.value)];
-      const identity=x=>x.type==='interview'&&x.interviewId ? x.interviewId : JSON.stringify([x.date,x.type,x.text]);
+      // Bulk Gmail messages can share the exact same timestamp and description.
+      // Their message ID, rather than the date, identifies each confirmed email.
+      const identity=x=>x.type==='interview'&&x.interviewId ? x.interviewId : x.gmailId ? JSON.stringify([x.type,x.gmailId]) : JSON.stringify([x.date,x.type,x.text]);
       const unique=new Map();
       for(const row of rows){
         const id=identity(row),previous=unique.get(id);

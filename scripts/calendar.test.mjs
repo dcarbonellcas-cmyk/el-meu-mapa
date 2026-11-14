@@ -44,3 +44,43 @@ test('month-only follow-ups remain in their month without inventing a day',()=>{
   assert.equal(context.calendarMonthFollowUps(interviews,'2027-08').length,0);
   assert.equal(context.calendarMonthFollowUps(interviews,'2027-13').length,0);
 });
+
+const data={centres:[{id:'a',name:'Escola Compartida',city:'A'},{id:'b',name:'Escola Compartida',city:'B'}],entitats:{infantil:[],lleure:[]}};
+const sources=(histories={},index=[],portals=[],legacy=[],statuses={})=>context.calendarApplicationSources(data,histories,index,portals,legacy,statuses);
+test('calendar includes Gmail imports and deduplicates a send already present in centre history',()=>{
+ const item={gmailId:'abcdef1234567890',placeId:'a',date:'2026-11-12T10:00:00Z',threadId:'abcdef1234567890'};
+ const events=sources({a:[{...item,type:'sent'}]},[item]).events.filter(x=>x.type==='sent');
+ assert.equal(events.length,1);assert.equal(events[0].date,'2026-11-12');assert.equal(events[0].threadId,item.threadId);
+});
+test('same-named schools and two distinct real emails on one day remain separate',()=>{
+ const a={type:'sent',date:'2026-11-12T10:00:00Z',gmailId:'aaaa'},b={...a,gmailId:'bbbb'};
+ const events=sources({a:[a,b],b:[a]}).events.filter(x=>x.type==='sent');
+ assert.equal(events.length,3);assert.equal(new Set(events.map(x=>x.id)).size,3);
+});
+test('calendar retains confirmed portal sends but never counts registration or preparation as a send',()=>{
+ const events=sources({portal:[{type:'sent',date:'2026-11-12T10:00:00Z'}],a:[{type:'prepared',date:'2026-11-12T10:00:00Z'}]},[],[{id:'portal',name:'Borsa de prova',status:'registered'},{id:'registeredOnly',name:'Només inscripció',status:'registered'}]).events;
+ assert.equal(events.filter(x=>x.type==='sent').length,1);assert.equal(events[0].placeName,'Borsa de prova');
+});
+test('an unlinked Gmail record retains its source name and date and has no guessed renewal',()=>{
+ const result=sources({},[{gmailId:'abcd',placeId:null,placeName:'Nom verificat al correu',date:'2026-11-12T23:30:00Z'}]);
+ assert.equal(result.events.length,1);assert.equal(result.events[0].placeName,'Nom verificat al correu');assert.equal(result.events[0].date,'2026-11-13');
+});
+test('an unlinked Gmail import reuses an existing linked send instead of creating a duplicate',()=>{
+ const item={gmailId:'abcd',date:'2026-11-12T10:00:00Z'};
+ assert.equal(sources({a:[{...item,type:'sent'}]},[{...item,placeId:null}]).events.filter(x=>x.type==='sent').length,1);
+});
+test('old dated sends are included once while undated sent statuses never receive an invented date',()=>{
+ const result=sources({a:[{type:'sent',date:'2026-11-12T10:00:00Z'}]},[],[],[{name:'Escola Compartida',matchedId:'a',sentDate:'2026-11-12'},{name:'Centre antic',sentDate:'2026-09-04'}],{b:'sent'});
+ assert.equal(result.events.filter(x=>x.type==='sent').length,2);assert.equal(result.undated,1);
+});
+
+test('Gmail import retains verified names and thread links without replacing centre history',async()=>{
+ const source=await readFile(new URL('../assets/js/candidatures.js',import.meta.url),'utf8');
+ const ctx=vm.createContext({Date,Map,Set});vm.runInContext(source.split('\n(function(){')[0],ctx);
+ const row={gmailId:'abcdef1234567890',date:'2026-11-12T10:00:00Z',placeId:'a',placeName:'Nom verificat',threadId:'1234567890abcdef'};
+ const snapshot={version:1,kind:'gmail-sent-index',items:[row]};
+ const first=ctx.mergeDashboardSentIndex(snapshot,[],new Set(['a']));
+ const second=ctx.mergeDashboardSentIndex(snapshot,first,new Set(['a']));
+ assert.equal(second.length,1);assert.equal(second[0].threadId,row.threadId);assert.equal(second[0].placeName,row.placeName);
+ assert.throws(()=>ctx.mergeDashboardSentIndex({...snapshot,items:[{...row,threadId:'https://unsafe.example'}]},[],new Set(['a'])));
+});
