@@ -1,5 +1,18 @@
 const GMAIL_CLIENT_ID='326278371839-alsvhik4agj0jqp6ps16ve3j722q6p2k.apps.googleusercontent.com';
 const GMAIL_SCOPE='https://www.googleapis.com/auth/gmail.send';
+let gmailRetryAfter=0;
+function gmailSendingWait(){
+  try{gmailRetryAfter=Math.max(gmailRetryAfter,Number(localStorage.getItem?.('mapaGmailSendRetryAfter_v1'))||0)}catch{}
+  if(Date.now()>=gmailRetryAfter)return '';
+  const when=new Date(gmailRetryAfter).toLocaleString('ca-ES',{timeZone:'Europe/Madrid',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});
+  return 'Gmail limita temporalment els enviaments del teu compte. Google indica que esperis fins al '+when+' (hora peninsular), però el bloqueig pot durar més. No es reintentarà automàticament.';
+}
+function rememberGmailSendingLimit(detail){
+  const timestamp=detail.match(/Retry after\s+(\d{4}-\d{2}-\d{2}T[0-9:.]+Z)/i)?.[1];
+  const until=Date.parse(timestamp);if(!Number.isFinite(until)||until<=Date.now())return '';
+  gmailRetryAfter=until;try{localStorage.setItem('mapaGmailSendRetryAfter_v1',String(until))}catch{}
+  return gmailSendingWait();
+}
 let gmailTokenClient=null;
 let gmailGrantedToken='',gmailGrantedUntil=0;
 function rememberGmailAccess(response){gmailGrantedToken=response.access_token;gmailGrantedUntil=Date.now()+Math.max(0,Number(response.expires_in||3600)-60)*1000}
@@ -32,11 +45,12 @@ async function actuallySendGmail(accessToken,snapshot){
   let delivered=false;
   const btn=document.getElementById('sendGmail');
   try{
+    const waiting=gmailSendingWait();if(waiting)throw Error(waiting);
     const {to,subject,body,docs,id}=snapshot;
     gmailNotice('Enviant candidatura…');
     const raw=await buildGmailRaw(to,subject,body,docs);
     const res=await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send',{method:'POST',headers:{Authorization:'Bearer '+accessToken,'Content-Type':'application/json'},body:JSON.stringify({raw})});
-    if(!res.ok){let detail='';try{detail=(await res.json()).error?.message||''}catch(e){};throw new Error(detail||('Error de Gmail ('+res.status+')'))}
+    if(!res.ok){let detail='';try{detail=(await res.json()).error?.message||''}catch(e){};if(res.status===429&&/Mail sending/i.test(detail)){const waiting=rememberGmailSendingLimit(detail);if(waiting)throw Error(waiting)}throw new Error(detail||('Error de Gmail ('+res.status+')'))}
     delivered=true; const receipt=await res.json();
     localStorage.setItem('status_'+id,'sent'); addHist(id,'sent',lastSent(id)?'CV renovat i enviat amb Gmail':'CV enviat amb Gmail',{gmailId:receipt.id,threadId:receipt.threadId});
     await applicationArchive('put',{gmailId:receipt.id,threadId:receipt.threadId,id,centre:snapshot.centre,role:snapshot.role,to,subject,body,sentAt:new Date().toISOString(),attachments:docs.map(d=>({name:d.name,type:d.type,size:d.blob.size}))});
@@ -47,6 +61,7 @@ async function actuallySendGmail(accessToken,snapshot){
 }
 let sendReviewBusy=false;
 async function sendWithGmail(){
+  const waiting=gmailSendingWait();if(waiting){gmailNotice(waiting);return}
   if(sendReviewBusy)return;
   const draft=document.getElementById('draftSubject').value+' '+document.getElementById('draftBody').value;
   if(draft.includes('[El teu nom]')||draft.includes('[La teva formació i experiència]')||draft.includes('[Completa l’experiència')){gmailNotice('Completa el teu nom i formació a Documents o edita l’esborrany abans d’enviar.');return}
@@ -62,6 +77,7 @@ async function sendWithGmail(){
   }catch(e){gmailNotice(e.message);return}finally{sendReviewBusy=false}
 }
 function authorizeReviewedGmail(snapshot){
+  const waiting=gmailSendingWait();if(waiting){gmailNotice(waiting);return}
   if(gmailGrantedToken&&Date.now()<gmailGrantedUntil){const button=document.getElementById('sendGmail');button.disabled=true;return actuallySendGmail(gmailGrantedToken,snapshot)}
   const btn=document.getElementById('sendGmail'); btn.disabled=true; btn.textContent='Connectant amb Gmail…'; gmailNotice('Autoritza el teu compte de Gmail a la finestra de Google.');
   if(!(window.google&&google.accounts&&google.accounts.oauth2)){gmailNotice('Google encara no s’ha carregat. Espera uns segons i torna-ho a provar.');btn.disabled=false;btn.textContent='✉ Enviar amb Gmail';return}

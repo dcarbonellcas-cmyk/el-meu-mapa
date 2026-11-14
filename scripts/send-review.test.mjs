@@ -59,3 +59,17 @@ test('connecting Gmail requests only send permission and never sends or records 
  assert.equal(x.requests.length,0);assert.equal(x.statuses.length,0);assert.equal(x.saved.length,0);assert.match(x.elements.gmailNotice.textContent,/No s’ha enviat cap correu/);
  await x.ctx.authorizeReviewedGmail(snapshot);assert.equal(x.requests.length,1);assert.equal(x.saved.length,1);
 });
+
+
+test('Gmail mail-sending quota stores the retry time and blocks repeated sends without a sent history',async()=>{
+ const x=setup(),retry=new Date(Date.now()+3600000).toISOString();let calls=0;
+ x.ctx.fetch=async()=>{calls++;return {ok:false,status:429,json:async()=>({error:{message:'User-rate limit exceeded. Retry after '+retry+' (Mail sending)'}})}};
+ await x.ctx.actuallySendGmail('synthetic-token',snapshot);
+ assert.equal(calls,1);assert.equal(x.saved.length,0);assert.equal(x.statuses.filter(([key])=>key.startsWith('status_')).length,0);
+ assert.match(x.elements.gmailNotice.textContent,/hora peninsular/);assert.match(x.elements.gmailNotice.textContent,/No es reintentarà automàticament/);
+ await x.ctx.actuallySendGmail('synthetic-token',snapshot);assert.equal(calls,1,'no second Gmail API request while the retry time is active');
+});
+test('a persisted Gmail send limit survives a new page session without opening Google',()=>{
+ const x=setup();x.ctx.localStorage.getItem=()=>String(Date.now()+3600000);x.ctx.authorizeReviewedGmail(snapshot);
+ assert.equal(x.requests.length,0);assert.match(x.elements.gmailNotice.textContent,/Gmail limita temporalment/);
+});
