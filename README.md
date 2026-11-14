@@ -91,3 +91,9 @@ Documents ofereix una còpia portàtil xifrada amb contrasenya (mínim 12 caràc
 A l’iPhone, cal importar dins de l’espai que s’utilitzarà: si es farà servir la icona de la pantalla d’inici, crear-la primer amb l’adreça de GitHub i carregar la còpia des d’aquella icona. Les dades del navegador poden quedar separades de les de l’app instal·lada. La connexió antiga amb Google es conserva com a opció; aquesta via manual no la necessita.
 
 La capçalera es mesura automàticament; els controls i Documents s’adapten a pantalles petites. Revisades Inici, Educació, Documents, Candidatures i Calendari a 320 px sense desbordament horitzontal, i Educació i Documents a 375 px. Aquesta simulació no acredita una prova física d’iPhone ni de la icona instal·lada.
+
+## Trasllat a Sites · 14/11/2026
+
+La interfície principal és a https://el-meu-mapa-escoles.dolca1021.chatgpt.site (privada). El codi editable de Sites i el seu manifest són al directori germà `../sites/el-meu-mapa`. Cada obertura nova mostra l’inici de sessió. No s’han eliminat les dades locals ni canviat el compte privat de Base44. GitHub Pages continua disponible per conservar i sincronitzar les dades dels navegadors antics abans del trasllat. No es redirigeix automàticament una còpia local que podria tenir canvis pendents.
+
+GitHub Actions manté la recollida diària de dades públiques; Sites les consulta automàticament amb còpia local de reserva. Les futures modificacions de la interfície s’han de publicar al mateix Site.

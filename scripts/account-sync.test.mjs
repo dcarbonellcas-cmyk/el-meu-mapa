@@ -53,3 +53,14 @@ test('live Base44 mp/private format is restricted to this app and never admits p
  assert.equal(privateFileUri('mp/private/'+APP+'/synthetic_mapa-test.bin'),true);
  for(const uri of ['mp/public/'+APP+'/file.bin','mp/private/another-app/file.bin','mp/private/'+APP+'/../file.bin','mp/private/'+APP+'/%2e%2e/file.bin','https://storage.example/public/file.bin','mp/private/'+APP+'/file.bin?public=true'])assert.equal(privateFileUri(uri),false,uri);
 });
+
+test('opening a page with a previously saved token still requires a fresh sign-in',async()=>{
+ const ui=await readFile(new URL('../assets/js/account-sync.js',import.meta.url),'utf8');
+ const values=new Map([['mapaAccountToken_v1','old-session'],['history_school','preserved']]);
+ const node=()=>({hidden:false,tagName:'SECTION',setAttribute(){},append(){},previousElementSibling:{},querySelector(){return node()}});
+ const body={children:[],append(el){this.children.push(el)}};let identityCalls=0;
+ const context={MapaAccountCore:{AccountStore:class{async me(){identityCalls++;return {id:'user'}}}},localStorage:{getItem:k=>values.get(k),removeItem:k=>values.delete(k)},document:{body,createElement:node,getElementById:()=>null,addEventListener(){}},window:{addEventListener(){}},setInterval(){}};
+ vm.createContext(context);vm.runInContext(ui,context);
+ assert.equal(identityCalls,0);assert.equal(body.children[0].hidden,false);assert.equal(body.children[1].hidden,true);
+ assert.equal(values.get('history_school'),'preserved');assert.equal(values.has('mapaAccountToken_v1'),false);
+});

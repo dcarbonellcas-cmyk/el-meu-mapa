@@ -1,4 +1,14 @@
 // Classic scripts retain the shared functions used by existing controls.
+// Sites keeps the public daily feed; account data never passes through GitHub.
+window.mapaPublicData=async function(name){
+  const allowed=['centres.json','entitats.json','centres-arxivats.json','ofertes.json','sincronitzacio.json','gmail-xifrat.json'];
+  if(!allowed.includes(name))throw Error('Font pública desconeguda.');
+  const local='assets/data/'+name;
+  const remote=location.hostname==='el-meu-mapa-escoles.dolca1021.chatgpt.site';
+  const paths=remote?['https://dcarbonellcas-cmyk.github.io/el-meu-mapa/'+local,local]:[local];
+  for(const path of paths){try{const r=await fetch(path,{cache:'no-store',credentials:'omit',signal:AbortSignal.timeout(15000)});if(!r.ok)continue;return await r.json()}catch{}}
+  throw Error('Dades no disponibles: '+name);
+};
 (async function(){
   function loadScript(path){return new Promise((resolve,reject)=>{
     const script=document.createElement('script');script.src=path+'?v='+encodeURIComponent(document.querySelector('meta[name="mapa-release"]')?.content||'20261113-mobil');script.async=false;
@@ -9,8 +19,7 @@
       // Generated from the JSON files; permits the original double-click preview.
       await loadScript('assets/data/dades-local.js');
     }else{
-      async function json(path){const r=await fetch(path+'?v=20261107-estil-lila',{cache:'no-store'});if(!r.ok)throw new Error('Dades no disponibles: '+path);return r.json()}
-      const [centres,entitats,archived]=await Promise.all([json('assets/data/centres.json'),json('assets/data/entitats.json'),json('assets/data/centres-arxivats.json')]);
+      const [centres,entitats,archived]=await Promise.all(['centres.json','entitats.json','centres-arxivats.json'].map(window.mapaPublicData));
       window.MAPA_DATA={centres,entitats,archived};
     }
     if(typeof L==='undefined')throw new Error('No s’ha pogut carregar el mapa. Comprova la connexió a Internet i recarrega la pàgina.');

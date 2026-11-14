@@ -2,7 +2,9 @@
 (() => {
   const {AccountStore,bytes,b64,digest}=MapaAccountCore;
   const tokenKey='mapaAccountToken_v1',ownerKey='mapaAccountOwner_v1',deviceKey='mapaAccountDevice_v1';
-  const store=new AccountStore({token:localStorage.getItem(tokenKey)||''});
+  // Require a fresh sign-in on every page opening, without deleting local records.
+  const store=new AccountStore();
+  localStorage.removeItem(tokenKey);
   let user=null,busy=false,applying=false,revision=0,timer,recordId='',lastHash='',mode='login';
   const cache=new Map(),refs=new Map(),applied=new Map();
   const gate=document.createElement('section');gate.id='accountGate';gate.setAttribute('aria-label','Accés al teu mapa');
@@ -89,5 +91,5 @@
   document.addEventListener('visibilitychange',()=>{if(!document.hidden&&user)sync().catch(()=>{})});window.addEventListener('online',()=>{if(user)sync().catch(()=>{})});
   window.addEventListener('storage',event=>{if(privateTrackingKey(event.key||'')||event.key==='mapaEscolesProfile_v1')schedule()});
   setInterval(()=>{if(!document.hidden&&user&&!/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement?.tagName||''))sync().catch(()=>{})},60000);
-  lock(true);if(store.token)attach().catch(error=>say(error.message));else say('Entra amb el teu compte per obrir el mapa, o crea’l si encara no en tens.');
+  lock(true);say('Entra amb el teu compte per obrir el mapa, o crea’l si encara no en tens.');
 })();

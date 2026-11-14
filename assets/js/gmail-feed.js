@@ -4,7 +4,7 @@
  async function refresh(){
   if(!key)return;
   try{
-   const response=await fetch('assets/data/gmail-xifrat.json',{cache:'no-store'});if(!response.ok)throw Error();const envelope=await response.json();
+   const envelope=await window.mapaPublicData('gmail-xifrat.json');
    if(envelope.version!==1)throw Error();
    const value=await crypto.subtle.decrypt({name:'AES-GCM',iv:bytes(envelope.iv),additionalData:new TextEncoder().encode('el-meu-mapa-gmail-v1')},key,bytes(envelope.ciphertext));
    const data=JSON.parse(new TextDecoder().decode(value));
@@ -14,7 +14,7 @@
   }catch{output.textContent=' No s’han pogut obrir les alertes. Comprova la connexió i la clau privada.';}
  }
  document.getElementById('unlockGmailFeed')?.addEventListener('click',async()=>{
-  const response=await fetch('assets/data/sincronitzacio.json',{cache:'no-store'});const status=await response.json();
+  const status=await window.mapaPublicData('sincronitzacio.json');
   if(status.sources.gmail?.state==='pending'){output.textContent=' Encara falta completar l’autorització de Google i la connexió privada.';return;}
   const value=prompt('Clau privada de les alertes (no la comparteixis):');if(!value)return;
   try{const raw=bytes(value.trim());if(raw.length!==32)throw Error();key=await crypto.subtle.importKey('raw',raw,'AES-GCM',false,['decrypt']);await refresh();}catch{output.textContent=' Clau no vàlida.';}

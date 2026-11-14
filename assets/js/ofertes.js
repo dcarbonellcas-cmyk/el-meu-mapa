@@ -22,7 +22,7 @@
   async function liveSources(silent=false){
     const notice=document.getElementById('jobsSyncNotice');
     try{
-      const r=await fetch('assets/data/ofertes.json',{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);const data=await r.json();
+      const data=await window.mapaPublicData('ofertes.json');
       const old=JSON.parse(localStorage.getItem('mapaEscolesJobs_v1')||'[]'),by=new Map(old.map(j=>[j.id,j])),present=new Set();let added=0;
       for(const j of data.jobs||[]){present.add(j.id);const existing=by.get(j.id);if(!existing)added++;const source=data.sources?.[j.source==='Feina Activa'?'feinaActiva':'sepe'];by.set(j.id,{...j,status:existing?.status||'saved',inactive:false,stale:source?.state!=='ok'});}
       for(const j of by.values())if(j.automatic&&!present.has(j.id))j.inactive=true;
