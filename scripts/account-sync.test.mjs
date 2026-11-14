@@ -8,7 +8,7 @@ function setup(fetcher){const context={crypto:webcrypto,btoa,atob,Uint8Array,Tex
 const reply=(body,status=200)=>new Response(JSON.stringify(body),{status,headers:{'Content-Type':'application/json'}});
 test('private upload encrypts bytes and a second device decrypts them without sending the key to storage',async()=>{
  let ciphertext;const calls=[];
- const fetcher=async(url,options={})=>{calls.push({url,options});if(url.endsWith('/UploadPrivateFile')){ciphertext=await options.body.get('file').arrayBuffer();return reply({file_uri:'private/test/random.bin'})}if(url.endsWith('/CreateFileSignedUrl'))return reply({signed_url:'https://private.example/file'});if(url==='https://private.example/file')return new Response(ciphertext);throw Error(url)};
+ const fetcher=async(url,options={})=>{calls.push({url,options});if(url.endsWith('/UploadPrivateFile')){ciphertext=await options.body.get('file').arrayBuffer();return reply({file_uri:'mp/private/6af755059e0add3fad1a1601/synthetic_mapa-test.bin'})}if(url.endsWith('/CreateFileSignedUrl'))return reply({signed_url:'https://private.example/file'});if(url==='https://private.example/file')return new Response(ciphertext);throw Error(url)};
  const first=setup(fetcher),raw=new TextEncoder().encode('Synthetic private CV');const ref=await first.upload(raw);assert.notEqual(new TextDecoder().decode(ciphertext),'Synthetic private CV');
  const second=setup(fetcher),restored=await second.download(ref);assert.equal(new TextDecoder().decode(restored),'Synthetic private CV');
  assert.equal(calls[0].options.headers.Authorization,'Bearer synthetic-token');assert.equal(calls.at(-1).options.headers,undefined);assert(!calls.some(c=>c.url.includes(ref.key)));
@@ -44,4 +44,12 @@ test('private file references accept both private path and private URI formats, 
  const ref={key:btoa('k'.repeat(32)),iv:btoa('i'.repeat(12)),hash:'synthetic-hash'};
  for(const file_uri of ['private/test/file.bin','private://test/file.bin'])assert.equal(context.MapaAccountCore.validateRef({...ref,file_uri}).file_uri,file_uri);
  assert.throws(()=>context.MapaAccountCore.validateRef({...ref,file_uri:'https://public.example/file.bin'}));
+});
+
+
+test('live Base44 mp/private format is restricted to this app and never admits public paths',()=>{
+ const context={crypto:webcrypto,btoa,atob,Uint8Array,TextEncoder,TextDecoder,FormData,File,URL,URLSearchParams,AbortSignal,fetch};vm.createContext(context);vm.runInContext(code,context);
+ const {privateFileUri,APP}=context.MapaAccountCore;
+ assert.equal(privateFileUri('mp/private/'+APP+'/synthetic_mapa-test.bin'),true);
+ for(const uri of ['mp/public/'+APP+'/file.bin','mp/private/another-app/file.bin','mp/private/'+APP+'/../file.bin','mp/private/'+APP+'/%2e%2e/file.bin','https://storage.example/public/file.bin','mp/private/'+APP+'/file.bin?public=true'])assert.equal(privateFileUri(uri),false,uri);
 });

@@ -4,8 +4,15 @@
   const b64=bytes=>{let s='';for(let i=0;i<bytes.length;i+=16384)s+=String.fromCharCode(...bytes.subarray(i,i+16384));return btoa(s)};
   const bytes=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
   async function digest(data){return b64(new Uint8Array(await crypto.subtle.digest('SHA-256',data)))}
+  // Observed UploadPrivateFile response: mp/private/<this app id>/<generated>.bin.
+  // Accept only this app's private namespace; public URLs and other apps stay rejected.
+  function privateFileUri(uri){
+    if(typeof uri!=='string'||uri.length>2000)return false;
+    if(uri.startsWith('mp/'))return new RegExp('^mp/private/'+APP+'/[A-Za-z0-9_-]+\\.bin$').test(uri);
+    return /^private(?:\/|:\/\/)/.test(uri);
+  }
   function validateRef(ref){
-    if(!ref||typeof ref.file_uri!=='string'||!/^private(?:\/|:\/\/)/.test(ref.file_uri)||ref.file_uri.length>2000||typeof ref.key!=='string'||typeof ref.iv!=='string'||bytes(ref.key).length!==32||bytes(ref.iv).length!==12||typeof ref.hash!=='string')throw Error('La còpia del compte no és vàlida.');
+    if(!ref||!privateFileUri(ref.file_uri)||typeof ref.key!=='string'||typeof ref.iv!=='string'||bytes(ref.key).length!==32||bytes(ref.iv).length!==12||typeof ref.hash!=='string')throw Error('La còpia del compte no és vàlida.');
     return ref;
   }
   class AccountStore{
@@ -50,5 +57,5 @@
       if(await digest(plain)!==ref.hash)throw Error('El document del compte està malmès.');return plain;
     }
   }
-  root.MapaAccountCore={AccountStore,digest,b64,bytes,validateRef,APP};
+  root.MapaAccountCore={AccountStore,digest,b64,bytes,validateRef,privateFileUri,APP};
 })(globalThis);
