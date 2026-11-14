@@ -80,7 +80,7 @@
   </header>
   <div class="calendar-controls">
     <button type="button" id="calendarRegisterSent" class="smallBtn">＋ Registrar enviament</button>
-    <button type="button" id="calendarInterview" class="smallBtn calendar-interview-button">＋ Entrevista</button>
+    <button type="button" id="calendarInterview" class="smallBtn calendar-interview-button">＋ Entrevista</button><label class="smallBtn">Importar entrevistes<input type="file" id="calendarImportInterviews" accept=".json,application/json" hidden></label>
   </div>
   <p id="calendarStatus" class="calendar-announcement" role="status"></p>
   <p id="calendarGmailStatus" class="calendar-announcement" role="status"></p>
@@ -104,7 +104,7 @@
       <label>Hora (si la coneixes) <input name="time" type="time"></label>
       <label>Durada en minuts <input name="duration" type="number" min="5" max="480"></label>
       <label>Lloc o enllaç <input name="location" maxlength="300"></label>
-      <label>Resultat <select name="outcome"><option value="pending">Pendent de resposta</option><option value="unfavorable">Resposta desfavorable</option><option value="favorable">Resposta favorable</option></select></label>
+      <label><span><input type="checkbox" name="completed"> Entrevista realitzada</span></label><label>Resultat <select name="outcome"><option value="pending">Pendent de resposta</option><option value="unfavorable">Resposta desfavorable</option><option value="favorable">Resposta favorable</option></select></label>
       <label>Nota <input name="note" maxlength="1000"></label>
       <label>Mes per tornar a contactar <input name="reminderMonth" type="month"></label>
     </div>

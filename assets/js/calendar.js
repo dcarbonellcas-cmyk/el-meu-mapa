@@ -87,6 +87,21 @@ function calendarApplicationSources(data,histories,sentIndex=[],portals=[],legac
   return {events,undated};
 }
 
+function mergeCalendarInterviewImport(snapshot,existing,knownPlaces){
+  if(snapshot?.version!==1||snapshot.kind!=='calendar-interviews'||!Array.isArray(snapshot.interviews)||snapshot.interviews.length>100)throw Error('El fitxer no conté entrevistes vàlides.');
+  const result=[...existing];
+  for(const item of snapshot.interviews){
+    if(!item||typeof item.name!=='string'||!item.name.trim()||item.name.length>300||!knownPlaces.has(String(item.placeId))||!/^\d{4}-\d{2}-\d{2}$/.test(item.day)||!['pending','favorable','unfavorable'].includes(item.outcome)||typeof item.completed!=='boolean'||typeof item.note!=='string'||item.note.length>1000||item.reminderMonth&&!/^\d{4}-(0[1-9]|1[0-2])$/.test(item.reminderMonth))throw Error('Hi ha una entrevista amb dades no vàlides.');
+    // Noon is an internal date-only anchor; it is never displayed as an appointment time.
+    const date=new Date(item.day+'T12:00:00+01:00');
+    if(!Number.isFinite(date.getTime())||applicationCalendarDay.format(date)!==item.day)throw Error('La data de l’entrevista no és vàlida.');
+    const duplicate=result.some(row=>row.type==='interview'&&(String(row.placeId||'')===String(item.placeId)||row.text===item.name)&&!row.dateUnknown&&applicationCalendarDay.format(new Date(row.date))===item.day);
+    if(duplicate)continue;
+    result.push({type:'interview',interviewId:'restored-'+item.placeId+'-'+item.day,placeId:String(item.placeId),text:item.name,date:date.toISOString(),timeUnknown:true,dateUnknown:false,completed:item.completed,outcome:item.outcome,note:item.note,reminderMonth:item.reminderMonth||'',modifiedAt:new Date().toISOString()});
+  }
+  return result.sort((a,b)=>Date.parse(b.date)-Date.parse(a.date));
+}
+
 function calendarMonthFollowUps(interviews,month){
   // A month is not an appointment date: never assign an invented day or time.
   if(!/^\d{4}-(0[1-9]|1[0-2])$/.test(month))return [];
@@ -95,7 +110,7 @@ function calendarMonthFollowUps(interviews,month){
 
 function calendarInterviewAppointments(){
   const interviews=hist('calendar_interviews').filter(item=>item.type==='interview'&&Number.isFinite(Date.parse(item.date)));
-  return [...new Map(interviews.map(item=>[item.interviewId||JSON.stringify([new Date(item.date).toISOString(),norm(item.text).trim()]),item])).values()];
+  return [...new Map(interviews.map(item=>[item.interviewId||JSON.stringify([new Date(item.date).toISOString(),norm(item.text).trim()]),item])).values()].map(item=>({...item,outcome:hist('calendar_interviews').find(row=>row.type==='interview_outcome'&&row.interviewDate===item.date&&row.text===item.text)?.outcome||item.outcome}));
 }
 
 (() => {
@@ -139,7 +154,10 @@ function calendarInterviewAppointments(){
       if(key.startsWith('status_'))statuses[key.slice(7)]=state(key.slice(7));
     }
     const projected=calendarApplicationSources(window.MAPA_DATA,histories,dashboardSentIndex(),privatePortalRows(localStorage),loadLegacyRows(),statuses);
-    const events=projected.events;
+    const appointments=calendarInterviewAppointments();
+    const heldPlaces=[...window.MAPA_DATA.centres,...(window.MAPA_DATA.archived||[]),...window.MAPA_DATA.entitats.infantil,...window.MAPA_DATA.entitats.lleure].filter(place=>interviewsForPlace(place,appointments).length);
+    const heldIds=new Set(heldPlaces.map(place=>String(place.id)));
+    const events=projected.events.filter(event=>!(event.type==='renewal'&&heldIds.has(String(event.placeId||event.id?.split('|')[1]))));
     undatedSends=projected.undated;
     const interviews=hist(interviewHistory);
     const outcomes=new Map();
@@ -152,7 +170,7 @@ function calendarInterviewAppointments(){
       if(item.dateUnknown)continue;
       const start=new Date(item.date);
       events.push({type:'interview',date:dayFormat.format(start),time:item.timeUnknown?'':clockFormat.format(start),
-        title:'Entrevista · '+item.text,location:item.location,duration:item.duration,
+        title:(item.completed?'Entrevista realitzada · ':'Entrevista · ')+item.text,location:item.location,duration:item.duration,
         interview:item,outcome:outcomes.get(JSON.stringify([item.date,item.text]))||item.outcome});
     }
     return events;
@@ -164,12 +182,12 @@ function calendarInterviewAppointments(){
     for(const item of calendarInterviewAppointments()){
       const row=document.createElement('li');
       const outcome=hist(interviewHistory).find(x=>x.type==='interview_outcome'&&x.interviewDate===item.date&&x.text===item.text)?.outcome||item.outcome||'pending';
-      row.textContent=item.text+' · '+(item.dateUnknown?'Data de l’entrevista pendent de confirmar':dayFormat.format(new Date(item.date)))+' · '+interviewOutcomes[outcome]+(item.note?' · '+item.note:'')+(item.reminderMonth?' · Tornar a contactar: '+item.reminderMonth:'');
+      row.textContent=item.text+(item.completed?' · Entrevista realitzada':'')+' · '+(item.dateUnknown?'Data de l’entrevista pendent de confirmar':dayFormat.format(new Date(item.date)))+' · '+interviewOutcomes[outcome]+(item.note?' · '+item.note:'')+(item.reminderMonth?' · Tornar a contactar: '+item.reminderMonth:'');
       const edit=document.createElement('button');edit.type='button';edit.className='smallBtn';edit.textContent='Editar entrevista';
       edit.setAttribute('aria-label','Editar entrevista · '+item.text);
       edit.addEventListener('click',()=>{
         editingInterview=item;form.hidden=false;
-        form.elements.centre.value=item.text;
+        form.elements.centre.value=item.text;form.elements.completed.checked=Boolean(item.completed);
         form.elements.date.value=item.dateUnknown?'':dayFormat.format(new Date(item.date));
         form.elements.time.value=item.dateUnknown||item.timeUnknown?'':clockFormat.format(new Date(item.date));
         form.elements.location.value=item.location||'';form.elements.duration.value=item.duration||'';
@@ -315,11 +333,12 @@ function calendarInterviewAppointments(){
     if(!centre){formStatus.textContent='Escriu el nom del centre o de l’empresa.';return;}
     try{
       if(time&&!day)throw Error('Indica el dia o deixa també l’hora en blanc.');
+      if(fields.get('completed')==='on'&&day>today())throw Error('Una entrevista futura no es pot marcar com a realitzada.');
       const start=day?madridInstant(day,time||'12:00'):new Date();
       const dateUnknown=!day;
       if(calendarInterviewAppointments().some(x=>!(editingInterview&&x.date===editingInterview.date&&x.text===editingInterview.text)&&norm(x.text).trim()===norm(centre).trim()&&Boolean(x.dateUnknown)===dateUnknown&&(dateUnknown||x.date===start.toISOString())))throw Error('Aquesta entrevista ja consta al seguiment.');
       const entry={type:'interview',modifiedAt:new Date().toISOString(),interviewId:editingInterview?.interviewId||(editingInterview?JSON.stringify([editingInterview.date,editingInterview.type,editingInterview.text]):crypto.randomUUID()),date:start.toISOString(),dateUnknown,timeUnknown:!time,text:centre,
-        outcome:fields.get('outcome'),note:fields.get('note').trim(),reminderMonth:fields.get('reminderMonth'),
+        completed:fields.get('completed')==='on',placeId:editingInterview?.placeId||undefined,outcome:fields.get('outcome'),note:fields.get('note').trim(),reminderMonth:fields.get('reminderMonth'),
         location:fields.get('location').trim(),duration:Number(fields.get('duration'))};
       if(editingInterview){
         const rows=hist(interviewHistory).filter(x=>!(x.type==='interview'&&x.date===editingInterview.date&&x.text===editingInterview.text));
@@ -335,6 +354,19 @@ function calendarInterviewAppointments(){
     }catch(error){formStatus.textContent=error.message;}
   });
 
+  byId('calendarImportInterviews').addEventListener('change',async event=>{
+    const input=event.target,file=input.files[0];if(!file)return;
+    try{
+      if(file.size>300000)throw Error('El fitxer és massa gran.');
+      const data=window.MAPA_DATA,known=new Set([...data.centres,...(data.archived||[]),...data.entitats.infantil,...data.entitats.lleure].map(place=>String(place.id)));
+      const previous=hist(interviewHistory),rows=mergeCalendarInterviewImport(JSON.parse(await file.text()),previous,known);
+      if(!confirm('Restaurar aquestes entrevistes al calendari i al teu compte privat de Base44? Es conserven els registres existents i no s’envia cap correu.'))return;
+      localStorage.setItem('history_'+interviewHistory,JSON.stringify(rows));
+      for(const item of rows)if(item.type==='interview'&&item.completed&&item.placeId)localStorage.setItem('status_'+item.placeId,'interview');
+      document.dispatchEvent(new Event('candidature-history-changed'));document.dispatchEvent(new Event('private-data-changed'));
+      status.textContent=(rows.filter(x=>x.type==='interview').length-previous.filter(x=>x.type==='interview').length)+' entrevistes recuperades.';render();
+    }catch(error){status.textContent=error.message}finally{input.value=''}
+  });
   const sentForm=byId('calendarSentForm');
   byId('calendarRegisterSent').addEventListener('click',()=>{
     sentForm.hidden=false;

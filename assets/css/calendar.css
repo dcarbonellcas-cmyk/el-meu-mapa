@@ -118,3 +118,5 @@
 .calendar-sent-agenda ul{padding-left:20px;max-height:360px;overflow:auto}
 .calendar-sent-agenda li{padding:8px 0;overflow-wrap:anywhere}
 .calendar-sent-agenda a{color:#205db3;font-weight:700}
+
+.calendar-form input[type="checkbox"]{width:auto;min-width:auto}

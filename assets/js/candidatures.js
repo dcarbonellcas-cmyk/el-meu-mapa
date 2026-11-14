@@ -23,6 +23,13 @@ function mergeDashboardSentIndex(snapshot,existing,knownPlaces){
   return [...byId.values()].sort((a,b)=>b.date.localeCompare(a.date));
 }
 
+function dashboardInterviewDetails(place,records){
+  const matches=interviewsForPlace(place,records);
+  const interview=matches.find(item=>item.completed)||matches[0];
+  if(!interview)return null;
+  return {interview,label:(interview.completed?'Entrevista realitzada':'Entrevista programada')+' · '+({pending:'Pendent de resposta',favorable:'Resposta favorable',unfavorable:'Resposta desfavorable'}[interview.outcome]||'Pendent de resposta')};
+}
+
 (function(){
   const statuses = ["No contactada","CV preparat","CV enviat","Toca renovar candidatura","Han contestat","Entrevista"];
   const statusColors = {"No contactada":"#b9c6d8","CV preparat":"#f5a623","CV enviat":"#16a34a","Toca renovar candidatura":"#f59e0b","Han contestat":"#7b4de2","Entrevista":"#ec4b91"};
@@ -49,7 +56,10 @@ function mergeDashboardSentIndex(snapshot,existing,knownPlaces){
     if(last&&['none','prepared'].includes(key))label='CV enviat';
     const tracking=trackingForPlace(s);
     if(tracking.bucket==='renew')label='Toca renovar candidatura';
-    return {status:label,hasSent:!!last||key==='sent',source:last?.source,date:last?.date||h[0]?.date||''};
+    const details=dashboardInterviewDetails(s,calendarInterviewAppointments()),interview=details?.interview;
+    if(interview)label='Entrevista';
+    const interviewLabel=details?.label||'';
+    return {status:label,displayStatus:interviewLabel||label,hasSent:!!last||key==='sent',source:last?.source,date:interview&&!interview.dateUnknown?applicationCalendarDay.format(new Date(interview.date)):last?.date||h[0]?.date||'',reminderMonth:interview?.reminderMonth};
   }
   function val(s, keys, fallback=""){
     for(const k of keys) if(s && s[k]!==undefined && s[k]!==null && String(s[k]).trim()!=="") return s[k];
@@ -92,7 +102,7 @@ function mergeDashboardSentIndex(snapshot,existing,knownPlaces){
         <td style="padding:12px 10px;font-weight:700">${esc(val(s,["name","nom","Denominació_completa"],"Centre"))}</td>
         <td>${esc(val(s,["city","municipality","municipi","Nom_municipi"],""))}</td>
         <td>${esc(type)}</td><td>${esc(stage)}</td>
-        <td><span style="display:inline-block;padding:5px 9px;border-radius:999px;background:${statusColors[st.status]}22;color:#173b72;font-weight:700;font-size:12px">${esc(st.status)}</span>${st.source==='website'?'<small> · Confirmada per tu · web</small>':''}</td>
+        <td><span style="display:inline-block;padding:5px 9px;border-radius:999px;background:${statusColors[st.status]}22;color:#173b72;font-weight:700;font-size:12px">${esc(st.displayStatus)}</span>${st.reminderMonth?'<small> · Tornar a contactar: '+esc(st.reminderMonth)+'</small>':''}${st.source==='website'?'<small> · Confirmada per tu · web</small>':''}</td>
         <td style="color:#7183a4">${esc(st.date||"—")}</td>
         <td><button class="openSchoolDash" data-id="${esc(sid(s))}" style="border:0;background:var(--lilac);color:var(--plum);border-radius:9px;padding:7px 10px;cursor:pointer;font-weight:700">Obrir</button></td>
       </tr>`;
@@ -130,7 +140,6 @@ function mergeDashboardSentIndex(snapshot,existing,knownPlaces){
   document.getElementById("dashStatus")?.addEventListener("change",render);
   document.getElementById("dashCards")?.addEventListener("click",e=>{
     const b=e.target.closest(".dashCard"); if(!b)return;
-    if(b.dataset.status==='Entrevista'){window.appShow('calendar');return}
     document.getElementById("dashStatus").value=b.dataset.status; render();
   });
   document.getElementById("dashRows")?.addEventListener("click",e=>{

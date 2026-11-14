@@ -32,12 +32,15 @@ function candidatureTracking(history,status='none',{now=new Date(),interviews=[]
   const dueDay=new Date(Date.UTC(year,monthNumber,Math.min(number,lastDay))).toISOString().slice(0,10);
   return {bucket:today>=dueDay?'renew':'sent',hasSent:true,lastSent:last.date,dueDay,reason:(today>=dueDay?'Per tornar a enviar des de ':'Pròxima revisió: ')+dueDay};
 }
+function interviewsForPlace(place,records){
+  const normalize=value=>String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+  return records.filter(item=>item.type==='interview'&&(item.placeId?String(item.placeId)===String(place.id):normalize(item.text)===normalize(place.name)));
+}
 function trackingForPlace(place,now=new Date()){
   const id=String(place.id),aliases={xarxa_fecc:['xarxa_fep'],xarxa_fep:['xarxa_fecc'],xarxa_borsadocent:['xarxa_manyanet'],xarxa_manyanet:['xarxa_borsadocent']};
   const ids=[id,...(aliases[id]||[])],history=ids.flatMap(key=>hist(key));
   if(typeof dashboardSentIndex==='function')for(const entry of dashboardSentIndex())if(ids.includes(String(entry.placeId)))history.push({...entry,type:'sent'});
-  const normalize=value=>String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
-  const interviews=hist('calendar_interviews').filter(x=>x.type==='interview'&&(String(x.placeId||'')===id||normalize(x.text)===normalize(place.name)));
+  const interviews=interviewsForPlace(place,hist('calendar_interviews'));
   const current=ids.map(key=>state(key)).find(value=>value!=='none')||'none';
   return candidatureTracking(history,current,{now,interviews});
 }

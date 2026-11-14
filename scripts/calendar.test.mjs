@@ -84,3 +84,22 @@ test('Gmail import retains verified names and thread links without replacing cen
  assert.equal(second.length,1);assert.equal(second[0].threadId,row.threadId);assert.equal(second[0].placeName,row.placeName);
  assert.throws(()=>ctx.mergeDashboardSentIndex({...snapshot,items:[{...row,threadId:'https://unsafe.example'}]},[],new Set(['a'])));
 });
+
+test('interview recovery preserves known days, outcomes and month reminders without inventing appointment times or duplicates',()=>{
+ const item={name:'Verified school',placeId:'a',day:'2026-11-09',completed:true,outcome:'unfavorable',note:'Verified note',reminderMonth:'2027-09'};
+ const snapshot={version:1,kind:'calendar-interviews',interviews:[item]};
+ const rows=context.mergeCalendarInterviewImport(snapshot,[],new Set(['a']));
+ assert.equal(rows.length,1);assert.equal(rows[0].timeUnknown,true);assert.equal(rows[0].completed,true);assert.equal(rows[0].reminderMonth,'2027-09');
+ assert.equal(new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Madrid'}).format(new Date(rows[0].date)),'2026-11-09');
+ assert.equal(context.mergeCalendarInterviewImport(snapshot,rows,new Set(['a'])).length,1);
+ assert.throws(()=>context.mergeCalendarInterviewImport({...snapshot,interviews:[{...item,day:'2026-02-31'}]},[],new Set(['a'])));
+});
+test('Candidatures links interviews by centre ID and shows completion separately from pending or unfavorable outcomes',async()=>{
+ const ctx=vm.createContext({Date,Intl});
+ vm.runInContext(await readFile(new URL('../assets/js/renovacions.js',import.meta.url),'utf8'),ctx);
+ vm.runInContext((await readFile(new URL('../assets/js/candidatures.js',import.meta.url),'utf8')).split('\n(function(){')[0],ctx);
+ const record={type:'interview',placeId:'a',text:'A previously recorded name',completed:true,outcome:'pending'};
+ assert.equal(ctx.dashboardInterviewDetails({id:'a',name:'Current directory name'},[record]).label,'Entrevista realitzada · Pendent de resposta');
+ assert.equal(ctx.dashboardInterviewDetails({id:'b',name:record.text},[record]),null,'a linked interview must not leak to another same-named centre');
+ assert.equal(ctx.dashboardInterviewDetails({id:'a'},[{...record,outcome:'unfavorable'}]).label,'Entrevista realitzada · Resposta desfavorable');
+});
