@@ -1,20 +1,80 @@
 {
-  "checkedAt": "2026-11-15T21:08:19.628Z",
+  "checkedAt": "2026-11-17T00:21:50.311Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-15T21:08:19.628Z",
-      "count": 187,
-      "reviewed": 716,
+      "updatedAt": "2026-11-17T00:21:50.311Z",
+      "count": 190,
+      "reviewed": 712,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-15T21:08:19.628Z",
+      "attemptedAt": "2026-11-17T00:21:50.311Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92328974",
+      "title": "MONITORS/ES DE MENJADOR",
+      "school": "Mou T Serveis i lleure",
+      "city": "TARRAGONA - TARRAGONÈS - 43001 TARRAGONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328974",
+      "snippet": "Busquem un/a monitor/a de menjador escolar amb vocació educativa, responsabilitat i habilitats per treballar amb infants. Descripció del lloc de treball: La persona seleccionada serà responsable d'acompanyar i supervisar els infants durant l'estona del menjador i el temps de lleure, vetllant pel seu benestar, seguretat",
+      "created": "1794832982530",
+      "expires": "2027-02-14T12:43:02.526Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92328966",
+      "title": "DIRECTORS/DIRECTORES DE LLEURE",
+      "school": "ASSOCIACIO DIVERJOC FONT D'EN FARGAS",
+      "city": "BARCELONA - BARCELONÈS - 08041 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328966",
+      "snippet": "Busquem directors i directores de lleure per dirigir activitats educatives adreçades a infants i joves. Les persones seleccionades coordinaran l’equip de monitors i monitores, faran el seguiment del programa d’activitats i seran el referent per a les famílies i l’entitat organitzadora.",
+      "created": "1794832227536",
+      "expires": "2027-02-14T12:30:27.533Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92328963",
+      "title": "MONITOR/MONITORA DE MENJADOR",
+      "school": "Escola Proa",
+      "city": "BARCELONA - BARCELONÈS - 08014 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328963",
+      "snippet": "Cerquem per una substitució un/a monitor/monitora de menjador per l'espai Migdia del curs 2026-2027. Incorporació immediata 2026. Possibilitat d'incorporació a l'equip de forma fixe.",
+      "created": "1794831224316",
+      "expires": "2027-02-14T12:13:44.312Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92328929",
+      "title": "MONITORS/ MONITORES MENJADOR ESCOLAR - SUPLÈNCIES",
+      "school": "La Xarranca, fundació socioeducativa privada",
+      "city": "BARCELONA - BAGES - 08240 MANRESA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328929",
+      "snippet": "Cerquem monitors/monitores de menjador per a la realització de suplències. Escoles zona de Manresa i rodalies. Disponibilitat immediata per treballar de dilluns a divendres de 12:30 a 15h (tots els dies o només dies esporàdics).",
+      "created": "1794814517411",
+      "expires": "2027-02-14T07:35:17.407Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92328915",
+      "title": "COORDINADOR/A PEDAGÒGIC DE SERVEIS I PROJECTES DE LLEURE",
+      "school": "La Xarranca, fundació socioeducativa privada",
+      "city": "BARCELONA - BAGES - 08241 MANRESA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328915",
+      "snippet": "Coordinador/a pedagògic de serveis i projectes de lleure de l'entitat",
+      "created": "1794812879336",
+      "expires": "2027-02-14T07:07:59.332Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92328883",
       "title": "EDUCADOR/A SOCIAL",
@@ -2176,18 +2236,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92323538",
-      "title": "MONITORS/ES DE MENJADOR (EL PRAT DE LLOBREGAT)",
-      "school": "Com a casa menjadors escolars S.L",
-      "city": "BARCELONA - BAIX LLOBREGAT - 08820 PRAT DE LLOBREGAT, EL",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92323538",
-      "snippet": "Se sol·licita personal de monitoratge de menjador i dinamització de projecte.",
-      "created": "1788158180951",
-      "expires": "2026-11-29T06:36:20.949Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92323509",
       "title": "MONITORS/MONITORES DE MENJADOR EN UN INSTITUT D’EDUCACIÓ ESPECIAL",
       "school": "Associació Socioeducativa Tu Tries",
@@ -2245,18 +2293,6 @@
       "snippet": "L'Escola Guinardó busquem una persona per formar part de l'equip de monitoratge de menjador de primària. Oferim horari de 12:30 o 13 a 15:00h de dilluns a divendres. Imprescindible disposar del títol de monitor/a de lleure.",
       "created": "1787550815605",
       "expires": "2026-11-22T05:53:35.604Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92322915",
-      "title": "MONITOR/MONITORA ESPAI MIGDIA PER ESCOLA A CABRERA. CURS 26/27",
-      "school": "SANED",
-      "city": "BARCELONA - MARESME - 08349 CABRERA DE MAR",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92322915",
-      "snippet": "Es precisa un/a monitor/monitora de menjador escolar pel curs 2026-27. Horari diversos. (acollida, menjador). Imprescindible vehicle per arribar al centre escolar.",
-      "created": "1787044978016",
-      "expires": "2026-11-16T09:22:58.015Z",
       "automatic": true
     }
   ]
