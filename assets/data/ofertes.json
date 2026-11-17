@@ -1,20 +1,128 @@
 {
-  "checkedAt": "2026-11-17T00:21:50.311Z",
+  "checkedAt": "2026-11-17T23:35:52.821Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-17T00:21:50.311Z",
-      "count": 190,
-      "reviewed": 712,
+      "updatedAt": "2026-11-17T23:35:52.821Z",
+      "count": 192,
+      "reviewed": 708,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-17T00:21:50.311Z",
+      "attemptedAt": "2026-11-17T23:35:52.821Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92329060",
+      "title": "MONITORS/MONITORES DE MENJADOR (ESPLUGUES)",
+      "school": "Empresa de càtering",
+      "city": "BARCELONA - BAIX LLOBREGAT - 08950 ESPLUGUES DE LLOBREGAT",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329060",
+      "snippet": "Es necessiten Monitors/monitores de menjador i dinamització de projecte",
+      "created": "1794918323790",
+      "expires": "2027-02-15T12:25:23.786Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329059",
+      "title": "MONITORS/MONITORES DE MENJADOR (BARCELONA)",
+      "school": "Empresa de càtering",
+      "city": "BARCELONA - BARCELONÈS - 08004 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329059",
+      "snippet": "Es necessiten Monitors/monitores de menjador i dinamització de projecte",
+      "created": "1794918234247",
+      "expires": "2027-02-15T12:23:54.243Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329042",
+      "title": "MONITORS/MONITORES DE MENJADOR (BADALONA)",
+      "school": "Com a casa menjadors escolars S.L",
+      "city": "BARCELONA - BARCELONÈS - 08913 BADALONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329042",
+      "snippet": "Es necessiten Monitors/monitores de menjador i dinamització de projecte",
+      "created": "1794915592918",
+      "expires": "2027-02-15T11:39:52.915Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329041",
+      "title": "MONITORS/MONITORES DE MENJADOR EN UN INSTITUT D’EDUCACIÓ ESPECIAL",
+      "school": "Associació Socioeducativa Tu Tries",
+      "city": "BARCELONA - VALLÈS OCCIDENTAL - 08206 SABADELL",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329041",
+      "snippet": "Es necessiten monitors/monitores de menjador en el temps de migdia en una escola d'educació especial de secundària a Sabadell.",
+      "created": "1794915291479",
+      "expires": "2027-02-15T11:34:51.476Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329037",
+      "title": "EDUCADOR/A INFANTIL -CERVELLÓ-",
+      "school": "",
+      "city": "BARCELONA - BAIX LLOBREGAT - 08757 CERVELLÓ",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329037",
+      "snippet": "Hola! Tens vocació per la petita infància i busques una oportunitat per créixer professionalment? A EULEN Serveis Sociosanitaris busquem un/a professional de l'Educació Infantil per unir-se al nostre equip en una de les nostres escoles ubicada a Cervelló (Baix Llobregat). Si t'apassiona l'educació infantil i vols fer c",
+      "created": "1794914582656",
+      "expires": "2027-02-15T11:23:02.652Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329032",
+      "title": "EDUCADOR/A SOCIAL",
+      "school": "Associació l'Esquitx",
+      "city": "BARCELONA - BARCELONÈS - 08003 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329032",
+      "snippet": "L'Associació l'Esquitx som una entitat sense ànim de lucre, declarada d'utilitat pública l'any 2014, que des del 1985 treballem al barri del Casc Antic de Barcelona acompanyant infants i famílies. El nostre objectiu és promoure el desenvolupament integral dels infants, oferint un espai educatiu, de confiança i de creix",
+      "created": "1794913740096",
+      "expires": "2027-02-15T11:09:00.092Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329031",
+      "title": "MONITORS/MONITORES DE MENJADOR (SANTA COLOMA)",
+      "school": "Empresa de càtering",
+      "city": "BARCELONA - BARCELONÈS - 08923 SANTA COLOMA DE GRAMENET",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329031",
+      "snippet": "Es necessiten Monitors/monitores de menjador i dinamització de projecte",
+      "created": "1794912439441",
+      "expires": "2027-02-15T10:47:19.437Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329010",
+      "title": "MONITORS/MONITORES EXTRAESCOLAR ANGLÈS SANTA COLOMA DE GRAMENET",
+      "school": "ACTIVIDADES FORMATIVAS SL",
+      "city": "BARCELONA - BARCELONÈS - 08921 SANTA COLOMA DE GRAMENET",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329010",
+      "snippet": "Activa, empresa líder en serveis educatius a centres escolars, cerca dos/dues monitors/monitores amb anglès per incorporar-se al nostre equip durant el curs escolar 26-27 en un centre educatiu a Santa Coloma de Gramenet amb infants d'Educació Infantil. Busquem persones dinàmiques, responsables i amb vocació educativa p",
+      "created": "1794901583086",
+      "expires": "2027-02-15T07:46:23.082Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92328990",
+      "title": "MONITORS/ES -PROFESSORS/ES PER TALLERS D'ESTUDI ESCOLES DE PRIMARIA I SECUNDARIA ZONA PALAFRUGELL",
+      "school": "MECA CENTRE S.L",
+      "city": "GIRONA - BAIX EMPORDÀ - 17200 PALAFRUGELL",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328990",
+      "snippet": "Busquem monitors/es i professors/es per impartir tallers d’estudi i reforç escolar a alumnes d’educació primària i secundària en centres educatius de la zona de Palafrugell.",
+      "created": "1794897236666",
+      "expires": "2027-02-15T06:33:56.662Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92328974",
       "title": "MONITORS/ES DE MENJADOR",
@@ -256,18 +364,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92328531",
-      "title": "EDUCADOR/A SOCIAL",
-      "school": "Associació l'Esquitx",
-      "city": "BARCELONA - BARCELONÈS - 08003 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328531",
-      "snippet": "L’Associació l’Esquitx és una entitat sense ànim de lucre, ubicada al Casc Antic de Barcelona i declarada d’utilitat pública l’any 2014. L’entitat des del 1985 porta a terme una tasca d’educació i acompanyament dels infants del barri i les seves famílies, promovent el seu desenvolupament harmònic. L’entitat necessita i",
-      "created": "1794230231648",
-      "expires": "2027-02-07T13:17:11.644Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92328483",
       "title": "MONITOR/MONITORA REFORÇ ESCOLAR TARDES-GAVÀ (BAIX LLOBREGAT)",
       "school": "FABRA FORMACIÓ S.L.",
@@ -289,18 +385,6 @@
       "snippet": "Busquem un mestre/a amb la doble titulació de mestre/a d'Infantil i Primària per una jornada completa de 30 i indefinida lligada a un contracte de jubliació parcial. IMPORTANT!! HA DE SER MESTRE I/O GRADUAT EN EDUCACIÓ PRIMÀRIA I INFANTIL. No poden ser d'altres titulacions relacionades amb educació.",
       "created": "1794206232630",
       "expires": "2027-02-07T06:37:12.626Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92328438",
-      "title": "EDUCADOR/A SOCIAL O INTEGRADOR/A SOCIAL",
-      "school": "Escola Pia Balaguer",
-      "city": "LLEIDA - NOGUERA - 25600 BALAGUER",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328438",
-      "snippet": "Es necessita un/a Educador/a social o integrador/a social per treballar amb infants nouvinguts o en situació de vulnerabilitat o discapacitat.",
-      "created": "1793968322496",
-      "expires": "2027-02-04T12:32:02.493Z",
       "automatic": true
     },
     {
@@ -496,18 +580,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92327953",
-      "title": "EDUCADOR/A INFANTIL - TREMP",
-      "school": "",
-      "city": "LLEIDA - PALLARS JUSSÀ - 22583 TREMP",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327953",
-      "snippet": "Hola! Tens vocació per la petita infància i busques una oportunitat per créixer professionalment? A EULEN Serveis Sociosanitaris busquem un/a professional de l'Educació Infantil per unir-se al nostre equip en una de les nostres escoles ubicades a Tremp (Pallars Jussà)*. Si t'apassiona l'educació infantil i vols fer cré",
-      "created": "1793351715388",
-      "expires": "2027-01-28T09:15:15.384Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92327947",
       "title": "PERSONAL MONITORATGE PER A TALLERS EN CATALÀ I REUS",
       "school": "Centre de formació",
@@ -529,30 +601,6 @@
       "snippet": "Es necessita un/a Monitor/monitora de lleure i menjador per a una suplència.",
       "created": "1793280918121",
       "expires": "2027-01-27T13:35:18.117Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92327900",
-      "title": "MONITORS/MONITORES DE MENJADOR (SANTA COLOMA)",
-      "school": "Empresa de càtering",
-      "city": "BARCELONA - BARCELONÈS - 08923 SANTA COLOMA DE GRAMENET",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327900",
-      "snippet": "Es necessiten Monitors/monitores de menjador i dinamització de projecte",
-      "created": "1793273020455",
-      "expires": "2027-01-27T11:23:40.451Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92327898",
-      "title": "MONITORS/MONITORES DE MENJADOR (BADALONA)",
-      "school": "Com a casa menjadors escolars S.L",
-      "city": "BARCELONA - BARCELONÈS - 08913 BADALONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327898",
-      "snippet": "Es necessiten Monitors/monitores de menjador i dinamització de projecte",
-      "created": "1793272522414",
-      "expires": "2027-01-27T11:15:22.410Z",
       "automatic": true
     },
     {
@@ -2008,18 +2056,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92324501",
-      "title": "MONITORS/MONITORES DE MENJADOR (BARCELONA)",
-      "school": "Com a casa menjadors escolars S.L",
-      "city": "BARCELONA - BARCELONÈS - 08005 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92324501",
-      "snippet": "Es necessiten monitors/monitores de menjador i dinamització de projecte",
-      "created": "1789026091393",
-      "expires": "2026-12-09T07:41:31.392Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92324486",
       "title": "MONITORS/MONITORES DE LLEURE - TALLER D'ART",
       "school": "ASSOCIACIO DIVERJOC FONT D'EN FARGAS",
@@ -2233,18 +2269,6 @@
       "snippet": "Es precisen monitors/monitores de menjador escolar pel curs 2026-27. Escola a Sabadell de dll a dv de 12:45 a 14:45.",
       "created": "1788161086477",
       "expires": "2026-11-29T07:24:46.476Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92323509",
-      "title": "MONITORS/MONITORES DE MENJADOR EN UN INSTITUT D’EDUCACIÓ ESPECIAL",
-      "school": "Associació Socioeducativa Tu Tries",
-      "city": "BARCELONA - VALLÈS OCCIDENTAL - 08206 SABADELL",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92323509",
-      "snippet": "Es necessiten monitors/es de menjador en el temps de migdia en una escola d'educació especial de secundària a Sabadell.",
-      "created": "1787914878469",
-      "expires": "2026-11-26T11:01:18.468Z",
       "automatic": true
     },
     {
