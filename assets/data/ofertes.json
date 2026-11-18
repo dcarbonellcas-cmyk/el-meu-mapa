@@ -1,20 +1,32 @@
 {
-  "checkedAt": "2026-11-17T23:35:52.821Z",
+  "checkedAt": "2026-11-18T22:59:33.357Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-17T23:35:52.821Z",
+      "updatedAt": "2026-11-18T22:59:33.357Z",
       "count": 192,
-      "reviewed": 708,
+      "reviewed": 712,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-17T23:35:52.821Z",
+      "attemptedAt": "2026-11-18T22:59:33.357Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_09202632433",
+      "title": "MONITOR/A DE MENJADOR ESCOLAR - 32433",
+      "school": "Oficina de Treball del SOC",
+      "city": "LLEIDA - PALLARS JUSSÀ - 25620 TREMP",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/09202632433",
+      "snippet": "Monitor/a de menjador escolar amb formació relacionada amb el lleure educatiu, monitor/a de lleure, educació infantil o similar. Es valorarà disposar del títol de monitor/a de lleure. Es valorarà experiència prèvia en tasques d'atenció i acompanyament d'infants. Contracte temporal Jornada parcial amb l'horari de 12:20 ",
+      "created": "1794994318091",
+      "expires": "2027-02-16T09:31:58.091Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92329060",
       "title": "MONITORS/MONITORES DE MENJADOR (ESPLUGUES)",
@@ -2113,18 +2125,6 @@
       "snippet": "Es precisen monitors/monitores de menjador escolar pel curs 2026-27. Sense escola fixa.",
       "created": "1788938993119",
       "expires": "2026-12-08T07:29:53.118Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92324383",
-      "title": "COORDINADOR/A ACADÈMIC/A",
-      "school": "Empresa sector educatiu",
-      "city": "LLEIDA - SEGRIÀ - 25005 LLEIDA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92324383",
-      "snippet": "Busquem un/a coordinador/a acadèmic/a per a un centre Kids&Us de Lleida. Som una acadèmia d'idiomes especialitzada en l'ensenyament de l'anglès a nens d'entre 1 i 18 anys. La Coordinadora acadèmica és la persona responsable de garantir l'aprenentatge de tots els alumnes i la correcta aplicació de la metodologia.",
-      "created": "1788938734833",
-      "expires": "2026-12-08T07:25:34.833Z",
       "automatic": true
     },
     {
