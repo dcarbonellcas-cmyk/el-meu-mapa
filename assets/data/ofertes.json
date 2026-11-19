@@ -1,20 +1,44 @@
 {
-  "checkedAt": "2026-11-18T22:59:33.357Z",
+  "checkedAt": "2026-11-19T23:08:17.723Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-18T22:59:33.357Z",
+      "updatedAt": "2026-11-19T23:08:17.723Z",
       "count": 192,
-      "reviewed": 712,
+      "reviewed": 718,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-18T22:59:33.357Z",
+      "attemptedAt": "2026-11-19T23:08:17.723Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92329247",
+      "title": "MONITOR/MONITORA SUPORT EDUCATIU PRIMÀRIA-GRANOLLERS",
+      "school": "EMPRESA DE FORMACIÓ",
+      "city": "BARCELONA - VALLÈS ORIENTAL - 08400 GRANOLLERS",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329247",
+      "snippet": "Es necessita un/a Monitor/monitora per a realitzar activitats de reforç escolars a infants de 1r i 2n de primària, en horari de migdia (12 a 13h) dilluns, dimarts, dimecres i dijous. Incorporació inmediata.",
+      "created": "1795093555537",
+      "expires": "2027-02-17T13:05:55.537Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329234",
+      "title": "MONITOR/MONITORA DE REFORÇ EN LECTOESCRIPTURA-LLIÇÀ D'AMUNT-(VALLÈS ORIENTAL)",
+      "school": "EMPRESA DE FORMACIÓ",
+      "city": "BARCELONA - VALLÈS ORIENTAL - 08186 LLIÇÀ D'AMUNT",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329234",
+      "snippet": "Es necessita un/a Monitor/monitora per a realitzar activitats de lecto-escriptura a infants d´educació Infantil, en horari de migdia (12 a 13h) dilluns, dimarts, dimecres i dijous. Incorporació inmediata.",
+      "created": "1795092367159",
+      "expires": "2027-02-17T12:46:07.159Z",
+      "automatic": true
+    },
     {
       "id": "fa_09202632433",
       "title": "MONITOR/A DE MENJADOR ESCOLAR - 32433",
@@ -73,18 +97,6 @@
       "snippet": "Es necessiten monitors/monitores de menjador en el temps de migdia en una escola d'educació especial de secundària a Sabadell.",
       "created": "1794915291479",
       "expires": "2027-02-15T11:34:51.476Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92329037",
-      "title": "EDUCADOR/A INFANTIL -CERVELLÓ-",
-      "school": "",
-      "city": "BARCELONA - BAIX LLOBREGAT - 08757 CERVELLÓ",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329037",
-      "snippet": "Hola! Tens vocació per la petita infància i busques una oportunitat per créixer professionalment? A EULEN Serveis Sociosanitaris busquem un/a professional de l'Educació Infantil per unir-se al nostre equip en una de les nostres escoles ubicada a Cervelló (Baix Llobregat). Si t'apassiona l'educació infantil i vols fer c",
-      "created": "1794914582656",
-      "expires": "2027-02-15T11:23:02.652Z",
       "automatic": true
     },
     {
@@ -253,18 +265,6 @@
       "snippet": "Precisem incorporar a monitors/monitores per menjadors escolars per cobrir suplències de dies puntuals, baixes mèdiques i/o permisos en centre ubicat a Viladecavalls. Cerquem perfils polivalents que puguin estar a qualsevol curs d' infantil i primària.",
       "created": "1794485934449",
       "expires": "2027-02-10T12:18:54.446Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92328786",
-      "title": "MONITOR/MONITORA SUPORT EDUCATIU PRIMÀRIA-LLIÇÀ D'AMUNT-(VALLÈS ORIENTAL)",
-      "school": "EMPRESA DE FORMACIÓ",
-      "city": "BARCELONA - VALLÈS ORIENTAL - 08186 LLIÇÀ D'AMUNT",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328786",
-      "snippet": "Es necessita un/a Monitor/monitora per a realitzar activitats de lecto-escriptura a infants d´educació Infantil, en horari de migdia (12 a 13h) dilluns, dimarts, dimecres i dijous. Incorporació inmediata.",
-      "created": "1794485479237",
-      "expires": "2027-02-10T12:11:19.233Z",
       "automatic": true
     },
     {
