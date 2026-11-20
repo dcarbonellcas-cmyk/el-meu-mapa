@@ -1,20 +1,68 @@
 {
-  "checkedAt": "2026-11-19T23:08:17.723Z",
+  "checkedAt": "2026-11-20T22:44:31.961Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-19T23:08:17.723Z",
-      "count": 192,
-      "reviewed": 718,
+      "updatedAt": "2026-11-20T22:44:31.961Z",
+      "count": 195,
+      "reviewed": 728,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-19T23:08:17.723Z",
+      "attemptedAt": "2026-11-20T22:44:31.961Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92329331",
+      "title": "INTEGRADOR/A SOCIAL O EDUCADOR/A SOCIAL",
+      "school": "DIVERSPORT SL",
+      "city": "BARCELONA - ALT PENEDÈS - 08731 SANT MARTÍ SARROCA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329331",
+      "snippet": "A Diversport busquem un/a INTEGRADOR/A SOCIAL per incorporar-se al Servei d’Intervenció Socioeducativa (SIS) de Sant Martí Sarroca. Busquem una persona propera, dinàmica i compromesa, amb ganes d’acompanyar infants i adolescents en el seu desenvolupament personal, educatiu i social. AQUEST PROJECTE POT SER PER A TU ...",
+      "created": "1795181840566",
+      "expires": "2027-02-18T13:37:20.566Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329329",
+      "title": "MONITOR/MONITORA PER A ESCOLA BRESSOL DE MOLINS DE REI",
+      "school": "COOPERATIVA DOBLE VIA SCCL",
+      "city": "BARCELONA - BAIX LLOBREGAT - 08750 MOLINS DE REI",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329329",
+      "snippet": "A Doble Via t'estem buscant! Si ets una persona amb iniciativa, dinàmica, entusiasta, amant del treball en equip volem que formis part d’un gran equip! Amb 25 anys d'història, oferim serveis integrals de gestió d’equipaments i programes d’acció social i cultural, d’educació, d’animació sociocultural i dinamització comu",
+      "created": "1795181241479",
+      "expires": "2027-02-18T13:27:21.479Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329296",
+      "title": "MONITORES/AS DE LUDOTECA (TARRAGONA)",
+      "school": "EULEN.SA",
+      "city": "TARRAGONA - TARRAGONÈS - 43001 TARRAGONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329296",
+      "snippet": "¡Hola! ¿Buscas un trabajo temporal a tiempo parcial para compaginar con otras actividades? ¿Aportas formación y/o experiencia en ludotecas? Actualmente, en EULEN Servicios Sociosanitarios nos encontramos en la búsqueda de Monitores/as para Ludoteca en Tarragona.",
+      "created": "1795164917895",
+      "expires": "2027-02-18T08:55:17.895Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_09202632674",
+      "title": "TÈCNIC/A D'EDUCACIÓ INFANTIL - 32674",
+      "school": "Oficina de Treball del SOC",
+      "city": "LLEIDA - PALLARS JUSSÀ - 25500 POBLA DE SEGUR, LA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/09202632674",
+      "snippet": "Tècnic/a en Educació Infantil amb formació del CFGS d'Educació Infantil Certificat C1 de Català Certificat negatiu del Registre Central de Delinqüents Sexuals Contracte temporal de substitució Jornada completa amb els descansos reglamentaris Horari de 9 a 15h",
+      "created": "1795161271403",
+      "expires": "2027-02-18T07:54:31.402Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92329247",
       "title": "MONITOR/MONITORA SUPORT EDUCATIU PRIMÀRIA-GRANOLLERS",
@@ -265,18 +313,6 @@
       "snippet": "Precisem incorporar a monitors/monitores per menjadors escolars per cobrir suplències de dies puntuals, baixes mèdiques i/o permisos en centre ubicat a Viladecavalls. Cerquem perfils polivalents que puguin estar a qualsevol curs d' infantil i primària.",
       "created": "1794485934449",
       "expires": "2027-02-10T12:18:54.446Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92328745",
-      "title": "MONITORS/ES D'EDUCACIÓ I TEMPS LLIURE",
-      "school": "Oficina de Treball del SOC",
-      "city": "BARCELONA - GARRAF - 08870 SITGES",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328745",
-      "snippet": "Es busquen monitors/es de lleure per donar suport en activitats esportives inclusives amb infants i joves de 5 a 15 anys. Es requereix experiència mínima de 6 mesos, títol de Monitor/a d'Activitats de Lleure Infantil i Juvenil i capacitat per treballar amb infants amb diversitat funcional. Es valorarà formació en l’àmb",
-      "created": "1794467530918",
-      "expires": "2027-02-10T07:12:10.915Z",
       "automatic": true
     },
     {
