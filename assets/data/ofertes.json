@@ -1,16 +1,16 @@
 {
-  "checkedAt": "2026-11-21T21:45:50.448Z",
+  "checkedAt": "2026-11-22T21:55:42.870Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-21T21:45:50.448Z",
-      "count": 195,
+      "updatedAt": "2026-11-22T21:55:42.870Z",
+      "count": 193,
       "reviewed": 728,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-21T21:45:50.448Z",
+      "attemptedAt": "2026-11-22T21:55:42.870Z",
       "message": "fetch failed"
     }
   },
@@ -2329,30 +2329,6 @@
       "snippet": "A Edukem-nos estem buscant monitors/monitores per dur a terme activitats extraescolars de robòtica i programació educativa en diverses escoles del Maresme durant el curs 2026-2027, principalment amb alumnat d’Educació Primària i, puntualment, de Secundària. Les activitats es realitzen de dilluns a divendres en horari d",
       "created": "1787739201543",
       "expires": "2026-11-24T10:13:21.542Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92323127",
-      "title": "MONITOR/A DE TRANSPORTE ESCOLAR - VILAFRANCA DEL PENEDÉS",
-      "school": "INTERIM GROUP",
-      "city": "BARCELONA - ALT PENEDÈS - 08720 VILAFRANCA DEL PENEDÈS",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92323127",
-      "snippet": "Desde INTERIM GROUP, estamos seleccionando un/a monitor/a de Transporte Escolar para trabajar en Vilafranca del Penedes.",
-      "created": "1787559655498",
-      "expires": "2026-11-22T08:20:55.497Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92323101",
-      "title": "MONITOR/A DE MENJADOR CURS 26-27",
-      "school": "Escola Guinardó",
-      "city": "BARCELONA - BARCELONÈS - 08041 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92323101",
-      "snippet": "L'Escola Guinardó busquem una persona per formar part de l'equip de monitoratge de menjador de primària. Oferim horari de 12:30 o 13 a 15:00h de dilluns a divendres. Imprescindible disposar del títol de monitor/a de lleure.",
-      "created": "1787550815605",
-      "expires": "2026-11-22T05:53:35.604Z",
       "automatic": true
     }
   ]
