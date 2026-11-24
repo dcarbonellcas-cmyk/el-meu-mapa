@@ -1,20 +1,32 @@
 {
-  "checkedAt": "2026-11-22T21:55:42.870Z",
+  "checkedAt": "2026-11-24T02:58:38.534Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-22T21:55:42.870Z",
-      "count": 193,
-      "reviewed": 728,
+      "updatedAt": "2026-11-24T02:58:38.534Z",
+      "count": 194,
+      "reviewed": 735,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-22T21:55:42.870Z",
+      "attemptedAt": "2026-11-24T02:58:38.534Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92329452",
+      "title": "DIRECTORS/DIRECTORES DE LLEURE",
+      "school": "ASSOCIACIO DIVERJOC FONT D'EN FARGAS",
+      "city": "BARCELONA - BARCELONÈS - 08041 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329452",
+      "snippet": "Busquem directors i directores de lleure per dirigir activitats educatives adreçades a infants i joves. Les persones seleccionades coordinaran l’equip de monitors i monitores, faran el seguiment del programa d’activitats i seran el referent per a les famílies i l’entitat organitzadora.",
+      "created": "1795440346167",
+      "expires": "2027-02-21T13:25:46.167Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92329331",
       "title": "INTEGRADOR/A SOCIAL O EDUCADOR/A SOCIAL",
