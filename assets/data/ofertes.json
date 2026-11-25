@@ -1,20 +1,164 @@
 {
-  "checkedAt": "2026-11-24T02:58:38.534Z",
+  "checkedAt": "2026-11-25T00:57:47.378Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-24T02:58:38.534Z",
-      "count": 194,
-      "reviewed": 735,
+      "updatedAt": "2026-11-25T00:57:47.378Z",
+      "count": 189,
+      "reviewed": 730,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-24T02:58:38.534Z",
+      "attemptedAt": "2026-11-25T00:57:47.378Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92329529",
+      "title": "MONITORS/MONITORES DE MENJADOR (ST.VICENTS DEL HORTS)",
+      "school": "Com a casa menjadors escolars S.L",
+      "city": "BARCELONA - BAIX LLOBREGAT - 08620 SANT VICENÇ DELS HORTS",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329529",
+      "snippet": "Es necessiten Monitors/monitores de menjador i dinamització de projecte",
+      "created": "1795527677775",
+      "expires": "2027-02-22T13:41:17.775Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329530",
+      "title": "MONITORS/MONITORES DE MENJADOR (SANT ANDREU DE LA BARCA)",
+      "school": "Com a casa menjadors escolars S.L",
+      "city": "BARCELONA - BAIX LLOBREGAT - 08740 SANT ANDREU DE LA BARCA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329530",
+      "snippet": "Es necessiten monitors/monitores de menjador i dinamització de projectes",
+      "created": "1795527671649",
+      "expires": "2027-02-22T13:41:11.649Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329543",
+      "title": "MONITORS/MONITORES DE MENJADOR (CORNELLÀ)",
+      "school": "Empresa de càtering",
+      "city": "BARCELONA - BAIX LLOBREGAT - 08940 CORNELLÀ DE LLOBREGAT",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329543",
+      "snippet": "Es necessiten Monitors/monitores de menjador i dinamització de projecte",
+      "created": "1795525447161",
+      "expires": "2027-02-22T13:04:07.161Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329544",
+      "title": "MONITORS/MONITORES DE MENJADOR (LES FRANQUESES DEL VALLÈS)",
+      "school": "Empresa de càtering",
+      "city": "BARCELONA - VALLÈS ORIENTAL - 08521 FRANQUESES DEL VALLÈS, LES",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329544",
+      "snippet": "Es necessiten Monitors/monitores de menjador i dinamització de projecte",
+      "created": "1795525432705",
+      "expires": "2027-02-22T13:03:52.705Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329545",
+      "title": "MONITORS/MONITORES DE MENJADOR (TARRAGONA I RODALIES)",
+      "school": "Empresa de càtering",
+      "city": "TARRAGONA - TARRAGONÈS - 43004 TARRAGONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329545",
+      "snippet": "Es necessiten Monitors/monitores de menjador i dinamització de projecte",
+      "created": "1795525424373",
+      "expires": "2027-02-22T13:03:44.373Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329536",
+      "title": "EDUCADOR/A DEL CENTRE OBERT (BADALONA)",
+      "school": "Empresa sector serveis socials i educatius",
+      "city": "BARCELONA - BARCELONÈS - 08918 BADALONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329536",
+      "snippet": "Busquem educador/a social. Es requereix una persona amb titulació de Grau o Diplomatura en Educació Social amb experiència en l'àmbit de la intervenció socioeducativa amb infants i adolescents. Es valorarà especialment l'experiència o els coneixements en l'acompanyament a infants i famílies en situació de vulnerabilita",
+      "created": "1795525040756",
+      "expires": "2027-02-22T12:57:20.756Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329523",
+      "title": "MONITORS/MONITORES REFORÇ EDUCATIU- EDUCACIÓ PRIMÀRIA- (REUS-TARRAGONA))",
+      "school": "FABRA FORMACIÓ S.L.",
+      "city": "TARRAGONA - BAIX CAMP - 43200 REUS",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329523",
+      "snippet": "Busquem persones amb experiència com a professors/professores de reforç escolar a alumnes educació primària per a dur a terme centres educatius de la ciutat de REUS (Tarragona).",
+      "created": "1795524999389",
+      "expires": "2027-02-22T12:56:39.389Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329519",
+      "title": "EDUCADOR/A SOCIAL",
+      "school": "Associació l'Esquitx",
+      "city": "BARCELONA - BARCELONÈS - 08003 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329519",
+      "snippet": "L'Associació l'Esquitx som una entitat sense ànim de lucre, declarada d'utilitat pública l'any 2014, que des del 1985 treballem al barri del Casc Antic de Barcelona acompanyant infants i famílies. El nostre objectiu és promoure el desenvolupament integral dels infants, oferint un espai educatiu, de confiança i de creix",
+      "created": "1795523911449",
+      "expires": "2027-02-22T12:38:31.449Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329513",
+      "title": "MONITORS/MONITORES DE LLEURE",
+      "school": "Centre de formació",
+      "city": "BARCELONA - BARCELONÈS - 08041 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329513",
+      "snippet": "Busquem monitors/monitores de menjador escolar i extraescolars per incorporar-se al nostre equip educatiu durant l'espai del migdia i tardes. La persona seleccionada s'encarregarà de la supervisió, dinamització i atenció dels infants durant el servei de dinar i el temps d'esbarjo posterior, promovent hàbits saludables ",
+      "created": "1795521488381",
+      "expires": "2027-02-22T11:58:08.381Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329471",
+      "title": "MONITOR/MONITORA DE MENJADOR - ESCOLA (JUNEDA)",
+      "school": "ARAMARK",
+      "city": "LLEIDA - GARRIGUES - 25430 JUNEDA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329471",
+      "snippet": "Empresa important de restauració col·lectiva cerca un/a Monitor/monitora de menjador per a una escola a JUNEDA: Es valorarà disposar de certificat de discapacitat superior al 33%. Aramark valorarà la idoneïtat de les candidatures segons l’experiència i les capacitats aportades, garantint l’equitat i la igualtat d’oport",
+      "created": "1795508596737",
+      "expires": "2027-02-22T08:23:16.737Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329466",
+      "title": "EDUCADOR/A SIEI",
+      "school": "Col.legi Sant Marc de Sarrià",
+      "city": "BARCELONA - BARCELONÈS - 08017 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329466",
+      "snippet": "Busquem un/a educador/a per jornada completa, 30 h setmanals com educador/a SIEI (infantil, primària i ESO) a un centre concertat d'una sola línia.",
+      "created": "1795508036142",
+      "expires": "2027-02-22T08:13:56.142Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329469",
+      "title": "MONITORS/MONITORES CENTRE SOCIOEDUCATIU DIARI DIVERSITAT FUNCIONAL INTEL·LECTUAL (SUBSTITUCIONS)",
+      "school": "Associació Socioeducativa Tu Tries",
+      "city": "BARCELONA - VALLÈS OCCIDENTAL - 08225 TERRASSA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329469",
+      "snippet": "Busquem professionals de l’àmbit socioeducatiu per incorporar-se al Centre Diari Capacitats Diverses, un espai socioeducatiu per a infants i joves dels 4 als 21 anys amb diversitat funcional intel·lectual. Es realitza després de la jornada escolar, de dilluns a divendres durant tot el curs a l’escola d’educació especia",
+      "created": "1795503601067",
+      "expires": "2027-02-22T07:00:01.067Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92329452",
       "title": "DIRECTORS/DIRECTORES DE LLEURE",
@@ -76,30 +220,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92329247",
-      "title": "MONITOR/MONITORA SUPORT EDUCATIU PRIMÀRIA-GRANOLLERS",
-      "school": "EMPRESA DE FORMACIÓ",
-      "city": "BARCELONA - VALLÈS ORIENTAL - 08400 GRANOLLERS",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329247",
-      "snippet": "Es necessita un/a Monitor/monitora per a realitzar activitats de reforç escolars a infants de 1r i 2n de primària, en horari de migdia (12 a 13h) dilluns, dimarts, dimecres i dijous. Incorporació inmediata.",
-      "created": "1795093555537",
-      "expires": "2027-02-17T13:05:55.537Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92329234",
-      "title": "MONITOR/MONITORA DE REFORÇ EN LECTOESCRIPTURA-LLIÇÀ D'AMUNT-(VALLÈS ORIENTAL)",
-      "school": "EMPRESA DE FORMACIÓ",
-      "city": "BARCELONA - VALLÈS ORIENTAL - 08186 LLIÇÀ D'AMUNT",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329234",
-      "snippet": "Es necessita un/a Monitor/monitora per a realitzar activitats de lecto-escriptura a infants d´educació Infantil, en horari de migdia (12 a 13h) dilluns, dimarts, dimecres i dijous. Incorporació inmediata.",
-      "created": "1795092367159",
-      "expires": "2027-02-17T12:46:07.159Z",
-      "automatic": true
-    },
-    {
       "id": "fa_09202632433",
       "title": "MONITOR/A DE MENJADOR ESCOLAR - 32433",
       "school": "Oficina de Treball del SOC",
@@ -157,18 +277,6 @@
       "snippet": "Es necessiten monitors/monitores de menjador en el temps de migdia en una escola d'educació especial de secundària a Sabadell.",
       "created": "1794915291479",
       "expires": "2027-02-15T11:34:51.476Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92329032",
-      "title": "EDUCADOR/A SOCIAL",
-      "school": "Associació l'Esquitx",
-      "city": "BARCELONA - BARCELONÈS - 08003 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329032",
-      "snippet": "L'Associació l'Esquitx som una entitat sense ànim de lucre, declarada d'utilitat pública l'any 2014, que des del 1985 treballem al barri del Casc Antic de Barcelona acompanyant infants i famílies. El nostre objectiu és promoure el desenvolupament integral dels infants, oferint un espai educatiu, de confiança i de creix",
-      "created": "1794913740096",
-      "expires": "2027-02-15T11:09:00.092Z",
       "automatic": true
     },
     {
@@ -253,30 +361,6 @@
       "snippet": "Cerquem monitors/monitores de menjador per a la realització de suplències. Escoles zona de Manresa i rodalies. Disponibilitat immediata per treballar de dilluns a divendres de 12:30 a 15h (tots els dies o només dies esporàdics).",
       "created": "1794814517411",
       "expires": "2027-02-14T07:35:17.407Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92328915",
-      "title": "COORDINADOR/A PEDAGÒGIC DE SERVEIS I PROJECTES DE LLEURE",
-      "school": "La Xarranca, fundació socioeducativa privada",
-      "city": "BARCELONA - BAGES - 08241 MANRESA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328915",
-      "snippet": "Coordinador/a pedagògic de serveis i projectes de lleure de l'entitat",
-      "created": "1794812879336",
-      "expires": "2027-02-14T07:07:59.332Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92328883",
-      "title": "EDUCADOR/A SOCIAL",
-      "school": "Associació l'Esquitx",
-      "city": "BARCELONA - BARCELONÈS - 08003 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328883",
-      "snippet": "Qui som? L'Associació l'Esquitx som una entitat sense ànim de lucre, declarada d'utilitat pública l'any 2014, que des del 1985 treballem al barri del Casc Antic de Barcelona acompanyant infants i famílies. El nostre objectiu és promoure el desenvolupament integral dels infants, oferint un espai educatiu, de confiança i",
-      "created": "1794571620894",
-      "expires": "2027-02-11T12:07:00.891Z",
       "automatic": true
     },
     {
@@ -376,30 +460,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92328672",
-      "title": "MONITOR/MONITORA DE REFORÇ ESCOLAR DILLUNS TARDA-MANLLEU-(OSONA)",
-      "school": "FABRA FORMACIÓ, S.L.",
-      "city": "BARCELONA - OSONA - 08560 MANLLEU",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328672",
-      "snippet": "Busquem un/a monitor/monitora amb experiència en reforç i suport educatiu escolar a nens/es de Primària a una escola de la població de Manlleu (Osona), dilluns tarda de 17:00-18:15h. Es complementarien hores per a treballar la resta de tardes, migdies o matins com a monitor/a en diferents espais municipals propers per ",
-      "created": "1794385854287",
-      "expires": "2027-02-09T08:30:54.283Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92328669",
-      "title": "MONITOR/A DE SUPORT EDUCATIU-ESO- CONSTANTÍ (TARRAGONA)",
-      "school": "FABRA FORMACIÓ S.L.",
-      "city": "TARRAGONA - TARRAGONÈS - 43120 CONSTANTÍ",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328669",
-      "snippet": "Monitor/a de suport educatiu i aplicació de tècniques d'estudi, a infants d'Educació Secundària els dilluns i dimecres de 15:30 a 16:45h a un Institut de la població de Constantí.",
-      "created": "1794385520707",
-      "expires": "2027-02-09T08:25:20.703Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92328542",
       "title": "TEI(TÈCNICS/ES EN EDUC. INFANTIL) SUPORT EDUCATIU DE MENJAR A ESCOLA BRESSOL (HOSPITALET DE LLOBREGAT)",
       "school": "CAVALL DE CARTRÓ S.L",
@@ -421,18 +481,6 @@
       "snippet": "T’agrada treballar amb infants? Tens energia, creativitat i ganes de viure la màgia del Nadal des de dins?. A Diversport busquem MONITORS/MONITORES DE LLEURE per formar part de l’equip del Parc de Nadal d'Asco! Busquem persones dinàmiques, responsables i amb moltes ganes de fer que els més petits gaudeixin d’unes jorna",
       "created": "1794230356228",
       "expires": "2027-02-07T13:19:16.224Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92328483",
-      "title": "MONITOR/MONITORA REFORÇ ESCOLAR TARDES-GAVÀ (BAIX LLOBREGAT)",
-      "school": "FABRA FORMACIÓ S.L.",
-      "city": "BARCELONA - BAIX LLOBREGAT - 08850 GAVÀ",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328483",
-      "snippet": "Busquem un/a monitor/monitora per a realitzar reforç escolar a alumnat d'Educació Primària a un centre educatiu de la població de Gavà (Baix Llobregat). Horari: 16:30-19:00h de dilluns a dijous",
-      "created": "1794210406849",
-      "expires": "2027-02-07T07:46:46.845Z",
       "automatic": true
     },
     {
@@ -532,18 +580,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92328201",
-      "title": "DIRECTOR/A DE LLEURE- RIUDOMS",
-      "school": "FABRA FORMACIÓ S.L.",
-      "city": "TARRAGONA - BAIX CAMP - 43330 RIUDOMS",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328201",
-      "snippet": "Busquem un/a Director/a de lleure per liderar, coordinar i supervisar activitats de lleure destinades a infants i joves pels dies 23 i 24 de novembre en horari de matí de 9:00-14:00h",
-      "created": "1793780465538",
-      "expires": "2027-02-02T08:21:05.534Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92328199",
       "title": "PERSONAL DE MONITORATGE DE LLEURE- RIUDOMS (TARRAGONA)",
       "school": "FABRA FORMACIÓ S.L.",
@@ -565,18 +601,6 @@
       "snippet": "Es necessita monitor/a d'oci i temps lleure per a realitzar una SUBSTITUCIÓ de 5 dies a una llar d'infants a Sant Adrià de Besòs.",
       "created": "1793779538474",
       "expires": "2027-02-02T08:05:38.471Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92328182",
-      "title": "MONITOR/A - PERAFITA (LLUÇANÈS- OSONA)",
-      "school": "Empresa de formació",
-      "city": "BARCELONA - LLUÇANÈS - 08589 PERAFITA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328182",
-      "snippet": "Es precisa un/a monitor/a de lleure per a realització d´activitats de lleure educatiu ala població de Perafita (Osona), i possibilitat en altres zones del Lluçanès. Els dimecres en horari de tarda.",
-      "created": "1793779511715",
-      "expires": "2027-02-02T08:05:11.710Z",
       "automatic": true
     },
     {
@@ -721,18 +745,6 @@
       "snippet": "Nascor Formació som una empresa referent a nivell estatal en l'àmbit de la formació, l'educació i la intervenció socioeducativa. Treballem desenvolupant projectes que promouen la inclusió, la igualtat d'oportunitats i l'acompanyament educatiu d'infants i joves, col·laborant amb administracions públiques, centres educat",
       "created": "1793173145850",
       "expires": "2027-01-26T07:39:05.846Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92327756",
-      "title": "MONITORS/MONITORES DE MENJADOR (ST.VICENTS DEL HORTS)",
-      "school": "Com a casa menjadors escolars S.L",
-      "city": "BARCELONA - BAIX LLOBREGAT - 08620 SANT VICENÇ DELS HORTS",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327756",
-      "snippet": "Es necessiten Monitors/monitores de menjador i dinamització de projecte",
-      "created": "1793172325130",
-      "expires": "2027-01-26T07:25:25.126Z",
       "automatic": true
     },
     {
@@ -1012,18 +1024,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92327055",
-      "title": "COORDINADOR/A EDUCATIU/IVA -TARRAGONA-",
-      "school": "FABRA FORMACIÓ S.L.",
-      "city": "TARRAGONA - TARRAGONÈS - 43001 TARRAGONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327055",
-      "snippet": "Es necessita un/a coordinador/a educatiu/iva per a la coordinació pedagògica dels diferents grups de suport educatiu, gestió, seguiment i avaluació dels infants a les diferents escoles on es realitza el projecte. Jornada de 16:30-18:30 de dilluns a dijous, divendres migdia de 13:00-15:00h",
-      "created": "1792393265824",
-      "expires": "2027-01-17T07:01:05.821Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92327004",
       "title": "EDUCADOR/A SOCIAL UEC VILANOVA I LA GELTRÚ",
       "school": "Empresa de l'àmbit de l'educació",
@@ -1153,18 +1153,6 @@
       "snippet": "Monitors/monitores de menjador i dinamització e projecte",
       "created": "1791896002532",
       "expires": "2027-01-11T12:53:22.530Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92326742",
-      "title": "MONITORS/MONITORES DE MENJADOR (SANT ANDREU DE LA BARCA)",
-      "school": "Com a casa menjadors escolars S.L",
-      "city": "BARCELONA - BAIX LLOBREGAT - 08740 SANT ANDREU DE LA BARCA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92326742",
-      "snippet": "Es necessiten monitors/monitores de menjador i dinamització de projectes",
-      "created": "1791895986659",
-      "expires": "2027-01-11T12:53:06.658Z",
       "automatic": true
     },
     {
@@ -2032,18 +2020,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92324622",
-      "title": "MONITORS/MONITORES-REFORÇ ESCOLAR- LLEIDA-",
-      "school": "FABRA FORMACIÓ S.L.",
-      "city": "LLEIDA - SEGRIÀ - 25192 LLEIDA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92324622",
-      "snippet": "Busquem incorporar monitors/monitores d'activitats extraescolars pel nou curs. Busquem monitors/es amb experiència en alguna de les següents activitats: Reforç escolar (primària) Reforç escolar (1r a 4t ESO) Reforç en matemàtiques (3r a 6è primària) Reforç en llengua catalana (primària) Anglès (imprescindible disposar ",
-      "created": "1789377392647",
-      "expires": "2026-12-13T09:16:32.646Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92324533",
       "title": "MONITORS/ES DE PATINATGE",
       "school": "ASSOCIACIO DIVERJOC FONT D'EN FARGAS",
@@ -2272,18 +2248,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92323724",
-      "title": "MONITORS/MONITORES D’ACTIVITATS EXTRAESCOLARS- LLEIDA-",
-      "school": "FABRA FORMACIÓ S.L.",
-      "city": "LLEIDA - SEGRIÀ - 25192 LLEIDA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92323724",
-      "snippet": "Busquem incorporar monitors/monitores d'activitats extraescolars pel nou curs.",
-      "created": "1788262070729",
-      "expires": "2026-11-30T11:27:50.728Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92323693",
       "title": "MONITORS/MONITORES DE MENJADOR ESCOLAR CURS 26-27 (BARCELONA)",
       "school": "TENO CATERING",
@@ -2317,30 +2281,6 @@
       "snippet": "Es precisen monitors/monitores de menjador escolar pel curs 2026-27. Escola a Sabadell de dll a dv de 12:45 a 14:45.",
       "created": "1788161086477",
       "expires": "2026-11-29T07:24:46.476Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92323356",
-      "title": "MONITOR/A DE MENJADOR ESCOLAR",
-      "school": "Collegi Pompeu Fabra SL",
-      "city": "GIRONA - GIRONÈS - 17190 SALT",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92323356",
-      "snippet": "Es necessita un/a monitor/a de menjador escolar.",
-      "created": "1787747250249",
-      "expires": "2026-11-24T12:27:30.248Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92323327",
-      "title": "MONITORS/MONITORES D'EXTRAESCOLAR DE ROBÒTICA I PROGRAMACIÓ",
-      "school": "Edukem-nos, S.L.",
-      "city": "BARCELONA - MARESME - 08340 VILASSAR DE MAR",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92323327",
-      "snippet": "A Edukem-nos estem buscant monitors/monitores per dur a terme activitats extraescolars de robòtica i programació educativa en diverses escoles del Maresme durant el curs 2026-2027, principalment amb alumnat d’Educació Primària i, puntualment, de Secundària. Les activitats es realitzen de dilluns a divendres en horari d",
-      "created": "1787739201543",
-      "expires": "2026-11-24T10:13:21.542Z",
       "automatic": true
     }
   ]
