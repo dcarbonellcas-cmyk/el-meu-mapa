@@ -1,20 +1,68 @@
 {
-  "checkedAt": "2026-11-25T00:57:47.378Z",
+  "checkedAt": "2026-11-26T00:33:37.866Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-25T00:57:47.378Z",
-      "count": 189,
-      "reviewed": 730,
+      "updatedAt": "2026-11-26T00:33:37.866Z",
+      "count": 183,
+      "reviewed": 722,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-25T00:57:47.378Z",
+      "attemptedAt": "2026-11-26T00:33:37.866Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92329645",
+      "title": "MONITOR/MONITORA ESPAI MIGDIA ESCOLA A SANTA PERPETUA.",
+      "school": "SANED",
+      "city": "BARCELONA - BARCELONÈS - 08002 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329645",
+      "snippet": "Es precisa un/a monitor/monitora de menjador escolar pel curs 2026-27.",
+      "created": "1795610353675",
+      "expires": "2027-02-23T12:39:13.675Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329631",
+      "title": "VETLLADOR/A ESCOLAR EN EL TEMPS DEL MIGDIA. BARCELONA. SANT GERVASI",
+      "school": "SANED",
+      "city": "BARCELONA - BARCELONÈS - 08001 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329631",
+      "snippet": "Es precisa un/a Vetllador d'espai migdia pel curs 2026-27.",
+      "created": "1795606522396",
+      "expires": "2027-02-23T11:35:22.396Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329610",
+      "title": "MONITOR/MONITORA I/O TÈCNIC/A ESPORTIU/IVA",
+      "school": "AULA MAGNA TARRAGONA SL",
+      "city": "TARRAGONA - TARRAGONÈS - 43005 TARRAGONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329610",
+      "snippet": "Es necessita un/a Monitor/monitora i/o tècnic/a per fer l’acompanyament i planificar rutes de mòduls professionals del cicle formatiu mitjà en Guia en el medi natural i de temps de lleure",
+      "created": "1795606435079",
+      "expires": "2027-02-23T11:33:55.079Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329585",
+      "title": "MONITOR/MONITORA ESPAI MIGDIA ESCOLA A LLAVANERES.",
+      "school": "SANED",
+      "city": "BARCELONA - MARESME - 08392 SANT ANDREU DE LLAVANERES",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329585",
+      "snippet": "Es precisa un/a monitor/monitora de menjador escolar pel curs 2026-27.",
+      "created": "1795593122908",
+      "expires": "2027-02-23T07:52:02.908Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92329529",
       "title": "MONITORS/MONITORES DE MENJADOR (ST.VICENTS DEL HORTS)",
@@ -385,18 +433,6 @@
       "snippet": "Aramark cerca Monitors/monitores de menjador per al curs escolar 2025-2026 – Zona de Badalona A Aramark estem buscant monitors/monitores de menjador escolar per cobrir diferents vacants que es generin en diferents centres educatius situats a la ciutat de Badalona. A Aramark garantim la igualtat d’oportunitats i valorar",
       "created": "1794488534141",
       "expires": "2027-02-10T13:02:14.137Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92328795",
-      "title": "MONITOR/MONITORA DE COMEDOR (BARCELONA)",
-      "school": "ARAMARK",
-      "city": "BARCELONA - BARCELONÈS - 08022 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328795",
-      "snippet": "Se precisa un/a monitor/monitora para comedor escolar en Avinguda Tibidabo, (Barcelona), con catalán y inglés",
-      "created": "1794486759219",
-      "expires": "2027-02-10T12:32:39.216Z",
       "automatic": true
     },
     {
@@ -1756,30 +1792,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92325106",
-      "title": "MONITORS/MONITORES ESPAI MIGDIA ESCOLA A CALELLA.",
-      "school": "SANED",
-      "city": "BARCELONA - BAIX LLOBREGAT - 08950 ESPLUGUES DE LLOBREGAT",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92325106",
-      "snippet": "Es precisen monitors/monitores de menjador escolar pel curs 2026-27.",
-      "created": "1789730819100",
-      "expires": "2026-12-17T11:26:59.099Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92325089",
-      "title": "MONITOR/MONITORA ESPAI MIGDIA BARCELONA. SANTA PERPETUA DE MOGODA",
-      "school": "SANED",
-      "city": "BARCELONA - VALLÈS OCCIDENTAL - 08130 SANTA PERPÈTUA DE MOGODA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92325089",
-      "snippet": "Es precisa un/a monitor/monitora de menjador escolar pel curs 2026-27.",
-      "created": "1789728168547",
-      "expires": "2026-12-17T10:42:48.546Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92325083",
       "title": "MONITORS/MONITORES DE MENJADORS ESCOLARS (SUPLÈNCIES) VILAFRANCA",
       "school": "TENO CATERING",
@@ -1801,18 +1813,6 @@
       "snippet": "Activa, empresa líder en serveis educatius a centres escolars, cerca un/a monitor/monitora de Psicomotricitat d'infantil i primer cicle de primària per incorporar-se al nostre equip durant el curs escolar 26-27 en un centre educatiu a Sant Just Desvern. Busquem persones dinàmiques, responsables i amb vocació educativa ",
       "created": "1789725651702",
       "expires": "2026-12-17T10:00:51.701Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92325074",
-      "title": "MONITOR/MONITORA ESPAI MIGDIA ESPLUGUES DE LLOBREGAT.",
-      "school": "SANED",
-      "city": "BARCELONA - BAIX LLOBREGAT - 08950 ESPLUGUES DE LLOBREGAT",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92325074",
-      "snippet": "Es precisa un/a monitor/monitora de menjador escolar pel curs 2026-27. HORARI DE DLL A DV DE 13 A 14.30H.",
-      "created": "1789724596027",
-      "expires": "2026-12-17T09:43:16.026Z",
       "automatic": true
     },
     {
@@ -2032,18 +2032,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92324530",
-      "title": "MONITOR/MONITORA ESPAI MIGDIA BARCELONA. ZONA LES CORTS",
-      "school": "SANED",
-      "city": "BARCELONA - BARCELONÈS - 08032 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92324530",
-      "snippet": "Es precisa un/a monitor/monitora de menjador escolar pel curs 2026-27.",
-      "created": "1789037341958",
-      "expires": "2026-12-09T10:49:01.957Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92324521",
       "title": "COORDINADOR/A D'ACTIVITATS EXTRAESCOLARS",
       "school": "ASSOCIACIO DIVERJOC FONT D'EN FARGAS",
@@ -2140,30 +2128,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92324385",
-      "title": "MONITORS/MONITORES ESPAI MIGDIA BARCELONA. CORRETORNS",
-      "school": "SANED",
-      "city": "BARCELONA - BARCELONÈS - 08032 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92324385",
-      "snippet": "Es precisen monitors/monitores de menjador escolar pel curs 2026-27. Sense escola fixa.",
-      "created": "1788938993119",
-      "expires": "2026-12-08T07:29:53.118Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92324342",
-      "title": "MONITORS/MONITORES ESPAI MIGDIA BARCELONA. ZONA NOU BARRIS",
-      "school": "SANED",
-      "city": "BARCELONA - BARCELONÈS - 08032 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92324342",
-      "snippet": "Es precisen monitors/monitores de menjador escolar pel curs 2026-27. Escola a Nou Barris, de dll a dv de 12:30 a 15:00h",
-      "created": "1788869410129",
-      "expires": "2026-12-07T12:10:10.129Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92324265",
       "title": "MONITORS/MONITORES DE MIGDIA",
       "school": "ASSOCIACIO DIVERJOC FONT D'EN FARGAS",
@@ -2185,30 +2149,6 @@
       "snippet": "Des de Nascor Formació cerquem incorporar un/a monitor/monitora de transport escolar per acompanyar i supervisar l'alumnat durant els trajectes d'anada i tornada del centre educatiu. Busquem una persona responsable, atenta i amb habilitats per treballar amb infants i joves, que contribueixi a garantir un trajecte segur",
       "created": "1788852005414",
       "expires": "2026-12-07T07:20:05.413Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92324177",
-      "title": "MONITORS/MONITORES ESPAI MIGDIA PER HOSPITALET",
-      "school": "SANED",
-      "city": "BARCELONA - BARCELONÈS - 08905 HOSPITALET DE LLOBREGAT, L'",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92324177",
-      "snippet": "Es precisen monitors/monitores de menjador escolar pel curs 2026-27. Escola a Hospitalet de dll a dv de 13:00 a 14:45.",
-      "created": "1788779429029",
-      "expires": "2026-12-06T11:10:29.029Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92324154",
-      "title": "MONITORS/MONITORES ESPAI MIGDIA PER SANT CUGAT",
-      "school": "SANED",
-      "city": "BARCELONA - VALLÈS OCCIDENTAL - 08195 SANT CUGAT DEL VALLÈS",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92324154",
-      "snippet": "Es precisen monitors/monitores de menjador escolar pel curs 2026-27. Escola a Sant Cugat horari de migdia.",
-      "created": "1788774944706",
-      "expires": "2026-12-06T09:55:44.706Z",
       "automatic": true
     },
     {
@@ -2269,18 +2209,6 @@
       "snippet": "Estem buscant un/a monitor/a de menjador per incorporar-se al nostre equip. La persona seleccionada serà responsable de supervisar i dinamitzar el temps de menjador, assegurant-se que els infants gaudeixin d’un entorn segur, respectuós i educatiu. És una oportunitat ideal per a persones apassionades per l’educació i am",
       "created": "1788252315260",
       "expires": "2026-11-30T08:45:15.259Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92323551",
-      "title": "MONITORS/MONITORES ESPAI MIGDIA PER GRUP SABADELL",
-      "school": "SANED",
-      "city": "BARCELONA - VALLÈS OCCIDENTAL - 08200 SABADELL",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92323551",
-      "snippet": "Es precisen monitors/monitores de menjador escolar pel curs 2026-27. Escola a Sabadell de dll a dv de 12:45 a 14:45.",
-      "created": "1788161086477",
-      "expires": "2026-11-29T07:24:46.476Z",
       "automatic": true
     }
   ]
