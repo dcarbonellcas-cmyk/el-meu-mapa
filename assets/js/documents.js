@@ -7,9 +7,18 @@ async function saveDoc(key,file,options={}){
   if(typeof navigator!=='undefined'&&navigator.storage?.persist)navigator.storage.persist().catch(()=>{});
   if(!options.restoring)document.dispatchEvent(new Event('private-data-changed'));
 }
-async function getDoc(key,options={}){const db=await docDB();return new Promise((resolve,reject)=>{const r=db.transaction(DOC_STORE,'readonly').objectStore(DOC_STORE).get(key);r.onsuccess=()=>{db.close();resolve(r.result&&(!r.result.deleted||options.includeDeleted)?r.result:null)};r.onerror=()=>reject(r.error)})}
+const FIXED_CANVA_CV='https://el-meu-mapa-escoles.dolca1021.chatgpt.site/assets/documents/cv-diana-canva-2026-11-26.pdf';
+let fixedCanvaCvPromise;
+async function getFixedCanvaCv(){
+  if(!fixedCanvaCvPromise)fixedCanvaCvPromise=fetch(FIXED_CANVA_CV).then(async response=>{
+    if(!response.ok)throw new Error('No s’ha pogut carregar el currículum de Canva.');
+    return {name:'Curriculum-Canva.pdf',type:'application/pdf',blob:await response.blob(),deleted:false,updated:'2026-11-26T00:00:00.000Z'};
+  }).catch(error=>{fixedCanvaCvPromise=null;throw error});
+  return fixedCanvaCvPromise;
+}
+async function getDoc(key,options={}){if(key==='cvAlternative'&&location.origin===new URL(FIXED_CANVA_CV).origin)return getFixedCanvaCv();const db=await docDB();return new Promise((resolve,reject)=>{const r=db.transaction(DOC_STORE,'readonly').objectStore(DOC_STORE).get(key);r.onsuccess=()=>{db.close();resolve(r.result&&(!r.result.deleted||options.includeDeleted)?r.result:null)};r.onerror=()=>reject(r.error)})}
 async function refreshDocs(){for(const [key,nameId,btnId] of [['cv','cvFileName','cvOpen'],['letter','letterFileName','letterOpen']]){let d=null;try{d=await getDoc(key)}catch(e){};document.getElementById(nameId).textContent=d?('✓ '+d.name):'Cap fitxer guardat';document.getElementById(btnId).style.display=d?'inline-block':'none'}await refreshOptionalDocs()}
-async function openDoc(key){const d=await getDoc(key);if(!d)return;const u=URL.createObjectURL(d.blob);window.open(u,'_blank');setTimeout(()=>URL.revokeObjectURL(u),60000)}
+async function openDoc(key){if(key==='cvAlternative'){window.open(FIXED_CANVA_CV,'_blank','noopener');return}const d=await getDoc(key);if(!d)return;const u=URL.createObjectURL(d.blob);window.open(u,'_blank');setTimeout(()=>URL.revokeObjectURL(u),60000)}
 function showMailDraft(s,subject,body){
   currentDraftSchoolId=String(s.id);
   clearManualMail();
@@ -17,7 +26,7 @@ function showMailDraft(s,subject,body){
   document.getElementById('includeRecommendation').checked=true;
   document.getElementById('draftTo').value=s.email||'';
   document.getElementById('draftSubject').value=subject||'';
-  const cvDigitalUrl='https://diana-carbonell-curriculum.dcarbonellcas.chatgpt.site/';
+  const cvDigitalUrl='https://diana-carbonell-curriculum.dolca1021.chatgpt.site/';
   const missatge=String(body||'');
   document.getElementById('draftBody').value=missatge.includes(cvDigitalUrl)?missatge:missatge.trimEnd()+'\n\nPodeu consultar el meu currículum professional aquí:\n'+cvDigitalUrl;
   if(window.beginTailoredDraft)window.beginTailoredDraft(s);
@@ -137,7 +146,7 @@ document.addEventListener('private-data-restored',event=>{
 async function setDocumentDeleted(key,deleted){const record=await getDoc(key,{includeDeleted:true});if(!record)return;await saveDoc(key,new File([record.blob],record.name,{type:record.type}),{deleted});document.dispatchEvent(new Event('private-data-restored'));}
 
 (() => {
-  const slots=[['cv','docsCvOpen','currículum complet'],['cvAlternative','docsCvAlternativeOpen','segon currículum'],['letter','docsLetterOpen','carta de presentació'],['recommendation','docsRecommendationOpen','carta de recomanació']];
+  const slots=[['letter','docsLetterOpen','carta de presentació'],['recommendation','docsRecommendationOpen','carta de recomanació']];
   async function updateDocumentActions(){
     for(const [key,open,label] of slots){
       const host=document.getElementById(open)?.parentElement;if(!host)continue;

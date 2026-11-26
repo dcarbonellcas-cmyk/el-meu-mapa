@@ -1,6 +1,6 @@
 (function(){
   const home=document.getElementById('homePage'), explore=document.getElementById('explorePage'), leisure=document.getElementById('leisurePage'), jobs=document.getElementById('jobsPage'), docs=document.getElementById('docsOverlay'), dash=document.getElementById('dashboardOverlay');
-  async function updateDocsPage(){for(const [key,name,btn] of [['cv','docsCvName','docsCvOpen'],['letter','docsLetterName','docsLetterOpen'],['cvAlternative','docsCvAlternativeName','docsCvAlternativeOpen'],['recommendation','docsRecommendationName','docsRecommendationOpen']]){let d=null;try{d=await getDoc(key)}catch(e){}document.getElementById(name).textContent=d?'✓ '+d.name:'Cap fitxer guardat';document.getElementById(btn).style.display=d?'inline-block':'none'}}
+  async function updateDocsPage(){for(const [key,name,btn] of [['letter','docsLetterName','docsLetterOpen'],['recommendation','docsRecommendationName','docsRecommendationOpen']]){let d=null;try{d=await getDoc(key)}catch(e){}document.getElementById(name).textContent=d?'✓ '+d.name:'Cap fitxer guardat';document.getElementById(btn).style.display=d?'inline-block':'none'}}
   document.addEventListener('private-data-restored',()=>{updateDocsPage();refreshDocs()});
   function active(page) {
     const navPage = ['managers','portals'].includes(page) ? 'explore' : page;
@@ -21,7 +21,7 @@
   document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.go)));
   document.getElementById('dashboardBtn').addEventListener('click',e=>{e.stopImmediatePropagation();show('candidates')},true);
   document.getElementById('closeDashboard')?.addEventListener('click',e=>{e.stopImmediatePropagation();show('home')},true);
-  for(const [key,input,open] of [['cv','docsCvInput','docsCvOpen'],['letter','docsLetterInput','docsLetterOpen'],['cvAlternative','docsCvAlternativeInput','docsCvAlternativeOpen'],['recommendation','docsRecommendationInput','docsRecommendationOpen']]){
+  for(const [key,input,open] of [['letter','docsLetterInput','docsLetterOpen'],['recommendation','docsRecommendationInput','docsRecommendationOpen']]){
     bindDocumentPicker(input,key,async ()=>{await updateDocsPage();await refreshDocs()});
     document.getElementById(open).addEventListener('click',()=>openDoc(key));
   }

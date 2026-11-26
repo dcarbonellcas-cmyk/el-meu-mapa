@@ -97,3 +97,8 @@ La capçalera es mesura automàticament; els controls i Documents s’adapten a 
 La interfície principal és a https://el-meu-mapa-escoles.dolca1021.chatgpt.site (privada). El codi editable de Sites i el seu manifest són al directori germà `../sites/el-meu-mapa`. Cada obertura nova mostra l’inici de sessió. No s’han eliminat les dades locals ni canviat el compte privat de Base44. GitHub Pages continua disponible per conservar i sincronitzar les dades dels navegadors antics abans del trasllat. No es redirigeix automàticament una còpia local que podria tenir canvis pendents.
 
 GitHub Actions manté la recollida diària de dades públiques; Sites les consulta automàticament amb còpia local de reserva. Les futures modificacions de la interfície s’han de publicar al mateix Site.
+
+
+## Documents fixos (26 de novembre de 2026)
+
+A Documents, el primer botó «Obrir» apunta al currículum web vigent i el segon al PDF de Canva allotjat al Site privat. El PDF no es publica en aquest repositori. L’accés al PDF requereix la sessió autoritzada del Site. A GitHub Pages, els adjunts de candidatura continuen utilitzant els documents privats desats al navegador; obrir un document no acredita cap enviament.
