@@ -1,20 +1,56 @@
 {
-  "checkedAt": "2026-11-26T00:33:37.866Z",
+  "checkedAt": "2026-11-26T19:23:14.592Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-26T00:33:37.866Z",
-      "count": 183,
-      "reviewed": 722,
+      "updatedAt": "2026-11-26T19:23:14.592Z",
+      "count": 182,
+      "reviewed": 730,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-26T00:33:37.866Z",
+      "attemptedAt": "2026-11-26T19:23:14.592Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92329741",
+      "title": "TÈCNIC/A D'INCLUSIÓ SOCIOLABORAL, ORIENTACIÓ I ACOMPANYAMENT, I TÈCNIC DE LLEURE EDUCATIU",
+      "school": "Fundació Astrid-21",
+      "city": "GIRONA - GIRONÈS - 17003 GIRONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329741",
+      "snippet": "Actualment, estem seleccionant un/a Tècnic/a d’Inclusió sociolaboral, orientació i acompanyament, i de Lleure Educatiu per incorporar-se a l’equip de l’Àrea Laboral i Formativa, i de Lleure Educatiu de l’entitat. La persona seleccionada desenvoluparà tasques de formació, orientació, acompanyament i suport en els proces",
+      "created": "1795697440255",
+      "expires": "2027-02-24T12:50:40.255Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329717",
+      "title": "COORDINADOR/A EDUCATIU/IVA -GAVÀ- (BAIX LLOBREGAT)",
+      "school": "FABRA FORMACIÓ S.L.",
+      "city": "BARCELONA - BAIX LLOBREGAT - 08850 GAVÀ",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329717",
+      "snippet": "Es necessita un/a coordinador/a educatiu/iva per a gestió d'inscripcions, coordinació pedagògica dels diferents grups de suport educatiu, gestió, seguiment i avaluació dels infants a les diferents escoles on es realitza el projecte.",
+      "created": "1795689242759",
+      "expires": "2027-02-24T10:34:02.759Z",
+      "automatic": true
+    },
+    {
+      "id": "fa_FA92329707",
+      "title": "EDUCADOR/A-DOCENT REFORÇ EDUCATIU ASSISTIT PROGRAMA CAIXA PROINFÀNCIA",
+      "school": "FUNDACIÓ",
+      "city": "BARCELONA - BARCELONÈS - 08033 BARCELONA",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329707",
+      "snippet": "A través de CaixaProinfància, a la Fundació ”la Caixa” treballem per oferir una vida millor a infants i adolescents que viuen en entorns desafavorits, a través d’un model d’acció social i educativa que ajuda a impulsar-ne la integració social, i la de les seves famílies. Dins del programa prestem diferents serveis com ",
+      "created": "1795685034619",
+      "expires": "2027-02-24T09:23:54.619Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92329645",
       "title": "MONITOR/MONITORA ESPAI MIGDIA ESCOLA A SANTA PERPETUA.",
@@ -652,18 +688,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92328161",
-      "title": "EDUCADOR/A SOCIOCULTURAL (ESPAI LUDOTECA)",
-      "school": "Empresa del sector dels serveis culturals",
-      "city": "BARCELONA - BARCELONÈS - 08012 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92328161",
-      "snippet": "Cerquem una persona per a incorporar-se al nostre equip de treball com a Tècnic/a especialitzada Nivell A, segons el Conveni del Lleure, per treballar en una ludoteca de Barcelona 30 hores setmanals.",
-      "created": "1793713865200",
-      "expires": "2027-02-01T13:51:05.196Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92328123",
       "title": "MONITORS/MONITORES DE MIGDIA",
       "school": "Centre de formació",
@@ -853,18 +877,6 @@
       "snippet": "Busquem un/a monitor/monitora per col·laborar en l’activitat del Tió de Nadal que tindrà lloc a Cunit, amb l’objectiu d’acompanyar les famílies participants i donar suport en l’organització de l’activitat. Si t’agrada el tracte amb els infants i les famílies i vols formar part d’una activitat nadalenca plena de màgia, ",
       "created": "1793023076476",
       "expires": "2027-01-24T13:57:56.473Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92327626",
-      "title": "EDUCADOR/A PEL CENTRE OBERT - EL RACÓ AL BARRI DE LA MINA (SANT ADRIÀ DE BESÒS)",
-      "school": "Casal dels Infants",
-      "city": "BARCELONA - BARCELONÈS - 08930 SANT ADRIÀ DE BESÒS",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92327626",
-      "snippet": "Busquem incorporar un/a educador/a. La persona compromesa amb l’educació i l’acompanyament socioeducatiu d’infants i famílies en situació de vulnerabilitat social. La persona s’encarregarà de planificar, desenvolupar i avaluar accions socioeducatives, amb un treball coordinat amb l’equip educatiu i la xarxa de serveis ",
-      "created": "1793013672513",
-      "expires": "2027-01-24T11:21:12.509Z",
       "automatic": true
     },
     {
@@ -1552,18 +1564,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92325765",
-      "title": "TÈCNIC/A DE FORMACIÓ LABORAL, ORIENTACIÓ I D'INSERCIÓ LABORAL, I DE LLEURE EDUCATIU",
-      "school": "Fundació Astrid-21",
-      "city": "GIRONA - GIRONÈS - 17003 GIRONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92325765",
-      "snippet": "Actualment, estem seleccionant un/a Tècnic/a de Formació laboral, Orientació i Inserció Laboral, i de Lleure Educatiu per incorporar-se a l’equip de l’Àrea Laboral i Formativa, i de Lleure Educatiu de l’entitat. La persona seleccionada desenvoluparà tasques de formació, orientació, acompanyament i suport en els process",
-      "created": "1790669952068",
-      "expires": "2026-12-28T08:19:12.067Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92325723",
       "title": "MONITOR/MONITORA CENTRE SOCIOEDUCATIU DIARI CAN BOADA INFANTIL",
       "school": "Associació Socioeducativa Tu Tries",
@@ -1585,18 +1585,6 @@
       "snippet": "Activa, empresa líder en serveis educatius a centres escolars, cerca Monitor/a per incorporar-se al nostre equip durant el curs escolar 26-27 a un centre educatiu de Santa Coloma de Gramenet. Busquem persones dinàmiques, responsables i amb vocació educativa per dinamitzar activitats adreçades a infants d'Educació Infan",
       "created": "1790575671960",
       "expires": "2026-12-27T06:07:51.960Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_FA92325611",
-      "title": "EDUCADOR/A PEL SERVEI ANEM I TORNEM - CENTRE OBERT INFANTIL A SANTA COLOMA DE GRAMENET",
-      "school": "Casal dels Infants",
-      "city": "BARCELONA - BARCELONÈS - 08001 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92325611",
-      "snippet": "Es necessita un/a educador/a pel servei Anem i tornem.",
-      "created": "1790336562939",
-      "expires": "2026-12-24T11:42:42.939Z",
       "automatic": true
     },
     {
