@@ -1,20 +1,32 @@
 {
-  "checkedAt": "2026-11-27T00:43:08.700Z",
+  "checkedAt": "2026-11-28T00:08:57.944Z",
   "sources": {
     "feinaActiva": {
       "state": "ok",
-      "updatedAt": "2026-11-27T00:43:08.700Z",
-      "count": 182,
-      "reviewed": 725,
+      "updatedAt": "2026-11-28T00:08:57.944Z",
+      "count": 181,
+      "reviewed": 719,
       "url": "https://feinaactiva.gencat.cat/search/offers/list?jobCategory=08"
     },
     "sepe": {
       "state": "error",
-      "attemptedAt": "2026-11-27T00:43:08.700Z",
+      "attemptedAt": "2026-11-28T00:08:57.944Z",
       "message": "fetch failed"
     }
   },
   "jobs": [
+    {
+      "id": "fa_FA92329814",
+      "title": "MONITOR/MONITORA REFORÇ ESCOLAR TARDES-GAVÀ (BAIX LLOBREGAT)",
+      "school": "FABRA FORMACIÓ S.L.",
+      "city": "BARCELONA - BAIX LLOBREGAT - 08850 GAVÀ",
+      "source": "Feina Activa",
+      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329814",
+      "snippet": "Busquem un/a monitor/monitora per a realitzar reforç escolar a alumnat d'Educació Primària a un centre educatiu de la població de Gavà (Baix Llobregat). Horari: 16:30-19:00h de dilluns a dijous",
+      "created": "1795781114477",
+      "expires": "2027-02-25T12:05:14.477Z",
+      "automatic": true
+    },
     {
       "id": "fa_FA92329741",
       "title": "TÈCNIC/A D'INCLUSIÓ SOCIOLABORAL, ORIENTACIÓ I ACOMPANYAMENT, I TÈCNIC DE LLEURE EDUCATIU",
@@ -184,18 +196,6 @@
       "automatic": true
     },
     {
-      "id": "fa_FA92329519",
-      "title": "EDUCADOR/A SOCIAL",
-      "school": "Associació l'Esquitx",
-      "city": "BARCELONA - BARCELONÈS - 08003 BARCELONA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/FA92329519",
-      "snippet": "L'Associació l'Esquitx som una entitat sense ànim de lucre, declarada d'utilitat pública l'any 2014, que des del 1985 treballem al barri del Casc Antic de Barcelona acompanyant infants i famílies. El nostre objectiu és promoure el desenvolupament integral dels infants, oferint un espai educatiu, de confiança i de creix",
-      "created": "1795523911449",
-      "expires": "2027-02-22T12:38:31.449Z",
-      "automatic": true
-    },
-    {
       "id": "fa_FA92329513",
       "title": "MONITORS/MONITORES DE LLEURE",
       "school": "Centre de formació",
@@ -289,18 +289,6 @@
       "snippet": "¡Hola! ¿Buscas un trabajo temporal a tiempo parcial para compaginar con otras actividades? ¿Aportas formación y/o experiencia en ludotecas? Actualmente, en EULEN Servicios Sociosanitarios nos encontramos en la búsqueda de Monitores/as para Ludoteca en Tarragona.",
       "created": "1795164917895",
       "expires": "2027-02-18T08:55:17.895Z",
-      "automatic": true
-    },
-    {
-      "id": "fa_09202632674",
-      "title": "TÈCNIC/A D'EDUCACIÓ INFANTIL - 32674",
-      "school": "Oficina de Treball del SOC",
-      "city": "LLEIDA - PALLARS JUSSÀ - 25500 POBLA DE SEGUR, LA",
-      "source": "Feina Activa",
-      "url": "https://feinaactiva.gencat.cat/search/offers/detail/09202632674",
-      "snippet": "Tècnic/a en Educació Infantil amb formació del CFGS d'Educació Infantil Certificat C1 de Català Certificat negatiu del Registre Central de Delinqüents Sexuals Contracte temporal de substitució Jornada completa amb els descansos reglamentaris Horari de 9 a 15h",
-      "created": "1795161271403",
-      "expires": "2027-02-18T07:54:31.402Z",
       "automatic": true
     },
     {
